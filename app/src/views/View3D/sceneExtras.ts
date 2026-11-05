@@ -19,7 +19,7 @@ import {
   type Camera,
   type DirectionalLight,
   type HemisphereLight,
-  type Scene,
+  type Object3D,
 } from 'three';
 
 import { SHADOW_DEPTH } from '../../lib/shadowDepth';
@@ -100,7 +100,7 @@ export function followDirection(camera: Vector3, target: Vector3): Vector3 {
 }
 
 export class SceneExtras {
-  private readonly scene: Scene;
+  private readonly scene: Object3D;
   private readonly lights: SceneLights;
   private readonly materials = {
     plunge: new LineBasicMaterial({ color: 0x00a8c6 }),
@@ -133,7 +133,7 @@ export class SceneExtras {
   /** A toolpath preview shows the cut material in place of the model. */
   private previewShown = false;
 
-  constructor(scene: Scene, lights: SceneLights) {
+  constructor(scene: Object3D, lights: SceneLights) {
     this.scene = scene;
     this.lights = lights;
   }

@@ -50,6 +50,7 @@ import { ViewCube } from '../ViewCube/ViewCube';
 import { jobMaterial, materialLook } from './appearance';
 import { finishSlot } from './componentFinish';
 import { loadMaterialTexture, texturePathFor } from './materialTexture';
+import { blankTurnMatrix, restingTurn } from './blankTurn';
 import { toolScenePosition, wrappedToolPose } from './toolMarker';
 import { blendView, VIEW_PRESETS, type OrbitView, type ViewPreset } from './camera3d';
 import { clipDropPoint } from './clipDrop';
@@ -915,19 +916,31 @@ export function View3D(): JSX.Element {
   }, [scheduleDraw, texturePath]);
 
   // The animated preview draws the tool where it is.
-  const previewTool = usePreviewStore((state) => (state.drawTool ? state.tool : null));
+  const previewTool = usePreviewStore((state) => state.tool);
+  const drawTool = usePreviewStore((state) => state.drawTool);
   useEffect(() => {
+    const renderer = rendererRef.current;
     const pose =
       previewTool !== null && isRotary(job)
         ? wrappedToolPose(previewTool, rotaryOf(job), surfaceZ(job))
         : null;
-    rendererRef.current?.setTool(
-      previewTool,
-      previewTool === null ? null : (pose?.at ?? toolScenePosition(previewTool, surfaceZ(job))),
-      pose?.lean,
+    // The blank turns under the tool, as on the machine, drawn or not. With no
+    // tool running it rests with the cut work facing up.
+    if (isRotary(job)) {
+      const { axis, diameter } = rotaryOf(job);
+      const radius = diameter / 2;
+      const turn = pose?.turn ?? (moves === null ? 0 : restingTurn(moves, axis, radius));
+      renderer?.setBlankTurn(blankTurnMatrix(axis, radius, turn));
+    } else {
+      renderer?.setBlankTurn(null);
+    }
+    const shown = drawTool ? previewTool : null;
+    renderer?.setTool(
+      shown,
+      shown === null ? null : (pose?.at ?? toolScenePosition(shown, surfaceZ(job))),
     );
     scheduleDraw();
-  }, [job, previewTool, scheduleDraw]);
+  }, [drawTool, job, moves, previewTool, scheduleDraw]);
 
   usePreviewChecks(rendererRef, scheduleDraw, job, preview, surfaceZ(job));
 

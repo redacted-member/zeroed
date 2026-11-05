@@ -1,5 +1,8 @@
+import { Vector3 } from 'three';
 import { describe, expect, it } from 'vitest';
 
+import { wrapPoint } from '../../lib/rotary';
+import { blankTurnMatrix } from './blankTurn';
 import { toolScenePosition, toolShape, wrappedToolPose } from './toolMarker';
 
 /** A tool outline as the kernel sends it: 33 samples from the tip up. */
@@ -80,24 +83,51 @@ describe('tool shape', () => {
 
 describe('wrappedToolPose', () => {
   const quarter = (Math.PI * 40) / 4;
+  const close = (a: readonly number[], b: readonly number[]) => {
+    a.forEach((value, i) => expect(value).toBeCloseTo(b[i] ?? 0, 6));
+  };
 
-  it('stands upright on top of the blank', () => {
-    const pose = wrappedToolPose({ x: 15, y: 0, z: 18 }, { axis: 'x', diameter: 40 }, 20);
-    expect(pose.at[0]).toBeCloseTo(15, 9);
-    expect(pose.at[1]).toBeCloseTo(-2, 9);
-    expect(pose.at[2]).toBeCloseTo(0, 9);
-    expect(pose.lean[0]).toBeCloseTo(0, 9);
-    expect(pose.lean[1]).toBe(0);
+  it('stands over the top of the blank whatever the angle, moving in X and height', () => {
+    const rotary = { axis: 'x', diameter: 40 } as const;
+    close(wrappedToolPose({ x: 15, y: 0, z: 18 }, rotary, 20).at, [15, -2, 0]);
+    close(wrappedToolPose({ x: 15, y: quarter, z: 18 }, rotary, 20).at, [15, -2, 0]);
+    close(wrappedToolPose({ x: 15, y: 3 * quarter, z: 25 }, rotary, 20).at, [15, 5, 0]);
+    // A blank along Y keeps it on the axis the other way.
+    close(
+      wrappedToolPose({ x: quarter, y: 15, z: 18 }, { axis: 'y', diameter: 40 }, 20).at,
+      [0, -2, -15],
+    );
   });
 
-  it('points at the axis a quarter turn round, along X and along Y', () => {
-    const x = wrappedToolPose({ x: 15, y: quarter, z: 20 }, { axis: 'x', diameter: 40 }, 20);
-    expect(x.at[1]).toBeCloseTo(-20, 9);
-    expect(x.at[2]).toBeCloseTo(-20, 9);
-    expect(x.lean[0]).toBeCloseTo(-Math.PI / 2, 9);
-    const y = wrappedToolPose({ x: quarter, y: 15, z: 20 }, { axis: 'y', diameter: 40 }, 20);
-    expect(y.at[0]).toBeCloseTo(20, 9);
-    expect(y.at[2]).toBeCloseTo(-15, 9);
-    expect(y.lean[1]).toBeCloseTo(-Math.PI / 2, 9);
+  it('turns the blank one turn for once round', () => {
+    const rotary = { axis: 'x', diameter: 40 } as const;
+    expect(wrappedToolPose({ x: 0, y: 0, z: 0 }, rotary, 0).turn).toBe(0);
+    expect(wrappedToolPose({ x: 0, y: quarter, z: 0 }, rotary, 0).turn).toBeCloseTo(Math.PI / 2, 9);
+    expect(wrappedToolPose({ x: 0, y: 4 * quarter, z: 0 }, rotary, 0).turn).toBeCloseTo(
+      2 * Math.PI,
+      9,
+    );
+  });
+
+  it('brings the spot on the blank up under the tool, on both axes and at any depth', () => {
+    for (const axis of ['x', 'y'] as const) {
+      for (const distance of [0, 7, quarter, 2 * quarter + 3, 5 * quarter, -11]) {
+        for (const z of [20, 17.5, 24]) {
+          const radial = 20 + z - 20;
+          const tip = axis === 'x' ? { x: 33, y: distance, z } : { x: distance, y: 33, z };
+          const pose = wrappedToolPose(tip, { axis, diameter: 40 }, 20);
+          const spot = wrapPoint(axis, 40, 33, distance, radial);
+          const moved = new Vector3(spot.x, spot.y, spot.z).applyMatrix4(
+            blankTurnMatrix(axis, 20, pose.turn),
+          );
+          close([moved.x, moved.y, moved.z], pose.at);
+        }
+      }
+    }
+  });
+
+  it('leaves the blank where it is at no turn', () => {
+    const still = new Vector3(5, -7, 3).applyMatrix4(blankTurnMatrix('x', 20, 0));
+    close([still.x, still.y, still.z], [5, -7, 3]);
   });
 });

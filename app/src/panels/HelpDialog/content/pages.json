@@ -109,7 +109,8 @@
           "Draw on the unwrapped area. Going across it goes around the blank, and a design crossing the edge carries on around.",
           "Use any toolpath in the Toolpaths panel, the same as on a flat job.",
           "A square blank can be turned round first with Create Rounding Toolpath in the Gadgets menu. Rapids clear its corners by themselves.",
-          "Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu. Turn it off to see the job flat."
+          "Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu. Turn it off to see the job flat.",
+          "With Animate preview on, the blank turns under an upright bit, as on the machine. When nothing is running, the blank rests with the cut work facing up."
         ]
       },
       {

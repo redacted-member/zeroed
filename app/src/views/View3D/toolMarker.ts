@@ -5,8 +5,6 @@
 // material top at y zero). A tool whose flute length is set shows its shank
 // at the size the collision checks use, and the holder when it is checked.
 
-import { wrapPoint } from '../../lib/rotary';
-
 /** How much taller than the cutting part the shank stands, as a fraction. */
 const SHANK_HEIGHT = 0.6;
 /** The shank's radius as a fraction of the cutter's widest radius. */
@@ -92,17 +90,17 @@ export function toolShape(
   return { cutter, shank, holder, radius, height };
 }
 
-/** Where the tool stands in the scene: its tip, and how far it leans, in
- * radians about scene x and scene z. */
+/** The tool on a rotary job shown wrapped: where its tip is in the scene, and
+ * how far the blank has turned to bring that spot under it, in radians. */
 export interface ToolPose {
   at: [number, number, number];
-  lean: [number, number];
+  turn: number;
 }
 
 /**
- * The tool at job point `tip` on a rotary job shown wrapped. The machine turns
- * the blank under an upright tool; the scene holds the blank still, so the tool
- * stands where that spot of the blank is, pointing at the axis.
+ * The tool at job point `tip` on a rotary job shown wrapped. As on the machine
+ * it stays upright over the top of the blank, moving along the axis and in
+ * height only, and the blank turns the spot it is cutting up to meet it.
  */
 export function wrappedToolPose(
   tip: { x: number; y: number; z: number },
@@ -112,17 +110,10 @@ export function wrappedToolPose(
   const radius = rotary.diameter / 2;
   const alongX = rotary.axis === 'x';
   const [along, around] = alongX ? [tip.x, tip.y] : [tip.y, tip.x];
-  const p = wrapPoint(
-    rotary.axis,
-    rotary.diameter,
-    along,
-    around,
-    Math.max(0, radius + tip.z - surfaceZ),
-  );
-  const theta = radius > 0 ? around / radius : 0;
+  const height = tip.z - surfaceZ;
   return {
-    at: [p.x, p.y, p.z],
-    lean: alongX ? [-theta, 0] : [0, -theta],
+    at: alongX ? [along, height, 0] : [0, height, -along],
+    turn: radius > 0 ? around / radius : 0,
   };
 }
 

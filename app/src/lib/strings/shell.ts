@@ -242,7 +242,7 @@ export const shellStrings = {
         },
         {
           name: 'Preview it.',
-          text: 'Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu.',
+          text: 'Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu. With Animate preview on, the blank turns under the bit, as on the machine.',
         },
         {
           name: 'Save with a rotary post.',

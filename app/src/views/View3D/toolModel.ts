@@ -73,13 +73,8 @@ export class ToolModel {
     scene.add(this.group);
   }
 
-  /** The tool turned from `parts` at scene point `at`, leaning `lean`
-   * radians about scene x and z (a wrapped view), or none. */
-  set(
-    parts: ToolParts | null,
-    at: readonly [number, number, number] | null,
-    lean: readonly [number, number] = [0, 0],
-  ): void {
+  /** The tool turned from `parts` at scene point `at`, or none. */
+  set(parts: ToolParts | null, at: readonly [number, number, number] | null): void {
     const same =
       parts === this.parts ||
       (parts !== null &&
@@ -94,7 +89,6 @@ export class ToolModel {
     this.group.visible = shown;
     if (at !== null) {
       this.group.position.set(at[0], at[1], at[2]);
-      this.group.rotation.set(lean[0], 0, lean[1]);
     }
   }
 

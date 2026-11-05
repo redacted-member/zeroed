@@ -3,7 +3,7 @@
 // area, colored by severity, drawn over the material so it always shows;
 // the issue picked in the list gets a larger ball and a ring round it.
 
-import { Group, Mesh, MeshBasicMaterial, RingGeometry, SphereGeometry, type Scene } from 'three';
+import { Group, Mesh, MeshBasicMaterial, RingGeometry, SphereGeometry, type Object3D } from 'three';
 
 import { SEVERITY_COLOURS } from './checkColours';
 
@@ -28,7 +28,7 @@ export class IssueMarkers {
     opacity: 0.9,
   });
 
-  constructor(private readonly scene: Scene) {
+  constructor(private readonly scene: Object3D) {
     this.group.renderOrder = 12;
     scene.add(this.group);
   }

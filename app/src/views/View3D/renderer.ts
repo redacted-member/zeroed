@@ -3,6 +3,7 @@
 // Job space maps to the scene as x -> x, y -> -z, z -> y, so that the
 // material top sits at scene y zero. The camera maths lives in camera3d.ts.
 
+import type { Matrix4 } from 'three';
 import {
   BoxGeometry,
   BufferAttribute,
@@ -13,6 +14,7 @@ import {
   DirectionalLight,
   EdgesGeometry,
   GridHelper,
+  Group,
   HemisphereLight,
   LineBasicMaterial,
   LineLoop,
@@ -92,6 +94,7 @@ import {
   type VertexGrid,
 } from './checkMarks';
 import { setSliceTint, sliceTintUniforms } from './sliceTint';
+import { movedBox } from './blankTurn';
 import { wrappedHeightfield, wrappedStock, type WrappedMesh } from './wrappedMesh';
 
 /** A point or direction as three numbers. */
@@ -200,6 +203,8 @@ function lineGeometry(positions: Float32Array): BufferGeometry {
 export class View3DRenderer {
   private readonly renderer: WebGLRenderer;
   private readonly scene = new Scene();
+  /** The job and everything cut or drawn on it: a rotary blank turns as one. */
+  private readonly work = new Group();
   private readonly perspective = new PerspectiveCamera(FOV_DEG, 1, 1, MAX_RADIUS * 4);
   private readonly ortho = new OrthographicCamera(-1, 1, 1, -1, -MAX_RADIUS * 4, MAX_RADIUS * 4);
   private projection: ProjectionKind = 'perspective';
@@ -261,7 +266,7 @@ export class View3DRenderer {
   private readonly vectorMaterial = new LineBasicMaterial({ color: 0x1c1c1c });
   /** The tool drawn by an animated preview. */
   private readonly tool = new ToolModel(this.scene);
-  private readonly issues = new IssueMarkers(this.scene);
+  private readonly issues = new IssueMarkers(this.work);
   private block: Mesh<BufferGeometry, MeshStandardMaterial> | null = null;
   private blockWire: Mesh<BufferGeometry, MeshBasicMaterial> | null = null;
   /** Outline of the flat material block, shown around the model. */
@@ -365,7 +370,9 @@ export class View3DRenderer {
     const fill = new DirectionalLight(0xdfe9ff, 0.7);
     fill.position.set(0.8, 0.5, -0.7);
     this.scene.add(sky, sun, fill, this.rim);
-    this.extras = new SceneExtras(this.scene, { sky, sun, fill });
+    this.work.matrixAutoUpdate = false;
+    this.scene.add(this.work);
+    this.extras = new SceneExtras(this.work, { sky, sun, fill });
   }
 
   /** Faceted shading instead of smooth normals. */
@@ -565,14 +572,14 @@ export class View3DRenderer {
     );
     const block = new Mesh(geometry, this.material);
     block.position.set(centreX, -job.thickness / 2, -centreY);
-    this.scene.add(block);
+    this.work.add(block);
     this.block = block;
     this.blockWire = new Mesh(geometry, this.wireMaterial);
     this.blockWire.position.copy(block.position);
-    this.scene.add(this.blockWire);
+    this.work.add(this.blockWire);
     this.blockEdges = new LineSegments(new EdgesGeometry(geometry), this.edgeMaterial);
     this.blockEdges.position.copy(block.position);
-    this.scene.add(this.blockEdges);
+    this.work.add(this.blockEdges);
 
     this.sceneBox = {
       min: [bounds.minX, -job.thickness, -bounds.maxY],
@@ -593,10 +600,10 @@ export class View3DRenderer {
     const rotary = rotaryOf(job);
     const geometry = wrappedGeometry(wrappedStock(job, bounds));
     const block = new Mesh(geometry, this.cutMaterial);
-    this.scene.add(block);
+    this.work.add(block);
     this.block = block;
     this.blockWire = new Mesh(geometry, this.wireMaterial);
-    this.scene.add(this.blockWire);
+    this.work.add(this.blockWire);
     const radius = rotary.diameter / 2;
     // A square blank reaches its corners, further out than the radius.
     const reach = rotary.blank === 'square' ? radius * Math.SQRT2 : radius;
@@ -621,17 +628,17 @@ export class View3DRenderer {
 
   private removeBlock(): void {
     if (this.block !== null) {
-      this.scene.remove(this.block);
+      this.work.remove(this.block);
       this.block.geometry.dispose();
       this.block = null;
     }
     if (this.blockWire !== null) {
       // Shares the block's geometry, already disposed.
-      this.scene.remove(this.blockWire);
+      this.work.remove(this.blockWire);
       this.blockWire = null;
     }
     if (this.blockEdges !== null) {
-      this.scene.remove(this.blockEdges);
+      this.work.remove(this.blockEdges);
       this.blockEdges.geometry.dispose();
       this.blockEdges = null;
     }
@@ -668,7 +675,7 @@ export class View3DRenderer {
       // re-upload the height texture.
       this.gpu.setField(field, changed);
       if (!this.cutOnGpu) {
-        this.scene.add(this.gpu.mesh, this.gpu.wire);
+        this.work.add(this.gpu.mesh, this.gpu.wire);
         this.cutOnGpu = true;
       }
       this.cut = this.gpu.mesh;
@@ -703,16 +710,16 @@ export class View3DRenderer {
     }
     this.cut = new Mesh(geometry, this.cutMaterial);
     this.paint();
-    this.scene.add(this.cut);
+    this.work.add(this.cut);
     this.cutWire = new Mesh(geometry, this.wireMaterial);
-    this.scene.add(this.cutWire);
+    this.work.add(this.cutWire);
     this.updateVisibility();
   }
 
   /** Builds the walls round `field`'s through cuts, or takes them away. */
   private setHoleWalls(field: Heightfield | null, onGpu: boolean): void {
     if (this.holeWalls !== null) {
-      this.scene.remove(this.holeWalls);
+      this.work.remove(this.holeWalls);
       this.holeWalls.geometry.dispose();
       this.holeWalls = null;
     }
@@ -735,7 +742,7 @@ export class View3DRenderer {
       geometry.computeVertexNormals();
     }
     this.holeWalls = new Mesh(geometry, this.cutMaterial);
-    this.scene.add(this.holeWalls);
+    this.work.add(this.holeWalls);
   }
 
   /**
@@ -744,18 +751,18 @@ export class View3DRenderer {
    */
   private clearCut(keepGpu: boolean): void {
     if (this.cut !== null && !this.cutOnGpu) {
-      this.scene.remove(this.cut);
+      this.work.remove(this.cut);
       this.cut.geometry.dispose();
     }
     if (this.cutWire !== null && !this.cutOnGpu) {
-      this.scene.remove(this.cutWire);
+      this.work.remove(this.cutWire);
     }
     this.cut = null;
     this.cutWire = null;
     this.surface = null;
     this.vertexGrid = null;
     if (this.cutOnGpu && !keepGpu) {
-      this.scene.remove(this.gpu.mesh, this.gpu.wire);
+      this.work.remove(this.gpu.mesh, this.gpu.wire);
       this.gpu.clear();
       this.cutOnGpu = false;
     }
@@ -869,7 +876,12 @@ export class View3DRenderer {
   /** The view framing a box in job space from the current angles, the
    * material top at job Z `surfaceZ`. */
   framedOn(box: Box3, surfaceZ = 0): OrbitView {
-    return fitView(sceneBoxOf(box, surfaceZ), this.view(), this.aspect, this.projection);
+    return fitView(
+      movedBox(sceneBoxOf(box, surfaceZ), this.work.matrix),
+      this.view(),
+      this.aspect,
+      this.projection,
+    );
   }
 
   /**
@@ -901,15 +913,23 @@ export class View3DRenderer {
   /**
    * The preview tool turned from its outline ([radius, height above the
    * tip] pairs, tip first) with its shank and holder, the tip at scene point
-   * `at`, leaning `lean` radians about scene x and z on a wrapped view, or
-   * null to hide it.
+   * `at`, or null to hide it.
    */
-  setTool(
-    parts: ToolParts | null,
-    at: readonly [number, number, number] | null,
-    lean?: readonly [number, number],
-  ): void {
-    this.tool.set(parts, at, lean);
+  setTool(parts: ToolParts | null, at: readonly [number, number, number] | null): void {
+    this.tool.set(parts, at);
+  }
+
+  /**
+   * Turns the blank and everything on it about its axis while a rotary preview
+   * runs, by `matrix`; null puts it back.
+   */
+  setBlankTurn(matrix: Matrix4 | null): void {
+    if (matrix === null) {
+      this.work.matrix.identity();
+    } else {
+      this.work.matrix.copy(matrix);
+    }
+    this.work.matrixWorldNeedsUpdate = true;
   }
 
   /** Paints the preview check's codes (CHECK_CODE per cell) on the
@@ -969,14 +989,14 @@ export class View3DRenderer {
     material: LineBasicMaterial,
   ): LineSegments<BufferGeometry, LineBasicMaterial> | null {
     if (old !== null) {
-      this.scene.remove(old);
+      this.work.remove(old);
       old.geometry.dispose();
     }
     if (positions === null || positions.length === 0) {
       return null;
     }
     const lines = new LineSegments(lineGeometry(positions), material);
-    this.scene.add(lines);
+    this.work.add(lines);
     return lines;
   }
 
