@@ -1,9 +1,10 @@
-import { useEffect, useRef, type JSX } from 'react';
+import { lazy, Suspense, useEffect, useRef, type JSX } from 'react';
 
 import { FORMS } from '../../forms/registry';
 import { strings } from '../../lib/strings';
 import { ToolpathsPanel } from '../../panels/ToolpathsPanel/ToolpathsPanel';
 import { formDock } from '../../state/formDock';
+import { useDocumentStore } from '../../state/documentStore';
 import { usePrefsStore } from '../../state/prefsStore';
 import { useUiStore } from '../../state/uiStore';
 import { DockButtons } from '../DockButtons/DockButtons';
@@ -13,11 +14,15 @@ import { FormHost } from '../FormHost/FormHost';
 import { ListResizer } from '../ListResizer/ListResizer';
 import { MaterialSummary } from '../MaterialSummary/MaterialSummary';
 import { PinButton } from '../PinButton/PinButton';
-import { RotaryGuide } from '../RotaryGuide/RotaryGuide';
 import { TOOL_GROUPS } from '../LeftPanel/toolGroups';
 import { ToolGroups } from '../ToolGroups/ToolGroups';
 
 import './RightPanel.scss';
+
+// Only rotary jobs show it, so it stays out of the start bundle.
+const RotaryGuide = lazy(() =>
+  import('../RotaryGuide/RotaryGuide').then((module) => ({ default: module.RotaryGuide })),
+);
 
 const text = strings.rightPanel;
 
@@ -30,6 +35,7 @@ const PANEL_ID = 'toolpaths-panel';
  * it hides to a tab on the window edge and slides out over the view.
  */
 export function RightPanel(): JSX.Element {
+  const rotary = useDocumentStore((state) => state.job.kind === 'rotary');
   const activeForm = useUiStore((state) => state.activeForm);
   const formSerial = useUiStore((state) => state.formSerial);
   const pinned = useUiStore((state) => state.toolpathsPinned);
@@ -116,7 +122,11 @@ export function RightPanel(): JSX.Element {
             <>
               <MaterialSummary />
               <div className="right-panel__operations">
-                <RotaryGuide />
+                {rotary ? (
+                  <Suspense fallback={null}>
+                    <RotaryGuide />
+                  </Suspense>
+                ) : null}
                 <ToolGroups groups={TOOL_GROUPS.toolpaths} />
               </div>
               <ListResizer

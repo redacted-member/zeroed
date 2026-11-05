@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zeroed</title>
+    <link rel="stylesheet" href="/src/shell/Splash/Splash.scss" />
   </head>
   <body>
     <div id="root"></div>
+    <div id="splash" class="splash" role="status" aria-label="Loading Zeroed">
+      <div class="splash__mark">
+        <picture>
+          <source
+            srcset="/src/shell/Splash/zeroed-logo-dark.png"
+            media="(prefers-color-scheme: light)"
+          />
+          <img class="splash__logo" src="/src/shell/Splash/zeroed-logo-white.png" alt="" />
+        </picture>
+        <div class="splash__bar"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -72,6 +72,7 @@ import { acceptsInput } from '../../state/busyStore';
 import { Tooltip } from '../Tooltip/Tooltip';
 
 import { afterPicks, picking } from '../../lib/pickOrder';
+import { hideSplash } from '../Splash/splash';
 import './AppShell.scss';
 
 function isTyping(event: KeyboardEvent): boolean {
@@ -589,7 +590,10 @@ export function AppShell(): JSX.Element {
 
   useEffect(() => {
     let cancelled = false;
-    void Promise.all([connect(), usePrefsStore.getState().load()]).then(async () => {
+    const loaded = Promise.all([connect(), usePrefsStore.getState().load()]);
+    const showApp = (): void => hideSplash(document.getElementById('splash'), performance.now());
+    void loaded.then(showApp, showApp);
+    void loaded.then(async () => {
       void useVariablesStore
         .getState()
         .load()

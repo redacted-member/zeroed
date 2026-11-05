@@ -1,0 +1,81 @@
+// Shown from index.html before the bundle runs, so it stands alone with no
+// tokens. It follows the system's appearance, as the app does; the logo is one
+// color, white on dark and dark on white.
+$ground-top: #1c1e21;
+$ground-bottom: #0e0f11;
+$light-ground: #ffffff;
+$dark-ink: #111315;
+
+:root {
+  --splash-ground: linear-gradient(#{$ground-top}, #{$ground-bottom});
+  --splash-ink: #ffffff;
+
+  @media (prefers-color-scheme: light) {
+    --splash-ground: #{$light-ground};
+    --splash-ink: #{$dark-ink};
+  }
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--splash-ground);
+  transition: opacity 240ms ease-out;
+
+  &--done {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.splash__mark {
+  position: absolute;
+  top: calc(50% - 82px);
+  left: calc(50% - 240px);
+  top: round(down, calc(50% - 82px), 2px);
+  left: round(down, calc(50% - 240px), 2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 480px;
+}
+
+.splash__logo {
+  display: block;
+  width: 480px;
+  height: 130px;
+}
+
+.splash__bar {
+  position: relative;
+  width: 160px;
+  height: 2px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--splash-ink) 16%, transparent);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 2px;
+    background: var(--splash-ink);
+    animation: splash-slide 800ms ease-in-out infinite alternate;
+  }
+}
+
+@keyframes splash-slide {
+  to {
+    transform: translateX(96px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash__bar::after {
+    width: 160px;
+    animation: none;
+  }
+}

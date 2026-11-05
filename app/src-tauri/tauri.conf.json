@@ -15,6 +15,7 @@
       {
         "label": "main",
         "title": "Zeroed",
+        "backgroundColor": "#15171a",
         "width": 1440,
         "height": 900,
         "minWidth": 1100,
