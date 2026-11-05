@@ -138,7 +138,8 @@
       "Enter the material size and thickness and pick the units.",
       "Set where Z zero and the XY datum are, to match how you zero the machine.",
       "Press OK."
-    ]
+    ],
+    "related": ["page:rotaryJobs"]
   },
   "drawRectangle": {
     "summary": "Draws a rectangle or square, with square, rounded or inward-curved corners. Drag it out in the 2D view or type its size and position.",
@@ -3186,7 +3187,7 @@
       "Press Save Toolpath(s) ... and choose where to save.",
       "Read any warning shown, such as a post that cannot change tools."
     ],
-    "related": ["page:beforeYouCut"]
+    "related": ["page:beforeYouCut", "page:rotaryJobs"]
   },
   "mergeToolpaths": {
     "summary": "Joins the visible toolpaths that use the same tool into one toolpath, so the machine runs them without a tool change or a trip home between them. The originals are hidden, not deleted.",

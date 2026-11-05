@@ -13,6 +13,7 @@ import { FormHost } from '../FormHost/FormHost';
 import { ListResizer } from '../ListResizer/ListResizer';
 import { MaterialSummary } from '../MaterialSummary/MaterialSummary';
 import { PinButton } from '../PinButton/PinButton';
+import { RotaryGuide } from '../RotaryGuide/RotaryGuide';
 import { TOOL_GROUPS } from '../LeftPanel/toolGroups';
 import { ToolGroups } from '../ToolGroups/ToolGroups';
 
@@ -115,6 +116,7 @@ export function RightPanel(): JSX.Element {
             <>
               <MaterialSummary />
               <div className="right-panel__operations">
+                <RotaryGuide />
                 <ToolGroups groups={TOOL_GROUPS.toolpaths} />
               </div>
               <ListResizer

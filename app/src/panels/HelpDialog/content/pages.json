@@ -82,5 +82,51 @@
       }
     ],
     "related": ["form:saveToolpaths", "panel:toolDatabase", "panel:machineConfiguration"]
+  },
+  "rotaryJobs": {
+    "title": "Rotary jobs",
+    "summary": "A rotary job cuts a blank that turns on a 4th axis. There is no separate rotary toolpath: you design flat on the unwrapped surface of the blank, use the normal toolpaths, and a rotary post processor turns the distance around the blank into rotary axis moves when you save.",
+    "sections": [
+      {
+        "heading": "Set up the job",
+        "items": [
+          "Job Setup: set Job Type to Rotary, then the blank's shape, length and diameter. Measure the real diameter, because it sets how far each turn goes.",
+          "Blank Along: whether the blank lies along X or along Y on your machine.",
+          "Z Zero Position: on the center of rotation or on the top of the blank, the same as you will set it on the machine.",
+          "Unwrapped Size is your drawing area: the blank's length one way, once around it the other. A 4 in blank is about 12.57 in around."
+        ]
+      },
+      {
+        "heading": "Set up the machine",
+        "items": [
+          "Machine Configuration, Rotary Axis: the letter your controller calls the axis, whether it reads degrees or linear units, and its direction.",
+          "Machine Configuration, Associated Post Processors: if the list has posts in it, include a rotary post. An empty list offers them all."
+        ]
+      },
+      {
+        "heading": "Make the toolpaths",
+        "items": [
+          "Draw on the unwrapped area. Going across it goes around the blank, and a design crossing the edge carries on around.",
+          "Use any toolpath in the Toolpaths panel, the same as on a flat job.",
+          "A square blank can be turned round first with Create Rounding Toolpath in the Gadgets menu. Rapids clear its corners by themselves.",
+          "Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu. Turn it off to see the job flat."
+        ]
+      },
+      {
+        "heading": "Save and cut",
+        "items": [
+          "Save Toolpaths picks a rotary post if it can and says which axis the file turns. Any other post warns you and writes the job flat.",
+          "On the machine: set the wrapped axis zero on the center of rotation, set Z zero to match Job Setup, and set the rotary axis zero where the design's zero should land.",
+          "Run an air cut first and watch Z lift before anything turns. Then cut text or an arrow into scrap, shallow.",
+          "If it reads mirrored on the blank, set Direction to Reversed in Machine Configuration and save again."
+        ]
+      }
+    ],
+    "related": [
+      "page:beforeYouCut",
+      "form:jobSetup",
+      "form:saveToolpaths",
+      "panel:machineConfiguration"
+    ]
   }
 }

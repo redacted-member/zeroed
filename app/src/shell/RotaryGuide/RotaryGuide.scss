@@ -1,0 +1,62 @@
+@use '../../styles/tokens';
+
+.rotary-guide {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: tokens.$space-2 tokens.$space-3;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  font-size: tokens.$font-size-small;
+}
+
+.rotary-guide__note {
+  margin: 0;
+}
+
+.rotary-guide__notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: tokens.$space-2;
+  color: tokens.$warning;
+}
+
+.rotary-guide__notice p {
+  margin: 0;
+}
+
+.rotary-guide__details {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.rotary-guide__summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rotary-guide__summary:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 2px;
+}
+
+.rotary-guide__steps {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: tokens.$space-2 0;
+  padding-left: tokens.$space-4;
+  color: tokens.$text-muted;
+}
+
+.rotary-guide__step strong {
+  color: tokens.$text;
+}
+
+.rotary-guide__button {
+  align-self: flex-start;
+}

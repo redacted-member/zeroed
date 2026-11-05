@@ -9,6 +9,8 @@ import type { FormId, WorkspaceTab } from '../state/uiStore';
 export const START_TOPIC = 'page:start';
 /** The checklist to work through before the first real cut. */
 export const BEFORE_YOU_CUT_TOPIC = 'page:beforeYouCut';
+/** How a rotary job goes from setup to the machine. */
+export const ROTARY_JOBS_TOPIC = 'page:rotaryJobs';
 /** The Toolpaths panel's page. */
 export const TOOLPATHS_TOPIC = 'panel:toolpaths';
 

@@ -216,6 +216,46 @@ export const shellStrings = {
   },
   rightPanel: {
     label: 'Toolpaths',
+    rotaryGuide: {
+      note: 'Rotary job: use any toolpath here. It wraps round the blank when you save it through a rotary post.',
+      noPost: (along: string) =>
+        `This machine has no post that wraps a blank along ${along}, so its files would come out flat. Add a rotary post in Machine Configuration.`,
+      machine: 'Machine Configuration...',
+      machineTip: 'Add a rotary post and set how the rotary axis is wired',
+      title: 'How to set up a rotary job',
+      steps: [
+        {
+          name: 'Set the blank.',
+          text: "In Job Setup, set the blank's shape, length and diameter, which way it lies and where Z zero is. Unwrapped Size is your drawing area.",
+        },
+        {
+          name: 'Draw it flat.',
+          text: 'Draw on the unwrapped area. Going across it goes around the blank.',
+        },
+        {
+          name: 'Check the axis.',
+          text: 'In Machine Configuration, set Rotary Axis to the letter, units and direction your controller uses.',
+        },
+        {
+          name: 'Add toolpaths.',
+          text: 'Use any toolpath in this panel. To turn a square blank round first, use Create Rounding Toolpath in the Gadgets menu.',
+        },
+        {
+          name: 'Preview it.',
+          text: 'Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu.',
+        },
+        {
+          name: 'Save with a rotary post.',
+          text: 'Save Toolpaths picks one if it can and says which axis the file turns.',
+        },
+        {
+          name: 'Test it.',
+          text: 'Run an air cut, then a shallow scrap cut. If it reads mirrored, set Direction to Reversed in Machine Configuration.',
+        },
+      ],
+      help: 'Rotary jobs help',
+      helpTip: 'Open the help page on rotary jobs',
+    },
     pin: 'Auto hide the Toolpaths panel',
     unpin: 'Keep the Toolpaths panel open',
     show: 'Show the Toolpaths panel',
