@@ -57,7 +57,7 @@ pub fn stl_bytes(field: &Field, base_z: f64) -> Vec<u8> {
 pub fn stl_of(triangles: &[Triangle]) -> Vec<u8> {
     let mut out = Vec::with_capacity(HEADER + 4 + triangles.len() * 50);
     let mut header = [b' '; HEADER];
-    let title = b"CarveStudio relief";
+    let title = b"Zeroed relief";
     header[..title.len()].copy_from_slice(title);
     out.extend_from_slice(&header);
     let count = u32::try_from(triangles.len()).unwrap_or(u32::MAX);

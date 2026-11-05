@@ -1,6 +1,6 @@
 [package]
 name = "carve-core"
-description = "CarveStudio kernel: geometry, relief model, CAM, document and file format"
+description = "Zeroed kernel: geometry, relief model, CAM, document and file format"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

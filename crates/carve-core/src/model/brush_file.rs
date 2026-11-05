@@ -26,7 +26,7 @@ const OPAQUE: u8 = 128;
 /// Picture files a brush can be read from.
 const PICTURES: [&str; 8] = ["png", "jpg", "jpeg", "bmp", "webp", "gif", "tif", "tiff"];
 
-/// The brushes folder: `CarveStudio/brushes` under the platform data
+/// The brushes folder: `Zeroed/brushes` under the platform data
 /// directory; unit tests get a folder under the temporary directory.
 pub fn brush_dir() -> PathBuf {
     if cfg!(test) {
@@ -34,7 +34,7 @@ pub fn brush_dir() -> PathBuf {
     }
     dirs::data_dir()
         .unwrap_or_else(std::env::temp_dir)
-        .join("CarveStudio")
+        .join("Zeroed")
         .join("brushes")
 }
 

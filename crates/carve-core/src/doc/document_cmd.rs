@@ -85,7 +85,7 @@ pub fn dispatch(kernel: &mut Kernel, name: &str, args: &str) -> Result<KernelRep
             let path = args.path.unwrap_or_else(|| {
                 let fallback = dirs::config_dir()
                     .unwrap_or_else(std::env::temp_dir)
-                    .join("CarveStudio")
+                    .join("Zeroed")
                     .join("Backups");
                 io::native::backup_path(kernel.document.file_path(), &fallback)
             });

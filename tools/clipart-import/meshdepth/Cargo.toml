@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
-# Stand alone: not a member of the CarveStudio workspace.
+# Stand alone: not a member of the Zeroed workspace.
 [workspace]
 
 [dependencies]

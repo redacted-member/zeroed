@@ -1261,7 +1261,7 @@ impl<'a> Writer<'a> {
             "TP_DIR" => self.job.path_name.clone(),
             "TP_EXT" => self.post.file_extension.clone(),
             "FILE_NOTES" => self.job.notes.clone(),
-            "PRODUCT" => "CarveStudio".to_string(),
+            "PRODUCT" => "Zeroed".to_string(),
             "TOOLPATHS_OUTPUT" => self.toolpath_names.join(", "),
             "TOOLPATH_NAME" => self.toolpath_name.clone(),
             "DL" => self
@@ -2270,7 +2270,7 @@ end
         let text = post_process(&extended, &PostJob::default(), &[tp]).expect("posts");
         assert!(text.contains("SX10.000MX7.071IA0.000ANG90.0"), "{text}");
         assert!(
-            text.contains("(FC1200 TP0 D6.0 sharp CarveStudio End Mill 6 mm)"),
+            text.contains("(FC1200 TP0 D6.0 sharp Zeroed End Mill 6 mm)"),
             "{text}"
         );
     }

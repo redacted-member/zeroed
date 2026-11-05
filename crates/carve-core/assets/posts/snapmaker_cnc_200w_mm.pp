@@ -1,4 +1,4 @@
-' CarveStudio post processor for Snapmaker 2.0 200W CNC, millimeters.
+' Zeroed post processor for Snapmaker 2.0 200W CNC, millimeters.
 ' M3 S sets the spindle speed in rpm, 8000 to 18000.
 ' Written from the Snapmaker 2.0 G-code reference: firmware based on Marlin,
 ' version 1.20.2 or later. Comments are written with a semicolon, because the
@@ -12,7 +12,7 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-11-04  First version.
+' Zeroed       2026-11-04  First version.
 
 POST_NAME = "Snapmaker 2.0 200W CNC (mm) (*.cnc)"
 FILE_EXTENSION = "cnc"
@@ -35,7 +35,7 @@ VAR DWELL_TIME = [DWELL|AF| S|1.2]
 
 begin HEADER
 + "; [TP_FILENAME]"
-+ "; Written by CarveStudio"
++ "; Written by Zeroed"
 + "; [TOOLS_USED]"
 + "G90"
 + "G21"

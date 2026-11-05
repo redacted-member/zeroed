@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (house-sign-grbl.gcode)
 (T7 = V Bit 60 deg)
 (T2 = End Mill 6 mm)

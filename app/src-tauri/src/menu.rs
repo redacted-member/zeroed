@@ -218,10 +218,10 @@ fn app_menu<R: Runtime>(app: &AppHandle<R>) -> tauri::Result<Submenu<R>> {
     let settings = MenuItemBuilder::with_id(SETTINGS_ID, "Settings...")
         .accelerator("CmdOrCtrl+,")
         .build(app)?;
-    let quit = MenuItemBuilder::with_id(QUIT_ID, "Quit CarveStudio")
+    let quit = MenuItemBuilder::with_id(QUIT_ID, "Quit Zeroed")
         .accelerator("CmdOrCtrl+Q")
         .build(app)?;
-    SubmenuBuilder::new(app, "CarveStudio")
+    SubmenuBuilder::new(app, "Zeroed")
         .about(Some(about_metadata(app)))
         .separator()
         .item(&settings)

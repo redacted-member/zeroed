@@ -1,5 +1,5 @@
 (knockdown-table-generic.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T14 = End Mill 1/4 inch)
 N10G90
 N20G21

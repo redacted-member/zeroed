@@ -1,26 +1,26 @@
-' CarveStudio post processor for GRBL controllers, millimeters.
+' Zeroed post processor for GRBL controllers, millimeters.
 ' GRBL has no automatic tool changer, so a tool change stops the spindle and
 ' pauses the program with M0 while the operator fits the next cutter.
 '
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-20  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-20  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  After the pause for a tool change the tool goes
+' Zeroed       2026-09-27  After the pause for a tool change the tool goes
 '                          straight up to the home height before the spindle
 '                          starts, so it never starts or moves across with the
 '                          new cutter still down at the material from zeroing.
 '                          The tool number is written before that lift.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
 
@@ -46,7 +46,7 @@ VAR ARC_CENTRE_Y = [J|IF|J|1.3]
 VAR DWELL_TIME = [DWELL|AF|P|1.2]
 
 begin HEADER
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TP_FILENAME])"
 + "([TOOLS_USED])"
 + "G90"

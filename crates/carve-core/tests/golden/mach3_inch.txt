@@ -1,6 +1,6 @@
 %
 (sample.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T1 = End Mill 6 mm)
 (T2 = Drill 6 mm)
 N10G90G94

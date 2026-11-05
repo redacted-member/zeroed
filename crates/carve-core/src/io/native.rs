@@ -161,7 +161,7 @@ pub fn open(path: &FsPath, revision: u64) -> Result<Document, CoreError> {
     {
         let mut entry = zip
             .by_name(DOCUMENT_ENTRY)
-            .map_err(|_| CoreError::validation("this is not a CarveStudio document"))?;
+            .map_err(|_| CoreError::validation("this is not a Zeroed document"))?;
         entry
             .read_to_string(&mut text)
             .map_err(|error| CoreError::io(path.display(), error))?;
@@ -582,7 +582,7 @@ mod tests {
     #[test]
     fn saving_to_a_folder_that_does_not_exist_is_reported() {
         let doc = Document::new();
-        let path = std::path::Path::new("/carve-studio-no-such-folder/x.carve");
+        let path = std::path::Path::new("/zeroed-no-such-folder/x.carve");
         let error = save(&doc, path).expect_err("no such folder");
         assert!(matches!(error, CoreError::Io { .. }), "{error}");
     }

@@ -1,7 +1,5 @@
 # Developing Zeroed
 
-The app and its code still use the working name CarveStudio.
-
 ## Layout
 
 ```
@@ -62,8 +60,8 @@ pnpm -C app tauri build --debug   # debug .app for local use
 tools/release/build.sh            # release .app and .dmg
 ```
 
-The bundles land in `target/<profile>/bundle/macos/CarveStudio.app` and
-`target/release/bundle/dmg/CarveStudio_<version>_aarch64.dmg` (under
+The bundles land in `target/<profile>/bundle/macos/Zeroed.app` and
+`target/release/bundle/dmg/Zeroed_<version>_aarch64.dmg` (under
 `CARGO_TARGET_DIR` when it is set). The app is ad-hoc signed and not
 notarized; see Installing on another Mac.
 
@@ -98,12 +96,12 @@ asks before installing.
 
 The app is ad-hoc signed and not notarized, so no Apple developer account
 or certificate is involved. On the Mac that built it, it just opens. On
-another Mac, copy `CarveStudio.app` to `/Applications` (from the `.dmg`);
+another Mac, copy `Zeroed.app` to `/Applications` (from the `.dmg`);
 the first open is then blocked. Either open it once, then go to System
 Settings > Privacy & Security and click Open Anyway, or run:
 
 ```
-xattr -dr com.apple.quarantine /Applications/CarveStudio.app
+xattr -dr com.apple.quarantine /Applications/Zeroed.app
 ```
 
 Building from source on that Mac avoids the block.
@@ -112,7 +110,7 @@ Building from source on that Mac avoids the block.
 
 When the app panics it writes a report (version, time, message and stack)
 to `Crash Reports` in the application data folder
-(`~/Library/Application Support/CarveStudio`), and nothing leaves the Mac.
+(`~/Library/Application Support/Zeroed`), and nothing leaves the Mac.
 The next start after a crash offers to show the report, then to restore the
 autosave backup of a job that had unsaved changes (Restore, Open Later,
 Discard). Each running copy keeps a small record in `Sessions` there; a clean

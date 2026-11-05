@@ -1,4 +1,4 @@
-# Machine checklist: before trusting CarveStudio output on real work
+# Machine checklist: before trusting Zeroed output on real work
 
 Software tests can prove the G-code matches the design. Only the machine can prove the design, the post and the
 machine agree. Work through these once per machine and post, and again after any post change.
@@ -16,7 +16,7 @@ machine agree. Work through these once per machine and post, and again after any
 - The toolpath summary's depths are what you expect; Save Toolpaths writes one file per tool if the machine has
   no tool changer.
 - Open the saved file in a separate G-code viewer (your controller's own preview, or any viewer you trust) and
-  compare the shape and depths with CarveStudio's preview.
+  compare the shape and depths with Zeroed's preview.
 
 ## 3. Air cut a tool change first
 Before the first air cut of a job, run a program with one tool change and nothing else under the spindle (save

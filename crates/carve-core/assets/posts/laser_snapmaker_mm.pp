@@ -1,4 +1,4 @@
-' CarveStudio post processor for the Snapmaker 2.0 laser module, millimeters.
+' Zeroed post processor for the Snapmaker 2.0 laser module, millimeters.
 ' M4 varies the power with the speed for smoother engraving. S is the power from
 ' 0 to 255, which is 2.55 times the toolpath's percent. No Z is written: set the
 ' focus on the machine before you run the file.
@@ -14,7 +14,7 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-11-04  First version.
+' Zeroed       2026-11-04  First version.
 
 POST_NAME = "Snapmaker 2.0 laser (mm) (*.nc)"
 FILE_EXTENSION = "nc"
@@ -34,7 +34,7 @@ VAR LASER_POWER = [POWER|AF| S|1.0|2.55]
 
 begin HEADER
 + "; [TP_FILENAME]"
-+ "; Written by CarveStudio"
++ "; Written by Zeroed"
 + "G90"
 + "G21"
 + "M5"

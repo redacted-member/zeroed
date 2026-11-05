@@ -1,5 +1,5 @@
 tell application "System Events"
-  tell process "carvestudio"
+  tell process "zeroed"
     set out to ""
     repeat with mbi in (menu bar items 2 thru -1 of menu bar 1)
       set out to out & "== " & name of mbi & linefeed

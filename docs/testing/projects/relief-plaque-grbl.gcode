@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (relief-plaque-grbl.gcode)
 (T2 = End Mill 6 mm)
 (T5 = Ball Nose 3 mm)

@@ -335,7 +335,7 @@ fn parse_args<T: serde::de::DeserializeOwned>(command: &str, args: &str) -> Resu
 }
 
 /// The folder user gadgets live in: `gadgets` next to the tool database,
-/// which is the CarveStudio folder of the user data directory.
+/// which is the Zeroed folder of the user data directory.
 pub fn user_dir(kernel: &Kernel) -> PathBuf {
     kernel
         .cam()

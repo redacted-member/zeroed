@@ -12,7 +12,7 @@ import './HelpDialog.scss';
 
 const text = dialogsStrings.helpDialog;
 
-/** Help > CarveStudio Help: the pages, panels, tools and forms, with a search. */
+/** Help > Zeroed Help: the pages, panels, tools and forms, with a search. */
 export function HelpDialog(): JSX.Element {
   const open = useDialogStore((state) => state.open === 'helpContents');
   const serial = useDialogStore((state) => state.helpSerial);

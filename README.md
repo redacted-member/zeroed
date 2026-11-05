@@ -113,8 +113,7 @@ pnpm -C app tauri build --bundles app dmg
 The app lands in `target/release/bundle/macos/`. To work on it in a browser
 against the real kernel, run `pnpm -C app dev`.
 
-The app is still called CarveStudio on screen and in its code, and its files end
-in `.carve`, while the rename to Zeroed is in progress.
+Jobs save as `.carve` files.
 
 More in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) and
 [docs/KERNEL_API.md](docs/KERNEL_API.md).

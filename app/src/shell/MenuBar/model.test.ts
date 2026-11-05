@@ -251,7 +251,7 @@ describe('buildMenus', () => {
       'Check for Updates',
       'Run Kickstarter',
       '-',
-      'About CarveStudio',
+      'About Zeroed',
     ]);
     const labels = flatItems(menu('view').entries).map((i) => i.label);
     expect(labels).not.toContain('Save 2D View as Image...');

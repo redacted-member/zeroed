@@ -1,4 +1,4 @@
-' CarveStudio post processor for LinuxCNC, millimeters.
+' Zeroed post processor for LinuxCNC, millimeters.
 ' For a hand tool change with a touch off: at each change the spindle
 ' lifts clear, a message names the new tool, T M6 and G43 H apply the tool
 ' table's length and M0 waits for the operator before Z lifts again.
@@ -8,29 +8,29 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-20  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-20  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z. The tool length offset
 '                          is G43 H and the tool number (was G43 HT and it).
-' CarveStudio  2026-09-27  The spindle stops (M5) before every tool change.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  The spindle stops (M5) before every tool change.
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-27  Tool changes are for a hand change: Z lifts clear
+' Zeroed       2026-09-27  Tool changes are for a hand change: Z lifts clear
 '                          before the change, a message names the new tool
 '                          and M0 waits for the operator; after it Z lifts
 '                          again before anything else moves.
-' CarveStudio  2026-09-28  Split from the LinuxCNC post, which now leaves the
+' Zeroed       2026-09-28  Split from the LinuxCNC post, which now leaves the
 '                          tool length to a probing M6: this one keeps the
 '                          hand change with a touch off at the M0 pause.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
-' CarveStudio  2026-09-28  The header sets every modal state the program
+' Zeroed       2026-09-28  The header sets every modal state the program
 '                          relies on, since LinuxCNC keeps them from the last
 '                          program: G90, G94, units, G17, G40, G49 and G64
 '                          (the G43 H after each change sets the length).
@@ -60,7 +60,7 @@ VAR DWELL_TIME = [DWELL|AF|P|1.2]
 
 begin HEADER
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "G90"
 + "G94"

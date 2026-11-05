@@ -1,6 +1,6 @@
 //! The maker's own furniture templates: files `<id>.carvefurniture.json`
 //! in the "Furniture Library" folder beside the tool database and posts
-//! (CarveStudio's folder in the system's data directory), or a folder the
+//! (Zeroed's folder in the system's data directory), or a folder the
 //! host sets.
 
 use std::path::{Path, PathBuf};
@@ -13,10 +13,10 @@ use super::template::{builtin_template, Template};
 pub const EXTENSION: &str = ".carvefurniture.json";
 
 /// The folder of the maker's templates: "Furniture Library" in
-/// CarveStudio's data folder.
+/// Zeroed's data folder.
 pub fn user_default_folder() -> PathBuf {
     let base = dirs::data_dir().unwrap_or_else(std::env::temp_dir);
-    base.join("CarveStudio").join("Furniture Library")
+    base.join("Zeroed").join("Furniture Library")
 }
 
 /// Where the maker's templates live; `None` keeps none (tests).

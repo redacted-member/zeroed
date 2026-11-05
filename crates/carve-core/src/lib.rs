@@ -1,4 +1,4 @@
-//! CarveStudio kernel.
+//! Zeroed kernel.
 //!
 //! The kernel owns the open [`Document`] and answers named commands with JSON
 //! or raw bytes. It is platform agnostic: it has no knowledge of Tauri, of the

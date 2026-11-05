@@ -1,6 +1,6 @@
 %
 (rotary.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T1 = Ball Nose 3 mm)
 N10G90G93
 N20G21

@@ -48,4 +48,4 @@ for (const child of children) {
 }
 process.on('SIGINT', () => stop(0));
 process.on('SIGTERM', () => stop(0));
-console.log(`CarveStudio: http://localhost:${vitePort} (kernel on ${kernelPort})`);
+console.log(`Zeroed: http://localhost:${vitePort} (kernel on ${kernelPort})`);

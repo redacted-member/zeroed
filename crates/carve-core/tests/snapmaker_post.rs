@@ -63,7 +63,7 @@ fn the_200w_post_writes_the_words_the_reference_lists() {
         &lines[..12],
         [
             "; sign.cnc",
-            "; Written by CarveStudio",
+            "; Written by Zeroed",
             "; T1 = End Mill 1/8 in",
             "G90",
             "G21",

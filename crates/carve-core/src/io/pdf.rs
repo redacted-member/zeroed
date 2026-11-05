@@ -846,7 +846,7 @@ pub fn export(layers: &[ExportLayer], bounds: BBox) -> Vec<u8> {
         )
         .into_bytes(),
         stream_object("", content.as_bytes()),
-        b"<< /Producer (CarveStudio) /Creator (CarveStudio) >>".to_vec(),
+        b"<< /Producer (Zeroed) /Creator (Zeroed) >>".to_vec(),
     ];
     for layer in &used {
         objects.push(format!("<< /Type /OCG /Name {} >>", pdf_string(&layer.name)).into_bytes());

@@ -267,7 +267,7 @@ export const menusStrings = {
     migrate: 'Migrate From Older Version...',
     checkUpdates: 'Check for Updates',
     kickstarter: 'Run Kickstarter',
-    about: 'About CarveStudio',
+    about: 'About Zeroed',
     notAvailable: 'Not available yet',
   },
 } as const;

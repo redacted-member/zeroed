@@ -49,7 +49,7 @@ pub const LIBRARY_VERSION: u32 = 4;
 pub const DIR_PREFIX: &str = "clipart-library-";
 
 /// Author recorded for every item.
-pub const AUTHOR: &str = "CarveStudio contributors";
+pub const AUTHOR: &str = "Zeroed contributors";
 
 /// License recorded for items made wholly by our code: the project's own.
 pub const LICENSE: &str = "MIT";

@@ -1,21 +1,21 @@
-' CarveStudio post processor for Centroid controls, millimeters. Centroid
+' Zeroed post processor for Centroid controls, millimeters. Centroid
 ' reads plain G code with G43 tool length offsets and ends with M30; arcs
 ' that move in Z are written as helical moves.
 '
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
 
@@ -42,7 +42,7 @@ VAR DWELL_TIME = [DWELL|AF| P|1.2]
 
 begin HEADER
 + "; [TP_FILENAME]"
-+ "; Written by CarveStudio"
++ "; Written by Zeroed"
 + "; [TOOLS_USED]"
 + "G90 G17 G40 G49 G80"
 + "G21"

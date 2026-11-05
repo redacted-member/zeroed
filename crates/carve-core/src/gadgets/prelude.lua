@@ -1,4 +1,4 @@
--- CarveStudio gadget library.
+-- Zeroed gadget library.
 --
 -- Everything here is built on carve.call(command, args), which runs one
 -- kernel command (see the kernel API document) and answers its result as a

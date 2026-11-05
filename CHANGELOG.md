@@ -1,6 +1,6 @@
 # Changelog
 
-Every release of CarveStudio, newest first. The version lives in
+Every release of Zeroed, newest first. The version lives in
 `app/package.json` (tauri.conf.json reads it) and the Cargo workspace;
 `tools/release/set-version.sh` changes both. Help > About shows it.
 

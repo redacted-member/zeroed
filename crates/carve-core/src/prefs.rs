@@ -1,7 +1,7 @@
 //! Application preferences.
 //!
 //! Preferences belong to the user, not to a document. They live in
-//! `CarveStudio/prefs.json` under the platform configuration directory and are
+//! `Zeroed/prefs.json` under the platform configuration directory and are
 //! read once when the kernel starts. The kernel applies the ones it uses
 //! itself (undo depth, units of a new job); the rest are held for the front
 //! end, which reads them with `prefs.get` and changes them with `prefs.set`.
@@ -1027,11 +1027,11 @@ impl PrefsStore {
     }
 
     /// The store in the user configuration directory,
-    /// `CarveStudio/prefs.json`. Falls back to the temporary directory on a
+    /// `Zeroed/prefs.json`. Falls back to the temporary directory on a
     /// platform that has no configuration directory.
     pub fn user_default() -> Self {
         let base = dirs::config_dir().unwrap_or_else(std::env::temp_dir);
-        PrefsStore::at(base.join("CarveStudio").join("prefs.json"))
+        PrefsStore::at(base.join("Zeroed").join("prefs.json"))
     }
 
     /// The file the store reads and writes.

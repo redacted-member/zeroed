@@ -1,7 +1,7 @@
 # Native app checks (macOS)
 
 Scripts that drive the running desktop app (`pnpm -C app tauri dev`,
-process `carvestudio`) the way a person would, for checks the browser
+process `zeroed`) the way a person would, for checks the browser
 cannot do: native menus, file dialogs, Finder open, drag and drop.
 
 Needs, for the app that runs them (Terminal, or Claude): Screen

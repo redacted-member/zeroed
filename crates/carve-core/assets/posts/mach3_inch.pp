@@ -1,22 +1,22 @@
-' CarveStudio post processor for Mach3 and Mach4 controllers, inches.
+' Zeroed post processor for Mach3 and Mach4 controllers, inches.
 ' Percent signs wrap the program, lines are numbered and the file is written
 ' with carriage return and line feed endings.
 '
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  The spindle stops (M5) before every tool change.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  The spindle stops (M5) before every tool change.
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
 
@@ -48,7 +48,7 @@ VAR DWELL_TIME = [DWELL|AF|P|1.2]
 begin HEADER
 + "%"
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "[N]G90G94"
 + "[N]G20"

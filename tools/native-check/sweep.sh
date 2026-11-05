@@ -5,10 +5,10 @@ for spec in "$@"; do
   i=$((i+1)); m=${spec%%|*}; it=${spec#*|}
   if [[ $it == *">"* ]]; then $S/nat.sh submenu "$m" "${it%%>*}" "${it#*>}" >/dev/null 2>&1; else $S/nat.sh menu "$m" "$it" >/dev/null 2>&1; fi
   sleep 1.5
-  w=$(osascript -e 'tell application "System Events" to tell process "carvestudio" to get {name of every window, count of sheets of window 1}' 2>&1)
+  w=$(osascript -e 'tell application "System Events" to tell process "zeroed" to get {name of every window, count of sheets of window 1}' 2>&1)
   echo "$i $spec -> windows: $w"
   screencapture -x $S/_full.png
-  b=$(osascript -e 'tell application "System Events" to tell process "carvestudio"
+  b=$(osascript -e 'tell application "System Events" to tell process "zeroed"
       set p to position of window 1
       set s to size of window 1
       return (item 1 of p as text) & "," & (item 2 of p as text) & "," & (item 1 of s as text) & "," & (item 2 of s as text)

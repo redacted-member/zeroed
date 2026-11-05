@@ -28,7 +28,7 @@ export const dialogsStrings = {
     ],
     licencesTitle: 'Third Party Licenses',
     licencesIntro:
-      'CarveStudio is free software under the GNU Affero General Public License, version 3 or later, with no warranty. Its source code is at github.com/redacted-member/zeroed. It is built with these open source projects:',
+      'Zeroed is free software under the GNU Affero General Public License, version 3 or later, with no warranty. Its source code is at github.com/redacted-member/zeroed. It is built with these open source projects:',
     licences: [
       ['React', 'MIT'],
       ['three.js', 'MIT'],
@@ -43,13 +43,13 @@ export const dialogsStrings = {
     ] as ReadonlyArray<readonly [string, string]>,
     project: 'Project',
     licence: 'License',
-    aboutTitle: 'About CarveStudio',
-    about: 'CarveStudio designs and machines 2D and 3D work on CNC routers and lasers.',
+    aboutTitle: 'About Zeroed',
+    about: 'Zeroed designs and machines 2D and 3D work on CNC routers and lasers.',
     version: (version: string) => `Kernel version ${version}`,
     unknownVersion: 'Kernel version unknown',
   },
   helpDialog: {
-    title: 'CarveStudio Help',
+    title: 'Zeroed Help',
     close: 'Close',
     search: 'Search the help',
     searchPlaceholder: 'Tool, form or word',
@@ -368,7 +368,7 @@ export const dialogsStrings = {
   },
   guide: {
     label: 'Getting started guide',
-    welcomeTitle: 'Welcome to CarveStudio',
+    welcomeTitle: 'Welcome to Zeroed',
     welcomeText:
       'Pick a walkthrough. Each one points at the next thing to click, and you can stop at any time.',
     choices: 'Walkthroughs',

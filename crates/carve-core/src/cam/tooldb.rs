@@ -1157,12 +1157,12 @@ impl ToolStore {
         ToolStore { path: path.into() }
     }
 
-    /// The store in the user data directory, `CarveStudio/tools.json`. Falls
+    /// The store in the user data directory, `Zeroed/tools.json`. Falls
     /// back to the temporary directory on a platform that has no data
     /// directory, so that construction never fails.
     pub fn user_default() -> Self {
         let base = dirs::data_dir().unwrap_or_else(std::env::temp_dir);
-        ToolStore::at(base.join("CarveStudio").join("tools.json"))
+        ToolStore::at(base.join("Zeroed").join("tools.json"))
     }
 
     /// The file the store reads and writes.
@@ -1602,7 +1602,7 @@ mod tests {
         let store = ToolStore::user_default();
         let text = store.path().display().to_string();
         assert!(text.ends_with("tools.json"), "{text}");
-        assert!(text.contains("CarveStudio"), "{text}");
+        assert!(text.contains("Zeroed"), "{text}");
     }
 
     fn data(machine: &str, material: &str, feed: f64) -> CuttingData {

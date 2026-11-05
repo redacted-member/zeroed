@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (sample.gcode)
 (T1 = End Mill 6 mm)
 (T2 = Drill 6 mm)

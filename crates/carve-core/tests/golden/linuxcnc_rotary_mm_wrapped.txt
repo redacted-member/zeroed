@@ -1,5 +1,5 @@
 (rotary.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T1 = End Mill 1/8 in)
 G90
 G93

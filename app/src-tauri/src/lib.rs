@@ -1,4 +1,4 @@
-//! CarveStudio desktop shell. It owns the window, the native menu and the
+//! Zeroed desktop shell. It owns the window, the native menu and the
 //! kernel host. All document behaviour lives in `carve-core`.
 
 pub mod kernel_bridge;
@@ -147,7 +147,7 @@ fn menu_icons(
     }
 }
 
-/// The application data folder: the CarveStudio folder that holds the tool
+/// The application data folder: the Zeroed folder that holds the tool
 /// database, the gadgets and the imported post processors.
 fn data_folder() -> std::path::PathBuf {
     let store = carve_core::cam::tooldb::ToolStore::user_default();
@@ -221,7 +221,7 @@ fn direct_output_path(name: String) -> Result<String, String> {
         .file_name()
         .ok_or_else(|| format!("{name} is not a file name"))?
         .to_owned();
-    let folder = std::env::temp_dir().join("carve-studio-direct-output");
+    let folder = std::env::temp_dir().join("zeroed-direct-output");
     std::fs::create_dir_all(&folder).map_err(|error| error.to_string())?;
     Ok(folder.join(file).to_string_lossy().into_owned())
 }
@@ -435,7 +435,7 @@ pub fn run() {
     match result {
         Ok(app) => app.run(on_run_event),
         Err(error) => {
-            eprintln!("CarveStudio could not start: {error}");
+            eprintln!("Zeroed could not start: {error}");
             std::process::exit(1);
         }
     }

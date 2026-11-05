@@ -42,7 +42,7 @@ describe('post change logs', () => {
     expect(lastChanged([])).toBeNull();
     expect(
       lastChanged([
-        { who: 'CarveStudio', when: '2026-09-20', what: 'First version.' },
+        { who: 'Zeroed', when: '2026-09-20', what: 'First version.' },
         { who: 'Sam', when: '2026-09-24', what: 'Helical arcs.' },
         { who: '', when: '', what: 'A note without a date.' },
       ]),

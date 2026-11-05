@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (box-joints-grbl.gcode)
 (T14 = End Mill 1/4 inch)
 G90

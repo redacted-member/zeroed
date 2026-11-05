@@ -1,5 +1,5 @@
-0 BEGIN PGM CARVESTUDIO MM
-1 ; sample.gcode, written by CarveStudio
+0 BEGIN PGM ZEROED MM
+1 ; sample.gcode, written by Zeroed
 2 ; End Mill 6 mm
 3 M5
 4 TOOL CALL 1 Z
@@ -39,4 +39,4 @@
 38 L Z+5.000 R0 FMAX
 39 L Z+25.000 R0 FMAX M5
 40 M30
-41 END PGM CARVESTUDIO MM
+41 END PGM ZEROED MM

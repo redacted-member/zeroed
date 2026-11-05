@@ -1,5 +1,5 @@
 (two-sided-top-generic.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T1 = End Mill 3 mm)
 N10G90
 N20G21

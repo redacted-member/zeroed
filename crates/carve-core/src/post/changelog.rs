@@ -5,7 +5,7 @@
 //! ' History
 //! ' Who          When        What
 //! ' ===========  ==========  ==================================
-//! ' CarveStudio  2026-09-20  First version.
+//! ' Zeroed       2026-09-20  First version.
 //! '                          A line that carries on the change above.
 //! ```
 //!
@@ -160,11 +160,11 @@ mod tests {
 
     #[test]
     fn a_history_table_becomes_rows() {
-        let text = "' A post for testing.\n'\n' History\n' Who          When        What\n' ===========  ==========  =====\n' CarveStudio  2026-09-20  First version.\n' Sam         2026-09-24  Arcs as helices.\n'                          Also the header.\n\nPOST_NAME = \"x\"\n";
+        let text = "' A post for testing.\n'\n' History\n' Who          When        What\n' ===========  ==========  =====\n' Zeroed       2026-09-20  First version.\n' Sam         2026-09-24  Arcs as helices.\n'                          Also the header.\n\nPOST_NAME = \"x\"\n";
         assert_eq!(
             change_log(text),
             vec![
-                entry("CarveStudio", "2026-09-20", "First version."),
+                entry("Zeroed", "2026-09-20", "First version."),
                 entry("Sam", "2026-09-24", "Arcs as helices. Also the header."),
             ]
         );

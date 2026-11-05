@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (rotary.gcode)
 (T1 = Ball Nose 3 mm)
 G90G93

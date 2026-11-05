@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (two-sided-top-grbl.gcode)
 (T1 = End Mill 3 mm)
 G90

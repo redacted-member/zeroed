@@ -1,4 +1,4 @@
-' CarveStudio post processor for ShopBot controllers, inches.
+' Zeroed post processor for ShopBot controllers, inches.
 ' ShopBot part files are comma separated commands rather than G code, and
 ' their move and jog speeds are units per second, so the speed variables
 ' carry a scale factor that turns inches per minute into per second.
@@ -7,22 +7,22 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  The file checks the machine is set to
+' Zeroed       2026-09-27  The file checks the machine is set to
 '                          inches (system variable 25) before it moves
 '                          and stops with a message if not; the spindle
 '                          stops (C7) before every tool change; dwells are
 '                          written as PAUSE.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The move speeds, spindle speed and start (MS, TR,
+' Zeroed       2026-09-28  The move speeds, spindle speed and start (MS, TR,
 '                          C6) are their own SPINDLE_ON block, written after
 '                          the tool change and again wherever a merged
 '                          toolpath changes speed: TR sets the new speed on
@@ -53,7 +53,7 @@ VAR DWELL_TIME = [DWELL|AF||1.2]
 
 begin HEADER
 + "'[TP_FILENAME]"
-+ "'Written by CarveStudio"
++ "'Written by Zeroed"
 + "'[TOOLS_USED]"
 + "SA"
 + "IF %(25)=1 THEN GOTO UNIT_ERROR"

@@ -1,5 +1,5 @@
 ; sample.gcode
-; Written by CarveStudio
+; Written by Zeroed
 ; T1 = End Mill 6 mm
 G90 G17 G40 G49 G80
 G21

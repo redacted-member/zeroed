@@ -43,8 +43,8 @@ pub struct TemplateDirs {
 }
 
 impl TemplateDirs {
-    /// `CarveStudio/templates` under the platform data directory (or the
-    /// folder [`DIR_ENV`] names) and `CarveStudio/templates-standard-<version>`
+    /// `Zeroed/templates` under the platform data directory (or the
+    /// folder [`DIR_ENV`] names) and `Zeroed/templates-standard-<version>`
     /// under the cache directory. Unit tests get folders under the temporary
     /// directory instead, so they never touch the user's files.
     pub fn user_default() -> Self {
@@ -63,12 +63,12 @@ impl TemplateDirs {
             .unwrap_or_else(|| {
                 dirs::data_dir()
                     .unwrap_or_else(std::env::temp_dir)
-                    .join("CarveStudio")
+                    .join("Zeroed")
                     .join("templates")
             });
         TemplateDirs {
             user,
-            standard: cache.join("CarveStudio").join(standard_folder),
+            standard: cache.join("Zeroed").join(standard_folder),
         }
     }
 }

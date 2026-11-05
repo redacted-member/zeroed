@@ -17,7 +17,7 @@ function template(id: string, over: Partial<TemplateSummary> = {}): TemplateSumm
     category: 'Storage',
     description: '',
     license: 'CC0-1.0',
-    author: 'CarveStudio contributors',
+    author: 'Zeroed contributors',
     source: null,
     credit: null,
     tags: [],

@@ -18,7 +18,10 @@ use super::compute::{Request, Strategy};
 use super::tool::Tool;
 
 /// The `format` field every template file carries.
-pub const TEMPLATE_FORMAT: &str = "carvestudio-toolpath-template";
+pub const TEMPLATE_FORMAT: &str = "zeroed-toolpath-template";
+
+/// The format name of templates saved before the app was named Zeroed.
+const OLDER_TEMPLATE_FORMAT: &str = "carvestudio-toolpath-template";
 /// The template file version this build writes and reads.
 pub const TEMPLATE_VERSION: u32 = 1;
 
@@ -87,7 +90,7 @@ impl Template {
     pub fn from_json(text: &str) -> Result<Template, CoreError> {
         let template: Template =
             serde_json::from_str(text).map_err(|e| CoreError::format("toolpath template", e))?;
-        if template.format != TEMPLATE_FORMAT {
+        if template.format != TEMPLATE_FORMAT && template.format != OLDER_TEMPLATE_FORMAT {
             return Err(CoreError::format(
                 "toolpath template",
                 "this file is not a toolpath template",
@@ -169,6 +172,9 @@ mod tests {
         assert!(Template::from_json("{}").is_err());
         let other = json!({ "format": "something else", "version": 1, "toolpaths": [] });
         assert!(Template::from_json(&other.to_string()).is_err());
+        // Templates saved before the app was named Zeroed still read.
+        let older = json!({ "format": OLDER_TEMPLATE_FORMAT, "version": 1, "toolpaths": [] });
+        assert!(Template::from_json(&older.to_string()).is_ok());
         let newer = json!({ "format": TEMPLATE_FORMAT, "version": 99, "toolpaths": [] });
         assert!(Template::from_json(&newer.to_string()).is_err());
     }

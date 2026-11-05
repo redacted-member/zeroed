@@ -336,7 +336,7 @@ pub fn write_model(
                 .map_or_else(|| "model".to_string(), |s| s.to_string_lossy().into_owned());
             let mtl = path.with_extension("mtl");
             let jpg = path.with_extension("jpg");
-            let mut material = String::from("# CarveStudio model material\nnewmtl model\n");
+            let mut material = String::from("# Zeroed model material\nnewmtl model\n");
             material.push_str("Ka 0.2 0.2 0.2\nKd 1 1 1\nKs 0 0 0\nillum 1\n");
             if let Some(texture) = texture {
                 let _ = writeln!(material, "map_Kd {stem}.jpg");
@@ -471,7 +471,7 @@ fn pov_point(out: &mut String, label: &str, p: [f64; 3]) {
 /// lines with 1 based indices.
 pub fn obj_text(mesh: &IndexedMesh, name: &str) -> String {
     let mut out = String::with_capacity(mesh.vertices.len() * 32 + mesh.faces.len() * 24);
-    out.push_str("# CarveStudio model, millimeters, Z up\n");
+    out.push_str("# Zeroed model, millimeters, Z up\n");
     let _ = writeln!(out, "o {name}");
     for v in &mesh.vertices {
         out.push('v');
@@ -493,7 +493,7 @@ pub fn obj_text(mesh: &IndexedMesh, name: &str) -> String {
 pub fn textured_obj_text(mesh: &IndexedMesh, stem: &str, field: &Field) -> String {
     let mut out = String::with_capacity(mesh.vertices.len() * 56 + mesh.faces.len() * 36);
     out.push_str(
-        "# CarveStudio model, millimeters, Z up
+        "# Zeroed model, millimeters, Z up
 ",
     );
     let _ = writeln!(out, "mtllib {stem}.mtl");
@@ -556,7 +556,7 @@ pub fn pov_text(mesh: &IndexedMesh) -> String {
     let span = (hi[0] - lo[0]).max(hi[1] - lo[1]).max(1.0);
 
     let mut out = String::with_capacity(mesh.vertices.len() * 36 + mesh.faces.len() * 24 + 1024);
-    out.push_str("// CarveStudio model, millimeters\n");
+    out.push_str("// Zeroed model, millimeters\n");
     out.push_str("#version 3.7;\n");
     out.push_str("global_settings { assumed_gamma 1.0 }\n\n");
     out.push_str("#declare CarveModel = mesh2 {\n  vertex_vectors {\n");

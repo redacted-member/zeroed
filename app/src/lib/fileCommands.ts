@@ -84,7 +84,7 @@ export async function newJob(): Promise<boolean> {
   return true;
 }
 
-/** File > Open: any file CarveStudio reads; see openFile for what each kind does. */
+/** File > Open: any file Zeroed reads; see openFile for what each kind does. */
 export async function openJob(): Promise<void> {
   const path = await getKernel().chooseOpenPath(strings.file.openTitle, openFilters());
   if (path !== null) {

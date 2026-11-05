@@ -1,4 +1,4 @@
-' CarveStudio post processor for Fanuc style controls, millimeters. The
+' Zeroed post processor for Fanuc style controls, millimeters. The
 ' program starts with a percent sign and a program number, each tool change
 ' calls tool length compensation (G43 H) with the tool's own number, and
 ' arcs that move in Z are written as helical G2 and G3 moves.
@@ -6,14 +6,14 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The tool length call moves in G0: nothing before it
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The tool length call moves in G0: nothing before it
 '                          sets a motion mode, so the control would otherwise
 '                          use its power on mode (G1 alarms with no feed).
-' CarveStudio  2026-09-27  The tool length call lifts to the safe Z or the home
+' Zeroed       2026-09-27  The tool length call lifts to the safe Z or the home
 '                          Z, whichever is higher, and the first rapid crosses
 '                          at that height before it comes down.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written once the tool change has lifted to the
 '                          clearance height (as the other posts do) and again
 '                          wherever a merged toolpath changes speed.
@@ -46,7 +46,7 @@ begin HEADER
 + "%"
 + "O0001"
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "[N]G90G94G17G40G49G80"
 + "[N]G21"

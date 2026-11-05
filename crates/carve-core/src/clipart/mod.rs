@@ -49,8 +49,8 @@ pub struct ClipartDirs {
 }
 
 impl ClipartDirs {
-    /// `CarveStudio/clipart` under the platform data directory and
-    /// `CarveStudio/clipart-library-<version>` under the cache directory. Unit tests
+    /// `Zeroed/clipart` under the platform data directory and
+    /// `Zeroed/clipart-library-<version>` under the cache directory. Unit tests
     /// get folders under the temporary directory instead, so they never
     /// touch the user's files.
     pub fn user_default() -> Self {
@@ -64,8 +64,8 @@ impl ClipartDirs {
         let data = dirs::data_dir().unwrap_or_else(std::env::temp_dir);
         let cache = dirs::cache_dir().unwrap_or_else(std::env::temp_dir);
         ClipartDirs {
-            user: data.join("CarveStudio").join("clipart"),
-            library: cache.join("CarveStudio").join(library::dir_name()),
+            user: data.join("Zeroed").join("clipart"),
+            library: cache.join("Zeroed").join(library::dir_name()),
         }
     }
 }

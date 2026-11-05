@@ -251,7 +251,7 @@ pub fn report_text(
 ) -> String {
     let (y, mo, d, h, mi, s) = civil(seconds);
     format!(
-        "CarveStudio crash report\n\
+        "Zeroed crash report\n\
          Version: {version}\n\
          Time: {y:04}-{mo:02}-{d:02} {h:02}:{mi:02}:{s:02} UTC\n\
          System: {} {}\n\
@@ -273,7 +273,7 @@ pub fn report_text(
 pub fn write_report(folder: &Path, seconds: u64, text: &str) -> std::io::Result<PathBuf> {
     std::fs::create_dir_all(folder)?;
     let (y, mo, d, h, mi, s) = civil(seconds);
-    let stem = format!("CarveStudio {y:04}-{mo:02}-{d:02} {h:02}.{mi:02}.{s:02}");
+    let stem = format!("Zeroed {y:04}-{mo:02}-{d:02} {h:02}.{mi:02}.{s:02}");
     let mut path = folder.join(format!("{stem}.txt"));
     let mut n = 2;
     while path.exists() {
@@ -510,13 +510,13 @@ mod tests {
         assert!(last.is_file());
         assert_eq!(
             last.file_name().and_then(|n| n.to_str()),
-            Some("CarveStudio 1970-01-01 00.17.02.txt")
+            Some("Zeroed 1970-01-01 00.17.02.txt")
         );
         // Two in one second get a number rather than overwrite each other.
         let twin = write_report(&folder, 1_022, "again").expect("written");
         assert_eq!(
             twin.file_name().and_then(|n| n.to_str()),
-            Some("CarveStudio 1970-01-01 00.17.02 2.txt")
+            Some("Zeroed 1970-01-01 00.17.02 2.txt")
         );
     }
 
@@ -532,7 +532,7 @@ mod tests {
         );
         assert!(
             text.starts_with(
-                "CarveStudio crash report\nVersion: 1.2.3\nTime: 2000-02-29 12:34:56 UTC\n"
+                "Zeroed crash report\nVersion: 1.2.3\nTime: 2000-02-29 12:34:56 UTC\n"
             ),
             "{text}"
         );
@@ -556,7 +556,7 @@ mod tests {
         assert_eq!(written.len(), 1);
         let text = std::fs::read_to_string(&written[0].1).expect("readable");
         assert!(
-            text.starts_with("CarveStudio crash report\nVersion: 9.8.7\n"),
+            text.starts_with("Zeroed crash report\nVersion: 9.8.7\n"),
             "{text}"
         );
         assert!(text.contains("\nMessage: the hook test panics\n"), "{text}");

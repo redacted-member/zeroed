@@ -1,6 +1,6 @@
 %
 (rotary-sleeve-mach3-rotary.tap)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T2 = End Mill 6 mm)
 (T1 = End Mill 3 mm)
 N10G90G93

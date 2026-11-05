@@ -1,5 +1,5 @@
 // The window title names the open job
-// title bar: "sign.carve - CarveStudio", or "Untitled - CarveStudio".
+// title bar: "sign.carve - Zeroed", or "Untitled - Zeroed".
 
 import { getKernel } from '../bridge/client';
 import { useDocumentStore } from '../state/documentStore';

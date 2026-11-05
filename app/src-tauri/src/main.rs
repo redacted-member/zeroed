@@ -7,5 +7,5 @@ fn main() {
         std::process::exit(code);
     }
     carve_core::io::dwg::set_helper(carve_core::io::dwg::Helper::current_exe());
-    carvestudio_lib::run()
+    zeroed_lib::run()
 }

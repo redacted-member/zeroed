@@ -1,7 +1,7 @@
 {
   "start": {
     "title": "Start here",
-    "summary": "CarveStudio turns drawings into cutting files for a CNC router. You draw or bring in vectors, add toolpaths that say how the bit moves, preview the cut and save a file for your machine.",
+    "summary": "Zeroed turns drawings into cutting files for a CNC router. You draw or bring in vectors, add toolpaths that say how the bit moves, preview the cut and save a file for your machine.",
     "sections": [
       {
         "heading": "The usual order",

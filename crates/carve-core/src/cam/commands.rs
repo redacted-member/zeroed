@@ -1330,7 +1330,7 @@ mod tests {
             .as_str()
             .is_some_and(|t| t.contains("POST_NAME")));
         let log = fixture.call("posts.changelog", &json!({ "id": "mach3_mm" }).to_string());
-        assert_eq!(log["entries"][0]["who"], "CarveStudio");
+        assert_eq!(log["entries"][0]["who"], "Zeroed");
         assert_eq!(log["entries"][0]["what"], "First version.");
         let copy = fixture.call("posts.customize", &json!({ "id": "mach3_mm" }).to_string());
         let id = copy["id"].as_str().expect("id").to_string();

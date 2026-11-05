@@ -26,7 +26,7 @@ to rewrite it after changing the library, and review the diff.
 
 Nothing is stored in the app bundle: the catalogue is listed from code, and an
 item's file (`.carveclip` for reliefs, SVG for vectors) is written into
-`CarveStudio/clipart-library-<version>` under the platform cache folder the
+`Zeroed/clipart-library-<version>` under the platform cache folder the
 first time it is drawn or inserted. Changing an item means raising
 `LIBRARY_VERSION` so the cache is written afresh.
 

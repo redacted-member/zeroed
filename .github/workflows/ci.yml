@@ -1,7 +1,7 @@
 # Gates for every push and pull request: the kernel (tests, clippy, format)
 # and the interface (types, lint, format, unit tests, build). The desktop
 # shell crate needs the macOS SDK, so it is checked locally with
-# `cargo check -p carvestudio`.
+# `cargo check -p zeroed`.
 name: CI
 
 on:

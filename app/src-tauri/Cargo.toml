@@ -1,13 +1,13 @@
 [package]
-name = "carvestudio"
-description = "CarveStudio desktop shell"
+name = "zeroed"
+description = "Zeroed desktop shell"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 
 [lib]
-name = "carvestudio_lib"
+name = "zeroed_lib"
 crate-type = ["lib"]
 
 [build-dependencies]

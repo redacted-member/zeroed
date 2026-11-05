@@ -1,5 +1,5 @@
 (laser-coaster-laser.gcode)
-(Written by CarveStudio)
+(Written by Zeroed)
 G90
 G21
 G17

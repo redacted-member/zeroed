@@ -39,7 +39,7 @@
       },
       {
         "title": "Help is always close",
-        "text": "Each panel title and each form has a ? button. Help > CarveStudio Help (F1) has every tool, and Help > Tutorial Browser brings this guide back."
+        "text": "Each panel title and each form has a ? button. Help > Zeroed Help (F1) has every tool, and Help > Tutorial Browser brings this guide back."
       }
     ]
   },
@@ -51,7 +51,7 @@
         "target": "tool:jobSetup",
         "click": true,
         "title": "Set up the board",
-        "text": "Click Job Setup to tell CarveStudio the size and thickness of your board."
+        "text": "Click Job Setup to tell Zeroed the size and thickness of your board."
       },
       {
         "target": "form",

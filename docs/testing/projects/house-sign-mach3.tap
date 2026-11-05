@@ -1,6 +1,6 @@
 %
 (house-sign-mach3.tap)
-(Written by CarveStudio)
+(Written by Zeroed)
 (T7 = V Bit 60 deg)
 (T2 = End Mill 6 mm)
 N10G90G94

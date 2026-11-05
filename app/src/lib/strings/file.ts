@@ -8,7 +8,7 @@ export const fileStrings = {
     saveTitle: 'Save Job As',
     importTitle: 'Import Vectors',
     exportTitle: 'Export Vectors',
-    jobFiles: 'CarveStudio Jobs',
+    jobFiles: 'Zeroed Jobs',
     vectorFiles: 'Vector Files',
     svgFiles: 'SVG',
     dxfFiles: 'DXF',
@@ -24,13 +24,13 @@ export const fileStrings = {
     bitmapFiles: 'Bitmap Images',
     meshFiles: '3D Models',
     clipFiles: 'Clipart',
-    unsupportedFile: (name: string) => `CarveStudio cannot open ${name}.`,
+    unsupportedFile: (name: string) => `Zeroed cannot open ${name}.`,
   },
   recovery: {
     showReport:
-      'CarveStudio quit unexpectedly last time and wrote a crash report on this Mac. Show the report?',
+      'Zeroed quit unexpectedly last time and wrote a crash report on this Mac. Show the report?',
     backupFound: (job: string, backup: string, kept: string) =>
-      `CarveStudio quit unexpectedly while ${job} had changes that had not been saved. A backup of them was kept at ${backup}.\n\nRestore opens it now; Open Later keeps it in the same folder as ${kept} for File > Open; Discard deletes it.`,
+      `Zeroed quit unexpectedly while ${job} had changes that had not been saved. A backup of them was kept at ${backup}.\n\nRestore opens it now; Open Later keeps it in the same folder as ${kept} for File > Open; Discard deletes it.`,
     restore: 'Restore',
     openLater: 'Open Later',
     discard: 'Discard',

@@ -16,9 +16,7 @@ describe('restoredPath', () => {
 
   it('gives no path to the backup of a job never saved', () => {
     expect(
-      restoredPath(
-        '/Users/me/Library/Application Support/CarveStudio/Backups/Untitled.backup.carve',
-      ),
+      restoredPath('/Users/me/Library/Application Support/Zeroed/Backups/Untitled.backup.carve'),
     ).toBeNull();
     expect(restoredPath('/Users/me/sign.carve')).toBeNull();
   });
@@ -87,7 +85,7 @@ describe('offerRecovery', () => {
 
   const crashed: SessionRecovery = {
     crashed: true,
-    report: '/r/CarveStudio 2026-09-28 00.20.31.txt',
+    report: '/r/Zeroed 2026-09-28 00.20.31.txt',
     backups: ['/j/sign.backup.carve'],
     kept: ['/j/sign recovered.carve'],
   };
@@ -102,8 +100,8 @@ describe('offerRecovery', () => {
     const calls = host(crashed, { confirm: true, choose: 'yes' });
     expect(await offerRecovery()).toBe(true);
     expect(calls.shell).toEqual([
-      expect.stringMatching(/^confirm CarveStudio quit unexpectedly/),
-      'show /r/CarveStudio 2026-09-28 00.20.31.txt',
+      expect.stringMatching(/^confirm Zeroed quit unexpectedly/),
+      'show /r/Zeroed 2026-09-28 00.20.31.txt',
       'choose Restore/Discard/Open Later',
       'record /j/sign.backup.carve',
     ]);

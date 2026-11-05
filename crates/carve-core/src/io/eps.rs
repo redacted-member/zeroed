@@ -1276,7 +1276,7 @@ pub fn export(layers: &[ExportLayer], bounds: BBox, flavour: Flavour) -> String 
     let used: Vec<&ExportLayer> = layers.iter().filter(|l| !l.paths.is_empty()).collect();
     let mut out = String::with_capacity(4096);
     out.push_str("%!PS-Adobe-3.0 EPSF-3.0\n");
-    out.push_str("%%Creator: CarveStudio\n");
+    out.push_str("%%Creator: Zeroed\n");
     let _ = writeln!(
         out,
         "%%BoundingBox: 0 0 {} {}",

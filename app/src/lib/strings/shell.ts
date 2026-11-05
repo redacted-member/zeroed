@@ -4,7 +4,7 @@ import { keys } from '../keyLabels';
 
 export const shellStrings = {
   app: {
-    name: 'CarveStudio',
+    name: 'Zeroed',
   },
   tabs: {
     label: 'Workspace tabs',

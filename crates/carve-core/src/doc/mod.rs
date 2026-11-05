@@ -2066,7 +2066,7 @@ impl Document {
     fn from_top_side(file: DocumentFile, revision: u64) -> Result<Self, CoreError> {
         if file.format > FORMAT_VERSION {
             return Err(CoreError::validation(format!(
-                "this file was written by a newer version of CarveStudio (format {})",
+                "this file was written by a newer version of Zeroed (format {})",
                 file.format
             )));
         }

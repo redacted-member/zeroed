@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "CarveStudio",
+  "productName": "Zeroed",
   "version": "../package.json",
-  "identifier": "com.carvestudio.app",
+  "identifier": "com.zeroed.app",
   "build": {
     "beforeDevCommand": "pnpm dev:web",
     "devUrl": "http://localhost:1420",
@@ -14,7 +14,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "CarveStudio",
+        "title": "Zeroed",
         "width": 1440,
         "height": 900,
         "minWidth": 1100,
@@ -35,53 +35,53 @@
     "fileAssociations": [
       {
         "ext": ["carve"],
-        "name": "CarveStudio Job",
-        "description": "CarveStudio job",
+        "name": "Zeroed Job",
+        "description": "Zeroed job",
         "role": "Editor",
         "rank": "Owner",
         "exportedType": {
-          "identifier": "com.carvestudio.job",
+          "identifier": "com.zeroed.job",
           "conformsTo": ["public.data", "public.content"]
         }
       },
       {
         "ext": ["carveclip"],
-        "name": "CarveStudio Clipart",
-        "description": "CarveStudio clipart",
+        "name": "Zeroed Clipart",
+        "description": "Zeroed clipart",
         "role": "Viewer",
         "rank": "Owner",
         "exportedType": {
-          "identifier": "com.carvestudio.clipart",
+          "identifier": "com.zeroed.clipart",
           "conformsTo": ["public.data", "public.content"]
         }
       },
       {
         "ext": ["cstemplate"],
-        "name": "CarveStudio Toolpath Template",
-        "description": "CarveStudio toolpath template",
+        "name": "Zeroed Toolpath Template",
+        "description": "Zeroed toolpath template",
         "role": "Viewer",
         "rank": "Owner",
         "exportedType": {
-          "identifier": "com.carvestudio.template",
+          "identifier": "com.zeroed.template",
           "conformsTo": ["public.data", "public.content"]
         }
       },
       {
         "ext": ["dxf", "dwg", "eps", "ai", "stl", "obj", "3ds", "3dm"],
         "name": "Design File",
-        "description": "Vectors and 3D models CarveStudio can import",
+        "description": "Vectors and 3D models Zeroed can import",
         "role": "Viewer"
       },
       {
         "ext": ["svg"],
         "name": "SVG Image",
-        "description": "Vectors CarveStudio can import",
+        "description": "Vectors Zeroed can import",
         "role": "Viewer"
       },
       {
         "ext": ["pdf", "png", "jpg", "jpeg", "bmp", "gif", "tif", "tiff", "webp"],
         "name": "Image or PDF",
-        "description": "Bitmaps to trace and PDF vectors CarveStudio can import",
+        "description": "Bitmaps to trace and PDF vectors Zeroed can import",
         "role": "Viewer",
         "rank": "Alternate"
       }
@@ -93,7 +93,7 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "copyright": "Copyright 2026 the CarveStudio authors",
+    "copyright": "Copyright 2026 the Zeroed authors",
     "macOS": {
       "minimumSystemVersion": "11.0",
       "signingIdentity": "-",

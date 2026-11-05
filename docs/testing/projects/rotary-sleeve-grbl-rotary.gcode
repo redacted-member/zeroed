@@ -1,4 +1,4 @@
-(Written by CarveStudio)
+(Written by Zeroed)
 (rotary-sleeve-grbl-rotary.gcode)
 (T2 = End Mill 6 mm)
 (T1 = End Mill 3 mm)

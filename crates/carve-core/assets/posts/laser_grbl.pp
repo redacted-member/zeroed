@@ -1,4 +1,4 @@
-' CarveStudio post processor for a GRBL laser, millimeters.
+' Zeroed post processor for a GRBL laser, millimeters.
 ' The beam is driven with M4 dynamic power and turned off for every travel
 ' move. Power is a percentage in the tool database, so it is scaled to the
 ' 0 to 1000 range GRBL expects with $30 left at its default.
@@ -6,7 +6,7 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-20  First version.
+' Zeroed       2026-09-20  First version.
 
 POST_NAME = "GRBL laser (mm) (*.gcode)"
 FILE_EXTENSION = "gcode"
@@ -24,7 +24,7 @@ VAR LASER_POWER = [POWER|AF|S|1.0|10]
 
 begin HEADER
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "G90"
 + "G21"
 + "G17"

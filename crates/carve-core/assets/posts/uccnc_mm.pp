@@ -1,4 +1,4 @@
-' CarveStudio post processor for UCCNC controllers, millimeters.
+' Zeroed post processor for UCCNC controllers, millimeters.
 ' For a hand tool change where the M6 macro probes the tool length on a
 ' fixed sensor: at each change the spindle stops and lifts clear, a comment
 ' names the new tool, T M6 runs the macro (it waits for the change, probes
@@ -12,35 +12,35 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  The spindle stops (M5) before every tool change.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  The spindle stops (M5) before every tool change.
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-27  Tool changes are for a hand change: Z lifts clear
+' Zeroed       2026-09-27  Tool changes are for a hand change: Z lifts clear
 '                          before the change, a message names the new tool
 '                          and M0 waits for the operator; after it Z lifts
 '                          again before anything else moves.
-' CarveStudio  2026-09-28  Tool changes are for an M6 that probes the tool
+' Zeroed       2026-09-28  Tool changes are for an M6 that probes the tool
 '                          length: no M0 after the change (the
 '                          hand change with M0 is its own post now).
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
-' CarveStudio  2026-09-28  The header sets every modal state the program
+' Zeroed       2026-09-28  The header sets every modal state the program
 '                          relies on, since UCCNC keeps them from the last
 '                          program: G90, G94, G21, G17, G40 and G64 (with
 '                          the screen's blending settings: UCCNC's P is not
 '                          a tolerance). It writes no G49: the M6 macro sets
 '                          the length, and one that skips a change to the
 '                          tool already fitted would leave it cancelled.
-' CarveStudio  2026-10-03  With "M6 macro applies tool length" off in Save
+' Zeroed       2026-10-03  With "M6 macro applies tool length" off in Save
 '                          Toolpaths (a macro that probes into the tool
 '                          table only), G43 H and the tool number follow
 '                          each M6, and G49 is in the header (as in the
@@ -74,7 +74,7 @@ VAR DWELL_TIME = [DWELL|AF|P|1.2]
 begin HEADER
 + "%"
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "[N]G90G94"
 + "[N]G21"

@@ -34,7 +34,7 @@ export function dockTopic(
   return side === 'left' ? tabTopic(activeTab) : TOOLPATHS_TOPIC;
 }
 
-/** The topic Help > CarveStudio Help and F1 open: the open form's, else the start page. */
+/** The topic Help > Zeroed Help and F1 open: the open form's, else the start page. */
 export function contextTopic(activeForm: FormId | null): string {
   return activeForm === null ? START_TOPIC : formTopic(activeForm);
 }

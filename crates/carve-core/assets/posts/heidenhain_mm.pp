@@ -1,4 +1,4 @@
-' CarveStudio post processor for Heidenhain conversational (plain language)
+' Zeroed post processor for Heidenhain conversational (plain language)
 ' controls, millimeters. Every line is numbered from 0, coordinates carry
 ' their sign, rapid moves use FMAX, and arcs are written as a circle center
 ' (CC) followed by a circular move (C) with its direction (DR- clockwise,
@@ -7,18 +7,18 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-25  First version.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-25  First version.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  The spindle stops (M5) before every tool change.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  The spindle stops (M5) before every tool change.
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The spindle speed and start are their own
+' Zeroed       2026-09-28  The spindle speed and start are their own
 '                          SPINDLE_ON block (TOOL CALL S, a call with only a
 '                          speed, which changes nothing else, then M3),
 '                          written after the tool change and again wherever
@@ -48,8 +48,8 @@ VAR ARC_CENTRE_Y = [JA|AFP| Y|1.3]
 VAR DWELL_TIME = [DWELL|AF||1.1]
 
 begin HEADER
-+ "[N] BEGIN PGM CARVESTUDIO MM"
-+ "[N] ; [TP_FILENAME], written by CarveStudio"
++ "[N] BEGIN PGM ZEROED MM"
++ "[N] ; [TP_FILENAME], written by Zeroed"
 end
 
 begin TOOLCHANGE
@@ -112,5 +112,5 @@ end
 begin FOOTER
 + "[N] L[ZCLEAR] R0 FMAX M5"
 + "[N] M30"
-+ "[N] END PGM CARVESTUDIO MM"
++ "[N] END PGM ZEROED MM"
 end

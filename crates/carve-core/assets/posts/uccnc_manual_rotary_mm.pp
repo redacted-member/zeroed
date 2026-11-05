@@ -1,4 +1,4 @@
-' CarveStudio post processor for UCCNC with a rotary A axis, millimeters.
+' Zeroed post processor for UCCNC with a rotary A axis, millimeters.
 ' For a machine with a rotary A axis and a hand tool change with a touch off.
 ' A blank along X wraps flat Y into A; a blank along Y wraps flat X into A. A
 ' is in degrees, one time round the blank is 360, and the wrapped linear axis
@@ -16,7 +16,7 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-11-04  First version.
+' Zeroed       2026-11-04  First version.
 
 POST_NAME = "UCCNC rotary A axis, manual touch off at M0 (mm) (*.tap)"
 FILE_EXTENSION = "tap"
@@ -51,7 +51,7 @@ VAR DWELL_TIME = [DWELL|AF|P|1.2]
 begin HEADER
 + "%"
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "[N]G90[FEED_MODE]"
 + "[N]G21"

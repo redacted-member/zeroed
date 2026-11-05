@@ -13,42 +13,42 @@
   <array>
     <dict>
       <key>CFBundleTypeName</key>
-      <string>CarveStudio Job</string>
+      <string>Zeroed Job</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSHandlerRank</key>
       <string>Owner</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.carvestudio.job</string>
+        <string>com.zeroed.job</string>
       </array>
       <key>CFBundleTypeIconFile</key>
       <string>carve-document.icns</string>
     </dict>
     <dict>
       <key>CFBundleTypeName</key>
-      <string>CarveStudio Clipart</string>
+      <string>Zeroed Clipart</string>
       <key>CFBundleTypeRole</key>
       <string>Viewer</string>
       <key>LSHandlerRank</key>
       <string>Owner</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.carvestudio.clipart</string>
+        <string>com.zeroed.clipart</string>
       </array>
       <key>CFBundleTypeIconFile</key>
       <string>carveclip-document.icns</string>
     </dict>
     <dict>
       <key>CFBundleTypeName</key>
-      <string>CarveStudio Toolpath Template</string>
+      <string>Zeroed Toolpath Template</string>
       <key>CFBundleTypeRole</key>
       <string>Viewer</string>
       <key>LSHandlerRank</key>
       <string>Owner</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>com.carvestudio.template</string>
+        <string>com.zeroed.template</string>
       </array>
     </dict>
     <dict>
@@ -107,9 +107,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.carvestudio.job</string>
+      <string>com.zeroed.job</string>
       <key>UTTypeDescription</key>
-      <string>CarveStudio Job</string>
+      <string>Zeroed Job</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -127,9 +127,9 @@
     </dict>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.carvestudio.clipart</string>
+      <string>com.zeroed.clipart</string>
       <key>UTTypeDescription</key>
-      <string>CarveStudio Clipart</string>
+      <string>Zeroed Clipart</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -147,9 +147,9 @@
     </dict>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>com.carvestudio.template</string>
+      <string>com.zeroed.template</string>
       <key>UTTypeDescription</key>
-      <string>CarveStudio Toolpath Template</string>
+      <string>Zeroed Toolpath Template</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

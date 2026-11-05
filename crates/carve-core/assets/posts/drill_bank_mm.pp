@@ -1,4 +1,4 @@
-' CarveStudio post processor for a G code controller with a drill bank,
+' Zeroed post processor for a G code controller with a drill bank,
 ' millimeters. As the generic post, plus the drill bank sections.
 '
 ' Setting it up for a machine
@@ -53,20 +53,20 @@
 ' History
 ' Who          When        What
 ' ===========  ==========  ==========================================
-' CarveStudio  2026-09-26  First version.
-' CarveStudio  2026-09-26  The drill bank block documented for setup.
-' CarveStudio  2026-09-27  Drill bank setup, pattern and final sections.
-' CarveStudio  2026-09-27  The footer stays at the home height instead of
+' Zeroed       2026-09-26  First version.
+' Zeroed       2026-09-26  The drill bank block documented for setup.
+' Zeroed       2026-09-27  Drill bank setup, pattern and final sections.
+' Zeroed       2026-09-27  The footer stays at the home height instead of
 '                          going back down to safe Z.
-' CarveStudio  2026-09-27  The spindle stops (M5) before every tool change.
-' CarveStudio  2026-09-27  After every tool change (and so at the start) Z lifts
+' Zeroed       2026-09-27  The spindle stops (M5) before every tool change.
+' Zeroed       2026-09-27  After every tool change (and so at the start) Z lifts
 '                          straight up to the safe Z or the home Z, whichever is
 '                          higher, before the spindle starts or anything moves
 '                          across; the first rapid crosses at that height and
 '                          only then comes down.
 '                          The footer lifts to that height too, so the move
 '                          home never crosses below the safe Z.
-' CarveStudio  2026-09-28  The spindle speed and start are their own SPINDLE_ON
+' Zeroed       2026-09-28  The spindle speed and start are their own SPINDLE_ON
 '                          block, written after the tool change as before and
 '                          again wherever a merged toolpath changes speed.
 
@@ -101,7 +101,7 @@ VAR DRILL_LIST = [DL||,|,]
 
 begin HEADER
 + "([TP_FILENAME])"
-+ "(Written by CarveStudio)"
++ "(Written by Zeroed)"
 + "([TOOLS_USED])"
 + "[N]G90"
 + "[N]G21"

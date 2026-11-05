@@ -284,8 +284,8 @@ name, width, height, cell} and `heights.f32`), STL/OBJ (relief) and
 SVG/DXF/EPS/AI (vectors). The shipped library (`clipart/library`, all made
 by our own code, listed in `crates/carve-core/assets/clipart/MANIFEST.json`)
 is always listed first with categories like "Shapes/Domes"; an item's file is
-written under `CarveStudio/clipart-library-<version>` in the cache dir the
-first time it is drawn or inserted. The user folder is `CarveStudio/clipart`
+written under `Zeroed/clipart-library-<version>` in the cache dir the
+first time it is drawn or inserted. The user folder is `Zeroed/clipart`
 under the platform data dir.
 | clipart.scan | {dirs? (replace the user folder), library? (alias samples; default true)} | {categories (sorted, `/` between levels), items:[{name, path, category, kind:"relief"\|"vector", format:"clip"\|"mesh"\|"vectors", tags?}], userDir, roots, warnings} |
 | clipart.thumbnail | {path, size? (16..1024, default 256)} | BLOB header {width, height, mime:"image/png"}, section png u8 (PNG file bytes, square, clear background) |
@@ -294,7 +294,7 @@ under the platform data dir.
 
 ## Job templates (session 4)
 A template is a `.carve` file. The user's templates live in
-`CarveStudio/templates` under the platform data dir (or the folder the
+`Zeroed/templates` under the platform data dir (or the folder the
 `CARVE_TEMPLATES_DIR` environment variable names); files at the top are
 listed with category null, each subfolder is a category. Five standard sheet
 templates (plywood 2440 x 1220 x 18 mm, MDF 1220 x 610 x 12 mm, hardwood
@@ -306,7 +306,7 @@ Gadgets may not run `templates.*`.
 | templates.new | {path} | {revision, name}; the template becomes a new untitled document (no path, clean, empty undo history); a file that does not open leaves the document alone |
 
 ## Gadgets (brief 013e)
-Lua 5.4 scripts in `<user data>/CarveStudio/gadgets/<name>/<name>.lua` (plus
+Lua 5.4 scripts in `<user data>/Zeroed/gadgets/<name>/<name>.lua` (plus
 optional `gadget.json` `{title, description}`), and three shipped ones
 (`gear-maker`, `keyhole`, `rounding`). A script declares `gadget = {title, description,
 dialog = {fields = [{id, label, kind: "number"|"length"|"choice"|"check"|"text"|"tool" (a tool database id, 0 for none; carve.tool(id) fetches it),

@@ -369,23 +369,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "carvestudio"
-version = "0.1.0"
-dependencies = [
- "carve-core",
- "libc",
- "objc2",
- "objc2-app-kit",
- "objc2-foundation",
- "png 0.18.1",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-dialog",
-]
-
-[[package]]
 name = "cavalier_contours"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5498,6 +5481,23 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.119",
+]
+
+[[package]]
+name = "zeroed"
+version = "0.1.0"
+dependencies = [
+ "carve-core",
+ "libc",
+ "objc2",
+ "objc2-app-kit",
+ "objc2-foundation",
+ "png 0.18.1",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-dialog",
 ]
 
 [[package]]

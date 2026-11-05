@@ -135,12 +135,12 @@ impl PostLibrary {
         }
     }
 
-    /// The library in the user data directory, `CarveStudio/posts`. Falls
+    /// The library in the user data directory, `Zeroed/posts`. Falls
     /// back to the temporary directory on a platform that has no data
     /// directory, so that construction never fails.
     pub fn user_default() -> Self {
         let base = dirs::data_dir().unwrap_or_else(std::env::temp_dir);
-        PostLibrary::at(base.join("CarveStudio").join("posts"))
+        PostLibrary::at(base.join("Zeroed").join("posts"))
     }
 
     /// Where imported posts are kept.
@@ -626,7 +626,7 @@ mod tests {
     fn the_user_library_sits_under_the_app_name() {
         let library = PostLibrary::user_default();
         let text = library.user_dir().display().to_string();
-        assert!(text.contains("CarveStudio"), "{text}");
+        assert!(text.contains("Zeroed"), "{text}");
         assert!(text.ends_with("posts"), "{text}");
     }
 

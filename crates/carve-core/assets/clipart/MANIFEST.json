@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "author": "CarveStudio contributors",
+  "author": "Zeroed contributors",
   "license": "MIT",
   "sources": "crates/carve-core/src/clipart/library/",
   "items": [
