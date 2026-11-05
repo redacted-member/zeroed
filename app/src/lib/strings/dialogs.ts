@@ -372,6 +372,8 @@ export const dialogsStrings = {
     welcomeText:
       'Pick a walkthrough. Each one points at the next thing to click, and you can stop at any time.',
     choices: 'Walkthroughs',
+    startHere: 'Start here',
+    makeSomething: 'Make something',
     dontShow: "Don't show this at start",
     dontShowTip: 'Help > Tutorial Browser opens this guide again',
     skip: 'Skip',

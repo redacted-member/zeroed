@@ -3,10 +3,25 @@
 
 import { create } from 'zustand';
 
-/** The window tour and the three walkthroughs. */
-export type GuideId = 'tour' | 'sign' | 'relief' | 'box';
+/** The two to begin with, then a walkthrough for each kind of project. */
+export const START_GUIDE_IDS = ['tour', 'machine'] as const;
 
-export const GUIDE_IDS: readonly GuideId[] = ['tour', 'sign', 'relief', 'box'];
+export const PROJECT_GUIDE_IDS = [
+  'cutout',
+  'sign',
+  'relief',
+  'rotary',
+  'trace',
+  'twoSided',
+  'nesting',
+  'box',
+  'furniture',
+  'laser',
+] as const;
+
+export type GuideId = (typeof START_GUIDE_IDS)[number] | (typeof PROJECT_GUIDE_IDS)[number];
+
+export const GUIDE_IDS: readonly GuideId[] = [...START_GUIDE_IDS, ...PROJECT_GUIDE_IDS];
 
 interface GuideState {
   open: boolean;

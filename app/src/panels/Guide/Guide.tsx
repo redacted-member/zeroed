@@ -1,9 +1,22 @@
-import { useEffect, useId, useRef, useState, type JSX } from 'react';
+import {
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type JSX,
+  type RefObject,
+} from 'react';
 
 import { dialogsStrings } from '../../lib/strings/dialogs';
 import { whyStrings } from '../../lib/strings/why';
 import { whyTip } from '../../shell/Tooltip/model';
-import { GUIDE_IDS, useGuideStore, type GuideId } from '../../state/guideStore';
+import {
+  PROJECT_GUIDE_IDS,
+  START_GUIDE_IDS,
+  useGuideStore,
+  type GuideId,
+} from '../../state/guideStore';
 import { GuideIcon } from '../GuideIcon/GuideIcon';
 import { usePrefsStore } from '../../state/prefsStore';
 import { useUiStore } from '../../state/uiStore';
@@ -36,35 +49,94 @@ export function Guide(): JSX.Element | null {
   return guide === null ? <Welcome /> : <Walkthrough guide={guide} step={step} />;
 }
 
+/** A card's size and the window's, measured before they paint, to place the card. */
+function useCardRoom(cardRef: RefObject<HTMLElement | null>): {
+  size: { width: number; height: number };
+  view: { width: number; height: number };
+} {
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  const [view, setView] = useState({ width: window.innerWidth, height: window.innerHeight });
+  useLayoutEffect(() => {
+    const card = cardRef.current;
+    if (card === null) {
+      return undefined;
+    }
+    const measure = () => {
+      setSize((prev) =>
+        prev.width === card.offsetWidth && prev.height === card.offsetHeight
+          ? prev
+          : { width: card.offsetWidth, height: card.offsetHeight },
+      );
+      setView((prev) =>
+        prev.width === window.innerWidth && prev.height === window.innerHeight
+          ? prev
+          : { width: window.innerWidth, height: window.innerHeight },
+      );
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(card);
+    window.addEventListener('resize', measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [cardRef]);
+  return { size, view };
+}
+
+function GuideChoices({
+  ids,
+  onPick,
+}: {
+  ids: readonly GuideId[];
+  onPick: (id: GuideId) => void;
+}): JSX.Element {
+  return (
+    <ul aria-label={text.choices} className="guide__choices">
+      {ids.map((id) => (
+        <li key={id}>
+          <button
+            className="guide__choice"
+            data-tip={GUIDES[id].blurb}
+            onClick={() => onPick(id)}
+            type="button"
+          >
+            <GuideIcon large name={id} />
+            <span className="guide__choice-text">
+              <span className="guide__choice-title">{GUIDES[id].title}</span>
+              <span className="guide__choice-blurb">{GUIDES[id].blurb}</span>
+            </span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Welcome(): JSX.Element {
   const titleId = useId();
   const showAtStart = usePrefsStore((state) => state.prefs.general.showGuide);
   const update = usePrefsStore((state) => state.update);
   const { start, close } = useGuideStore.getState();
+  const cardRef = useRef<HTMLElement>(null);
+  const { size, view } = useCardRoom(cardRef);
+  const at = placeCard(null, size, view);
   return (
-    <section aria-labelledby={titleId} className="guide guide__card guide__card--welcome">
+    <section
+      aria-labelledby={titleId}
+      className="guide guide__card guide__card--welcome"
+      ref={cardRef}
+      style={{ left: at.left, top: at.top }}
+    >
       <h2 className="guide__title" id={titleId}>
         {text.welcomeTitle}
       </h2>
       <p className="guide__text">{text.welcomeText}</p>
-      <ul aria-label={text.choices} className="guide__choices">
-        {GUIDE_IDS.map((id) => (
-          <li key={id}>
-            <button
-              className="guide__choice"
-              data-tip={GUIDES[id].blurb}
-              onClick={() => start(id)}
-              type="button"
-            >
-              <GuideIcon large name={id} />
-              <span className="guide__choice-text">
-                <span className="guide__choice-title">{GUIDES[id].title}</span>
-                <span className="guide__choice-blurb">{GUIDES[id].blurb}</span>
-              </span>
-            </button>
-          </li>
-        ))}
-      </ul>
+      <h3 className="guide__group">{text.startHere}</h3>
+      <GuideChoices ids={START_GUIDE_IDS} onPick={start} />
+      <h3 className="guide__group">{text.makeSomething}</h3>
+      <GuideChoices ids={PROJECT_GUIDE_IDS} onPick={start} />
       <div className="guide__footer">
         <label className="guide__check" data-tip={text.dontShowTip}>
           <input
@@ -145,8 +217,6 @@ function Walkthrough({ guide, step }: { guide: GuideId; step: number }): JSX.Ele
   const next = last ? close : () => goTo(index + 1);
   const box = useTargetBox(current);
   const cardRef = useRef<HTMLElement | null>(null);
-  const [size, setSize] = useState({ width: 300, height: 180 });
-  const [view, setView] = useState({ width: window.innerWidth, height: window.innerHeight });
   const titleId = useId();
   const activeForm = useUiStore((state) => state.activeForm);
   const formOpen = activeForm !== null;
@@ -162,32 +232,7 @@ function Walkthrough({ guide, step }: { guide: GuideId; step: number }): JSX.Ele
     }
   }, [opens, activeForm, goTo, index]);
 
-  // The card's size and the window's, to place the card beside its control.
-  useEffect(() => {
-    const card = cardRef.current;
-    if (card === null) {
-      return undefined;
-    }
-    const measure = () => {
-      setSize((prev) =>
-        prev.width === card.offsetWidth && prev.height === card.offsetHeight
-          ? prev
-          : { width: card.offsetWidth, height: card.offsetHeight },
-      );
-      setView((prev) =>
-        prev.width === window.innerWidth && prev.height === window.innerHeight
-          ? prev
-          : { width: window.innerWidth, height: window.innerHeight },
-      );
-    };
-    const observer = new ResizeObserver(measure);
-    observer.observe(card);
-    window.addEventListener('resize', measure);
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', measure);
-    };
-  }, []);
+  const { size, view } = useCardRoom(cardRef);
 
   // A step that waits for a click on its control goes on once the click has run.
   useEffect(() => {

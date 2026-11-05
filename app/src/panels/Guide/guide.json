@@ -43,6 +43,103 @@
       }
     ]
   },
+  "machine": {
+    "title": "Set up your machine",
+    "blurb": "Do this once, before your first cut: machine, post processor and bits.",
+    "steps": [
+      {
+        "title": "What you will set",
+        "text": "Machine Configuration holds your machine's details. These cards say what to set. Read them first, because the dialog covers this card until you click OK."
+      },
+      {
+        "title": "Its size and units",
+        "text": "You will name your machine, pick the units your controller uses and type the X, Y and Z travel under Working Area."
+      },
+      {
+        "title": "Its post processor",
+        "text": "Under Add post processor, choose your controller and click Add. The post processor writes the file your machine reads, so it has to match."
+      },
+      {
+        "title": "A rotary axis, if you have one",
+        "text": "Under Rotary Axis, set the axis letter, whether it reads degrees or linear units, and its direction. Add a rotary post processor too."
+      },
+      {
+        "title": "Open it now",
+        "text": "Open the Machine menu and pick Machine Configuration. Set these things and click OK. This card comes back when you do, then click Next."
+      },
+      {
+        "target": "tool:toolDatabase",
+        "click": true,
+        "title": "Your bits",
+        "text": "Click Tool Database and enter the real diameter, flute length, shank and holder of each bit, with feeds and speeds you trust. The preview uses them to find collisions."
+      },
+      {
+        "title": "Before your first cut",
+        "text": "Open Help Contents from the Help menu and read Before You Cut. Run the first file in the air with your hand on the stop button."
+      }
+    ]
+  },
+  "cutout": {
+    "title": "Cut out a part",
+    "blurb": "Bring in a shape and cut it free, held in place with tabs.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the board",
+        "text": "Click Job Setup to tell Zeroed the size and thickness of your material."
+      },
+      {
+        "target": "form",
+        "title": "Material size",
+        "text": "Type the width, height and thickness of your material, then click OK."
+      },
+      {
+        "target": "tool:importVectors",
+        "click": true,
+        "title": "Bring in a shape",
+        "text": "Click Import Bitmap / Vectors to open an SVG, DXF, DWG, EPS, AI or PDF file. No file yet? Use Draw Rectangle instead."
+      },
+      {
+        "target": "views",
+        "title": "Pick the shape",
+        "text": "Click the outline of the part in the view."
+      },
+      {
+        "target": "tool:profile",
+        "click": true,
+        "title": "Cut it out",
+        "text": "In the Toolpaths panel, click 2D Profile Toolpath."
+      },
+      {
+        "target": "form",
+        "title": "Choose the bit and depth",
+        "text": "Next to Tool, click Select... and pick an end mill. Set the cut depth to the material thickness and Machine Vectors to Outside / Right."
+      },
+      {
+        "target": "form",
+        "title": "Hold it with tabs",
+        "text": "Turn on Add tabs to toolpath so the part stays put until the end of the cut, then click Calculate."
+      },
+      {
+        "target": "toolpaths",
+        "title": "Inside cuts come first",
+        "text": "Add any pockets and holes the same way. Toolpaths run from the top of this list down, so keep the outline last."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to watch the cut before you make it."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths, pick your machine's post processor and save the file."
+      }
+    ]
+  },
   "sign": {
     "title": "V-grooved sign",
     "blurb": "Text carved with a V-bit inside a border.",
@@ -183,6 +280,235 @@
       }
     ]
   },
+  "rotary": {
+    "title": "Rotary",
+    "blurb": "Wrap a design round a turning blank on a 4th axis.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the blank",
+        "text": "Click Job Setup to tell Zeroed about the blank on your rotary axis."
+      },
+      {
+        "target": "form",
+        "title": "Make it a rotary job",
+        "text": "Under Job Type, pick Rotary. Set the Blank Shape, Blank Length and Blank Diameter, and Blank Along for the axis it lies along. Then click OK."
+      },
+      {
+        "target": "views",
+        "title": "Your design is flat",
+        "text": "The view now shows the blank unrolled: its length one way and the distance round it the other. Draw flat here and it wraps when you cut."
+      },
+      {
+        "target": "tool:createText",
+        "click": true,
+        "title": "Add a design",
+        "text": "Click Create Text to write something to carve round the blank."
+      },
+      {
+        "target": "form",
+        "title": "Type the text",
+        "text": "Click in the view where the text goes, then type the words and pick a font and a height. Click Close when done."
+      },
+      {
+        "target": "views",
+        "title": "Pick what to carve",
+        "text": "Click the text in the view."
+      },
+      {
+        "target": "tool:pocket",
+        "click": true,
+        "title": "Any toolpath wraps",
+        "text": "There is no special rotary toolpath. In the Toolpaths panel, click Pocket Toolpath."
+      },
+      {
+        "target": "form",
+        "title": "Choose the bit",
+        "text": "Next to Tool, click Select... and pick an end mill. Set the cut depth and click Calculate."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Watch it turn",
+        "text": "Click Preview Toolpaths, turn on Animate preview and click Preview All Toolpaths. The blank turns under the bit, as it will on your machine."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths and pick a rotary post processor, which writes the moves round the blank. Run a scrap cut first: if it reads mirrored, flip Direction in Machine Configuration."
+      }
+    ]
+  },
+  "trace": {
+    "title": "Trace a picture",
+    "blurb": "Turn an image into vectors you can cut.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the board",
+        "text": "Click Job Setup to tell Zeroed the size and thickness of your material."
+      },
+      {
+        "target": "form",
+        "title": "Material size",
+        "text": "Type the width, height and thickness of your material, then click OK."
+      },
+      {
+        "target": "tool:importVectors",
+        "click": true,
+        "title": "Bring in the picture",
+        "text": "Click Import Bitmap / Vectors and open your image. Black and white pictures with clean edges trace best."
+      },
+      {
+        "target": "views",
+        "title": "Pick the picture",
+        "text": "Click the picture in the view."
+      },
+      {
+        "target": "tool:traceBitmap",
+        "click": true,
+        "title": "Trace it",
+        "text": "Click Trace Bitmap."
+      },
+      {
+        "target": "form",
+        "title": "Fit the lines",
+        "text": "Set the Threshold, Noise Filter and Corner Fit. Click Preview to check the lines, then click Apply."
+      },
+      {
+        "target": "views",
+        "title": "Pick the new vectors",
+        "text": "Click Close, then click the vectors you want to cut. They lie exactly over the picture."
+      },
+      {
+        "target": "tool:profile",
+        "click": true,
+        "title": "Cut along them",
+        "text": "In the Toolpaths panel, click 2D Profile Toolpath."
+      },
+      {
+        "target": "form",
+        "title": "Choose the bit",
+        "text": "Next to Tool, click Select... and pick a bit. Set the cut depth and click Calculate."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to see the cut before you make it."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths, pick your machine's post processor and save the file."
+      }
+    ]
+  },
+  "twoSided": {
+    "title": "Two-sided job",
+    "blurb": "Cut both faces of a board and flip it in between.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the board",
+        "text": "Click Job Setup to tell Zeroed the size and thickness of your material."
+      },
+      {
+        "target": "form",
+        "title": "Make it double sided",
+        "text": "Under Job Type, pick Double Sided. Under Flip Direction, say how you will turn the board over. Then click OK."
+      },
+      {
+        "target": "views",
+        "title": "Top side first",
+        "text": "Press 1 to work on the top side. Draw or import what goes on this face."
+      },
+      {
+        "target": "tool:profile",
+        "click": true,
+        "title": "Cut the top",
+        "text": "Pick a vector and click 2D Profile Toolpath, or any other toolpath. Choose the bit and click Calculate."
+      },
+      {
+        "target": "views",
+        "title": "Now the bottom",
+        "text": "Press 2 to work on the bottom side. Draw what goes on this face and add its toolpaths the same way."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview both sides",
+        "text": "Click Preview Toolpaths, then Preview All Sides to see both faces cut in order."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths and save a file for each side. Run the top file, turn the board over the way you set in Job Setup, then run the bottom file."
+      }
+    ]
+  },
+  "nesting": {
+    "title": "Nest parts on a sheet",
+    "blurb": "Pack parts onto sheets to use as little material as possible.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the sheet",
+        "text": "Click Job Setup and enter your sheet size and thickness. A full sheet is 96 x 48 in."
+      },
+      {
+        "target": "form",
+        "title": "Sheet size",
+        "text": "Type the width, height and thickness of your sheet, then click OK."
+      },
+      {
+        "target": "tool:importVectors",
+        "click": true,
+        "title": "Bring in your parts",
+        "text": "Click Import Bitmap / Vectors to open your parts, or draw them on the Design tab."
+      },
+      {
+        "target": "views",
+        "title": "Pick the parts",
+        "text": "Drag a box around the parts in the view to pick them all."
+      },
+      {
+        "target": "tool:nest",
+        "click": true,
+        "title": "Nest them",
+        "text": "Click Nest Parts."
+      },
+      {
+        "target": "form",
+        "title": "Leave room for the bit",
+        "text": "Type the Tool Dia. and the Clearance between parts, then click Apply. Zeroed adds more sheets when the parts need them."
+      },
+      {
+        "target": "sheetsTab",
+        "title": "See your sheets",
+        "text": "The Sheets tab lists each sheet. Click one to work on it."
+      },
+      {
+        "target": "tool:profile",
+        "click": true,
+        "title": "Cut them out",
+        "text": "Pick the parts on a sheet and click 2D Profile Toolpath."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths, pick your post processor and save a file for each sheet."
+      }
+    ]
+  },
   "box": {
     "title": "Box with joints",
     "blurb": "Flat panels joined with the Joint Creator, checked in the Assembly View.",
@@ -230,6 +556,100 @@
         "target": "form",
         "title": "Check the fit",
         "text": "Click Verify Fit to check every joint, and open Cut List for the part sizes. Before the real parts, cut a Test Coupon from the Joint Creator to check the fit."
+      }
+    ]
+  },
+  "furniture": {
+    "title": "Design furniture",
+    "blurb": "Start from a template, set your sizes and get every panel and joint.",
+    "steps": [
+      {
+        "target": "assembly",
+        "click": true,
+        "title": "Open the Assembly View",
+        "text": "Click Assembly View. Furniture is designed and checked here."
+      },
+      {
+        "target": "form",
+        "title": "Start from a template",
+        "text": "Click New Furniture to open the Furniture Library, then pick a template you like."
+      },
+      {
+        "target": "form",
+        "title": "Make it your size",
+        "text": "In the Furniture Designer, type the sizes or drag the sliders. The Assembly View shows the result as you go."
+      },
+      {
+        "target": "form",
+        "title": "Create it",
+        "text": "Click Create. Zeroed makes the panels on sheets, the joints, the toolpaths and the pieces."
+      },
+      {
+        "target": "form",
+        "title": "See it go together",
+        "text": "In the Assembly View, drag the Explode slider to pull the pieces apart and see how they fit."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths, pick your post processor and save a file for each sheet."
+      }
+    ]
+  },
+  "laser": {
+    "title": "Laser engraving",
+    "blurb": "Burn text or shapes with a laser, with no bit and no depth.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the board",
+        "text": "Click Job Setup to tell Zeroed the size and thickness of your material."
+      },
+      {
+        "target": "form",
+        "title": "Material size",
+        "text": "Type the width, height and thickness of your material, then click OK."
+      },
+      {
+        "target": "tool:createText",
+        "click": true,
+        "title": "Add something to burn",
+        "text": "Click Create Text to write the words. Vectors you draw or import work the same way."
+      },
+      {
+        "target": "form",
+        "title": "Type the text",
+        "text": "Click in the view where the text goes, then type the words and pick a font and a height. Click Close when done."
+      },
+      {
+        "target": "views",
+        "title": "Pick what to burn",
+        "text": "Click the text in the view."
+      },
+      {
+        "target": "tool:laserCutFill",
+        "click": true,
+        "title": "Laser Cut & Fill",
+        "text": "In the Toolpaths panel, click Laser Cut & Fill."
+      },
+      {
+        "target": "form",
+        "title": "Choose the laser",
+        "text": "Next to Tool, click Select... and pick a laser. Choose Cut On or Hatch Fill, set the Power and Move Speed, then click Calculate."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to see the burn before you make it."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths and pick a laser post processor. Wear the safety glasses made for your laser, and never leave a running laser alone."
       }
     ]
   }

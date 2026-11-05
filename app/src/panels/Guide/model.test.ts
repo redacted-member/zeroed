@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { contentProblems } from '../../lib/usSpelling';
-import { GUIDE_IDS } from '../../state/guideStore';
+import { GUIDE_IDS, type GuideId } from '../../state/guideStore';
 import {
   CARD_GAP,
   GUIDES,
@@ -15,7 +15,7 @@ import {
 const steps = GUIDE_IDS.flatMap((id) => GUIDES[id].steps.map((step) => ({ id, step })));
 
 describe('guide steps', () => {
-  it('has the window tour and the three walkthroughs, each with a title and a few steps', () => {
+  it('has every walkthrough, each with a title and a few steps', () => {
     expect(Object.keys(GUIDES).sort()).toEqual([...GUIDE_IDS].sort());
     for (const id of GUIDE_IDS) {
       expect(GUIDES[id].title, id).not.toBe('');
@@ -48,7 +48,7 @@ describe('guide steps', () => {
   });
 
   it('walks each project through the controls to click, in order', () => {
-    const clicks = (id: 'sign' | 'relief' | 'box') =>
+    const clicks = (id: GuideId) =>
       GUIDES[id].steps.filter((s) => s.click === true).map((s) => s.target);
     expect(clicks('sign')).toEqual([
       'tool:jobSetup',
@@ -61,6 +61,24 @@ describe('guide steps', () => {
     expect(clicks('relief')).toEqual(
       expect.arrayContaining(['tool:createShape', 'tool:rough3d', 'tool:finish3d']),
     );
+    expect(clicks('rotary')).toEqual([
+      'tool:jobSetup',
+      'tool:createText',
+      'tool:pocket',
+      'tool:preview',
+      'tool:saveToolpaths',
+    ]);
+    expect(clicks('cutout')).toEqual([
+      'tool:jobSetup',
+      'tool:importVectors',
+      'tool:profile',
+      'tool:preview',
+      'tool:saveToolpaths',
+    ]);
+    expect(clicks('laser')).toEqual(expect.arrayContaining(['tool:laserCutFill']));
+    expect(clicks('nesting')).toEqual(expect.arrayContaining(['tool:nest']));
+    expect(clicks('machine')).toEqual(['tool:toolDatabase']);
+    expect(clicks('trace')).toEqual(expect.arrayContaining(['tool:traceBitmap']));
     expect(clicks('box')).toEqual([
       'tool:drawRectangle',
       'tool:jointCreator',
@@ -76,6 +94,14 @@ describe('guide steps', () => {
       ...GUIDES[id].steps.flatMap((s) => [s.title, s.text]),
     ]);
     expect(texts.flatMap(contentProblems)).toEqual([]);
+  });
+});
+
+describe('the welcome card', () => {
+  it('offers every walkthrough once, with the first steps first', () => {
+    expect(GUIDE_IDS.slice(0, 2)).toEqual(['tour', 'machine']);
+    expect(new Set(GUIDE_IDS).size).toBe(GUIDE_IDS.length);
+    expect(Object.keys(GUIDES).sort()).toEqual([...GUIDE_IDS].sort());
   });
 });
 
@@ -100,7 +126,7 @@ describe('placeCard', () => {
   const view = { width: 1400, height: 900 };
 
   it('centers the card with no target', () => {
-    expect(placeCard(null, card, view)).toEqual({ left: 550, top: 375 });
+    expect(placeCard(null, card, view)).toEqual({ left: 550, top: 374 });
   });
 
   it('puts the card to the right of a target on the left', () => {
@@ -118,9 +144,17 @@ describe('placeCard', () => {
     expect(at.top).toBe(900 - 150 - CARD_GAP);
   });
 
+  it('lands on whole, even pixels when the room would split one', () => {
+    const at = placeCard(null, { width: 301, height: 181 }, { width: 1101, height: 701 });
+    expect(at).toEqual({ left: 400, top: 260 });
+    const beside = placeCard({ left: 11, top: 21.5, width: 33, height: 11 }, card, view);
+    expect(beside.left % 2).toBe(0);
+    expect(beside.top % 2).toBe(0);
+  });
+
   it('centers the card over a target that fills the window', () => {
     const at = placeCard({ left: 0, top: 0, width: 1400, height: 900 }, card, view);
-    expect(at).toEqual({ left: 550, top: 375 });
+    expect(at).toEqual({ left: 550, top: 374 });
   });
 });
 

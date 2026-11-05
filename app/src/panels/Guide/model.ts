@@ -92,6 +92,11 @@ export interface Box {
 /** Room kept between the card, its target and the window edge. */
 export const CARD_GAP = 12;
 
+/** Down to a whole, even pixel, so the card's edges stay sharp. */
+function evenPixel(value: number): number {
+  return Math.floor(value / 2) * 2;
+}
+
 /**
  * Where the card goes: beside the target (right, then left, then below,
  * then above, the first side with room), kept inside the window; centered
@@ -103,7 +108,7 @@ export function placeCard(
   view: { width: number; height: number },
 ): { left: number; top: number } {
   const clamp = (value: number, size: number, room: number) =>
-    Math.max(CARD_GAP, Math.min(value, room - size - CARD_GAP));
+    evenPixel(Math.max(CARD_GAP, Math.min(value, room - size - CARD_GAP)));
   if (target === null) {
     return {
       left: clamp((view.width - card.width) / 2, card.width, view.width),
@@ -115,16 +120,16 @@ export function placeCard(
   const below = target.top + target.height + CARD_GAP;
   const above = target.top - CARD_GAP - card.height;
   if (right + card.width + CARD_GAP <= view.width) {
-    return { left: right, top: clamp(target.top, card.height, view.height) };
+    return { left: evenPixel(right), top: clamp(target.top, card.height, view.height) };
   }
   if (left >= CARD_GAP) {
-    return { left, top: clamp(target.top, card.height, view.height) };
+    return { left: evenPixel(left), top: clamp(target.top, card.height, view.height) };
   }
   if (below + card.height + CARD_GAP <= view.height) {
-    return { left: clamp(target.left, card.width, view.width), top: below };
+    return { left: clamp(target.left, card.width, view.width), top: evenPixel(below) };
   }
   if (above >= CARD_GAP) {
-    return { left: clamp(target.left, card.width, view.width), top: above };
+    return { left: clamp(target.left, card.width, view.width), top: evenPixel(above) };
   }
   return placeCard(null, card, view);
 }

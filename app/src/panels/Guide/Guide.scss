@@ -2,6 +2,7 @@
 
 $guide-layer: 900;
 $card-width: 340px;
+$welcome-width: 720px;
 
 .guide__ring {
   position: fixed;
@@ -28,14 +29,15 @@ $card-width: 340px;
   background: tokens.$panel-raised;
   color: tokens.$text;
   font-size: tokens.$font-size;
+  line-height: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .guide__card--welcome {
-  top: 50%;
-  left: 50%;
-  width: 360px;
-  transform: translate(-50%, -50%);
+  width: $welcome-width;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
 }
 
 .guide__progress {
@@ -52,7 +54,7 @@ $card-width: 340px;
 
 .guide__text {
   margin: 0 0 tokens.$space-2;
-  line-height: 1.4;
+  line-height: 18px;
 }
 
 .guide__hint {
@@ -61,13 +63,24 @@ $card-width: 340px;
   font-size: tokens.$font-size-small;
 }
 
+.guide__group {
+  margin: 0 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
 .guide__choices {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: tokens.$space-1;
   margin: 0 0 tokens.$space-3;
   padding: 0;
   list-style: none;
+}
+
+.guide__choices > li {
+  display: flex;
 }
 
 .guide__choice {
