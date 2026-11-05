@@ -1,0 +1,40 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.two-rail-sweep {
+  @include form.form-root;
+}
+
+.two-rail-sweep__hint {
+  @include form.form-hint;
+}
+
+.two-rail-sweep__group {
+  @include form.form-group;
+}
+
+.two-rail-sweep__legend {
+  @include form.form-legend;
+}
+
+.two-rail-sweep__count {
+  @include form.form-hint;
+
+  flex: 1 1 auto;
+}
+
+.two-rail-sweep__count--error {
+  color: tokens.$danger;
+}
+
+.two-rail-sweep__pick {
+  @include form.form-button;
+
+  flex: 1 1 auto;
+}
+
+.two-rail-sweep__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}

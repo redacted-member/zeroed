@@ -1,0 +1,22 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.cross-section {
+  @include form.form-root;
+}
+
+.cross-section__hint {
+  @include form.form-hint;
+}
+
+.cross-section__step {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.cross-section__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

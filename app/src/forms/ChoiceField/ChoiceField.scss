@@ -1,0 +1,25 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.choice-field {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice-field__label {
+  padding: 0;
+  margin-bottom: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.choice-field__options {
+  @include form.form-choices;
+}
+
+.choice-field__option {
+  @include form.form-choice;
+}

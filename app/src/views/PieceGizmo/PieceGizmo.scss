@@ -1,0 +1,139 @@
+@use '../../styles/tokens';
+
+.piece-gizmo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.piece-gizmo__ring {
+  fill: none;
+  stroke-width: 2.5;
+  pointer-events: stroke;
+  cursor: grab;
+}
+
+.piece-gizmo__ring--x {
+  stroke: #e0443a;
+}
+
+.piece-gizmo__ring--y {
+  stroke: #3fae4a;
+}
+
+.piece-gizmo__ring--z {
+  stroke: #3a6fe0;
+}
+
+.piece-gizmo__ring:hover,
+.piece-gizmo__ring--active {
+  stroke: #f2c230;
+  stroke-width: 4;
+}
+
+.piece-gizmo__arrow {
+  pointer-events: all;
+  cursor: grab;
+}
+
+.piece-gizmo__shaft {
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.piece-gizmo__head {
+  stroke-width: 1;
+}
+
+.piece-gizmo__arrow--x .piece-gizmo__shaft {
+  stroke: #e0443a;
+}
+
+.piece-gizmo__arrow--x .piece-gizmo__head {
+  fill: #e0443a;
+  stroke: #e0443a;
+}
+
+.piece-gizmo__arrow--y .piece-gizmo__shaft {
+  stroke: #3fae4a;
+}
+
+.piece-gizmo__arrow--y .piece-gizmo__head {
+  fill: #3fae4a;
+  stroke: #3fae4a;
+}
+
+.piece-gizmo__arrow--z .piece-gizmo__shaft {
+  stroke: #3a6fe0;
+}
+
+.piece-gizmo__arrow--z .piece-gizmo__head {
+  fill: #3a6fe0;
+  stroke: #3a6fe0;
+}
+
+.piece-gizmo__arrow:hover .piece-gizmo__shaft,
+.piece-gizmo__arrow--active .piece-gizmo__shaft {
+  stroke: #f2c230;
+  stroke-width: 5;
+}
+
+.piece-gizmo__arrow:hover .piece-gizmo__head,
+.piece-gizmo__arrow--active .piece-gizmo__head {
+  fill: #f2c230;
+  stroke: #f2c230;
+}
+
+.piece-gizmo__ball {
+  fill: rgba(150, 150, 150, 0.55);
+  stroke: #6b6b6b;
+  stroke-width: 1.5;
+  pointer-events: all;
+  cursor: move;
+}
+
+.piece-gizmo__ball:hover,
+.piece-gizmo__ball--active {
+  fill: rgba(242, 194, 48, 0.6);
+  stroke: #f2c230;
+}
+
+.piece-gizmo__field {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font-size: tokens.$font-size-small;
+  transform: translate(14px, 14px);
+}
+
+.piece-gizmo__label {
+  white-space: nowrap;
+}
+
+.piece-gizmo__input {
+  width: 72px;
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.piece-gizmo__input:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.piece-gizmo__unit {
+  color: tokens.$text-muted;
+}

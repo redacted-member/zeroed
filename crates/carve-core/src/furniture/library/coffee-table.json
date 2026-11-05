@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "id": "coffee-table",
+  "name": "Coffee Table",
+  "category": "Tables",
+  "description": "Low table on arched panel ends with front and back rails under the top and an optional lower shelf.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["living room", "low table", "shelf"],
+  "params": [
+    { "key": "width", "label": "Length", "kind": "length", "default": 1000, "min": 700, "max": 1500, "group": "Size" },
+    { "key": "depth", "label": "Width", "kind": "length", "default": 550, "min": 400, "max": 800, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 420, "min": 350, "max": 500, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "oh", "label": "Top overhang at the ends", "kind": "length", "default": 100, "min": 0, "max": 150, "group": "Layout" },
+    { "key": "shelf", "label": "Lower shelf", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "arch", "label": "Arched ends", "kind": "toggle", "default": 1, "group": "Style" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "span": "{width}-2*{oh}-2*{t}",
+    "rail_h": "80"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "25" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "20", "z": "0", "w": "{t}", "d": "{depth}-40", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "60", "when": "{arch}" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{oh}-{t}", "y": "20", "z": "0", "w": "{t}", "d": "{depth}-40", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "60", "when": "{arch}" } ] },
+    { "id": "rail_f", "name": "Front rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "60", "z": "{leg_h}-{rail_h}", "w": "{span}", "d": "{t}", "h": "{rail_h}" } },
+    { "id": "rail_b", "name": "Back rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-60-{t}", "z": "{leg_h}-{rail_h}", "w": "{span}", "d": "{t}", "h": "{rail_h}" } },
+    { "id": "shelf", "name": "Lower shelf", "material": "main", "grain": "long", "when": "{shelf}",
+      "box": { "x": "{oh}+{t}", "y": "20", "z": "110", "w": "{span}", "d": "{depth}-40", "h": "{t}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "shelf", "b": "end_l|end_r", "class": "shelf" },
+    { "a": "rail_f|rail_b", "b": "end_l|end_r", "class": "rail" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to frame", "default": "dowel" },
+    "shelf": { "label": "Shelf to ends", "default": "dado" },
+    "rail": { "label": "Rails to ends", "default": "tabSlot" }
+  },
+  "hardware": [
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

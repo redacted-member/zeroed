@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.imported-toolpath {
+  @include form.form-root;
+}
+
+.imported-toolpath__hint {
+  @include form.form-hint;
+}
+
+.imported-toolpath__file {
+  @include form.form-hint;
+  overflow-wrap: anywhere;
+}
+
+.imported-toolpath__notice {
+  @include form.form-error;
+}
+
+.imported-toolpath__group {
+  @include form.form-group;
+}
+
+.imported-toolpath__legend {
+  @include form.form-legend;
+}
+
+.imported-toolpath__name {
+  display: grid;
+  gap: tokens.$space-1;
+}
+
+.imported-toolpath__input {
+  font: inherit;
+}

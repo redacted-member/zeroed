@@ -1,0 +1,21 @@
+@use '../../styles/form';
+
+.draw-star {
+  @include form.form-root;
+}
+
+.draw-star__hint {
+  @include form.form-hint;
+}
+
+.draw-star__group {
+  @include form.form-group;
+}
+
+.draw-star__legend {
+  @include form.form-legend;
+}
+
+.draw-star__button {
+  @include form.form-button;
+}

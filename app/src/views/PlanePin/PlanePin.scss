@@ -1,0 +1,21 @@
+.plane-pin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.plane-pin__stalk {
+  stroke: #2f7df6;
+  stroke-width: 2;
+}
+
+.plane-pin__head {
+  fill: #2f7df6;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  pointer-events: all;
+  cursor: ns-resize;
+}

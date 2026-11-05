@@ -1,0 +1,1290 @@
+{
+  "design": {
+    "title": "Design",
+    "summary": "The Design tab of the left dock holds the drawing and modeling tools as titled groups of icons. Click an icon to open its form or run it at once.",
+    "fields": [
+      {
+        "name": "Design",
+        "text": "The dock tab down the left edge that shows this page; F11 also switches to the design layout."
+      },
+      {
+        "name": "File Operations",
+        "text": "Job Setup, Open File, importing vectors, bitmaps and 3D models, and exporting the model as STL."
+      },
+      {
+        "name": "Create Vectors",
+        "text": "Tools that draw circles, rectangles, lines, arcs, text and dimensions, or trace a bitmap."
+      },
+      {
+        "name": "Transform Objects",
+        "text": "Move, size, rotate, mirror, distort and align the selection; Vector Unwrapper shows on rotary jobs only."
+      },
+      {
+        "name": "Edit Objects",
+        "text": "Selection, node editing and transform modes, grouping, measuring, welding, trimming, joining and fixing vectors."
+      },
+      {
+        "name": "Align Objects",
+        "text": "Center or line up the selection; shows only with Show common tools on drawing tab turned on."
+      },
+      {
+        "name": "Offset and Layout",
+        "text": "Offset outlines and make arrays, circular copies, copies along vectors or nested layouts."
+      },
+      {
+        "name": "Joinery",
+        "text": "Opens the Joint Creator for joints between flat parts."
+      },
+      {
+        "name": "Modeling Tools",
+        "text": "Make relief components from vectors and bitmaps, then change, combine, split and sculpt them."
+      },
+      {
+        "name": "Tool icons",
+        "text": "A pressed icon marks the open form or the current editing mode; a grayed icon cannot be used now."
+      },
+      {
+        "name": "Tooltips",
+        "text": "Resting on an icon shows its name, its shortcut key in brackets and a line saying what it does."
+      },
+      {
+        "name": "Create Flat Plane",
+        "text": "Opens its form; Shift-click adds a zero plane at once instead."
+      },
+      {
+        "name": "Switch to the machining layout (F12)",
+        "text": "The first title button: switches to the layout with the Toolpaths panel pinned."
+      },
+      {
+        "name": "Help",
+        "text": "The ? title button opens help on the form open in the dock, or on this page."
+      },
+      {
+        "name": "Auto hide the tool panel",
+        "text": "The pin button: unpinned, the panel hides and slides out while the pointer is over a dock tab."
+      },
+      {
+        "name": "Keep the tool panel open",
+        "text": "The pin button while auto hide is on: click to pin the panel open beside the view again."
+      },
+      {
+        "name": "Drag to resize the tool panel",
+        "text": "The inner edge of the dock: drag it, or use the arrow keys, to change the panel width."
+      },
+      {
+        "name": "Show additional file operations (New, Save, Undo and Redo on the Design tab)",
+        "text": "The Preferences option that adds a row of New, Save, Undo and Redo icons at the top."
+      }
+    ],
+    "steps": [
+      "Click the Design tab on the left edge of the window.",
+      "Rest the pointer on an icon to read what it does.",
+      "Click the icon to open its form in the dock, or to run it.",
+      "Close the form to return to the tool groups."
+    ]
+  },
+  "sheets": {
+    "title": "Sheets",
+    "summary": "Lists every sheet of the job with its size and contents. Use it to add, edit, rename, duplicate or delete sheets and to pick the active one.",
+    "fields": [
+      {
+        "name": "Sheets in the job",
+        "text": "Each row shows the sheet name, its size and thickness, and how many vectors and components it holds."
+      },
+      {
+        "name": "Click a row",
+        "text": "Selects the sheet; Cmd or Ctrl-click adds or removes one, Shift-click selects a range."
+      },
+      {
+        "name": "Double click a row",
+        "text": "Makes that sheet the active sheet, the one the views show and you draw on."
+      },
+      {
+        "name": "Keyboard",
+        "text": "Arrow keys move through the rows, Enter activates, Space selects, F2 renames, Delete removes."
+      },
+      {
+        "name": "Add New",
+        "text": "Adds a sheet the size of each selected sheet, or of the active sheet when none is selected."
+      },
+      {
+        "name": "Edit",
+        "text": "Changes the size, thickness and datum of the selected sheets."
+      },
+      {
+        "name": "Delete",
+        "text": "Deletes the selected sheets and everything on them; a job always keeps at least one sheet."
+      },
+      {
+        "name": "Edit Sheet...",
+        "text": "Right click menu: opens the sheet editor for this sheet or the selected sheets."
+      },
+      {
+        "name": "Rename",
+        "text": "Right click menu: type a new name for the sheet in its row."
+      },
+      {
+        "name": "Make Active Sheet",
+        "text": "Right click menu: makes this sheet active; grayed when it already is."
+      },
+      {
+        "name": "Duplicate Sheet",
+        "text": "Right click menu: adds a copy of the sheet."
+      },
+      {
+        "name": "Move Selected Objects Here",
+        "text": "Right click menu: moves the selected vectors and component to this sheet; needs a selection on another sheet."
+      },
+      {
+        "name": "Delete Sheet",
+        "text": "Right click menu: deletes the sheet or the selected sheets, after asking when they hold objects."
+      },
+      {
+        "name": "New Sheet",
+        "text": "Right click menu: adds a new sheet sized like the clicked or selected sheets."
+      },
+      {
+        "name": "Sheet Size",
+        "text": "In the sheet editor: Width (X), Height (Y) and Thickness (Z) of the sheet."
+      },
+      {
+        "name": "Scale design with sheet size",
+        "text": "In the sheet editor: stretches the vectors and components on each sheet to its new size."
+      },
+      {
+        "name": "Z Zero Position",
+        "text": "In the sheet editor: whether Z zero is the material surface or the machine bed."
+      },
+      {
+        "name": "XY Datum Position",
+        "text": "In the sheet editor: the corner or center used as XY zero, with Datum Offset X and Y."
+      }
+    ],
+    "steps": [
+      "Open the Sheets tab on the left edge of the window.",
+      "Click Add New to make another sheet.",
+      "Select a sheet and click Edit to change its size.",
+      "Double click a sheet to work on it."
+    ]
+  },
+  "layers": {
+    "title": "Layers",
+    "summary": "Lists the layers of the job. Set the color, visibility, lock and order of each layer, pick the active layer and move objects between layers.",
+    "fields": [
+      {
+        "name": "Add",
+        "text": "Opens Add New Layer to name a new layer and pick its color."
+      },
+      {
+        "name": "Show All",
+        "text": "Makes every layer visible."
+      },
+      {
+        "name": "Hide All",
+        "text": "Hides every layer."
+      },
+      {
+        "name": "Hide Empty",
+        "text": "Toggles hiding layers that hold no objects."
+      },
+      {
+        "name": "Drag to reorder",
+        "text": "Drag a row by its grip onto another row to change the layer order."
+      },
+      {
+        "name": "Layer color",
+        "text": "The color swatch sets the color the layer's vectors are drawn in."
+      },
+      {
+        "name": "Visible",
+        "text": "The eye button shows or hides the layer's objects."
+      },
+      {
+        "name": "Locked",
+        "text": "The lock button stops the layer's objects from being picked in the view."
+      },
+      {
+        "name": "Set active",
+        "text": "Click a layer name to make it active; new objects go on the active layer."
+      },
+      {
+        "name": "Rename layer",
+        "text": "Double click a layer name to type a new one; Enter keeps it, Esc cancels."
+      },
+      {
+        "name": "Keep-out",
+        "text": "Marks a keep-out layer: its closed vectors are areas the tool must stay out of."
+      },
+      {
+        "name": "Move selection to this layer",
+        "text": "Moves the selected objects onto this layer; needs a selection."
+      },
+      {
+        "name": "Duplicate layer with its objects",
+        "text": "Adds a copy of the layer and everything on it."
+      },
+      {
+        "name": "Move up",
+        "text": "Moves the layer one place up the list; Move down moves it one place down."
+      },
+      {
+        "name": "Delete layer",
+        "text": "Deletes the layer and its objects, asking first when it holds any; one layer always stays."
+      },
+      {
+        "name": "Keep-out Zone",
+        "text": "Right click menu: makes the layer a keep-out zone; Not a Keep-out Zone turns it back."
+      },
+      {
+        "name": "Select All Vectors on Layer",
+        "text": "Right click menu: selects every vector on this layer."
+      },
+      {
+        "name": "Merge into Active Layer",
+        "text": "Right click menu: moves this layer's objects onto the active layer and removes it."
+      },
+      {
+        "name": "Insert Layer Above...",
+        "text": "Right click menu: adds a new layer just above this one; New Layer... adds one at the end."
+      }
+    ],
+    "steps": [
+      "Click Add and give the new layer a name.",
+      "Click the layer name to make it active.",
+      "Draw, or select objects and click Move selection to this layer.",
+      "Use the eye and lock buttons to hide or protect layers."
+    ]
+  },
+  "components": {
+    "title": "Components",
+    "summary": "The Component Tree lists the relief components by level, in the order they combine. Reorder, group, show, hide and edit the parts of the 3D model here.",
+    "fields": [
+      {
+        "name": "Component Tree",
+        "text": "Levels are folders; within a level the model builds from the bottom of the list up."
+      },
+      {
+        "name": "Up",
+        "text": "Moves the selected component one place up, later in the combine order."
+      },
+      {
+        "name": "Down",
+        "text": "Moves the selected component one place down, earlier in the combine order."
+      },
+      {
+        "name": "New Level",
+        "text": "Adds a new level to hold components."
+      },
+      {
+        "name": "Group",
+        "text": "Groups the selected components so they combine and move as one."
+      },
+      {
+        "name": "Ungroup",
+        "text": "Breaks the selected group back into single components."
+      },
+      {
+        "name": "From Visible",
+        "text": "Creates one component from the visible model."
+      },
+      {
+        "name": "From Vectors",
+        "text": "Creates a component from the selected vectors."
+      },
+      {
+        "name": "Properties",
+        "text": "Opens the properties of the selected components, group or level."
+      },
+      {
+        "name": "Delete",
+        "text": "Deletes the selected components or group."
+      },
+      {
+        "name": "Show check boxes",
+        "text": "The check box on a level, group or component shows or hides it in the model."
+      },
+      {
+        "name": "Click a row",
+        "text": "Selects a component; Cmd or Ctrl-click adds or removes one, Shift-click selects a range."
+      },
+      {
+        "name": "Double click a row",
+        "text": "Opens the properties of the component, or of the level for a level row."
+      },
+      {
+        "name": "Level row",
+        "text": "Click a level name to make it the active level; the arrow opens or closes it."
+      },
+      {
+        "name": "Combine mode",
+        "text": "The badge on each row shows how it combines: Add, Subtract, Merge, Low or Multiply."
+      },
+      {
+        "name": "Clipped",
+        "text": "Badge on a level whose model is clipped to vectors; Mirrored marks a level with a mirror mode."
+      },
+      {
+        "name": "Drag rows",
+        "text": "Drag to reorder, into a group or onto another level; Alt with an arrow key also moves it."
+      },
+      {
+        "name": "Keyboard",
+        "text": "F2 renames, Alt with Enter opens properties, Delete removes the selection."
+      },
+      {
+        "name": "Right click menu",
+        "text": "Offers properties, rename, show or hide, combine mode, move to level, edits, bake, clipping and more."
+      }
+    ],
+    "steps": [
+      "Select closed vectors and click From Vectors, or use a Modeling Tools form.",
+      "Drag components up or down to change how they combine.",
+      "Double click a component to change its properties.",
+      "Use the check boxes to show or hide parts of the model."
+    ]
+  },
+  "clipart": {
+    "title": "Clipart",
+    "summary": "Browse the clipart library of reliefs and vectors and put pieces into the job. Double click a clip or drag it onto a view.",
+    "fields": [
+      {
+        "name": "Search",
+        "text": "Shows only clips whose name, category or tags hold every word typed."
+      },
+      {
+        "name": "Scale (%)",
+        "text": "Size the next inserted clip is scaled to, from 1 to 10000 percent; 100 keeps it as saved."
+      },
+      {
+        "name": "Thumbnails",
+        "text": "Small, Medium and Large set how big the preview tiles are."
+      },
+      {
+        "name": "Library Folders",
+        "text": "The folder tree of the library; All shows every clip, a folder shows only its clips."
+      },
+      {
+        "name": "Clip tiles",
+        "text": "Each tile shows a preview and whether the clip is a Relief or Vectors."
+      },
+      {
+        "name": "Click a tile",
+        "text": "Selects the clip for Insert."
+      },
+      {
+        "name": "Double click a tile",
+        "text": "Inserts the clip at the job center."
+      },
+      {
+        "name": "Drag a tile",
+        "text": "Drop the clip onto the 2D or 3D view to insert it at that spot."
+      },
+      {
+        "name": "Insert",
+        "text": "Inserts the selected clip at the job center."
+      },
+      {
+        "name": "Rescan",
+        "text": "Reads the clipart folders again, to pick up clips added outside the app."
+      },
+      {
+        "name": "Your clipart folder",
+        "text": "Shows the folder where your own clipart is kept."
+      }
+    ],
+    "steps": [
+      "Open the Clipart tab and pick a library folder or type in Search.",
+      "Set Scale (%) if the clip should come in larger or smaller.",
+      "Double click a tile, or drag it onto the 2D or 3D view."
+    ]
+  },
+  "toolpaths": {
+    "title": "Toolpaths",
+    "summary": "The Toolpaths panel on the right shows the material setup, the toolpath operations and the list of calculated toolpaths. Create, order, show, recalculate and save toolpaths here.",
+    "fields": [
+      {
+        "name": "Material Setup",
+        "text": "Summary of the material: thickness or diameter, Z Zero, Safe Z and Home Position."
+      },
+      {
+        "name": "Set...",
+        "text": "Opens the Material Setup form to change the material and machine settings."
+      },
+      {
+        "name": "Toolpath Operations",
+        "text": "Icons that open each toolpath form, plus editing, templates, preview, summary and saving tools."
+      },
+      {
+        "name": "Switch to the design layout (F11)",
+        "text": "Title button: switches to the layout with the tool panel pinned."
+      },
+      {
+        "name": "Help",
+        "text": "The ? title button opens help on the open form, or on this panel."
+      },
+      {
+        "name": "Auto hide the Toolpaths panel",
+        "text": "Pin button: unpinned, the panel hides to a Toolpaths tab and slides out on hover."
+      },
+      {
+        "name": "Show every toolpath in the list",
+        "text": "The header check box shows or hides every listed toolpath at once."
+      },
+      {
+        "name": "Sheet",
+        "text": "Drop-down that lists the toolpaths of one sheet, or All Sheets; picking a sheet makes it active."
+      },
+      {
+        "name": "Move up",
+        "text": "Moves the selected toolpath one place up the list; Move down moves it down."
+      },
+      {
+        "name": "Show check box",
+        "text": "The check box on each toolpath shows or hides it in the views."
+      },
+      {
+        "name": "Toolpath row",
+        "text": "Shows the tool shape, name, status mark and estimated time; click to select it."
+      },
+      {
+        "name": "Double click a toolpath",
+        "text": "Opens the toolpath's form to edit and recalculate it."
+      },
+      {
+        "name": "Status mark",
+        "text": "Shows whether the toolpath is Calculated, Needs recalculating, or Calculated, but cuts nothing."
+      },
+      {
+        "name": "Groups",
+        "text": "Toolpaths can sit in groups; the arrow opens a group and its check box shows all members."
+      },
+      {
+        "name": "Drag toolpaths",
+        "text": "Drag a toolpath to reorder it, or drop it into or out of a group."
+      },
+      {
+        "name": "Machining Time...",
+        "text": "Opens the Machining Time Estimate; the line beside it totals the visible toolpaths."
+      },
+      {
+        "name": "Right click a toolpath",
+        "text": "Show or hide options, Edit, Rename, Duplicate, Recalculate, grouping, Move to a sheet, Save and Delete."
+      },
+      {
+        "name": "Right click a group",
+        "text": "Rename, Expand, Show or Hide Toolpaths in Group, Recalculate Group, Ungroup and Delete Group..."
+      },
+      {
+        "name": "Drag to resize the toolpath list (double click to reset)",
+        "text": "The bar above the list changes how tall the list is."
+      }
+    ],
+    "steps": [
+      "Click Set... and check the material thickness and Z zero.",
+      "Select vectors, then pick a toolpath operation icon.",
+      "Fill in the form and calculate; the toolpath joins the list.",
+      "Use the check boxes to pick which toolpaths to preview and save."
+    ]
+  },
+  "view2d": {
+    "title": "2D View",
+    "summary": "The 2D view is where you draw and select vectors. The document bar above it switches views and picks the active sheet, layer and level; the toolbar sets zoom, snapping and display.",
+    "fields": [
+      {
+        "name": "2D View (F2)",
+        "text": "Shows only the 2D view; 3D View (F3) and Assembly View switch to the others."
+      },
+      {
+        "name": "Tile views",
+        "text": "Two buttons show the 2D and 3D views side by side (Page Up) or stacked (Page Down)."
+      },
+      {
+        "name": "Top",
+        "text": "On double sided jobs, Top and Bottom pick the side to edit; Swap Sides exchanges them."
+      },
+      {
+        "name": "Active sheet",
+        "text": "Drop-down that picks the active sheet; off while the job has only one."
+      },
+      {
+        "name": "Active layer",
+        "text": "Drop-down that picks the layer new objects go on; off while there is only one."
+      },
+      {
+        "name": "Active level",
+        "text": "Drop-down that picks the active component level; off with fewer than two levels."
+      },
+      {
+        "name": "Snap to objects (nodes, midpoints, centers, intersections, job points)",
+        "text": "Turns snapping to object points on or off."
+      },
+      {
+        "name": "Smart snapping",
+        "text": "Lines the pointer up with key points of nearby objects while drawing or moving."
+      },
+      {
+        "name": "Snap to grid",
+        "text": "Snaps the pointer to the grid when nothing else is snapped."
+      },
+      {
+        "name": "Show the component preview",
+        "text": "Toolbar View group: toggles components drawn in the 2D view; nearby buttons toggle bitmaps and toolpaths."
+      },
+      {
+        "name": "Zoom box",
+        "text": "Toolbar tool: drag a box to zoom into it (Z); Pan drags the view."
+      },
+      {
+        "name": "Zoom To Job (F6)",
+        "text": "Fits the material in the view; Zoom To All and Zoom To Selection (Cmd or Ctrl+F) sit beside it."
+      },
+      {
+        "name": "Snap Settings (F4)",
+        "text": "Opens the snap settings; Snap to guides toggles snapping to guide lines."
+      },
+      {
+        "name": "Show grid",
+        "text": "Toolbar Display group: toggles the grid; Show rulers and Clear guides sit beside it."
+      },
+      {
+        "name": "Zoom and pan",
+        "text": "The mouse wheel zooms at the pointer; drag with the middle or right button, or hold Space, to pan."
+      },
+      {
+        "name": "Select",
+        "text": "Click an object to select it; Shift adds, Cmd or Ctrl toggles, Esc clears the selection."
+      },
+      {
+        "name": "Selection box",
+        "text": "Dragging right selects objects fully inside; dragging left also selects objects it touches."
+      },
+      {
+        "name": "Guides",
+        "text": "Drag from a ruler to add a guide; drag it back onto a ruler to delete it; double click edits it."
+      },
+      {
+        "name": "Right click",
+        "text": "A right click without moving opens the drawing menu: undo, clipboard, grouping, zoom and more."
+      }
+    ],
+    "steps": [
+      "Pick the active sheet and layer in the document bar.",
+      "Draw with a Create Vectors tool, or click objects to select them.",
+      "Scroll to zoom and middle drag or hold Space to pan.",
+      "Right click for the drawing menu."
+    ]
+  },
+  "view3d": {
+    "title": "3D View",
+    "summary": "The 3D view shows the model, vectors, toolpaths and material block in three dimensions. Turn, pan and zoom it with the mouse or the toolbar and cube.",
+    "fields": [
+      {
+        "name": "3D View (F3)",
+        "text": "The document bar tab that shows only the 3D view; the tile buttons show it beside the 2D view."
+      },
+      {
+        "name": "Isometric View",
+        "text": "Toolbar button that turns the camera to a corner view."
+      },
+      {
+        "name": "View from Top",
+        "text": "Toolbar buttons look straight at the model from Top, Front, Back, Left, Right or Bottom."
+      },
+      {
+        "name": "Zoom to Fit",
+        "text": "Zooms so the whole job fits in the view."
+      },
+      {
+        "name": "Orthographic View",
+        "text": "Toggles a flat view without perspective."
+      },
+      {
+        "name": "Show Vectors in 3D",
+        "text": "Toggles drawing the vectors in the 3D view."
+      },
+      {
+        "name": "Show Toolpaths",
+        "text": "Toggles drawing the toolpaths."
+      },
+      {
+        "name": "Show Model",
+        "text": "Toggles drawing the relief model."
+      },
+      {
+        "name": "Show Material Block",
+        "text": "Toggles drawing the block of material."
+      },
+      {
+        "name": "Orientation cube",
+        "text": "A small cube that turns with the camera; click a face to look at it."
+      },
+      {
+        "name": "Left drag",
+        "text": "Turns the view around the model; Shift with the left button pans."
+      },
+      {
+        "name": "Middle drag",
+        "text": "Pans the view."
+      },
+      {
+        "name": "Right drag",
+        "text": "Pans in the Modern mouse scheme, zooms in the Legacy scheme (Preferences, 3D View)."
+      },
+      {
+        "name": "Mouse wheel",
+        "text": "Zooms the view in and out."
+      },
+      {
+        "name": "Double click",
+        "text": "Selects the component under the pointer; Shift adds or removes it, empty space clears."
+      },
+      {
+        "name": "Cmd or Ctrl drag",
+        "text": "Moves the component under the pointer."
+      }
+    ],
+    "steps": [
+      "Click 3D View in the document bar.",
+      "Left drag to turn the model and scroll to zoom.",
+      "Click a face of the cube or a toolbar view button to line up the view.",
+      "Use the Show buttons to pick what the view draws."
+    ]
+  },
+  "toolDatabase": {
+    "title": "Tool Database",
+    "summary": "Keeps your cutting tools in groups with their shape and cutting data for each material and machine. Pick, add, edit, copy, import and export tools here.",
+    "fields": [
+      {
+        "name": "Material",
+        "text": "Picks the material whose cutting data the editor shows; Any material shows the tool's own data."
+      },
+      {
+        "name": "Materials...",
+        "text": "Opens Material Management to add or rename materials."
+      },
+      {
+        "name": "Machine",
+        "text": "Picks the machine whose feeds and speeds the editor shows."
+      },
+      {
+        "name": "Machines...",
+        "text": "Opens Machine Configuration."
+      },
+      {
+        "name": "Type of new tool",
+        "text": "Picks the kind of tool New Tool makes, such as End Mill, Ball Nose or V-Bit."
+      },
+      {
+        "name": "New Tool",
+        "text": "Adds a tool of the chosen type to the selected group."
+      },
+      {
+        "name": "New Group",
+        "text": "Adds a group to sort tools into."
+      },
+      {
+        "name": "Copy",
+        "text": "Copies the selected tool."
+      },
+      {
+        "name": "Delete",
+        "text": "Deletes the selected tool or group, after asking."
+      },
+      {
+        "name": "Import...",
+        "text": "Shows the import choices: into the selected group, or merge overwriting or keeping existing data."
+      },
+      {
+        "name": "Choose File...",
+        "text": "Picks the tool database file to import with the chosen mode."
+      },
+      {
+        "name": "Export...",
+        "text": "Saves the tools to a file."
+      },
+      {
+        "name": "Tools",
+        "text": "The tool list: drag tools and groups to reorder or move them; Alt with an arrow moves the selection."
+      },
+      {
+        "name": "Name",
+        "text": "Tool editor: the tool name, built from a format; Name Format... and Variables... edit it."
+      },
+      {
+        "name": "Geometry",
+        "text": "Tool editor: the tool shape, such as Diameter (D), angle or tip radius, and its Units."
+      },
+      {
+        "name": "Cutting Parameters",
+        "text": "Tool editor: Pass Depth and Stepover for the chosen material and machine."
+      },
+      {
+        "name": "Feeds and Speeds",
+        "text": "Tool editor: Spindle Speed, Feed Units, Feed Rate and Plunge Rate; Chip Load is worked out."
+      },
+      {
+        "name": "Tool Number",
+        "text": "Tool editor: the number the machine uses for tool changes."
+      },
+      {
+        "name": "Apply",
+        "text": "Tool editor: saves the changes to the tool."
+      },
+      {
+        "name": "Add Default Tools",
+        "text": "Adds any of the standard tools missing from the database."
+      }
+    ],
+    "steps": [
+      "Pick the Material and Machine at the top.",
+      "Select a tool in the list, or pick a type and click New Tool.",
+      "Set its geometry, cutting parameters and feeds and speeds.",
+      "Click Apply to save the tool."
+    ]
+  },
+  "machineConfiguration": {
+    "title": "Machine Configuration",
+    "summary": "Keeps your machines with their working area, time estimate settings and the post processors they use.",
+    "fields": [
+      {
+        "name": "Machines",
+        "text": "The list of machines; the active one is marked active."
+      },
+      {
+        "name": "Add Machine",
+        "text": "Adds a new machine."
+      },
+      {
+        "name": "Duplicate",
+        "text": "Adds a copy of the selected machine."
+      },
+      {
+        "name": "Delete",
+        "text": "Deletes the selected machine and the feeds and speeds saved for it."
+      },
+      {
+        "name": "Name",
+        "text": "The machine name; each machine needs its own name."
+      },
+      {
+        "name": "Units",
+        "text": "Millimeters or Inches for this machine's values."
+      },
+      {
+        "name": "Working Area",
+        "text": "X travel, Y travel and Z travel of the machine, at most 100000 mm."
+      },
+      {
+        "name": "Rapid Rate",
+        "text": "How fast the machine moves between cuts, used for time estimates."
+      },
+      {
+        "name": "Acceleration units",
+        "text": "The unit the X, Y and Z accelerations are typed in."
+      },
+      {
+        "name": "X acceleration",
+        "text": "With Y and Z acceleration, lets estimates follow speeding up and slowing down; zero leaves them out."
+      },
+      {
+        "name": "Rotary acceleration",
+        "text": "Acceleration of the rotary axis in deg/s², for time estimates."
+      },
+      {
+        "name": "Axis letter",
+        "text": "The letter your controller calls the rotary axis. A rotary job's file turns this axis."
+      },
+      {
+        "name": "Axis reads",
+        "text": "Degrees, where once round the blank is 360, or Linear units, where once round is the blank's circumference in the post's units."
+      },
+      {
+        "name": "Direction",
+        "text": "Reversed turns the axis the other way. Use it when a scrap cut reads mirrored on the blank."
+      },
+      {
+        "name": "Associated Post Processors",
+        "text": "The post processors Save Toolpaths offers for this machine."
+      },
+      {
+        "name": "Default for Save Toolpaths",
+        "text": "Marks the post processor Save Toolpaths picks first."
+      },
+      {
+        "name": "Remove",
+        "text": "Takes a post processor off this machine's list."
+      },
+      {
+        "name": "Add",
+        "text": "Adds the post processor chosen in Choose a post processor... to the list."
+      },
+      {
+        "name": "OK",
+        "text": "Saves the changes and closes; Apply saves without closing, Cancel drops them."
+      }
+    ],
+    "steps": [
+      "Click Add Machine and give it a name.",
+      "Enter the working area and units.",
+      "Add the post processors this machine uses and pick a default.",
+      "Click OK."
+    ]
+  },
+  "postManagement": {
+    "title": "Post-Processor Management",
+    "summary": "Lists the post processors that turn toolpaths into machine files. Find, view, install, customize and remove them here.",
+    "fields": [
+      {
+        "name": "Filter",
+        "text": "Shows only post processors whose name, extension or controller matches."
+      },
+      {
+        "name": "Install Post-Processor...",
+        "text": "Picks a .pp file and adds it as a custom post processor."
+      },
+      {
+        "name": "Post-processors",
+        "text": "The table lists Name, Extension, Units and Supports: Arcs, Laser or Rotary."
+      },
+      {
+        "name": "Custom",
+        "text": "Badge on post processors you installed or customized."
+      },
+      {
+        "name": "Details",
+        "text": "Shows the selected post's name, identity, extension, units, file and last change."
+      },
+      {
+        "name": "View",
+        "text": "Shows the contents of the post processor file."
+      },
+      {
+        "name": "Change Log",
+        "text": "Shows the post's change history (Who, When, What) from its comments."
+      },
+      {
+        "name": "Customize",
+        "text": "Copies the post into your posts folder so you can edit it."
+      },
+      {
+        "name": "Edit",
+        "text": "Custom posts only: opens the file in the text editor."
+      },
+      {
+        "name": "Open File Location",
+        "text": "Custom posts only: opens the folder that holds the file."
+      },
+      {
+        "name": "Delete",
+        "text": "Custom posts only: deletes the post processor after asking; this cannot be undone."
+      },
+      {
+        "name": "Copy to Clipboard",
+        "text": "Copies the contents shown by View."
+      }
+    ],
+    "steps": [
+      "Type in Filter to find your controller.",
+      "Select a post processor to see its details.",
+      "Click Customize to make an editable copy, or Install Post-Processor... to add one."
+    ]
+  },
+  "preferences": {
+    "title": "Preferences",
+    "summary": "Application settings, in five sections: General, 2D View, 3D View, Toolpaths and Confirmations. They apply to every job.",
+    "fields": [
+      {
+        "name": "General",
+        "text": "New job units, Job Setup at start, undo steps, auto-save, tool tips, recent files and window layout."
+      },
+      {
+        "name": "Default units",
+        "text": "The units new jobs start with."
+      },
+      {
+        "name": "Auto-save every (0 = off)",
+        "text": "Minutes between automatic saves; 0 turns auto-save off."
+      },
+      {
+        "name": "Show tool tips",
+        "text": "Turns the tooltips on controls on or off."
+      },
+      {
+        "name": "Show usage information in the status bar",
+        "text": "Shows hints about the current tool at the left of the status bar."
+      },
+      {
+        "name": "Show additional file operations (New, Save, Undo and Redo on the Design tab)",
+        "text": "Adds those icons to the Design tab."
+      },
+      {
+        "name": "Remember the tab and view layout between sessions",
+        "text": "Reopens with the same tabs and view layout."
+      },
+      {
+        "name": "2D View",
+        "text": "Grid, rulers, grid style, ruler colors, the snapping in effect at start and snap radius."
+      },
+      {
+        "name": "3D View",
+        "text": "Background, shading, model drawing style, material look, camera animation and the orientation cube."
+      },
+      {
+        "name": "Mouse Controls",
+        "text": "Scheme: Modern (right drag pans) or Legacy (right drag zooms)."
+      },
+      {
+        "name": "Toolpaths",
+        "text": "Calculation tolerances, toolpath list behavior, preview colors and Preview Toolpaths layout."
+      },
+      {
+        "name": "Default toolpath filtering",
+        "text": "Whether the toolpath list starts on the Active sheet or All sheets."
+      },
+      {
+        "name": "Ask before recalculating toolpaths",
+        "text": "Asks first when a change would recalculate toolpaths."
+      },
+      {
+        "name": "Confirmations",
+        "text": "Which deletions and embossing warnings ask first, and what to do with crossing vectors."
+      },
+      {
+        "name": "Crossing Vectors",
+        "text": "For V-Groove and Pocket vectors and offsets: ask, open the Vector Validator, skip or carry on."
+      },
+      {
+        "name": "Reset to Defaults",
+        "text": "Puts every preference back to its default."
+      },
+      {
+        "name": "OK",
+        "text": "Saves the preferences and closes; Cancel closes without the changes."
+      }
+    ],
+    "steps": [
+      "Choose Options... on the Edit menu.",
+      "Pick a section on the left.",
+      "Change the settings.",
+      "Click OK to keep them."
+    ]
+  },
+  "materials": {
+    "title": "Material Management",
+    "summary": "Keeps the list of materials that tools store cutting data for. Picking a material makes it active, so toolpaths use its cutting data.",
+    "fields": [
+      {
+        "name": "Materials",
+        "text": "The list; click a material to make it active."
+      },
+      {
+        "name": "Add",
+        "text": "Adds a new material."
+      },
+      {
+        "name": "Duplicate",
+        "text": "Adds a copy of the active material."
+      },
+      {
+        "name": "Duplicate the cutting data of every tool too",
+        "text": "With Duplicate, also copies each tool's cutting data for that material."
+      },
+      {
+        "name": "Delete",
+        "text": "Deletes the active material and all cutting data kept for it, after asking."
+      },
+      {
+        "name": "Name",
+        "text": "The name of the active material; each name must be unique."
+      },
+      {
+        "name": "Rename",
+        "text": "Gives the active material the name typed in Name."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the dialog."
+      }
+    ],
+    "steps": [
+      "Click Add, type a name and click Rename.",
+      "Click a material to make it active.",
+      "Set its cutting data in the Tool Database."
+    ]
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "summary": "Lists every key the app answers, grouped by area, with the key names written for your computer.",
+    "fields": [
+      {
+        "name": "File",
+        "text": "Keys for new, open, save and import."
+      },
+      {
+        "name": "Edit",
+        "text": "Keys for undo, clipboard, grouping, rotating and mirroring the selection."
+      },
+      {
+        "name": "View",
+        "text": "Keys for the 2D and 3D views, zooming, tiling, sides and snap settings."
+      },
+      {
+        "name": "Panels and tools",
+        "text": "Keys that open tabs, layouts and forms such as Move, Set Size and Rotate."
+      },
+      {
+        "name": "Moving the selection",
+        "text": "Arrow keys and modifiers that nudge the selection by set distances."
+      },
+      {
+        "name": "Key",
+        "text": "The key or keys; when a row lists several joined by or, any of them works."
+      },
+      {
+        "name": "Action",
+        "text": "What the key does."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the dialog."
+      }
+    ]
+  },
+  "notes": {
+    "title": "Notes",
+    "summary": "Free text kept with the job, such as setup reminders or customer details.",
+    "fields": [
+      {
+        "name": "Notes kept with this job",
+        "text": "Type the notes; they are saved in the job file."
+      },
+      {
+        "name": "Full stop start",
+        "text": "Start the notes with a full stop (.) to show them each time the job opens."
+      },
+      {
+        "name": "OK",
+        "text": "Keeps the notes and closes."
+      },
+      {
+        "name": "Cancel",
+        "text": "Closes without the changes."
+      }
+    ]
+  },
+  "templates": {
+    "title": "New from Template",
+    "summary": "File > New from Template starts a job from a saved template; File > Save as Template saves the current job as one.",
+    "fields": [
+      {
+        "name": "Template list",
+        "text": "Templates grouped by category, each with its size and counts of layers, vectors and toolpaths."
+      },
+      {
+        "name": "Open",
+        "text": "Opens the picked template as a new untitled job with its setup, layers and settings."
+      },
+      {
+        "name": "Template Name",
+        "text": "Save as Template: the name to save under; an existing name asks before replacing."
+      },
+      {
+        "name": "Category",
+        "text": "Save as Template: optional; templates with a category are listed under it."
+      },
+      {
+        "name": "Include vectors and components",
+        "text": "Save as Template: also keeps the drawing and model in the template."
+      },
+      {
+        "name": "Include toolpaths",
+        "text": "Save as Template: also keeps the toolpaths in the template."
+      },
+      {
+        "name": "Save",
+        "text": "Save as Template: saves the template to the templates folder shown below."
+      }
+    ],
+    "steps": [
+      "Choose File > Save as Template and give it a name.",
+      "Pick what to include and click Save.",
+      "Later, choose File > New from Template, pick it and click Open."
+    ]
+  },
+  "vectorSelector": {
+    "title": "Vector Selector",
+    "summary": "Selects vectors by geometry and layer. The selection in the 2D view updates as you change the filters.",
+    "fields": [
+      {
+        "name": "Objects",
+        "text": "Counts the vectors picked, and how many are closed and open."
+      },
+      {
+        "name": "Select open vectors",
+        "text": "Includes open vectors."
+      },
+      {
+        "name": "Select closed vectors",
+        "text": "Includes closed vectors."
+      },
+      {
+        "name": "Only circles",
+        "text": "Picks only circles."
+      },
+      {
+        "name": "Circle Diameter",
+        "text": "With Only circles, picks circles of this size; any diameter when empty."
+      },
+      {
+        "name": "Tolerance",
+        "text": "How far a circle's size may differ from Circle Diameter."
+      },
+      {
+        "name": "All visible layers",
+        "text": "Picks from every visible layer; clear it to tick single layers below."
+      },
+      {
+        "name": "Associate with toolpath",
+        "text": "From a toolpath form: the toolpath reapplies these filters whenever it is calculated."
+      },
+      {
+        "name": "OK",
+        "text": "Keeps the filter and the selection."
+      }
+    ],
+    "steps": [
+      "Choose Edit > Selection, then Vector Selector...",
+      "Tick the kinds of vectors and the layers you want.",
+      "Check the count, then click OK."
+    ]
+  },
+  "toolpathWarnings": {
+    "title": "Toolpath Warnings",
+    "summary": "Shows what the last toolpath calculation warned about, once it finishes. Check each point before machining.",
+    "fields": [
+      {
+        "name": "Toolpath name",
+        "text": "Each heading names the toolpath the warnings below it belong to."
+      },
+      {
+        "name": "All toolpaths",
+        "text": "Heading for warnings that are not about one toolpath."
+      },
+      {
+        "name": "OK",
+        "text": "Closes the dialog."
+      }
+    ]
+  },
+  "machiningTime": {
+    "title": "Machining Time Estimate",
+    "summary": "Lists the estimated time of each visible toolpath and the total, with a scale factor to match your machine.",
+    "fields": [
+      {
+        "name": "Toolpath",
+        "text": "Each visible toolpath with its estimated Time."
+      },
+      {
+        "name": "All visible toolpaths",
+        "text": "The total time of the visible toolpaths."
+      },
+      {
+        "name": "Scale Factor",
+        "text": "Multiplies every estimate; compare an estimate with a real run to set it."
+      },
+      {
+        "name": "Rapid rate",
+        "text": "Shows the rapid rate and machine the estimate uses, and whether accelerations are counted."
+      },
+      {
+        "name": "Machine Configuration...",
+        "text": "Opens Machine Configuration to change the rapid rate and accelerations."
+      },
+      {
+        "name": "Apply",
+        "text": "Saves the scale factor and updates the estimates."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the dialog."
+      }
+    ],
+    "steps": [
+      "Run a job and time it on the machine.",
+      "Divide the real time by the estimate and enter it as Scale Factor.",
+      "Click Apply."
+    ]
+  },
+  "statusBar": {
+    "title": "Status bar",
+    "summary": "The strip along the bottom of the window. It reports the app's state, snapping, typed values, errors, the selection, the pointer position and the units.",
+    "fields": [
+      {
+        "name": "Status line",
+        "text": "Ready, Starting..., or a warning to restart; with usage information on, a hint for the current tool."
+      },
+      {
+        "name": "Snap",
+        "text": "Names what the pointer is snapped to, such as Node, Mid, Center, Grid or Guide."
+      },
+      {
+        "name": "Typed value",
+        "text": "Shows the value you are typing for the current tool."
+      },
+      {
+        "name": "Error",
+        "text": "Shows the last error message, when there is one."
+      },
+      {
+        "name": "selected",
+        "text": "How many objects are selected."
+      },
+      {
+        "name": "X Y",
+        "text": "The pointer position in the 2D view, in job units."
+      },
+      {
+        "name": "Units",
+        "text": "The units of the job."
+      }
+    ]
+  },
+  "menuBar": {
+    "title": "Menu bar",
+    "summary": "The menus along the top of the window. Each holds commands for one area of the app.",
+    "fields": [
+      {
+        "name": "File",
+        "text": "New, open, recent files, close, save, templates, print, import, export and the application data folder."
+      },
+      {
+        "name": "Edit",
+        "text": "Undo, clipboard, selection, alignment, join, curve fit, nest, job size, notes, snap options and options."
+      },
+      {
+        "name": "Model",
+        "text": "Create components, create from other things, import and export models, sculpt, smooth, split and properties."
+      },
+      {
+        "name": "Machine",
+        "text": "Machine Configuration, adding machines and packages, and managing and installing post processors."
+      },
+      {
+        "name": "Toolpaths",
+        "text": "Show the Toolpaths tab, recalculate all, preview drawing and quality, templates, merge, job sheet, materials, tool database."
+      },
+      {
+        "name": "View",
+        "text": "Zoom to drawing, guide lines, what the 3D view draws, shading options, saving a shaded image and tiling."
+      },
+      {
+        "name": "Gadgets",
+        "text": "Install gadgets and shortcuts, the Joint Creator, then one item per installed gadget."
+      },
+      {
+        "name": "Help",
+        "text": "Help Contents, Keyboard Shortcuts, tutorials, release information, online links, updates and About."
+      }
+    ]
+  }
+}

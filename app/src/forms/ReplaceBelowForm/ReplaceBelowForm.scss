@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.replace-below {
+  @include form.form-root;
+}
+
+.replace-below__hint {
+  @include form.form-hint;
+}
+
+.replace-below__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.replace-below__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.replace-below__group {
+  @include form.form-group;
+}
+
+.replace-below__legend {
+  @include form.form-legend;
+}

@@ -1,0 +1,41 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.toolpath-3d {
+  @include form.form-root;
+}
+
+.toolpath-3d__hint {
+  @include form.form-hint;
+}
+
+.toolpath-3d__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.toolpath-3d__group {
+  @include form.form-group;
+}
+
+.toolpath-3d__legend {
+  @include form.form-legend;
+}
+
+.toolpath-3d__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.toolpath-3d__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

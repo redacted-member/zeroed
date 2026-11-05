@@ -1,0 +1,52 @@
+@use '../../styles/tokens';
+
+.number-field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number-field__label {
+  flex: 1 1 auto;
+  min-width: 96px;
+  font-size: tokens.$font-size-small;
+}
+
+.number-field__input {
+  display: inline-flex;
+  gap: tokens.$space-1;
+  align-items: baseline;
+}
+
+.number-field__field {
+  width: 96px;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  text-align: right;
+}
+
+.number-field__field[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.number-field__field:disabled {
+  opacity: 0.5;
+}
+
+.number-field__unit {
+  width: 34px;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.number-field__error {
+  flex: 1 0 100%;
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}

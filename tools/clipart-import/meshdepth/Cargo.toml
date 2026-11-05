@@ -1,0 +1,14 @@
+[package]
+name = "meshdepth"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Stand alone: not a member of the CarveStudio workspace.
+[workspace]
+
+[dependencies]
+gltf = { version = "1", default-features = false, features = ["utils"] }
+
+[profile.release]
+opt-level = 3

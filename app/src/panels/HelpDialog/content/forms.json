@@ -1,0 +1,5690 @@
+{
+  "documentVariables": {
+    "summary": "Keeps named values that any number box can use, written in curly braces such as {width} / 2, so one change updates every field that uses them.",
+    "fields": [
+      {
+        "name": "Name",
+        "text": "Name of the new variable: letters, digits and underscores, starting with a letter."
+      },
+      {
+        "name": "Value",
+        "text": "A number, or a formula using other variables such as {width} / 2 + 1."
+      },
+      {
+        "name": "Add",
+        "text": "Adds the new variable to the list."
+      },
+      {
+        "name": "Variables",
+        "text": "The list of variables; edit a name or value in place, it saves when you leave the box."
+      },
+      {
+        "name": "Delete",
+        "text": "Removes that variable."
+      },
+      {
+        "name": "Export...",
+        "text": "Saves the variables to a text file."
+      },
+      {
+        "name": "Import...",
+        "text": "Loads variables from a text file; ones with the same name are replaced."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Type a name and a value, then press Add.",
+      "In any number box, type the variable in curly braces, such as {depth} + 1.",
+      "Or right click a number box to insert a variable."
+    ]
+  },
+  "jobSetup": {
+    "summary": "Changes the kind of job, the material size and thickness, units, where zero is, and the 3D modeling resolution.",
+    "fields": [
+      {
+        "name": "Job Type",
+        "text": "Single Sided, Double Sided (cut from both faces) or Rotary (cut on a turning blank)."
+      },
+      {
+        "name": "Width (X)",
+        "text": "Width of the material."
+      },
+      {
+        "name": "Height (Y)",
+        "text": "Height (length) of the material."
+      },
+      {
+        "name": "Material Thickness (Z)",
+        "text": "Thickness of the material."
+      },
+      {
+        "name": "Units",
+        "text": "Work in millimeters or inches."
+      },
+      {
+        "name": "Blank Shape",
+        "text": "Rotary only: a round Cylinder or a Square blank."
+      },
+      {
+        "name": "Blank Length",
+        "text": "Rotary only: length of the blank along its axis."
+      },
+      {
+        "name": "Blank Diameter",
+        "text": "Rotary only: diameter of a round blank; reads Blank Side for a square one."
+      },
+      {
+        "name": "Blank Along",
+        "text": "Rotary only: whether the blank lies along the X axis or the Y axis."
+      },
+      {
+        "name": "Flip design with the material when the axis changes",
+        "text": "Rotary only: turns the design with the blank when you change its axis."
+      },
+      {
+        "name": "Flip Direction",
+        "text": "Double sided only: how the material is turned over, left-right or top-bottom."
+      },
+      {
+        "name": "Bottom Side Z Zero",
+        "text": "Double sided only: where Z zero is when cutting the bottom face."
+      },
+      {
+        "name": "Z Zero Position",
+        "text": "Where Z zero is: Material Surface or Machine Bed; for rotary, Center of Rotation or Blank Surface."
+      },
+      {
+        "name": "XY Datum Position",
+        "text": "Which point of the material is X0, Y0: a corner or the center."
+      },
+      {
+        "name": "Use Offset",
+        "text": "Moves the datum away from that point by the offsets below."
+      },
+      {
+        "name": "Datum Offset X",
+        "text": "How far the datum is moved in X."
+      },
+      {
+        "name": "Datum Offset Y",
+        "text": "How far the datum is moved in Y."
+      },
+      {
+        "name": "Scale design with job size",
+        "text": "Shown when the job has a design: stretches vectors and components to the new size."
+      },
+      {
+        "name": "Modeling Resolution",
+        "text": "Finer keeps small detail on big jobs but makes 3D work slower; Standard suits most jobs."
+      },
+      {
+        "name": "Material Settings",
+        "text": "Picks the color or texture the material shows in the 3D view."
+      },
+      {
+        "name": "OK",
+        "text": "Applies the job setup."
+      },
+      {
+        "name": "Cancel",
+        "text": "Closes without changes."
+      }
+    ],
+    "steps": [
+      "Pick the job type.",
+      "Enter the material size and thickness and pick the units.",
+      "Set where Z zero and the XY datum are, to match how you zero the machine.",
+      "Press OK."
+    ]
+  },
+  "drawRectangle": {
+    "summary": "Draws a rectangle or square, with square, rounded or inward-curved corners. Drag it out in the 2D view or type its size and position.",
+    "fields": [
+      {
+        "name": "Anchor Point",
+        "text": "Picks which point of the rectangle (a corner, an edge middle or the center) X and Y place."
+      },
+      {
+        "name": "X",
+        "text": "Horizontal position of the anchor point."
+      },
+      {
+        "name": "Y",
+        "text": "Vertical position of the anchor point."
+      },
+      {
+        "name": "Corner Type",
+        "text": "Square corners, corners rounded outward (Radiused External) or curved inward (Radiused Internal)."
+      },
+      {
+        "name": "Radius",
+        "text": "Size of the rounded corners; only used when the corner type is not Square."
+      },
+      {
+        "name": "Width (X)",
+        "text": "Width of the rectangle across the job."
+      },
+      {
+        "name": "Height (Y)",
+        "text": "Height of the rectangle up the job."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown when shapes are selected for editing: changes them to the values above."
+      },
+      {
+        "name": "Create",
+        "text": "Draws a new rectangle with the values above."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; rectangles already drawn stay."
+      }
+    ],
+    "steps": [
+      "Pick the corner type and, for rounded corners, a radius.",
+      "Click and drag in the 2D view to draw the rectangle, or type the anchor, width and height.",
+      "Press Create (or Enter) to make a rectangle from the typed values.",
+      "Drag the green corner handles to change the radius before creating."
+    ]
+  },
+  "drawCircle": {
+    "summary": "Draws a circle from its center and its radius or diameter. Drag it out in the 2D view or type the values.",
+    "fields": [
+      {
+        "name": "Center X",
+        "text": "Horizontal position of the circle's center."
+      },
+      {
+        "name": "Center Y",
+        "text": "Vertical position of the circle's center."
+      },
+      {
+        "name": "Size",
+        "text": "Choose whether the size box below is the Radius or the Diameter."
+      },
+      {
+        "name": "Radius",
+        "text": "Distance from the center to the edge; reads Diameter when Diameter is picked."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown when circles are selected for editing: changes them to the values above."
+      },
+      {
+        "name": "Create",
+        "text": "Draws a new circle with the values above."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; circles already drawn stay."
+      }
+    ],
+    "steps": [
+      "Click the center in the 2D view and drag out the radius, or type the center and size.",
+      "Press Create (or Enter) to draw from the typed values.",
+      "To change an existing circle, click it, edit the values and press Apply."
+    ]
+  },
+  "drawEllipse": {
+    "summary": "Draws an ellipse from its width and height. Drag it out in the 2D view or type its size and position.",
+    "fields": [
+      {
+        "name": "Anchor Point",
+        "text": "Picks which point of the ellipse's box (a corner, an edge middle or the center) X and Y place."
+      },
+      {
+        "name": "X",
+        "text": "Horizontal position of the anchor point."
+      },
+      {
+        "name": "Y",
+        "text": "Vertical position of the anchor point."
+      },
+      {
+        "name": "Width (X)",
+        "text": "Overall width of the ellipse."
+      },
+      {
+        "name": "Height (Y)",
+        "text": "Overall height of the ellipse."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown when ellipses are selected for editing: changes them to the values above."
+      },
+      {
+        "name": "Create",
+        "text": "Draws a new ellipse with the values above."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; ellipses already drawn stay."
+      }
+    ],
+    "steps": [
+      "Click and drag in the 2D view to draw the ellipse, or type the anchor, width and height.",
+      "Press Create (or Enter) to draw from the typed values.",
+      "To change an existing ellipse, click it, edit the values and press Apply."
+    ]
+  },
+  "drawPolygon": {
+    "summary": "Draws a regular polygon with any number of equal sides, such as a hexagon or octagon.",
+    "fields": [
+      {
+        "name": "Center X",
+        "text": "Horizontal position of the polygon's center."
+      },
+      {
+        "name": "Center Y",
+        "text": "Vertical position of the polygon's center."
+      },
+      {
+        "name": "Number of Sides",
+        "text": "How many sides the polygon has, for example 6 for a hexagon."
+      },
+      {
+        "name": "Size",
+        "text": "Choose whether the size box below is the Radius or the Diameter."
+      },
+      {
+        "name": "Radius",
+        "text": "Distance from the center to a corner; reads Diameter when Diameter is picked."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown when polygons are selected for editing: changes them to the values above."
+      },
+      {
+        "name": "Create",
+        "text": "Draws a new polygon with the values above."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; polygons already drawn stay."
+      }
+    ],
+    "steps": [
+      "Set the number of sides.",
+      "Click the center in the 2D view and drag out the size, or type the center and size.",
+      "Press Create (or Enter) to draw from the typed values."
+    ]
+  },
+  "drawStar": {
+    "summary": "Draws a star from its number of points, its outer radius and how deep its inner corners go.",
+    "fields": [
+      {
+        "name": "Number of Points",
+        "text": "How many points the star has, for example 5."
+      },
+      {
+        "name": "Center X",
+        "text": "Horizontal position of the star's center."
+      },
+      {
+        "name": "Center Y",
+        "text": "Vertical position of the star's center."
+      },
+      {
+        "name": "Outer Radius",
+        "text": "Distance from the center to the tip of each point."
+      },
+      {
+        "name": "Inner Radius (% of outer)",
+        "text": "Depth of the inner corners as a percentage of the outer radius; lower makes thinner points."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown when stars are selected for editing: changes them to the values above."
+      },
+      {
+        "name": "Create",
+        "text": "Draws a new star with the values above."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; stars already drawn stay."
+      }
+    ],
+    "steps": [
+      "Set the number of points and the inner radius percentage.",
+      "Click the center in the 2D view and drag out the outer radius, or type the values.",
+      "Press Create (or Enter) to draw from the typed values."
+    ]
+  },
+  "drawPolyline": {
+    "summary": "Draws a line point by point, with straight spans or smooth curves. Click points in the 2D view or type each next point.",
+    "fields": [
+      {
+        "name": "Enter the next point as",
+        "text": "Type the next point as X, Y, as an angle and length, or as dX, dY from the last point."
+      },
+      {
+        "name": "Next Point X",
+        "text": "X of the next point; reads X Offset when entering dX, dY."
+      },
+      {
+        "name": "Next Point Y",
+        "text": "Y of the next point; reads Y Offset when entering dX, dY."
+      },
+      {
+        "name": "Angle",
+        "text": "With Angle and Length: direction of the next span from the last point, in degrees."
+      },
+      {
+        "name": "Length",
+        "text": "With Angle and Length: how long the next span is."
+      },
+      {
+        "name": "Add",
+        "text": "Adds the typed point to the line; Enter in a box does the same."
+      },
+      {
+        "name": "Undo",
+        "text": "Removes the last point added."
+      },
+      {
+        "name": "Finish",
+        "text": "Ends the line; it needs at least two points."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Click in the 2D view to place points; click and drag to make a smooth curve.",
+      "Or type the next point and press Add.",
+      "Click the start point (or press Tab) to close the shape.",
+      "Press Finish or Space to end an open line."
+    ]
+  },
+  "drawArc": {
+    "summary": "Draws an arc through points you click, or from typed start and end points and a radius or height.",
+    "fields": [
+      {
+        "name": "Arc Type",
+        "text": "Click the arc as start, end and a point on it, or as center, start and end."
+      },
+      {
+        "name": "Start Point",
+        "text": "X and Y where the arc begins."
+      },
+      {
+        "name": "End Point",
+        "text": "X and Y where the arc ends."
+      },
+      {
+        "name": "Size By",
+        "text": "Set the typed arc by its Radius or by its Height above the line from start to end."
+      },
+      {
+        "name": "Radius",
+        "text": "Radius or height of the typed arc; a negative value puts it on the other side."
+      },
+      {
+        "name": "Create",
+        "text": "Draws the arc from the typed values."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; arcs already drawn stay."
+      }
+    ],
+    "steps": [
+      "Pick the arc type.",
+      "Click the points in the 2D view in the order the hint shows.",
+      "Or type the start and end points, pick Radius or Height, enter the size and press Create."
+    ]
+  },
+  "dimensions": {
+    "summary": "Adds dimension lines to the drawing: lengths, horizontal or vertical distances, angles and arc radii.",
+    "fields": [
+      {
+        "name": "Dimension Type",
+        "text": "Pick Length, Vertical, Horizontal, Angle or Arc; the clicks and fields change to suit."
+      },
+      {
+        "name": "First Point",
+        "text": "X and Y of the points the dimension measures; the boxes shown depend on the type."
+      },
+      {
+        "name": "Radius",
+        "text": "Arc type only: the radius of the arc or circle being dimensioned."
+      },
+      {
+        "name": "Show Diameter",
+        "text": "Arc type only: shows the diameter instead of the radius."
+      },
+      {
+        "name": "Use Custom Text",
+        "text": "Shows your own text instead of the measured value."
+      },
+      {
+        "name": "Custom Text",
+        "text": "The text to show when Use Custom Text is ticked."
+      },
+      {
+        "name": "Apply",
+        "text": "Shown while editing a dimension picked with Shift click: saves its new points and text."
+      },
+      {
+        "name": "Font",
+        "text": "Font used for the text of new dimensions."
+      },
+      {
+        "name": "Text Height",
+        "text": "Height of the dimension text."
+      },
+      {
+        "name": "Decimal Places",
+        "text": "How many decimal places the value shows (angles have their own setting)."
+      },
+      {
+        "name": "Offset",
+        "text": "Gap between the measured point and the start of each extension line."
+      },
+      {
+        "name": "Place Dimensions on Layer",
+        "text": "Puts new dimensions on their own layer instead of the active one."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the layer dimensions go on."
+      },
+      {
+        "name": "Create",
+        "text": "Makes a dimension from the typed values."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Pick the dimension type.",
+      "Click the points in the 2D view in the order the hint lists; the last click places the line or text.",
+      "Or type the points and press Create.",
+      "Shift click an existing dimension to edit it, or drag its text to move the line."
+    ]
+  },
+  "drawFreehand": {
+    "summary": "Sketches a vector by dragging the mouse; when you let go the stroke is smoothed into curves.",
+    "fields": [
+      {
+        "name": "Smoothness",
+        "text": "Low follows the stroke closely; high rounds corners into curves with fewer nodes."
+      },
+      {
+        "name": "Stabilize",
+        "text": "Higher values damp out hand jitter: the line trails behind the pointer inside a circle."
+      },
+      {
+        "name": "End vector at cursor",
+        "text": "Carries the line on to where the pointer is when you let go, not where the brush lagged."
+      },
+      {
+        "name": "Fade Selected Bitmap",
+        "text": "Shown with a picture selected: fades it in the 2D view so your strokes stand out."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; strokes already drawn stay."
+      }
+    ],
+    "steps": [
+      "Set the smoothness and stabilizing sliders.",
+      "Hold the mouse button down in the 2D view and drag to sketch.",
+      "Finish near the start, or press Tab while drawing, to close the shape.",
+      "Hold Ctrl when starting on the end of an open vector to carry it on."
+    ]
+  },
+  "traceBitmap": {
+    "summary": "Traces the dark areas, or chosen colors, of a picture into closed vectors laid exactly over it.",
+    "fields": [
+      {
+        "name": "Colors",
+        "text": "Color pictures only: sets how many colors the picture is split into."
+      },
+      {
+        "name": "Trace",
+        "text": "Picks the color whose areas are traced; you can also click the color on the picture."
+      },
+      {
+        "name": "Link",
+        "text": "Traces this color together with the picked one as a single area."
+      },
+      {
+        "name": "Reset",
+        "text": "Clears all Link ticks."
+      },
+      {
+        "name": "Trace Area",
+        "text": "Drag over the picture to trace only part of it; click it to trace all of it."
+      },
+      {
+        "name": "Threshold",
+        "text": "Black and white pictures: pixels darker than this (0 to 255) are traced; 128 is middle gray."
+      },
+      {
+        "name": "Noise Filter",
+        "text": "Drops specks smaller than this many pixels in area; raise it for grainy pictures."
+      },
+      {
+        "name": "Corner Fit",
+        "text": "Fit outlines with straight Lines or smooth Curves."
+      },
+      {
+        "name": "Corner Fit slider",
+        "text": "Loose smooths the outline more; Tight follows the pixels more closely."
+      },
+      {
+        "name": "Bitmap Fading",
+        "text": "Fades the picture in the 2D view so the traced vectors are easier to see."
+      },
+      {
+        "name": "Preview",
+        "text": "Shows the traced outlines without making them."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the traced vectors."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Import a picture and select it in the 2D view.",
+      "Set the threshold, or pick the color to trace for a color picture.",
+      "Adjust Noise Filter and Corner Fit, then press Preview to check.",
+      "Press Apply to make the vectors."
+    ]
+  },
+  "move": {
+    "summary": "Moves the selection to an exact position, or by a set distance from where it is.",
+    "fields": [
+      {
+        "name": "Anchor Point",
+        "text": "Absolute moves only: which point of the selection box goes to X and Y."
+      },
+      {
+        "name": "Type of Move",
+        "text": "Absolute places the anchor at X, Y; Relative shifts the selection by X, Y."
+      },
+      {
+        "name": "X Position",
+        "text": "The X position (Absolute) or the distance to move across (Relative)."
+      },
+      {
+        "name": "Y Position",
+        "text": "The Y position (Absolute) or the distance to move up or down (Relative)."
+      },
+      {
+        "name": "Apply",
+        "text": "Moves the selection."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to move.",
+      "Pick Absolute or Relative.",
+      "For Absolute, pick the anchor point; then type X and Y.",
+      "Press Apply."
+    ]
+  },
+  "setSize": {
+    "summary": "Sets an exact width and height for the selection, as a whole or for each item on its own.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Scale the selection as one block, or scale each selected item individually."
+      },
+      {
+        "name": "Anchor Point",
+        "text": "The point of the selection box that stays put while it changes size."
+      },
+      {
+        "name": "Width",
+        "text": "New width of the selection."
+      },
+      {
+        "name": "Height",
+        "text": "New height of the selection."
+      },
+      {
+        "name": "Link XY",
+        "text": "Keeps the proportions: changing one size changes the other to match."
+      },
+      {
+        "name": "Auto Scale Z",
+        "text": "With components selected: changes their height in proportion with their new size."
+      },
+      {
+        "name": "Apply",
+        "text": "Resizes the selection."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to resize.",
+      "Pick the mode and the anchor point that should stay put.",
+      "Type the new width or height; leave Link XY ticked to keep proportions.",
+      "Press Apply."
+    ]
+  },
+  "rotate": {
+    "summary": "Turns the selection by an angle, or to an exact angle, about a pivot point.",
+    "fields": [
+      {
+        "name": "Pivot Point",
+        "text": "Turn about a corner or the center of the selection, or about typed coordinates."
+      },
+      {
+        "name": "Pivot X",
+        "text": "With Use Coordinates: X of the point to turn about."
+      },
+      {
+        "name": "Pivot Y",
+        "text": "With Use Coordinates: Y of the point to turn about."
+      },
+      {
+        "name": "Type of Rotation and Angle",
+        "text": "Relative turns by the angle; Absolute sets the selection to that angle."
+      },
+      {
+        "name": "Angle",
+        "text": "Angle in degrees; positive turns counterclockwise."
+      },
+      {
+        "name": "Apply",
+        "text": "Rotates the selection."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to rotate.",
+      "Pick the pivot point, or click in the 2D view to place it.",
+      "Pick Relative or Absolute and type the angle.",
+      "Press Apply."
+    ]
+  },
+  "mirror": {
+    "summary": "Flips the selection across its own center or edges, the material center, or a straight line you pick.",
+    "fields": [
+      {
+        "name": "Horizontal",
+        "text": "Flips the selection left to right about its own center."
+      },
+      {
+        "name": "Vertical",
+        "text": "Flips the selection top to bottom about its own center."
+      },
+      {
+        "name": "Left Edge",
+        "text": "Flips across the left edge of the selection box."
+      },
+      {
+        "name": "Right Edge",
+        "text": "Flips across the right edge of the selection box."
+      },
+      {
+        "name": "Top Edge",
+        "text": "Flips across the top edge of the selection box."
+      },
+      {
+        "name": "Bottom Edge",
+        "text": "Flips across the bottom edge of the selection box."
+      },
+      {
+        "name": "Left to Right",
+        "text": "Flips left to right about the center of the material."
+      },
+      {
+        "name": "Top to Bottom",
+        "text": "Flips top to bottom about the center of the material."
+      },
+      {
+        "name": "Flip About Line",
+        "text": "Flips across a straight line picked last with Shift click."
+      },
+      {
+        "name": "Create a mirrored copy",
+        "text": "Leaves the original in place and flips a copy instead."
+      },
+      {
+        "name": "Use Rotated Bounds",
+        "text": "For a single rotated object: flips about its own turned box, not the upright one."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to flip.",
+      "Tick Create a mirrored copy to keep the original.",
+      "Click the button for the flip you want; it happens at once."
+    ]
+  },
+  "distort": {
+    "summary": "Bends the selected vectors, text or a component, by dragging an envelope around them or by fitting them to curves.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Bounding Box drags an envelope; Along a Single Curve or Between Two Curves fits to open vectors."
+      },
+      {
+        "name": "Bake Components",
+        "text": "Shown when several components are selected: combines them into one so they can be distorted."
+      },
+      {
+        "name": "Use Rotated Bounds",
+        "text": "Starts the envelope from the turned box of a rotated selection."
+      },
+      {
+        "name": "Bake Distortion",
+        "text": "Makes the distortion permanent so the vectors can be node edited."
+      },
+      {
+        "name": "Apply",
+        "text": "Curve modes: bends the objects along the curve or curves selected last."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects; for the curve modes select the open vector or vectors last.",
+      "Pick the mode.",
+      "Bounding Box: drag the envelope nodes in the 2D view; I adds a node, D deletes one.",
+      "Curve modes: press Apply.",
+      "Press Bake Distortion when you are happy with the shape."
+    ]
+  },
+  "vectorUnwrapper": {
+    "summary": "For rotary jobs: unrolls a closed cross-section into a flat profile once round the blank, for use in a two rail sweep.",
+    "fields": [
+      {
+        "name": "Center of Rotation",
+        "text": "Unroll about the center of the contour, the center of the job or a custom point."
+      },
+      {
+        "name": "X",
+        "text": "Custom point only: X of the center of rotation."
+      },
+      {
+        "name": "Y",
+        "text": "Custom point only: Y of the center of rotation."
+      },
+      {
+        "name": "Refine unwrapped vectors",
+        "text": "Simplifies the result into far fewer nodes."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the unrolled profile as a new vector."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Set the job type to Rotary in Job Setup.",
+      "Select one closed cross-section contour.",
+      "Pick the center of rotation; for a custom point drag the round handle or type it.",
+      "Press Apply."
+    ]
+  },
+  "align": {
+    "summary": "Lines up the selection on the material or on the last selected object, and spaces objects evenly.",
+    "fields": [
+      {
+        "name": "Align to Material",
+        "text": "Centers the selection on the material, both ways or in X or Y only."
+      },
+      {
+        "name": "Align to Selection",
+        "text": "Lines the objects up with the last one selected: centers, edges, or just outside top or bottom."
+      },
+      {
+        "name": "Space Selection",
+        "text": "Spaces the objects evenly across or up; Ctrl click keeps the order they were selected."
+      },
+      {
+        "name": "Inside last vector",
+        "text": "Spaces the objects inside the last selected vector instead of across their own span."
+      },
+      {
+        "name": "Show common tools on drawing tab",
+        "text": "Also shows the main align buttons on the Design tab."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects; select the one to align to last.",
+      "Click an align or space button; it acts at once.",
+      "Ctrl click a space button to keep the order you selected them in."
+    ]
+  },
+  "snapSettings": {
+    "summary": "Chooses what the pointer snaps to in the 2D view, and sets the grid, snap reach and nudge distance.",
+    "fields": [
+      {
+        "name": "Snap to nodes",
+        "text": "Snaps to the points of vectors."
+      },
+      {
+        "name": "Snap to midpoints",
+        "text": "Snaps to the middle of spans."
+      },
+      {
+        "name": "Snap to centers",
+        "text": "Snaps to the centers of arcs and circles."
+      },
+      {
+        "name": "Snap to intersections",
+        "text": "Snaps to where vectors cross."
+      },
+      {
+        "name": "Snap to job corners and center",
+        "text": "Snaps to the corners and center of the material."
+      },
+      {
+        "name": "Snap to guides",
+        "text": "Snaps to guide lines."
+      },
+      {
+        "name": "Snap to grid",
+        "text": "Snaps to the grid points."
+      },
+      {
+        "name": "Smart snapping",
+        "text": "Snaps the pointer into line with points of nearby objects as you draw."
+      },
+      {
+        "name": "Grid spacing",
+        "text": "Distance between grid points."
+      },
+      {
+        "name": "Snap radius (px)",
+        "text": "How close, in screen pixels, the pointer must be to snap; about 10 works well."
+      },
+      {
+        "name": "Snap distances (drags move in round steps for the zoom)",
+        "text": "Makes drags move in round steps that suit the zoom level."
+      },
+      {
+        "name": "Fixed nudge distance",
+        "text": "How far Ctrl+Shift with an arrow key moves the selection."
+      },
+      {
+        "name": "OK",
+        "text": "Saves the settings and closes the form."
+      },
+      {
+        "name": "Close",
+        "text": "Closes without saving."
+      }
+    ]
+  },
+  "sculpt": {
+    "summary": "Shapes the selected component by hand in the 3D view: smooth, smudge, add or take away material with a brush.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The brush: Smooth, Smudge, Deposit (adds), Remove (takes away) or Undo Brush (puts back the start)."
+      },
+      {
+        "name": "Use a custom brush",
+        "text": "Deposit and Remove only: stamps the shape of another component or a brush file instead of a round brush."
+      },
+      {
+        "name": "Brush",
+        "text": "The component or loaded brush file used as the custom brush."
+      },
+      {
+        "name": "Load Brush...",
+        "text": "Loads a brush from a file or picture."
+      },
+      {
+        "name": "Angle",
+        "text": "Turns the custom brush by this many degrees."
+      },
+      {
+        "name": "Dynamic Rotation",
+        "text": "Turns the custom brush to follow the direction of the stroke."
+      },
+      {
+        "name": "Merge",
+        "text": "Merges each stroke with earlier ones instead of piling them on top."
+      },
+      {
+        "name": "Diameter",
+        "text": "Size of the brush; the mouse wheel changes it too."
+      },
+      {
+        "name": "Strength",
+        "text": "How much each stroke changes the surface; around 50% is a gentle start."
+      },
+      {
+        "name": "Smoothness",
+        "text": "Softness of the brush edge: 0 is a hard edge, higher fades out toward the rim."
+      },
+      {
+        "name": "Preserve Transparency (0)",
+        "text": "Keeps the brush inside the component's outline; off lets it build on empty areas."
+      },
+      {
+        "name": "Show Visible Model (F)",
+        "text": "Shows the whole model while sculpting, not just the selected component."
+      },
+      {
+        "name": "Mode",
+        "text": "Normal lets heights rise or fall; Raise only lets them go up; Lower only lets them go down."
+      },
+      {
+        "name": "Overlay image opacity",
+        "text": "Shown with an overlay picture: how strongly it shows over the model."
+      },
+      {
+        "name": "Show overlay image (O)",
+        "text": "Shows or hides the overlay picture."
+      },
+      {
+        "name": "Preset",
+        "text": "Picks saved brush settings for this tool."
+      },
+      {
+        "name": "Add",
+        "text": "Saves the current brush settings as a named preset."
+      },
+      {
+        "name": "Remove",
+        "text": "Deletes the chosen preset."
+      },
+      {
+        "name": "Keep",
+        "text": "Marks the sculpting so far as a point Discard goes back to."
+      },
+      {
+        "name": "Discard",
+        "text": "Throws away the sculpting since the last Keep."
+      },
+      {
+        "name": "OK",
+        "text": "Finishes sculpting and keeps the changes."
+      },
+      {
+        "name": "Cancel",
+        "text": "Throws away all sculpting done since the form opened."
+      }
+    ],
+    "steps": [
+      "Select one component in the Components list.",
+      "Pick a tool and set the diameter and strength.",
+      "Drag over the model in the 3D view to sculpt.",
+      "Press Keep at good points; press OK when done."
+    ]
+  },
+  "guidePosition": {
+    "summary": "Sets the exact position of a guide line, locks it, or deletes it.",
+    "fields": [
+      {
+        "name": "Position",
+        "text": "Where the guide sits: X for a vertical guide, Y for a horizontal one."
+      },
+      {
+        "name": "Lock this guide",
+        "text": "Stops the guide being dragged by accident."
+      },
+      {
+        "name": "Delete Guide",
+        "text": "Removes the guide."
+      },
+      {
+        "name": "OK",
+        "text": "Moves the guide to the typed position."
+      },
+      {
+        "name": "Close",
+        "text": "Closes without changes."
+      }
+    ]
+  },
+  "join": {
+    "summary": "Joins selected open vectors whose ends are close enough into single vectors.",
+    "fields": [
+      {
+        "name": "Join Tolerance",
+        "text": "Ends closer than this are joined; keep it small, such as 0.1 mm."
+      },
+      {
+        "name": "Join",
+        "text": "Joins the selected open vectors."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": ["Select the open vectors to join.", "Set the join tolerance.", "Press Join."]
+  },
+  "offset": {
+    "summary": "Draws a new outline a set distance outside or inside the selected vectors.",
+    "fields": [
+      {
+        "name": "Direction",
+        "text": "Outwards (right of an open vector) or Inwards (left of an open vector)."
+      },
+      {
+        "name": "Distance",
+        "text": "How far the new outline sits from the original."
+      },
+      {
+        "name": "Create sharp offset corners",
+        "text": "Keeps outside corners sharp instead of rounding them."
+      },
+      {
+        "name": "Offset",
+        "text": "Makes the offset outline."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": ["Select the vectors.", "Pick the direction and type the distance.", "Press Offset."]
+  },
+  "fillet": {
+    "summary": "Rounds corners, or adds dog-bone and T-bone reliefs so a round cutter can reach inside corners.",
+    "fields": [
+      {
+        "name": "Tool Radius",
+        "text": "Radius of the fillet; for reliefs, use the radius of the cutter."
+      },
+      {
+        "name": "Fillet Type",
+        "text": "Normal rounds the corner; Dog-Bone, T-Bone and Plasma / Drag Knife cut reliefs or loops."
+      },
+      {
+        "name": "OK",
+        "text": "Closes the form; fillets already made stay."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Set the tool radius and fillet type.",
+      "Click a corner in the 2D view to fillet it.",
+      "Click an existing fillet to take it out again."
+    ]
+  },
+  "trim": {
+    "summary": "Removes spans of vectors back to the nearest crossings by clicking on them.",
+    "fields": [
+      {
+        "name": "Rejoin Trimmed Sections",
+        "text": "When the form closes, joins the trimmed pieces whose ends meet."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Click a span in the 2D view; it is cut back to the nearest crossings.",
+      "Hold the button down and drag over spans to trim several.",
+      "Ungroup grouped vectors first; groups cannot be trimmed."
+    ]
+  },
+  "trimObjects": {
+    "summary": "Cuts the selected objects at a closed boundary vector, clearing what lies inside or outside it.",
+    "fields": [
+      {
+        "name": "Trim Options",
+        "text": "Clear the parts inside the boundary, or the parts outside it."
+      },
+      {
+        "name": "Refit Curves After Clipping",
+        "text": "Smooths the cut vectors back into curves after trimming."
+      },
+      {
+        "name": "Apply",
+        "text": "Trims the objects."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to trim.",
+      "Shift select the closed boundary vector last.",
+      "Pick inside or outside and press Apply."
+    ]
+  },
+  "measure": {
+    "summary": "Measures the distance and angle between two points, or reads the details of a span or a whole vector.",
+    "fields": [
+      {
+        "name": "Measure",
+        "text": "Between 2 Points gives distance and angle; Span and Contour Properties give length, area and more."
+      },
+      {
+        "name": "Clear",
+        "text": "Clears the current measurement."
+      },
+      {
+        "name": "OK",
+        "text": "Closes the form."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Pick what to measure.",
+      "For two points, click both points, or press and drag; snapping applies.",
+      "For a span or contour, click the vector."
+    ]
+  },
+  "editPicture": {
+    "summary": "Adjusts the brightness, contrast and look of the selected picture, and can add a faded border.",
+    "fields": [
+      {
+        "name": "Contrast",
+        "text": "Makes darks darker and lights lighter; negative flattens the picture."
+      },
+      {
+        "name": "Brightness",
+        "text": "Lightens or darkens the whole picture."
+      },
+      {
+        "name": "Gamma",
+        "text": "Brightens or darkens the middle tones; 1 leaves them as they are."
+      },
+      {
+        "name": "Invert",
+        "text": "Swaps light and dark."
+      },
+      {
+        "name": "Grayscale",
+        "text": "Removes the color."
+      },
+      {
+        "name": "Border type",
+        "text": "No border, a rectangular border or an oval border."
+      },
+      {
+        "name": "Fade width",
+        "text": "How wide the border fades out, as a percentage of the picture."
+      },
+      {
+        "name": "Reset",
+        "text": "Puts the sliders back to their starting values."
+      },
+      {
+        "name": "Apply",
+        "text": "Applies the changes to the picture as one undo step."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select one picture in the 2D view.",
+      "Move the sliders and tick the options you want.",
+      "Press Apply."
+    ]
+  },
+  "vectorTexture": {
+    "summary": "Fills the selected closed vectors, or the whole job, with rows of straight or wavy lines to machine as a texture.",
+    "fields": [
+      {
+        "name": "Angle",
+        "text": "Direction of the rows, from -90 to 90 degrees."
+      },
+      {
+        "name": "Max. Spacing",
+        "text": "Largest distance between two rows."
+      },
+      {
+        "name": "Spacing variation",
+        "text": "0% keeps rows evenly spaced; higher makes the gaps random."
+      },
+      {
+        "name": "Wavelength",
+        "text": "Length of one wave along a row."
+      },
+      {
+        "name": "Amplitude",
+        "text": "Height of the waves either side of the row; 0 keeps rows straight."
+      },
+      {
+        "name": "Noise",
+        "text": "Adds a random wobble to the rows; 0% is smooth."
+      },
+      {
+        "name": "Place Vectors on Layer",
+        "text": "Puts the texture lines on their own layer."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the layer for the texture lines."
+      },
+      {
+        "name": "Preview",
+        "text": "Shows the lines dashed without making them."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the texture lines."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select closed vectors to fill, or none for the whole job.",
+      "Set the angle, spacing and wave settings.",
+      "Press Preview to check, then Apply."
+    ]
+  },
+  "extend": {
+    "summary": "Stretches the end of an open vector in a straight line until it meets another vector, or meets another end's extension.",
+    "fields": [
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Click the end of an open vector; a dashed extension line appears.",
+      "Click where the extension meets a span, or click the end of another open vector to meet its extension.",
+      "Right click to start again with a different end."
+    ]
+  },
+  "fitCurves": {
+    "summary": "Replaces vectors made of many short spans with fewer smooth arcs, curves or straight lines.",
+    "fields": [
+      {
+        "name": "Fitting Type",
+        "text": "Fit with Circular Arcs, Bezier Curves or Straight Lines."
+      },
+      {
+        "name": "Tolerance",
+        "text": "How far the new vector may stray from the old one; smaller is closer but uses more spans."
+      },
+      {
+        "name": "Keep Sharp Corners",
+        "text": "Keeps corners sharp instead of rounding them into the fit."
+      },
+      {
+        "name": "Max Angle",
+        "text": "Corners that turn by more than this many degrees stay sharp."
+      },
+      {
+        "name": "Replace selected vectors",
+        "text": "Replaces the originals; off keeps them and puts the fitted copies on the current layer."
+      },
+      {
+        "name": "Apply",
+        "text": "Fits the selected vectors."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the vectors to fit.",
+      "Pick the fitting type and set the tolerance.",
+      "Press Apply."
+    ]
+  },
+  "validator": {
+    "summary": "Checks vectors for open ends, crossings, duplicates and zero length spans that stop them cutting cleanly, and marks each problem.",
+    "fields": [
+      {
+        "name": "V-Groove Mode",
+        "text": "Ignores crossings inside text, which fonts often have and V-groove copes with."
+      },
+      {
+        "name": "Search Selected Vectors",
+        "text": "Searches the selection, or all visible vectors when nothing is selected; press again to Stop."
+      },
+      {
+        "name": "Marks",
+        "text": "Key to the marks drawn in the 2D view for each kind of problem."
+      },
+      {
+        "name": "Fix zero length Spans",
+        "text": "Removes the zero length spans that were found, then searches again."
+      },
+      {
+        "name": "Show",
+        "text": "Selects the vector with that problem and zooms to it."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the vectors to check, or none to check them all.",
+      "Press the search button.",
+      "Press Show next to a problem to zoom to it, then fix it.",
+      "Press Fix zero length Spans if any were found."
+    ]
+  },
+  "boundary": {
+    "summary": "Draws one closed outline around the selected objects, optionally grown outward or stretched round them like a rubber band.",
+    "fields": [
+      {
+        "name": "Offset Boundary",
+        "text": "Grows the outline outward by the distance below."
+      },
+      {
+        "name": "Distance",
+        "text": "How far outside the objects the outline sits."
+      },
+      {
+        "name": "Rubber Band Boundary",
+        "text": "Stretches the outline round the objects, bridging gaps and hollows."
+      },
+      {
+        "name": "Create",
+        "text": "Makes the boundary vector."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects.",
+      "Tick the options you want and set the distance.",
+      "Press Create."
+    ]
+  },
+  "arrayCopy": {
+    "summary": "Copies the selection into a grid of rows and columns, with optional mirroring and staggered rows or columns.",
+    "fields": [
+      {
+        "name": "Selected Objects Size",
+        "text": "Shows the width and height of the selection, to help set the spacing."
+      },
+      {
+        "name": "Columns (X)",
+        "text": "How many copies across, including the original."
+      },
+      {
+        "name": "Rows (Y)",
+        "text": "How many copies up, including the original."
+      },
+      {
+        "name": "Spacing By",
+        "text": "Gap is the space between copies; Offset is the distance from one copy's start to the next."
+      },
+      {
+        "name": "X",
+        "text": "Gap or offset between columns."
+      },
+      {
+        "name": "Y",
+        "text": "Gap or offset between rows."
+      },
+      {
+        "name": "Block Symmetry",
+        "text": "Click each copy in the two by two block to mirror or turn it; the pattern repeats."
+      },
+      {
+        "name": "Row X",
+        "text": "Every other row shifts this far across, for a staggered or brick pattern."
+      },
+      {
+        "name": "Row Y",
+        "text": "Every other row shifts this far up or down."
+      },
+      {
+        "name": "Column X",
+        "text": "Every other column shifts this far across."
+      },
+      {
+        "name": "Column Y",
+        "text": "Every other column shifts this far up or down."
+      },
+      {
+        "name": "Group Copies",
+        "text": "Groups the copies together."
+      },
+      {
+        "name": "Copy",
+        "text": "Makes the copies."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the vectors or components to copy.",
+      "Set the columns and rows.",
+      "Pick Gap or Offset and set the X and Y spacing.",
+      "Press Copy."
+    ]
+  },
+  "nest": {
+    "summary": "Packs the selected parts onto one or more sheets with little waste, leaving room for the cutter between them.",
+    "fields": [
+      {
+        "name": "Tool Dia. (D)",
+        "text": "Diameter of the cutter that will cut the parts out."
+      },
+      {
+        "name": "Clearance (C)",
+        "text": "Extra gap kept between parts on top of the tool diameter."
+      },
+      {
+        "name": "Border Gap",
+        "text": "Space kept clear around the edge of each sheet."
+      },
+      {
+        "name": "Rotate Parts to find best fit",
+        "text": "Lets parts turn to fit better."
+      },
+      {
+        "name": "Rotation Step",
+        "text": "Angle steps the parts may turn by, such as 90 degrees."
+      },
+      {
+        "name": "Mirror parts to find best fit",
+        "text": "Lets parts be flipped to fit better."
+      },
+      {
+        "name": "Allow parts inside other parts",
+        "text": "Lets small parts go in the holes of bigger ones."
+      },
+      {
+        "name": "Remove original parts",
+        "text": "Deletes the originals once they are nested."
+      },
+      {
+        "name": "Nest two-sided parts",
+        "text": "Double-sided jobs: objects on the other side move with each part."
+      },
+      {
+        "name": "Nest From",
+        "text": "The corner of the sheet nesting starts from."
+      },
+      {
+        "name": "Nest Direction",
+        "text": "Fill the sheet along X or along Y first."
+      },
+      {
+        "name": "Nest boundary layer",
+        "text": "Nests inside the vectors on this layer instead of on the whole material."
+      },
+      {
+        "name": "Number of copies",
+        "text": "How many of the selected part to nest."
+      },
+      {
+        "name": "Filler",
+        "text": "Makes the selected part fill the space left after the others are placed."
+      },
+      {
+        "name": "Apply",
+        "text": "Saves the copies and filler setting on the selected parts."
+      },
+      {
+        "name": "Active Sheet",
+        "text": "The sheet to nest onto."
+      },
+      {
+        "name": "Customize...",
+        "text": "Picks several sheets, and how many of each, to nest across."
+      },
+      {
+        "name": "Nest",
+        "text": "Packs the parts."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the parts to nest.",
+      "Set the tool diameter, clearance and border gap.",
+      "Optionally set copies or Filler for some parts and press Apply.",
+      "Choose the sheet options and press Nest."
+    ]
+  },
+  "plates": {
+    "summary": "Copies a selected template across the material to make many plates, filling !!name!! text variables from a data file or a counter.",
+    "fields": [
+      {
+        "name": "Sheet Margins",
+        "text": "Space left clear at the edges of the material."
+      },
+      {
+        "name": "Equal margins",
+        "text": "Uses one margin for all four edges; untick to set each edge."
+      },
+      {
+        "name": "Horizontal",
+        "text": "Gap between plates across."
+      },
+      {
+        "name": "Vertical",
+        "text": "Gap between plates up."
+      },
+      {
+        "name": "Create each plate on its own sheet",
+        "text": "Puts every plate on a separate sheet."
+      },
+      {
+        "name": "Create toolpaths (for the toolpaths calculated on the template)",
+        "text": "Copies the template's toolpaths for each sheet of plates."
+      },
+      {
+        "name": "Mode",
+        "text": "Plates that do not fit go on new Sheets, or on new Layers of this sheet."
+      },
+      {
+        "name": "Plates to Make",
+        "text": "Without a data file: how many plates to make."
+      },
+      {
+        "name": "Import from file...",
+        "text": "Loads a text data file; each row makes one plate."
+      },
+      {
+        "name": "Clear",
+        "text": "Stops using the data file."
+      },
+      {
+        "name": "Separator",
+        "text": "The character between columns in the data file."
+      },
+      {
+        "name": "First row is column names",
+        "text": "Treats the first row of the file as headings, not as a plate."
+      },
+      {
+        "name": "Variables",
+        "text": "For each !!name!! in the text, pick a data column or a Counter to fill it."
+      },
+      {
+        "name": "Start",
+        "text": "Counter only: the first number."
+      },
+      {
+        "name": "Increment",
+        "text": "Counter only: how much the number goes up each plate."
+      },
+      {
+        "name": "Digits",
+        "text": "Counter only: pads the number with leading zeros to this many digits; 0 for none."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the plates."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Draw the template, with text such as !!name!! where values change, and select it.",
+      "Set the margins and spacing.",
+      "Import a data file, or set how many plates to make.",
+      "Pick a column or counter for each variable.",
+      "Press Calculate."
+    ]
+  },
+  "gadget": {
+    "summary": "Runs a gadget chosen from the Gadgets menu. Its settings depend on the gadget and are shown in groups.",
+    "fields": [
+      {
+        "name": "Settings",
+        "text": "The gadget's own options: numbers, check boxes, choices and text, as the gadget asks."
+      },
+      {
+        "name": "Choose a tool",
+        "text": "Shown when the gadget cuts: picks a tool from the tool database."
+      },
+      {
+        "name": "OK",
+        "text": "Runs the gadget, or updates the toolpath being edited."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Pick a gadget from the Gadgets menu.",
+      "Select anything the gadget asks for.",
+      "Fill in its settings and press OK."
+    ]
+  },
+  "circularArray": {
+    "summary": "Copies the selection around a center point, over a full circle or part of one.",
+    "fields": [
+      {
+        "name": "Selected Objects Size",
+        "text": "Shows the width and height of the selection."
+      },
+      {
+        "name": "Center X",
+        "text": "X of the point the copies go around; you can also drag the center marker."
+      },
+      {
+        "name": "Center Y",
+        "text": "Y of the point the copies go around."
+      },
+      {
+        "name": "Rotate Copies",
+        "text": "Turns each copy to face around the center; off keeps them upright."
+      },
+      {
+        "name": "Number of Items",
+        "text": "How many items in total, including the original."
+      },
+      {
+        "name": "Angle",
+        "text": "Set the Total Angle the copies spread over, or the Step Angle between them."
+      },
+      {
+        "name": "Total Angle",
+        "text": "Angle in degrees; reads Step Angle when that is picked. Use 360 for a full circle; copies run clockwise."
+      },
+      {
+        "name": "Copy",
+        "text": "Makes the copies."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the objects to copy.",
+      "Place the center by typing it, dragging the marker or clicking in the 2D view.",
+      "Set the number of items and the angle.",
+      "Press Copy."
+    ]
+  },
+  "copyAlong": {
+    "summary": "Places copies of an object, or circles, at even spacing along one or more vectors.",
+    "fields": [
+      {
+        "name": "Copy",
+        "text": "Copy Object places the first selected object; Copy Circles places circles instead."
+      },
+      {
+        "name": "Circle Diameter",
+        "text": "Copy Circles only: size of each circle."
+      },
+      {
+        "name": "Spacing",
+        "text": "Space by a Number of copies, or by a Distance between copies."
+      },
+      {
+        "name": "Copies",
+        "text": "How many copies go along each vector."
+      },
+      {
+        "name": "Distance",
+        "text": "Distance along the vector from one copy to the next."
+      },
+      {
+        "name": "Force even spacing",
+        "text": "Stretches the distance slightly so copies land on both ends."
+      },
+      {
+        "name": "Align Objects to curve",
+        "text": "Turns each copy to follow the direction of the vector."
+      },
+      {
+        "name": "Create Copies on new layer",
+        "text": "Puts the copies on a new layer."
+      },
+      {
+        "name": "Reverse Direction",
+        "text": "Starts from the other end of the vector."
+      },
+      {
+        "name": "Copy",
+        "text": "Makes the copies."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the object to copy first, then Shift select the vectors to copy along.",
+      "Pick copies or distance and set the value.",
+      "Press Copy."
+    ]
+  },
+  "createText": {
+    "summary": "Writes text as vectors in any installed font, placed at a point or fitted to fill a box.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Text places text at a point; Text in a Box stretches it to fill a box."
+      },
+      {
+        "name": "Text",
+        "text": "The words to write; changes show at once."
+      },
+      {
+        "name": "Fonts",
+        "text": "Show All fonts, or only Single Line fonts suited to engraving."
+      },
+      {
+        "name": "Font",
+        "text": "The font to use; drag the corner of the list to make it bigger."
+      },
+      {
+        "name": "Bold",
+        "text": "Uses the bold style of the font."
+      },
+      {
+        "name": "Italic",
+        "text": "Uses the italic style of the font."
+      },
+      {
+        "name": "Text Height",
+        "text": "Height of the letters; not shown in box mode, where the box sets the size."
+      },
+      {
+        "name": "Alignment",
+        "text": "Lines up several lines of text to the left, center or right."
+      },
+      {
+        "name": "X",
+        "text": "Text mode: X of the anchor point."
+      },
+      {
+        "name": "Y",
+        "text": "Text mode: Y of the anchor point."
+      },
+      {
+        "name": "Anchor",
+        "text": "Text mode: which point of the text sits at X, Y."
+      },
+      {
+        "name": "Width",
+        "text": "Box mode: width of the box the text fills."
+      },
+      {
+        "name": "Height",
+        "text": "Box mode: height of the box the text fills."
+      },
+      {
+        "name": "Margin",
+        "text": "Box mode: space kept inside the box edges: None, Normal or Wide."
+      },
+      {
+        "name": "Vertical Stretch",
+        "text": "Box mode: fill the height by spreading the lines or by making letters taller."
+      },
+      {
+        "name": "Horizontal Stretch",
+        "text": "Box mode: fill the width with word gaps, letter spacing, letter width or letter size."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form; the text is already made."
+      }
+    ],
+    "steps": [
+      "Click in the 2D view to place the text, or drag a box in box mode.",
+      "Type the text and pick a font and height.",
+      "Drag the square handle to move the text, or a round handle to arch it.",
+      "Click elsewhere to start new text, or press Close."
+    ]
+  },
+  "textSelection": {
+    "summary": "Fine-tunes a piece of text in the 2D view: letter spacing, line spacing and arching.",
+    "fields": [
+      {
+        "name": "OK",
+        "text": "Closes the form."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Click a piece of text.",
+      "Click between two letters to close them up; Shift click opens them out.",
+      "Click between two lines to change their spacing the same way.",
+      "Drag the top handle up or the bottom handle down to arch the text."
+    ]
+  },
+  "textOnCurve": {
+    "summary": "Lays a line of text along a selected vector, above, on or below it.",
+    "fields": [
+      {
+        "name": "Text Size",
+        "text": "Keep the text size, or scale the text to fill the whole curve."
+      },
+      {
+        "name": "Text Spacing",
+        "text": "Spreads or tightens the letters along the curve, in percent."
+      },
+      {
+        "name": "Text Position",
+        "text": "Puts the text above, on or below the curve."
+      },
+      {
+        "name": "Text on other side",
+        "text": "Moves the text to the other side of the curve."
+      },
+      {
+        "name": "Offset Distance",
+        "text": "Gap between the curve and the text."
+      },
+      {
+        "name": "Text Alignment",
+        "text": "Starts the text at the left, center or right of the curve; not used when filling."
+      },
+      {
+        "name": "Character Orientation",
+        "text": "Turn each letter to follow the curve, or keep letters upright."
+      },
+      {
+        "name": "Apply",
+        "text": "Puts the text on the curve."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select one line of text and one vector.",
+      "Set the size, position and spacing.",
+      "Press Apply; drag in the 2D view to slide the text along the curve."
+    ]
+  },
+  "profileToolpath": {
+    "summary": "Cuts along the selected vectors, outside, inside or on the line, to cut parts out or cut grooves.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "Depth the cut starts at; 0 is the material surface."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "How deep the cut goes; for a cut-out, the material thickness or a little more."
+      },
+      {
+        "name": "Show advanced toolpath options",
+        "text": "Shows the last pass, tabs, ramps, leads, order, start and corner options."
+      },
+      {
+        "name": "Tool",
+        "text": "Select... picks a tool from the database; Edit... changes it for this toolpath only."
+      },
+      {
+        "name": "Edit Passes...",
+        "text": "Shows how many passes reach the cut depth and lets you change their depths."
+      },
+      {
+        "name": "Machine Vectors",
+        "text": "Cut Outside / Right, Inside / Left, or On the vector."
+      },
+      {
+        "name": "Direction",
+        "text": "Climb or Conventional cutting; climb usually leaves a cleaner edge."
+      },
+      {
+        "name": "Allowance Offset",
+        "text": "Leaves this much extra material on the part; negative cuts into it."
+      },
+      {
+        "name": "Do Separate Last Pass",
+        "text": "Cuts a final light pass to clean up the edge."
+      },
+      {
+        "name": "Allowance (A)",
+        "text": "Material the earlier passes leave for the last pass to remove."
+      },
+      {
+        "name": "Reverse direction",
+        "text": "Runs the last pass the other way round."
+      },
+      {
+        "name": "Add tabs to toolpath",
+        "text": "Leaves small bridges so parts stay held in the sheet."
+      },
+      {
+        "name": "Length",
+        "text": "Length of each tab."
+      },
+      {
+        "name": "Thickness",
+        "text": "Height of each tab above the bottom of the cut."
+      },
+      {
+        "name": "Create 3D Tabs",
+        "text": "Makes sloped tabs the tool ramps over instead of flat steps."
+      },
+      {
+        "name": "Edit Tabs...",
+        "text": "Places tabs automatically or by clicking on the vectors."
+      },
+      {
+        "name": "Ramp",
+        "text": "Ramps the tool into the cut (Smooth, Zig Zag or Spiral) by a distance or angle, instead of plunging."
+      },
+      {
+        "name": "Leads",
+        "text": "Adds a straight or curved lead in, and optionally out, on closed vectors."
+      },
+      {
+        "name": "Order",
+        "text": "Orders to try for cutting the vectors; the fastest ticked one is used."
+      },
+      {
+        "name": "Start At",
+        "text": "Where each cut starts: optimized, the vectors' own start points, or nearest a box point."
+      },
+      {
+        "name": "Corners",
+        "text": "Sharpens external corners; with a V-bit, can also sharpen internal corners."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Follows the model surface, measuring depths down from it."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Selector... picks vectors by filters so templates find them again."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the vectors to cut.",
+      "Set the start and cut depths.",
+      "Pick a tool and choose outside, inside or on.",
+      "Add tabs if the parts are cut free.",
+      "Press Calculate."
+    ]
+  },
+  "pocketToolpath": {
+    "summary": "Clears all the material inside closed vectors down to a depth, with one or more tools.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "Depth the pocket starts at; 0 is the material surface."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "Depth of the pocket floor below the material surface."
+      },
+      {
+        "name": "Tools",
+        "text": "Tools in cutting order; later tools clear only what earlier ones could not reach."
+      },
+      {
+        "name": "Edit Passes...",
+        "text": "Shows how many passes reach the depth and lets you change them."
+      },
+      {
+        "name": "Clear Pocket",
+        "text": "Offset follows the shape in rings; Raster cuts back and forth in lines."
+      },
+      {
+        "name": "Cut Direction",
+        "text": "Climb or Conventional cutting."
+      },
+      {
+        "name": "Raster Angle",
+        "text": "Raster only: angle of the lines, 0 is along X."
+      },
+      {
+        "name": "Profile Pass",
+        "text": "Raster only: cut round the edge first, last or not at all."
+      },
+      {
+        "name": "Ramp Plunge Moves",
+        "text": "Ramps the tool into each pass instead of plunging straight down."
+      },
+      {
+        "name": "Distance",
+        "text": "Length of the ramp."
+      },
+      {
+        "name": "Pocket Allowance",
+        "text": "Leaves this much material on the pocket walls; negative cuts wider."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Cuts the pockets in the order the vectors were selected."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Follows the model surface, measuring depths down from it."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Selector... picks vectors by filters so templates find them again."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors to pocket.",
+      "Set the start and cut depths.",
+      "Add a tool, and smaller ones after it for tight corners if needed.",
+      "Pick Offset or Raster and press Calculate."
+    ]
+  },
+  "drillToolpath": {
+    "summary": "Drills a hole at the center of each selected closed vector, with optional pecking and dwell.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "Depth the drilling starts at; 0 is the material surface."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "How deep each hole goes."
+      },
+      {
+        "name": "Tool",
+        "text": "Select... picks a drill; Edit... changes it for this toolpath only."
+      },
+      {
+        "name": "Use Peck Drilling",
+        "text": "Drills in steps, lifting out between them to clear chips."
+      },
+      {
+        "name": "Peck Depth (P)",
+        "text": "Depth of each peck; it is the tool's pass depth."
+      },
+      {
+        "name": "Retract",
+        "text": "Lift right out above the start depth, or just above the previous peck."
+      },
+      {
+        "name": "Retract Gap (R)",
+        "text": "How far above that height the drill lifts between pecks."
+      },
+      {
+        "name": "Dwell at the bottom of each drill pass",
+        "text": "Pauses at the bottom of each pass."
+      },
+      {
+        "name": "Dwell Time",
+        "text": "How long the pause lasts, in seconds."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Drills the holes in the order the vectors were selected."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Selector... picks vectors by filters so templates find them again."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select circles or other closed vectors at the hole positions.",
+      "Set the depths and pick a drill.",
+      "Tick peck drilling for deep holes.",
+      "Press Calculate."
+    ]
+  },
+  "vgrooveToolpath": {
+    "summary": "Carves inside closed vectors with a V-bit, going deeper where the shape is wider, as for lettering and signs.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "Depth the carving starts at; 0 is the material surface."
+      },
+      {
+        "name": "Flat Depth (F)",
+        "text": "Tick to limit the depth; wider areas are left flat at this depth."
+      },
+      {
+        "name": "Tool",
+        "text": "Select... picks a V-bit; Edit... changes it for this toolpath only."
+      },
+      {
+        "name": "Use Clearance Tools",
+        "text": "Uses flat tools to clear the flat areas when Flat Depth is on."
+      },
+      {
+        "name": "Clearance tools",
+        "text": "The clearance tools in cutting order; each clears what the one before could not reach."
+      },
+      {
+        "name": "Tool-specific options",
+        "text": "For the picked clearance tool: strategy, raster angle, direction and ramping."
+      },
+      {
+        "name": "Corner Sharpen",
+        "text": "For a V-bit after the first tool: follows into corners left uncut instead of pocketing."
+      },
+      {
+        "name": "Use Vector Start Points",
+        "text": "Starts each cut at the vector's own start point."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Carves the shapes in the order they were selected."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Selector... picks vectors by filters so templates find them again."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors, such as text.",
+      "Pick a V-bit.",
+      "For wide shapes, tick Flat Depth and add a clearance tool.",
+      "Press Calculate."
+    ]
+  },
+  "inlayToolpath": {
+    "summary": "Cuts a V-bit pocket and a matching plug from the same closed vectors, so the plug can be glued in face down.",
+    "fields": [
+      {
+        "name": "Pocket Depth (D)",
+        "text": "How deep the pocket is carved."
+      },
+      {
+        "name": "Glue Gap (G)",
+        "text": "Space left between the plug top and the pocket floor for glue."
+      },
+      {
+        "name": "Surface Gap (S)",
+        "text": "Gap between the two boards once pressed; bigger leaves less plug board to cut away."
+      },
+      {
+        "name": "Tool",
+        "text": "Select... picks a V-bit or engraving tool for both parts."
+      },
+      {
+        "name": "Use Clearance Tools",
+        "text": "Uses flat tools to clear the wider areas."
+      },
+      {
+        "name": "Clearance tools",
+        "text": "The clearance tools in cutting order."
+      },
+      {
+        "name": "Plug Destination Sheet",
+        "text": "The sheet the plug toolpath goes on."
+      },
+      {
+        "name": "Plug Outer Boundary",
+        "text": "Clear the plug board to the Sheet Limits, or to a Vector Offset round the shapes."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "Vector Offset only: how far outside the shapes the plug board is cleared."
+      },
+      {
+        "name": "Name",
+        "text": "Base name; the two toolpaths get Pocket and Plug added."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the pocket and plug toolpaths."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors of the inlay.",
+      "Set the pocket depth and the gaps.",
+      "Pick a V-bit and, if needed, clearance tools.",
+      "Choose the plug sheet and press Calculate."
+    ]
+  },
+  "mouldingToolpath": {
+    "summary": "Sweeps a cross-section profile along one or more drive rails to cut a molding.",
+    "fields": [
+      {
+        "name": "Drive Rail",
+        "text": "Select the rails first, then the profile last; the count of each shows here."
+      },
+      {
+        "name": "Clear Rail",
+        "text": "Clears the selection so you can pick the rails again."
+      },
+      {
+        "name": "Toolpath position in the material",
+        "text": "Slides the molding up or down within the material thickness."
+      },
+      {
+        "name": "Gap Above Toolpath",
+        "text": "Material left above the top of the profile."
+      },
+      {
+        "name": "Gap Below Toolpath",
+        "text": "Material left under the lowest point of the profile."
+      },
+      {
+        "name": "Tool",
+        "text": "Select... picks the finishing tool, usually a ball nose."
+      },
+      {
+        "name": "Vary Stepover",
+        "text": "Spaces passes over the profile surface so steep parts get more passes."
+      },
+      {
+        "name": "Skip Flat Regions",
+        "text": "Leaves out finishing passes over flats the clearance tool already cut."
+      },
+      {
+        "name": "Use Larger Area Clearance Tool",
+        "text": "Roughs the molding out first with a bigger tool."
+      },
+      {
+        "name": "Machine Flat Regions",
+        "text": "Lets the clearance tool cut wide flat parts of the profile to exact height."
+      },
+      {
+        "name": "Ramp Plunge Moves",
+        "text": "Ramps the clearance tool into each level instead of plunging."
+      },
+      {
+        "name": "Distance",
+        "text": "Length of the clearance tool's ramp."
+      },
+      {
+        "name": "Machining Allowance",
+        "text": "Material the clearance tool leaves for the finishing tool."
+      },
+      {
+        "name": "Create Sharp Corners",
+        "text": "Makes sharp mitered corners where the rail turns, instead of rounded ones."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "How far the passes run past the sides of the profile."
+      },
+      {
+        "name": "Use automatic boundary offset",
+        "text": "Sets the boundary offset from the tool size, to clean steep ends."
+      },
+      {
+        "name": "Rail Selection",
+        "text": "Selector... picks the rails by filters."
+      },
+      {
+        "name": "Profile Selection",
+        "text": "Selector... picks the profile by filters; needs automatic rail selection."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the drive rails, then Shift select the profile last.",
+      "Set the position in the material.",
+      "Pick the finishing tool and, if wanted, a clearance tool.",
+      "Press Calculate."
+    ]
+  },
+  "quickEngraveToolpath": {
+    "summary": "Engraves along the selected vectors at a fixed depth, and can fill closed shapes with lines.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "Select... picks an engraving tool, such as a diamond drag tool."
+      },
+      {
+        "name": "Depth / Pressure",
+        "text": "How deep to engrave; for a drag tool, how far it is pressed in."
+      },
+      {
+        "name": "Engrave",
+        "text": "Outline follows the vectors; Fill also fills closed shapes."
+      },
+      {
+        "name": "Stepover",
+        "text": "Fill only: distance between fill lines."
+      },
+      {
+        "name": "Fill pattern",
+        "text": "Fill only: straight Hatch lines or Offset rings."
+      },
+      {
+        "name": "Hatch Angle",
+        "text": "Hatch only: angle of the fill lines."
+      },
+      {
+        "name": "Cross Hatch",
+        "text": "Hatch only: adds a second set of lines across the first."
+      },
+      {
+        "name": "Use Nose Cone",
+        "text": "For a tool with a sprung nose cone: every pass runs at full depth."
+      },
+      {
+        "name": "Tool Depth",
+        "text": "Nose cone only: how far the tool is pressed in."
+      },
+      {
+        "name": "Number of Passes",
+        "text": "Nose cone only: how many times each line is engraved."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Selector... picks vectors by filters so templates find them again."
+      },
+      {
+        "name": "Name",
+        "text": "Name of the toolpath in the toolpath list."
+      },
+      {
+        "name": "Immediate Output",
+        "text": "Pick a machine and post processor and save or send this toolpath right away."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the vectors to engrave.",
+      "Pick an engraving tool and set the depth.",
+      "Choose Outline or Fill.",
+      "Press Calculate, then save it with Immediate Output if you like."
+    ]
+  },
+  "chamferToolpath": {
+    "summary": "Cuts a bevel along the edges of the selected vectors with the cone of a V-bit, or in small steps with a ball nose. Open vectors are cut on the line.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the material surface the chamfer starts; 0 starts at the top."
+      },
+      {
+        "name": "Tool",
+        "text": "The cutter. Select... picks a V-bit, engraving tool or ball nose; Edit... changes this toolpath's copy."
+      },
+      {
+        "name": "Angle (A)",
+        "text": "Bevel angle from vertical for a ball nose. With a V-bit it is fixed at half the tool angle."
+      },
+      {
+        "name": "Width (W)",
+        "text": "How wide the bevel is across the top. Typing it makes the depth follow from the angle."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "How deep the bevel goes. Typing it makes the width follow from the angle."
+      },
+      {
+        "name": "Overcut",
+        "text": "Moves the cut out and down the slope so the edge of the cone finishes the foot cleanly."
+      },
+      {
+        "name": "Max Cut Depth",
+        "text": "Read only: the deepest the chamfer will cut, worked out once a tool is picked."
+      },
+      {
+        "name": "Chamfer Type",
+        "text": "Inside or Outside: which side of closed vectors gets the bevel."
+      },
+      {
+        "name": "Slope",
+        "text": "Slope Downwards makes the vector the top edge of the bevel; Slope Upwards makes it the foot."
+      },
+      {
+        "name": "Cut Direction",
+        "text": "Climb or Conventional milling direction. Climb usually gives a cleaner edge."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Cuts the vectors in the order you selected them instead of an optimized order."
+      },
+      {
+        "name": "Safe Z",
+        "text": "Read only: the clearance height from Material Setup the tool lifts to between cuts."
+      },
+      {
+        "name": "Home Position",
+        "text": "Read only: where the tool starts and ends, set in Material Setup."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... sets filters that pick them automatically."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath from the selected vectors with these settings."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Toolpaths already calculated stay."
+      }
+    ],
+    "steps": [
+      "Select the vectors whose edges you want to bevel.",
+      "Pick a V-bit with Select..., or a ball nose and set the Angle.",
+      "Type the Width or the Cut Depth of the bevel.",
+      "Choose Inside or Outside and the slope.",
+      "Press Calculate."
+    ]
+  },
+  "straightInlayToolpath": {
+    "summary": "Makes straight sided inlays with an end mill: first choose the part to cut, a male insert or a female pocket or hole, and that part's settings open in the panel.",
+    "fields": [
+      {
+        "name": "Male Inlay (Insert)",
+        "text": "Straight cuts a plain insert; Stepped cuts an insert with a shoulder step around its edge."
+      },
+      {
+        "name": "Female Inlay (Pocket / Hole)",
+        "text": "Pocket clears a recess for the insert; Hole cuts right around the inside of the shape."
+      },
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface the cut starts; usually 0."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "How deep the insert profile, hole or pocket is cut."
+      },
+      {
+        "name": "Tool",
+        "text": "The end mill used. Select... picks from the Tool Database; the pocket can list several tools."
+      },
+      {
+        "name": "Edit Passes...",
+        "text": "Shows and changes the depth of each pass; the count is shown beside it."
+      },
+      {
+        "name": "Machine Vectors...",
+        "text": "Shows the side cut: inserts are cut outside the vectors, holes inside."
+      },
+      {
+        "name": "Direction",
+        "text": "Climb or Conventional cut direction for the insert or hole."
+      },
+      {
+        "name": "Allowance Offset",
+        "text": "Extra material trimmed off the insert or hole edge to adjust the fit."
+      },
+      {
+        "name": "Step Depth",
+        "text": "Stepped insert only: how far down the shoulder step goes. It must end above the cut depth."
+      },
+      {
+        "name": "Step Width",
+        "text": "Stepped insert only: how wide the shoulder step is."
+      },
+      {
+        "name": "Add tabs to toolpath",
+        "text": "Leaves small tabs so the insert stays attached; set Length and Thickness, or Edit Tabs..."
+      },
+      {
+        "name": "Profile options",
+        "text": "Pages for ramps, leads, cutting order, start points and sharp corners."
+      },
+      {
+        "name": "Clear Pocket",
+        "text": "Pocket only: Offset or Raster clearing of the recess."
+      },
+      {
+        "name": "Raster Angle",
+        "text": "Pocket only, with Raster: the angle of the clearing lines."
+      },
+      {
+        "name": "Profile Pass",
+        "text": "Pocket only, with Raster: adds a cleanup pass around the edge, first or last."
+      },
+      {
+        "name": "Ramp Plunge Moves",
+        "text": "Pocket only: ramps into the material over the Distance instead of plunging straight down."
+      },
+      {
+        "name": "Pocket Allowance",
+        "text": "Pocket only: extra cut round the pocket edge so the insert fits."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Cuts the vectors in the order you selected them."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the inlay toolpath from the selected closed vectors."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors of the inlay shape.",
+      "Pick the part to make: Straight or Stepped insert, or Pocket or Hole.",
+      "Set the depths and pick an end mill.",
+      "Adjust the allowance for the fit you want and press Calculate.",
+      "Open the form again to make the matching part."
+    ]
+  },
+  "drillBankToolpath": {
+    "summary": "Drills the selected circles with a multi drill head: each firing lowers every drill that lands on a circle of its diameter. Use it on machines with a drill bank, such as boring heads for shelf holes.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface drilling starts; usually 0."
+      },
+      {
+        "name": "Cut Depth (C)",
+        "text": "How deep each hole is drilled."
+      },
+      {
+        "name": "Tool",
+        "text": "The drill used for feeds and pass depth. Select... picks one; Edit... changes this toolpath's copy."
+      },
+      {
+        "name": "Drill Bank",
+        "text": "Shows how many drills the bank has, its grid and pitch."
+      },
+      {
+        "name": "Edit Drill Bank...",
+        "text": "Opens the layout of the bank: drill counts, pitch, reference drill, and each drill's number and diameter."
+      },
+      {
+        "name": "Pitch Tolerance",
+        "text": "How far circles may be off the bank's pitch and still be drilled in one firing."
+      },
+      {
+        "name": "Diameter Tolerance",
+        "text": "How far a circle's size may differ from a drill's diameter and still match it."
+      },
+      {
+        "name": "Use Peck Drilling",
+        "text": "Drills in steps, lifting out between them to clear chips. The peck depth is the tool's pass depth."
+      },
+      {
+        "name": "Retract",
+        "text": "Where the drill lifts to between pecks: above the start depth, or just above the previous pass."
+      },
+      {
+        "name": "Retract Gap (R)",
+        "text": "How far above that height the drill lifts between pecks."
+      },
+      {
+        "name": "Dwell at the bottom of each drill pass",
+        "text": "Pauses the drill at the bottom of each pass for the Dwell Time, in seconds."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface under the tool instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the circles you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the drill bank toolpath from the selected circles."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the circles to drill.",
+      "Press Edit Drill Bank... and set up your drill head to match the machine.",
+      "Set the cut depth and pick a drill tool.",
+      "Set peck and dwell if needed, then press Calculate.",
+      "Save with a post processor that supports a drill bank."
+    ]
+  },
+  "threadMillingToolpath": {
+    "summary": "Mills a screw thread round the center of each selected circle with a thread milling tool, inside a hole or on the outside of a boss.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface the thread starts; usually 0."
+      },
+      {
+        "name": "Max Depth (M)",
+        "text": "The deepest the cutter goes below the start depth."
+      },
+      {
+        "name": "Thread Length (L)",
+        "text": "Read only: how long the thread will be, stopping where the lowest tooth reaches."
+      },
+      {
+        "name": "Tool",
+        "text": "The thread mill. Select... picks one; a multi point tool fixes the pitch to its own."
+      },
+      {
+        "name": "Pitch preset",
+        "text": "Picks a standard thread size to fill in pitch and diameter, or Custom to type them."
+      },
+      {
+        "name": "Pitch (P)",
+        "text": "Distance between thread crests. Locked when the tool is a multi point cutter."
+      },
+      {
+        "name": "Diameter (D)",
+        "text": "The major (outer crest) diameter of the thread."
+      },
+      {
+        "name": "Minor Diameter",
+        "text": "Read only: the root diameter of the thread, worked out from pitch and diameter."
+      },
+      {
+        "name": "Fit Tolerance",
+        "text": "Cuts a little deeper than the basic thread for an easier fit; start small, such as 0.1 mm."
+      },
+      {
+        "name": "Create Circles for Internal Threads",
+        "text": "Draws a minor diameter circle at each selected circle, so you can pocket the hole first."
+      },
+      {
+        "name": "Thread Type",
+        "text": "Internal cuts a thread inside a hole; External cuts it on the outside of a post."
+      },
+      {
+        "name": "Thread Direction",
+        "text": "Right Handed for normal threads that tighten clockwise, or Left Handed."
+      },
+      {
+        "name": "Top to Bottom",
+        "text": "Ticked, the tool threads downward from the top; unticked, it cuts upward from the bottom."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Threads the circles in the order you selected them."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the circles you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the thread milling toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the circles to thread.",
+      "Pick a thread milling tool.",
+      "Choose a pitch preset or type the pitch and diameter.",
+      "For an internal thread, press Create Circles and pocket or drill the holes first.",
+      "Set Internal or External and the hand, then press Calculate."
+    ]
+  },
+  "flutingToolpath": {
+    "summary": "Cuts grooves along the selected vectors that sink in and rise out gradually at their ends, for decorative flutes on columns, legs and panels.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface the flute starts; usually 0."
+      },
+      {
+        "name": "Flute Depth",
+        "text": "The full depth of the flute where it is deepest."
+      },
+      {
+        "name": "Tool",
+        "text": "The cutter, usually a ball nose for round bottomed flutes. Select... picks one."
+      },
+      {
+        "name": "Flute Type",
+        "text": "Ramp over the whole length, only at the start, or at both start and end."
+      },
+      {
+        "name": "Specify Ramp",
+        "text": "Set the ramp by a Length or as a Percentage of the vector. Off for a complete ramp."
+      },
+      {
+        "name": "Ramp Length",
+        "text": "How long each ramp is when set by length."
+      },
+      {
+        "name": "Ramp %",
+        "text": "How much of each vector's length the ramp takes when set by percentage."
+      },
+      {
+        "name": "Ramp Type",
+        "text": "Linear ramps at a steady slope; Smooth eases in and out for a softer end."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Cuts the vectors in the order you selected them."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the fluting toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the vectors to flute.",
+      "Set the flute depth and pick a ball nose tool.",
+      "Choose the flute type and ramp length or percentage.",
+      "Press Calculate."
+    ]
+  },
+  "prismToolpath": {
+    "summary": "Carves the selected closed vectors into sharp raised prisms with the cone of a V-bit, the ridges following their center lines. Good for beveled lettering and signs.",
+    "fields": [
+      {
+        "name": "Carve Direction",
+        "text": "Shown only for older toolpaths: Outside raises the shape as a prism, Inside sinks it as a V channel."
+      },
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface carving starts; usually 0."
+      },
+      {
+        "name": "Prism Depth",
+        "text": "Limits how deep the prism is cut. Leave it empty to carve the full prism."
+      },
+      {
+        "name": "Set Depth for Full Prism",
+        "text": "Fills in the depth the widest selected shape needs to come to a point with this tool."
+      },
+      {
+        "name": "Tool",
+        "text": "The V-bit or engraving tool. Pass depth and stepover come from the tool."
+      },
+      {
+        "name": "Cut Direction",
+        "text": "Climb or Conventional milling direction."
+      },
+      {
+        "name": "Use Vector Selection Order",
+        "text": "Carves the vectors in the order you selected them."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the prism toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors to carve.",
+      "Pick a V-bit.",
+      "Leave Prism Depth empty for full prisms, or type a limit.",
+      "Press Calculate. Pocket the waste around the shapes separately if needed."
+    ]
+  },
+  "textureToolpath": {
+    "summary": "Scatters short dipping strokes over the area inside the selected closed vectors for a hand tooled look, or cuts along the selected vectors as the pattern.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The cutter, usually a ball nose. Select... picks one; Edit... changes this toolpath's copy."
+      },
+      {
+        "name": "Start Depth",
+        "text": "How far below the surface the strokes start from; usually 0."
+      },
+      {
+        "name": "Use selected vectors as pattern",
+        "text": "Cuts along the selected vectors instead of scattering random strokes inside them."
+      },
+      {
+        "name": "Ramp at start and end",
+        "text": "Pattern mode only: each cut dips in and rises out like a flute instead of cutting at full depth."
+      },
+      {
+        "name": "Max. Cut Depth",
+        "text": "The deepest a stroke cuts below the start depth."
+      },
+      {
+        "name": "Min. Depth",
+        "text": "Slider: the shallowest stroke as a percent of the max depth, for varied depths."
+      },
+      {
+        "name": "Max. Cut Length",
+        "text": "The longest a stroke can be."
+      },
+      {
+        "name": "Min Length",
+        "text": "Slider: the shortest stroke as a percent of the max length."
+      },
+      {
+        "name": "Max Overlap",
+        "text": "How much a stroke may overlap the one before, as a percent of its length."
+      },
+      {
+        "name": "Variation",
+        "text": "Overlap slider: 0 always overlaps by the maximum, 100 varies from none up to it."
+      },
+      {
+        "name": "Stepover",
+        "text": "The distance between rows of strokes."
+      },
+      {
+        "name": "Variation (stepover)",
+        "text": "Slider: how far strokes may wander across their row, for a less regular look."
+      },
+      {
+        "name": "Angle",
+        "text": "The direction of the strokes and their rows, in degrees from the X axis."
+      },
+      {
+        "name": "Save ...",
+        "text": "Saves these texture settings to a file to reuse later."
+      },
+      {
+        "name": "Load ...",
+        "text": "Loads texture settings saved earlier."
+      },
+      {
+        "name": "Offset",
+        "text": "Boundary Vector Offset: how far the strokes keep in from the vectors."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the texture toolpath and shows it."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors to texture.",
+      "Pick a ball nose tool.",
+      "Set the depth, stroke length, stepover and angle.",
+      "Adjust the sliders for variety and press Calculate.",
+      "Check the result in Preview and tweak until you like it."
+    ]
+  },
+  "materialSetup": {
+    "summary": "Sets the material thickness, where Z zero is, where the model sits inside the material, and the safe heights and home position the machine uses. Heights are measured above the top of the material.",
+    "fields": [
+      {
+        "name": "Thickness",
+        "text": "How thick the material is. On a rotary job this field is the Diameter of the stock."
+      },
+      {
+        "name": "Show detailed summary on toolpath tab",
+        "text": "Shows a fuller material summary at the top of the toolpath panel."
+      },
+      {
+        "name": "Z-Zero",
+        "text": "Where the tool is zeroed: Material Surface or Machine Bed; on rotary, surface or center of the cylinder."
+      },
+      {
+        "name": "Gap Above Model",
+        "text": "Pick this to set how much material is left above the 3D model."
+      },
+      {
+        "name": "Gap Below Model",
+        "text": "Pick this to set the gap between the model's base and the bottom of the material."
+      },
+      {
+        "name": "Model Thickness",
+        "text": "Read only: the height of the 3D model."
+      },
+      {
+        "name": "Set...",
+        "text": "Opens Scale Model Z Height to make the model thinner or thicker."
+      },
+      {
+        "name": "Modeling Plane Z",
+        "text": "Read only: the height of the model's base plane in the material."
+      },
+      {
+        "name": "Clearance (Z1)",
+        "text": "Height above the material the tool lifts to for rapid moves; clear any clamps."
+      },
+      {
+        "name": "Plunge (Z2)",
+        "text": "Height above the material where the tool slows to plunge speed. It must not be above Z1."
+      },
+      {
+        "name": "X",
+        "text": "Home position X, where the tool starts and ends the job."
+      },
+      {
+        "name": "Y",
+        "text": "Home position Y, where the tool starts and ends the job."
+      },
+      {
+        "name": "Z Gap above Material",
+        "text": "How high above the material the tool waits at the home position."
+      },
+      {
+        "name": "OK",
+        "text": "Applies the settings and updates the toolpaths."
+      },
+      {
+        "name": "Cancel",
+        "text": "Closes the form without changes."
+      }
+    ],
+    "steps": [
+      "Check the material thickness matches your stock.",
+      "Choose whether Z zero is the material surface or the machine bed.",
+      "Set the gap above or below the model to position it in the material.",
+      "Set Clearance (Z1), Plunge (Z2) and the home position, then press OK."
+    ]
+  },
+  "saveToolpaths": {
+    "summary": "Writes the toolpaths as a file your machine can run. Tick the toolpaths to save and pick the post processor for your machine. A rotary job needs a rotary post: it turns the distance around the blank into the rotary axis in degrees, and the form says which axis. Other posts write the job flat and warn you.",
+    "fields": [
+      {
+        "name": "Output",
+        "text": "Save the Selected Toolpath, all visible toolpaths to one file, or visible toolpaths to multiple files."
+      },
+      {
+        "name": "Group where possible",
+        "text": "With multiple files, neighboring toolpaths cut with one tool share a file."
+      },
+      {
+        "name": "Output Tiled Toolpaths",
+        "text": "Saves one file per tile. Only available once Toolpath Tiling is set up."
+      },
+      {
+        "name": "Toolpaths to be saved ...",
+        "text": "Tick the toolpaths to save; each row shows its tool number and tool. Click a row to select it."
+      },
+      {
+        "name": "Machine",
+        "text": "The machine the files are for; it narrows the post processor list."
+      },
+      {
+        "name": "Post Processor",
+        "text": "The file format for your machine controller. Add Post-Processors adds more."
+      },
+      {
+        "name": "Output direct to machine",
+        "text": "Sends the file straight to the machine's control software, when the post supports it."
+      },
+      {
+        "name": "Machine Configuration...",
+        "text": "Opens the machine settings to add or change machines."
+      },
+      {
+        "name": "Add side to toolpath name",
+        "text": "Double sided jobs only: adds Top or Bottom to the saved file names."
+      },
+      {
+        "name": "Save Toolpath(s) ...",
+        "text": "Writes the file or files. It reads Output Toolpath(s) when sending direct."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Show or tick the toolpaths you want to save.",
+      "Choose the output: selected toolpath, one file or multiple files.",
+      "Pick your machine and its post processor.",
+      "Press Save Toolpath(s) ... and choose where to save.",
+      "Read any warning shown, such as a post that cannot change tools."
+    ],
+    "related": ["page:beforeYouCut"]
+  },
+  "mergeToolpaths": {
+    "summary": "Joins the visible toolpaths that use the same tool into one toolpath, so the machine runs them without a tool change or a trip home between them. The originals are hidden, not deleted.",
+    "fields": [
+      {
+        "name": "Toolpaths to be merged ...",
+        "text": "Lists the visible toolpaths. Show or hide toolpaths in the toolpath list to choose."
+      },
+      {
+        "name": "Ordering",
+        "text": "Tick Left to Right, Bottom to Top, Grid or Shortest Path; the fastest ticked order is used."
+      },
+      {
+        "name": "Merge By Part",
+        "text": "Keeps the cuts that lie in one part together before moving on to the next part."
+      },
+      {
+        "name": "Name",
+        "text": "The name of the merged toolpath."
+      },
+      {
+        "name": "Merge Toolpaths",
+        "text": "Makes the merged toolpath. Each part keeps its own feeds and speed."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Make two or more toolpaths with the same tool visible in the toolpath list.",
+      "Tick the orders to try, and Merge By Part if you like.",
+      "Type a name and press Merge Toolpaths."
+    ]
+  },
+  "arrayCopyToolpath": {
+    "summary": "Copies the visible toolpaths into a grid of rows and columns to the right of and above them, for cutting several of the same part. The originals are hidden, not deleted.",
+    "fields": [
+      {
+        "name": "Toolpaths",
+        "text": "Lists the visible toolpaths that will be copied. Show or hide them in the toolpath list to choose."
+      },
+      {
+        "name": "Rows (Y)",
+        "text": "How many copies go up the job. Rows times columns must make at least two."
+      },
+      {
+        "name": "Columns (X)",
+        "text": "How many copies go across the job."
+      },
+      {
+        "name": "Spacing",
+        "text": "Offset measures from one copy's start to the next; Gap is the space between their outlines."
+      },
+      {
+        "name": "X",
+        "text": "The spacing across, between columns."
+      },
+      {
+        "name": "Y",
+        "text": "The spacing up, between rows."
+      },
+      {
+        "name": "Minimize tool changes",
+        "text": "When the toolpaths use different tools, cuts all copies with one tool before changing."
+      },
+      {
+        "name": "Name",
+        "text": "The name of the new array toolpath."
+      },
+      {
+        "name": "Create",
+        "text": "Makes the array copy. Recalculating a copy follows the original toolpaths."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Make only the toolpaths to copy visible in the toolpath list.",
+      "Set the number of rows and columns.",
+      "Choose Offset or Gap and type the X and Y spacing.",
+      "Press Create."
+    ]
+  },
+  "toolpathTiling": {
+    "summary": "Splits the toolpaths of a job bigger than your machine into tiles that are cut one after another, moving the material on by one tile between them. The XY datum must be at the bottom left of the job.",
+    "fields": [
+      {
+        "name": "Tile Toolpaths",
+        "text": "Turns tiling on. It needs the XY datum at the bottom left corner, set in Job Setup."
+      },
+      {
+        "name": "Tiling Method",
+        "text": "Individual Tiles for separate pieces, or Feed-through in X or Y for one board moved along the machine."
+      },
+      {
+        "name": "Tile Width (x)",
+        "text": "How wide each tile is; set it to what your machine can cut. Hidden for Feed-through in Y."
+      },
+      {
+        "name": "Tile Height (y)",
+        "text": "How tall each tile is. Hidden for Feed-through in X."
+      },
+      {
+        "name": "Tile Overlap",
+        "text": "How far tiles overlap. For individual tiles use at least the tool radius; it must be smaller than the tile."
+      },
+      {
+        "name": "Machine smallest tile first",
+        "text": "Cuts the smallest tile before the others."
+      },
+      {
+        "name": "Update Tiles",
+        "text": "Works out the tiles with these settings and draws them."
+      },
+      {
+        "name": "Active Tile",
+        "text": "Picks which tile the view and preview show; the count of tiles is shown above."
+      },
+      {
+        "name": "Draw toolpaths in original position for visualization",
+        "text": "Draws the tiled toolpaths where they sit in the full job instead of at the datum."
+      },
+      {
+        "name": "Delete All Tiling Data",
+        "text": "Removes the tiles so the toolpaths are drawn and saved whole again."
+      },
+      {
+        "name": "Hide Tiling Manager",
+        "text": "Closes the form. The tiling settings stay."
+      }
+    ],
+    "steps": [
+      "Make sure the XY datum is at the bottom left in Job Setup.",
+      "Tick Tile Toolpaths and choose a tiling method.",
+      "Type the tile size and overlap, then press Update Tiles.",
+      "Save the toolpaths with Output Tiled Toolpaths ticked to get one file per tile."
+    ]
+  },
+  "photoCarveToolpath": {
+    "summary": "Carves a photograph as V grooves across the selected bitmap, cutting deeper and wider where the picture is darker. Select the bitmap, and vectors if you want the grooves to follow them.",
+    "fields": [
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface carving starts; usually 0."
+      },
+      {
+        "name": "Max Carving Depth",
+        "text": "How deep the grooves go in the darkest parts of the picture."
+      },
+      {
+        "name": "Stepover Retract",
+        "text": "How high the tool lifts when moving from one groove to the next."
+      },
+      {
+        "name": "Tool",
+        "text": "The V-bit that carves the grooves. Select... picks one."
+      },
+      {
+        "name": "Strategy",
+        "text": "Raster uses parallel lines, Hatch uses crossing lines, Selected Vectors follows your vectors."
+      },
+      {
+        "name": "Line Spacing",
+        "text": "Slider from Dense to Sparse: percent of the groove width; 100 leaves a sharp ridge between grooves."
+      },
+      {
+        "name": "Line Angle",
+        "text": "The angle of the groove lines, from -90 to 90 degrees. Off with Selected Vectors."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface instead of the flat top."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the photo carving toolpath. It needs a selected bitmap and a tool."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Select the bitmap to carve, and any vectors to follow.",
+      "Pick a V-bit and set the max carving depth.",
+      "Choose a strategy, line spacing and angle.",
+      "Press Calculate, then check the result in Preview."
+    ]
+  },
+  "importedToolpath": {
+    "summary": "Edits a toolpath read from a G-code file: place it in the job, set how deep it cuts and its feeds. Imported moves are never recalculated.",
+    "fields": [
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list; it cannot be empty."
+      },
+      {
+        "name": "Move X",
+        "text": "Shifts the whole toolpath left or right by this distance."
+      },
+      {
+        "name": "Move Y",
+        "text": "Shifts the whole toolpath up or down by this distance."
+      },
+      {
+        "name": "Start Depth (D)",
+        "text": "Lowers the toolpath by this much below the surface."
+      },
+      {
+        "name": "Feed Rate",
+        "text": "Cutting speed of the tool across the material."
+      },
+      {
+        "name": "Plunge Rate",
+        "text": "Speed the tool moves down into the material."
+      },
+      {
+        "name": "Spindle Speed",
+        "text": "Spindle speed in r.p.m. written with the toolpath."
+      },
+      {
+        "name": "Tool",
+        "text": "The tool the preview draws with. Select... picks one from the Tool Database."
+      },
+      {
+        "name": "Apply",
+        "text": "Saves these changes to the imported toolpath."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Import the G-code file, or open an imported toolpath from the list.",
+      "Move it into place with Move X and Move Y.",
+      "Set the start depth, feeds and a tool for the preview.",
+      "Press Apply."
+    ]
+  },
+  "previewToolpaths": {
+    "summary": "Shows the material being cut by your toolpaths in the 3D view, with an estimated machining time, and checks the result for gouges, collisions and leftover material before you cut.",
+    "fields": [
+      {
+        "name": "Material Appearance...",
+        "text": "Picks the wood or material look and color the preview uses."
+      },
+      {
+        "name": "Machined Area Color ....",
+        "text": "How cut areas are shaded: Material Color, Surface Color, Global Fill Color, Toolpath Color or Lithophane."
+      },
+      {
+        "name": "Set All",
+        "text": "Toolpath Color only: gives every toolpath the fill color of the selected one."
+      },
+      {
+        "name": "No fill",
+        "text": "Toolpath Color only: the selected toolpath's cuts show in the material color."
+      },
+      {
+        "name": "Light fall off",
+        "text": "Lithophane only: how quickly light fades through thicker material."
+      },
+      {
+        "name": "Animate preview",
+        "text": "Shows the cutting move by move instead of all at once."
+      },
+      {
+        "name": "Draw tool",
+        "text": "Shows the tool moving during an animated preview."
+      },
+      {
+        "name": "Preview Selected Toolpath",
+        "text": "Cuts only the toolpath selected in the list."
+      },
+      {
+        "name": "Playback",
+        "text": "Run, Pause, Single Step and Run to Retract control an animated preview."
+      },
+      {
+        "name": "Speed",
+        "text": "How fast the animated preview plays."
+      },
+      {
+        "name": "Preview All Sides",
+        "text": "Double sided jobs: cuts the visible toolpaths of both sides."
+      },
+      {
+        "name": "Preview All Toolpaths",
+        "text": "Cuts every toolpath in the list, visible or not."
+      },
+      {
+        "name": "Preview Visible Toolpaths",
+        "text": "Cuts only the toolpaths shown in the toolpath list."
+      },
+      {
+        "name": "Reset Preview",
+        "text": "Puts the material back to uncut."
+      },
+      {
+        "name": "Undo Last",
+        "text": "Takes back the last preview or waste removal."
+      },
+      {
+        "name": "Save Preview Image...",
+        "text": "Saves a picture of the 3D preview to a file."
+      },
+      {
+        "name": "Show Check Colors",
+        "text": "Paints gouges red, leftover material blue and undercuts violet, and lists each issue."
+      },
+      {
+        "name": "Tolerance",
+        "text": "How far the preview may differ from the design before a check flags it."
+      },
+      {
+        "name": "Issues found by the preview",
+        "text": "Each issue with its toolpath and position; click one to show it in the 3D view."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Show the toolpaths you want in the toolpath list.",
+      "Press Preview Visible Toolpaths, or tick Animate preview first to watch it cut.",
+      "Double click waste areas in the 3D view to remove them.",
+      "Turn on check colors and review any issues listed.",
+      "Press Reset Preview before trying again."
+    ]
+  },
+  "createFlatShape": {
+    "summary": "Makes a flat plane component from the selected closed vectors, lifted by its base height. With nothing selected the plane covers the whole material.",
+    "fields": [
+      {
+        "name": "Base Height",
+        "text": "Lifts the whole shape by this amount; 0 starts it at the modeling plane."
+      },
+      {
+        "name": "Fade",
+        "text": "Makes the component fade in height between two anchor points; Set Anchor picks them in the 3D view."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second anchor; 50 halves it."
+      },
+      {
+        "name": "Tilt",
+        "text": "Tilts the component up from one anchor point toward another; Set Anchor picks them."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far it tilts, in degrees, between -90 and 90."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select the closed vectors, or nothing to cover the whole material.",
+      "Type the Base Height of the plane.",
+      "Pick how it combines with the model.",
+      "Press Apply and check the 3D view."
+    ]
+  },
+  "createShape": {
+    "summary": "Makes a rounded, domed component from the selected closed vectors. Use it for raised lettering, pillows and domes.",
+    "fields": [
+      {
+        "name": "Profile Angle",
+        "text": "How steeply the sides rise from the edge, in degrees; 90 is the steepest."
+      },
+      {
+        "name": "Angle",
+        "text": "Slider for the profile angle, from 1 to 90 degrees."
+      },
+      {
+        "name": "Limit",
+        "text": "Caps the shape at a height, flattening its top."
+      },
+      {
+        "name": "Limit Height",
+        "text": "The height the top is flattened at when Limit is ticked."
+      },
+      {
+        "name": "Preserve Internal Corners",
+        "text": "Keeps the valleys at inside corners of the outline crisp instead of rounded."
+      },
+      {
+        "name": "Scale",
+        "text": "Scales the rise of the shape so its top reaches a set height."
+      },
+      {
+        "name": "Height",
+        "text": "The height the shape's top is scaled to when Scale is ticked."
+      },
+      {
+        "name": "Base Height",
+        "text": "Lifts the whole shape by this amount; 0 starts it at the modeling plane."
+      },
+      {
+        "name": "Fade",
+        "text": "Makes the component fade in height between two anchor points; Set Anchor picks them in the 3D view."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second anchor; 50 halves it."
+      },
+      {
+        "name": "Tilt",
+        "text": "Tilts the component up from one anchor point toward another; Set Anchor picks them."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far it tilts, in degrees, between -90 and 90."
+      },
+      {
+        "name": "Total Height",
+        "text": "Shows the highest point after Apply. Type a new value and press Enter to rescale to it."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select one or more closed vectors.",
+      "Set the Profile Angle; lower angles give a flatter dome.",
+      "Tick Limit or Scale to control the height.",
+      "Choose how it combines and press Apply.",
+      "Adjust and press Apply again to update it."
+    ]
+  },
+  "createAngledShape": {
+    "summary": "Makes a component with straight sloping sides from the selected closed vectors, like a chiseled or beveled shape.",
+    "fields": [
+      {
+        "name": "Profile Angle",
+        "text": "How steeply the sides rise from the edge, in degrees; 90 is the steepest."
+      },
+      {
+        "name": "Angle",
+        "text": "Slider for the profile angle, from 1 to 90 degrees."
+      },
+      {
+        "name": "Limit",
+        "text": "Caps the shape at a height, flattening its top."
+      },
+      {
+        "name": "Limit Height",
+        "text": "The height the top is flattened at when Limit is ticked."
+      },
+      {
+        "name": "Preserve Internal Corners",
+        "text": "Keeps the valleys at inside corners of the outline crisp instead of rounded."
+      },
+      {
+        "name": "Scale",
+        "text": "Scales the rise of the shape so its top reaches a set height."
+      },
+      {
+        "name": "Height",
+        "text": "The height the shape's top is scaled to when Scale is ticked."
+      },
+      {
+        "name": "Base Height",
+        "text": "Lifts the whole shape by this amount; 0 starts it at the modeling plane."
+      },
+      {
+        "name": "Fade",
+        "text": "Makes the component fade in height between two anchor points; Set Anchor picks them in the 3D view."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second anchor; 50 halves it."
+      },
+      {
+        "name": "Tilt",
+        "text": "Tilts the component up from one anchor point toward another; Set Anchor picks them."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far it tilts, in degrees, between -90 and 90."
+      },
+      {
+        "name": "Total Height",
+        "text": "Shows the highest point after Apply. Type a new value and press Enter to rescale to it."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select one or more closed vectors.",
+      "Set the Profile Angle of the sloping sides.",
+      "Tick Limit to flatten the top at a height, or Scale to set its height.",
+      "Choose how it combines and press Apply."
+    ]
+  },
+  "createSmoothShape": {
+    "summary": "Makes a component that curves up from a cove at its foot to a rounded top, from the selected closed vectors.",
+    "fields": [
+      {
+        "name": "Top Smoothing",
+        "text": "Slider: how rounded the top of the shape is."
+      },
+      {
+        "name": "Bottom Smoothing",
+        "text": "Slider: how rounded the cove at the foot of the shape is."
+      },
+      {
+        "name": "Limit",
+        "text": "Caps the shape at a height, flattening its top."
+      },
+      {
+        "name": "Limit Height",
+        "text": "The height the top is flattened at when Limit is ticked."
+      },
+      {
+        "name": "Preserve Internal Corners",
+        "text": "Keeps the valleys at inside corners of the outline crisp instead of rounded."
+      },
+      {
+        "name": "Blend To Inner Vectors",
+        "text": "Treats vectors nested inside the outline as the top of the shape, not as holes."
+      },
+      {
+        "name": "Scale",
+        "text": "Scales the rise of the shape so its top reaches a set height."
+      },
+      {
+        "name": "Height",
+        "text": "The height the shape's top is scaled to when Scale is ticked."
+      },
+      {
+        "name": "Base Height",
+        "text": "Lifts the whole shape by this amount; 0 starts it at the modeling plane."
+      },
+      {
+        "name": "Fade",
+        "text": "Makes the component fade in height between two anchor points; Set Anchor picks them in the 3D view."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second anchor; 50 halves it."
+      },
+      {
+        "name": "Tilt",
+        "text": "Tilts the component up from one anchor point toward another; Set Anchor picks them."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far it tilts, in degrees, between -90 and 90."
+      },
+      {
+        "name": "Total Height",
+        "text": "Shows the highest point after Apply. Type a new value and press Enter to rescale to it."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select one or more closed vectors.",
+      "Move the Top and Bottom Smoothing sliders to shape the section.",
+      "Tick Limit or Scale to control the height.",
+      "Choose how it combines and press Apply."
+    ]
+  },
+  "createCustomShape": {
+    "summary": "Makes a component from closed vectors using a section you draw: select the closed vectors and one open profile vector. The part of the profile above the line joining its ends, left end at the edge, becomes the section.",
+    "fields": [
+      {
+        "name": "Limit",
+        "text": "Caps the shape at a height, flattening its top."
+      },
+      {
+        "name": "Limit Height",
+        "text": "The height the top is flattened at when Limit is ticked."
+      },
+      {
+        "name": "Preserve Internal Corners",
+        "text": "Keeps the valleys at inside corners of the outline crisp instead of rounded."
+      },
+      {
+        "name": "Blend To Inner Vectors",
+        "text": "Treats vectors nested inside the outline as the top of the shape, not as holes."
+      },
+      {
+        "name": "Scale",
+        "text": "Scales the rise of the shape so its top reaches a set height."
+      },
+      {
+        "name": "Height",
+        "text": "The height the shape's top is scaled to when Scale is ticked."
+      },
+      {
+        "name": "Base Height",
+        "text": "Lifts the whole shape by this amount; 0 starts it at the modeling plane."
+      },
+      {
+        "name": "Fade",
+        "text": "Makes the component fade in height between two anchor points; Set Anchor picks them in the 3D view."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second anchor; 50 halves it."
+      },
+      {
+        "name": "Tilt",
+        "text": "Tilts the component up from one anchor point toward another; Set Anchor picks them."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far it tilts, in degrees, between -90 and 90."
+      },
+      {
+        "name": "Total Height",
+        "text": "Shows the highest point after Apply. Type a new value and press Enter to rescale to it."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Draw an open vector for the section, left end at the outer edge.",
+      "Select the closed vectors and the profile vector.",
+      "Tick Limit or Scale to control the height.",
+      "Choose how it combines and press Apply."
+    ]
+  },
+  "importModel": {
+    "summary": "Brings a 3D model file into the job: choose which face looks up, turn it, and set its size before positioning it. The 3D view shows the result as you go.",
+    "fields": [
+      {
+        "name": "Choose File...",
+        "text": "Picks the 3D model file to import; its name and triangle count are shown."
+      },
+      {
+        "name": "Imported model type",
+        "text": "Rotary jobs only: Full 3D model wraps around the axis; Flat model imports as for a flat job."
+      },
+      {
+        "name": "Face on top",
+        "text": "Which face of the model points up: Top, Bottom, Front, Back, Left or Right."
+      },
+      {
+        "name": "Rotate about Z",
+        "text": "Buttons that turn the model by 90, 180 or 45 degrees about the vertical axis."
+      },
+      {
+        "name": "About X",
+        "text": "Turns the model about the X axis by the typed angle. You can also drag the rings."
+      },
+      {
+        "name": "About Y",
+        "text": "Turns the model about the Y axis by the angle typed."
+      },
+      {
+        "name": "About Z",
+        "text": "Turns the model about the Z axis by the angle typed."
+      },
+      {
+        "name": "Reset Rotation",
+        "text": "Sets all three rotation angles back to 0."
+      },
+      {
+        "name": "X",
+        "text": "Model Size: the model's width."
+      },
+      {
+        "name": "Y",
+        "text": "Model Size: the model's depth from front to back."
+      },
+      {
+        "name": "Z",
+        "text": "Model Size: the model's height."
+      },
+      {
+        "name": "Lock XYZ Ratio",
+        "text": "Keeps the proportions when you change one size."
+      },
+      {
+        "name": "Units",
+        "text": "Whether the file's numbers are mm or inches."
+      },
+      {
+        "name": "Scale x 25.4 (inches to mm)",
+        "text": "Makes the model 25.4 times bigger, for a file drawn in inches."
+      },
+      {
+        "name": "Scale ÷ 25.4 (mm to inches)",
+        "text": "Makes the model 25.4 times smaller, for a file drawn in mm."
+      },
+      {
+        "name": "Apply",
+        "text": "Applies the sizes typed above."
+      },
+      {
+        "name": "Center Model",
+        "text": "Moves the model back to the middle of the rotation handles."
+      },
+      {
+        "name": "Apply Perspective along Z",
+        "text": "Shrinks the far parts of the model for a perspective look; the slider sets the amount."
+      },
+      {
+        "name": "Model units",
+        "text": "Rotary full model only: the units of the file."
+      },
+      {
+        "name": "Rotation Axis Movement",
+        "text": "Rotary full model only: On lets you drag the rotation axis within the model."
+      },
+      {
+        "name": "Model Scaling",
+        "text": "Rotary full model only: set Length and Diameter, fit to the material, or reset or resize the material."
+      },
+      {
+        "name": "Position & Import",
+        "text": "Goes on to place the model in the material and import it."
+      },
+      {
+        "name": "Segment",
+        "text": "Goes on to cut the model into pieces that each carve from above."
+      },
+      {
+        "name": "Cancel",
+        "text": "Closes the form without importing."
+      }
+    ],
+    "steps": [
+      "Press Choose File... and pick the model.",
+      "Choose the face on top and turn the model until it looks right.",
+      "Set the size and units, then press Apply.",
+      "Press Position & Import to place it, or Segment to split it first."
+    ]
+  },
+  "positionModel": {
+    "summary": "Sets where an imported 3D model is cut off before it becomes a component. Everything above the zero plane becomes the component; undercuts become straight walls down.",
+    "fields": [
+      {
+        "name": "Zero Plane Position",
+        "text": "Slider and box: the height above the model's lowest point where it is cut off."
+      },
+      {
+        "name": "Middle",
+        "text": "Puts the zero plane halfway up the model."
+      },
+      {
+        "name": "Bottom",
+        "text": "Puts the zero plane at the model's lowest point, keeping all of it."
+      },
+      {
+        "name": "Create Both Sides",
+        "text": "Double sided jobs only: also makes a component on the other side from what lies below the plane."
+      },
+      {
+        "name": "Discard data below zero plane",
+        "text": "Drops everything below the plane. Unticked, those parts stay as depths below zero."
+      },
+      {
+        "name": "Highlight Undercuts",
+        "text": "Colors areas the tool cannot reach from above, so you can adjust the orientation."
+      },
+      {
+        "name": "Back",
+        "text": "Returns to the orientation step."
+      },
+      {
+        "name": "Import",
+        "text": "Makes the component and adds it to the model."
+      },
+      {
+        "name": "Cancel",
+        "text": "Stops the import without adding anything."
+      }
+    ],
+    "steps": [
+      "Drag the slider or type where the model should be cut off.",
+      "Tick Highlight Undercuts to check for areas the tool cannot reach.",
+      "Press Back to change the orientation if needed.",
+      "Press Import."
+    ]
+  },
+  "segmentModel": {
+    "summary": "Cuts an imported 3D model into segments that can each be carved from above, then lays them out flat in the material. Use it for models with undercuts that one side cannot reach.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Edit places segmenting planes and cuts; Layout turns each segment to face up."
+      },
+      {
+        "name": "X",
+        "text": "Edit mode: moves the segmenting plane along X. You can also drag its handles in the 3D view."
+      },
+      {
+        "name": "Y",
+        "text": "Edit mode: moves the segmenting plane along Y."
+      },
+      {
+        "name": "Z",
+        "text": "Edit mode: moves the segmenting plane up or down."
+      },
+      {
+        "name": "Tilt about X",
+        "text": "Edit mode: tilts the plane about the X axis, in degrees."
+      },
+      {
+        "name": "Tilt about Y",
+        "text": "Edit mode: tilts the plane about the Y axis, in degrees."
+      },
+      {
+        "name": "Segment",
+        "text": "Edit mode: cuts the selected segment in two along the plane."
+      },
+      {
+        "name": "Segments",
+        "text": "The tree of segments. Drag one onto another to merge them; right click for Delete Children or Separate."
+      },
+      {
+        "name": "Segment Orientation",
+        "text": "Layout mode: Turn up, down, left, right or Rotate flat turns the selected segment."
+      },
+      {
+        "name": "Free Rotation",
+        "text": "Layout mode: shows About X, Y and Z fields to turn the segment by any angle."
+      },
+      {
+        "name": "Visualize Undercuts",
+        "text": "Layout mode: colors areas of the segment the tool cannot reach from above."
+      },
+      {
+        "name": "Create Backface Caps",
+        "text": "Fills the cut faces of each segment flat."
+      },
+      {
+        "name": "Resize Material To Fit Slices",
+        "text": "Grows the material so it holds all the laid out segments."
+      },
+      {
+        "name": "Create Boundary Vectors",
+        "text": "Draws each segment's top and bottom outlines as vectors."
+      },
+      {
+        "name": "Back",
+        "text": "Returns to the orientation step."
+      },
+      {
+        "name": "OK",
+        "text": "Makes the segments as components laid out in the material."
+      },
+      {
+        "name": "Cancel",
+        "text": "Stops the import without adding anything."
+      }
+    ],
+    "steps": [
+      "In Edit mode, place the plane where the model should split and press Segment.",
+      "Repeat on other segments until each can be carved from above.",
+      "Switch to Layout and turn each segment so it faces up.",
+      "Tick the options you want and press OK."
+    ]
+  },
+  "twoRailSweep": {
+    "summary": "Sweeps one or more cross section vectors along two drive rails into a component; the section stretches to fill the gap between the rails. Good for frames, legs and tapered moldings.",
+    "fields": [
+      {
+        "name": "Use Selection",
+        "text": "Takes the two selected vectors as the rails; the first shows red, the second green."
+      },
+      {
+        "name": "Swap Rail Order",
+        "text": "Swaps which rail is first and which is second."
+      },
+      {
+        "name": "Clear Rails",
+        "text": "Forgets the chosen rails so you can pick others."
+      },
+      {
+        "name": "Cross Sections",
+        "text": "Select an open vector and click a rail to attach it; right click rails or sections for more options."
+      },
+      {
+        "name": "Scale cross sections with width",
+        "text": "Makes the section taller where the rails are farther apart. Unticked, heights stay as drawn."
+      },
+      {
+        "name": "Sweep between spans",
+        "text": "Blends sections with the same number of spans span by span, for crisper transitions."
+      },
+      {
+        "name": "Fill center of inner closed vector rails",
+        "text": "With two closed rails, fills inside the inner one at the height the sections reach."
+      },
+      {
+        "name": "Scale to Exact Height",
+        "text": "Scales the sweep so its highest point is the Height typed."
+      },
+      {
+        "name": "Height",
+        "text": "The top height used with Scale to Exact Height."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select the two rail vectors and press Use Selection.",
+      "Select an open cross section vector and click a rail to attach it; add more if you like.",
+      "Set the height options.",
+      "Press Apply and check the 3D view."
+    ]
+  },
+  "extrudeWeave": {
+    "summary": "Extrudes cross section vectors, or a component, along one or more drive rails into a new component. Where rails cross, the strands can weave over and under each other.",
+    "fields": [
+      {
+        "name": "Use Selection",
+        "text": "Takes the selected vectors as the drive rails; each shows its start and direction."
+      },
+      {
+        "name": "Clear Rails",
+        "text": "Forgets the chosen rails so you can pick others."
+      },
+      {
+        "name": "Extrude",
+        "text": "Use Vector Cross Sections to sweep open vectors, or Use a Component to run a component along the rail."
+      },
+      {
+        "name": "Cross Sections / Sweep Interior",
+        "text": "Select an open vector and click a rail to attach it; drag it along the rail, right click for more."
+      },
+      {
+        "name": "Create sharp corners",
+        "text": "Miters the corners of the rails instead of rounding them."
+      },
+      {
+        "name": "Sweep between spans",
+        "text": "Blends sections with the same number of spans span by span."
+      },
+      {
+        "name": "Component",
+        "text": "With a component: the component to run along the rail, its X following the rail."
+      },
+      {
+        "name": "Along the rail",
+        "text": "Stretch one copy to the rail's length, or fill the rail with multiple copies."
+      },
+      {
+        "name": "Overlap",
+        "text": "With copies: how much of its length each copy overlaps the one before, in percent."
+      },
+      {
+        "name": "Flip alternate copies",
+        "text": "With copies: flips every other copy across the rail."
+      },
+      {
+        "name": "Weave under/over at crossings",
+        "text": "Raises and lowers the strands where rails cross, alternately over and under."
+      },
+      {
+        "name": "Weave",
+        "text": "Scale Shape scales the heights at crossings; Add Base keeps them and lifts by the percentages."
+      },
+      {
+        "name": "Z Under",
+        "text": "Height, in percent, of a strand where it passes under another."
+      },
+      {
+        "name": "Z Over",
+        "text": "Height, in percent, of a strand where it passes over another; it can be above 100."
+      },
+      {
+        "name": "Scale to Exact Height",
+        "text": "Scales the result so its highest point is the Height typed."
+      },
+      {
+        "name": "Height",
+        "text": "The top height used with Scale to Exact Height."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select the rail vectors and press Use Selection.",
+      "Choose vector cross sections or a component.",
+      "Attach a cross section to a rail, or pick the component.",
+      "Tick Weave if the rails cross, then press Apply."
+    ]
+  },
+  "textureArea": {
+    "summary": "Fills an area with repeating copies of a component to make a relief texture. Select the component to repeat and, to limit the area, closed vectors around it; the original is hidden.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Transform Object moves the result; Edit Textured Area Component lets you drag the tile box in 2D."
+      },
+      {
+        "name": "X",
+        "text": "Spacing: gap between tiles across, as a percent of the tile width; below zero overlaps them."
+      },
+      {
+        "name": "Y",
+        "text": "Spacing: gap between tiles upward, as a percent of the tile height."
+      },
+      {
+        "name": "X Shift",
+        "text": "Moves every other row across by this percent of the tile width, for a brick pattern."
+      },
+      {
+        "name": "Y Shift",
+        "text": "Moves every other column up by this percent of the tile height."
+      },
+      {
+        "name": "Reflection",
+        "text": "Click each of the four tiles to cycle it through no, horizontal, vertical or both reflections."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Select the component to repeat.",
+      "Also select closed vectors to limit the area, or none to fill the job.",
+      "Set the spacing, shifts and reflections.",
+      "Press Apply and check the 3D view."
+    ]
+  },
+  "turnSpin": {
+    "summary": "Turns an open profile vector around an axis into a component. Select exactly one open vector as the cross section, then press Apply.",
+    "fields": [
+      {
+        "name": "Mode",
+        "text": "Turn spins the profile around the line joining its ends, like a lathe; Spin turns it around its left end."
+      },
+      {
+        "name": "Scale to Exact Height",
+        "text": "Scales the result so its highest point is the Height typed."
+      },
+      {
+        "name": "Height",
+        "text": "The top height used with Scale to Exact Height."
+      },
+      {
+        "name": "Component Name",
+        "text": "The name of the component in the component tree."
+      },
+      {
+        "name": "Combine",
+        "text": "How it joins the model: Add stacks on top, Subtract cuts into it, Merge keeps the higher."
+      },
+      {
+        "name": "Reset",
+        "text": "Discards what this form applied, putting the model back as it was when the form opened."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the component, or updates the one this form made last."
+      },
+      {
+        "name": "Start New Component",
+        "text": "Keeps what is applied and clears the selection, so the next Apply makes a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Applied components stay."
+      }
+    ],
+    "steps": [
+      "Draw an open vector for the profile.",
+      "Select it and choose Turn or Spin.",
+      "For Spin, move the vector right so the round shape has room.",
+      "Press Apply and check the 3D view."
+    ]
+  },
+  "componentEdit": {
+    "summary": "Changes the component selected in the component list with one edit at a time: smooth, draft, tilt, fade, mirror, flip, scale heights or emboss. Each edit is one undo step.",
+    "fields": [
+      {
+        "name": "Edit",
+        "text": "Picks the change to make; the fields below change to suit it."
+      },
+      {
+        "name": "Strength",
+        "text": "Smooth: blur radius; each pass averages heights within this distance. Larger is softer."
+      },
+      {
+        "name": "Passes",
+        "text": "Smooth: how many times the blur is repeated."
+      },
+      {
+        "name": "Draft Angle",
+        "text": "Add Draft: how far the walls slope outward, in degrees, so the shape cuts from above."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "Tilt: how steeply the component rises toward one side, in degrees."
+      },
+      {
+        "name": "Direction",
+        "text": "Tilt or Fade: the direction of the slope or fade, in degrees counterclockwise from X."
+      },
+      {
+        "name": "Pivot at the component center",
+        "text": "Tilt: pivots about the component's center; untick to type Pivot X and Pivot Y."
+      },
+      {
+        "name": "Fade Start",
+        "text": "Fade: where the fade begins, as a percent across the component; heights are full before it."
+      },
+      {
+        "name": "Fade End",
+        "text": "Fade: where heights reach zero, as a percent; it must be after the start."
+      },
+      {
+        "name": "Mirror",
+        "text": "Mirror: flips the component left to right or top to bottom about its own center."
+      },
+      {
+        "name": "Scale Factor",
+        "text": "Scale Heights: multiplies every height; 0.5 halves them."
+      },
+      {
+        "name": "Base Offset",
+        "text": "Scale Heights: adds this amount to every height after scaling."
+      },
+      {
+        "name": "Maximum Height",
+        "text": "Emboss: squashes heights so the top is at this height, keeping the detail."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the chosen edit to the selected component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Edits made stay."
+      }
+    ],
+    "steps": [
+      "Select a component in the component list.",
+      "Choose the edit to make.",
+      "Fill in its settings.",
+      "Press Apply; use Undo to take it back."
+    ]
+  },
+  "componentProperties": {
+    "summary": "Shows and changes the properties of the component, group or level picked in the Component Tree. Changes apply as soon as you stop typing; with several components picked, they apply to all.",
+    "fields": [
+      {
+        "name": "Name",
+        "text": "The name shown in the Component Tree; it cannot be empty. Hidden when several components are picked."
+      },
+      {
+        "name": "Combine Mode",
+        "text": "How it joins what is below it: Add, Subtract, Merge, Low or Multiply."
+      },
+      {
+        "name": "Shape Height",
+        "text": "Components: scales the component's heights, as a percent; 100 keeps them as made."
+      },
+      {
+        "name": "Base Height",
+        "text": "Lifts the component or level by this amount."
+      },
+      {
+        "name": "Fade",
+        "text": "Components: fades the height between two anchor points picked with Set Anchor."
+      },
+      {
+        "name": "Fade by",
+        "text": "Percent of the height taken away at the second fade anchor."
+      },
+      {
+        "name": "Tilt",
+        "text": "Components: tilts the component up from one anchor toward another."
+      },
+      {
+        "name": "Tilt Angle",
+        "text": "How far the component tilts, in degrees."
+      },
+      {
+        "name": "Bake",
+        "text": "Makes the shape height, base height, fade and tilt a permanent part of the component."
+      },
+      {
+        "name": "Appearance",
+        "text": "How it is colored in the 3D view: from its parent or children, a solid color, or a material."
+      },
+      {
+        "name": "Color swatch",
+        "text": "The color used when Appearance is Solid Color."
+      },
+      {
+        "name": "Material",
+        "text": "The material look used when Appearance is Use Material, such as Oak or MDF."
+      },
+      {
+        "name": "Highlight Selected Component",
+        "text": "Highlights the picked components in the 3D view while the form is open."
+      },
+      {
+        "name": "Close",
+        "text": "Applies any change still waiting and closes the form."
+      }
+    ],
+    "steps": [
+      "Pick a component, group or level in the Component Tree.",
+      "Change its name, combine mode or heights.",
+      "Set its appearance in the 3D view.",
+      "Press Bake to fix fade and tilt for good, if you want."
+    ]
+  },
+  "componentTransform": {
+    "summary": "Moves, scales and rotates the selected component flat in XY by the amounts you type. Heights are not scaled, and the change is one undo step.",
+    "fields": [
+      {
+        "name": "Move X",
+        "text": "Moves the component left or right by this distance."
+      },
+      {
+        "name": "Move Y",
+        "text": "Moves the component up or down by this distance."
+      },
+      {
+        "name": "Scale X",
+        "text": "Stretches the component's width, as a percent; 100 keeps it the same."
+      },
+      {
+        "name": "Scale Y",
+        "text": "Stretches the component's depth, as a percent."
+      },
+      {
+        "name": "Link X and Y",
+        "text": "Keeps Scale X and Scale Y the same so the shape keeps its proportions."
+      },
+      {
+        "name": "Angle",
+        "text": "Rotates the component, in degrees; positive angles turn counterclockwise."
+      },
+      {
+        "name": "Pivot",
+        "text": "Scales and rotates about the Component center, or about a Point you type as Pivot X and Pivot Y."
+      },
+      {
+        "name": "Reset",
+        "text": "Puts every field back to no change."
+      },
+      {
+        "name": "Apply",
+        "text": "Moves, scales and rotates the selected component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select a component in the component list.",
+      "Type the move, scale and angle you want.",
+      "Choose the pivot and press Apply."
+    ]
+  },
+  "exportStl": {
+    "summary": "Turns the whole model, or the selected component, into a triangle mesh and saves it as an STL, OBJ or POV-Ray file for 3D printing or other programs.",
+    "fields": [
+      {
+        "name": "Limit Triangles By...",
+        "text": "Limits the mesh by an approximate tolerance or by a maximum number of triangles."
+      },
+      {
+        "name": "Tolerance",
+        "text": "How far the mesh may stray from the model; smaller keeps more detail and makes a bigger file."
+      },
+      {
+        "name": "Triangles",
+        "text": "The most triangles the mesh may have; more keeps more detail."
+      },
+      {
+        "name": "Back face of triangulation",
+        "text": "How the back is closed: left open, mirrored, a flat plane, the other side, or sides on rotary."
+      },
+      {
+        "name": "Triangulate",
+        "text": "Builds the mesh and shows it in the 3D view before you save."
+      },
+      {
+        "name": "Num Tri Created",
+        "text": "Read only: how many triangles the mesh has."
+      },
+      {
+        "name": "Maximum Error",
+        "text": "Read only: the largest distance between the mesh and the model."
+      },
+      {
+        "name": "Draw shaded triangulation",
+        "text": "Shows the mesh shaded; untick to see it as a wireframe."
+      },
+      {
+        "name": "Save Triangulation...",
+        "text": "Saves the mesh; the file type you choose sets STL, OBJ or POV-Ray."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select a component to export only it, or nothing for the whole model.",
+      "Set the tolerance or triangle count.",
+      "Choose how to close the back; a flat plane suits 3D printing.",
+      "Press Triangulate to check the mesh, then Save Triangulation..."
+    ]
+  },
+  "replaceBelow": {
+    "summary": "Trims or flattens the bottom of the selected components below a height. Several components, or a level, are baked into one component first.",
+    "fields": [
+      {
+        "name": "Replace Value Below",
+        "text": "The cut off height, measured on the chosen components. You can also drag the blue pin in the 3D view."
+      },
+      {
+        "name": "Replace Value With",
+        "text": "Transparent removes everything below the height; Plane raises it flat to that height."
+      },
+      {
+        "name": "Lower Component by Value",
+        "text": "Afterward drops what is left by the same height so it sits back at zero."
+      },
+      {
+        "name": "Apply",
+        "text": "Trims or flattens the component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Select the components, or make a level active.",
+      "Type the height or drag the blue pin in the 3D view.",
+      "Choose Transparent or Plane, and whether to lower the result.",
+      "Press Apply."
+    ]
+  },
+  "crossSection": {
+    "summary": "Draws the model's height along a line as an open vector, so you can see or reuse its profile. The vector goes on the active layer just above the top left of the job, distance along X and height along Y.",
+    "fields": [
+      {
+        "name": "Start point",
+        "text": "Click in the 2D view where the section line starts."
+      },
+      {
+        "name": "End point",
+        "text": "Click where the line ends; the profile vector is drawn straight away."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Vectors already drawn stay."
+      }
+    ],
+    "steps": [
+      "Open the form and click the start of the line across the model in the 2D view.",
+      "Click the end of the line.",
+      "Find the new profile vector above the top left of the job."
+    ]
+  },
+  "sliceModel": {
+    "summary": "Cuts a model that is thicker than your material into Z slices that can be machined from separate boards and glued together. Each slice becomes a component dropped to the zero plane; the originals are hidden.",
+    "fields": [
+      {
+        "name": "Model Thickness",
+        "text": "Read only: the height of the model being sliced."
+      },
+      {
+        "name": "Material Thickness",
+        "text": "Read only: the job's material thickness, a good slice thickness to aim for."
+      },
+      {
+        "name": "Slice by",
+        "text": "Slice Thickness makes slices of a set thickness; Number of Slices divides the height equally."
+      },
+      {
+        "name": "Slice Thickness",
+        "text": "How thick each slice is, usually your board thickness."
+      },
+      {
+        "name": "From Top",
+        "text": "Slices from the top down, leaving the thinner part slice at the bottom. Off, it is at the top."
+      },
+      {
+        "name": "Number of Slices",
+        "text": "Divides the model height into this many equal slices."
+      },
+      {
+        "name": "Create Boundary Vectors",
+        "text": "Outlines each slice with vectors on a new layer named after the slice."
+      },
+      {
+        "name": "Height bar",
+        "text": "Shows the cut heights; double click it to add a height there."
+      },
+      {
+        "name": "Slice heights",
+        "text": "Lists the Z heights the model is cut at. Pick one to edit it, or New height to add one."
+      },
+      {
+        "name": "Z height",
+        "text": "The height of the picked slice line; type a new value and press Apply."
+      },
+      {
+        "name": "Apply",
+        "text": "Saves the typed Z height to the list."
+      },
+      {
+        "name": "Delete",
+        "text": "Removes the picked height from the list."
+      },
+      {
+        "name": "Slice Model",
+        "text": "Cuts the model into slice components. It is one undo step."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Check the model and material thickness.",
+      "Choose to slice by thickness or by number of slices.",
+      "Adjust individual heights in the list or on the bar if needed.",
+      "Press Slice Model, then make toolpaths for each slice."
+    ]
+  },
+  "smoothComponents": {
+    "summary": "Smooths the whole selected component to soften detail and edges. The 3D view shows the result as you move the slider.",
+    "fields": [
+      {
+        "name": "Smoothing",
+        "text": "Slider from 0 to 100 percent: how strongly the component is smoothed. Release it to see the result."
+      },
+      {
+        "name": "Preserve Transparency",
+        "text": "Keeps the smoothing inside the component so its outline does not blur into the background."
+      },
+      {
+        "name": "Bake Current Smoothing",
+        "text": "Fixes the current smoothing in place; move the slider again to smooth further."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form, keeping the smoothing shown."
+      }
+    ],
+    "steps": [
+      "Select a component in the Components list.",
+      "Move the Smoothing slider and watch the 3D view.",
+      "Press Bake Current Smoothing to lock it in, and smooth again if needed."
+    ]
+  },
+  "embossComponent": {
+    "summary": "Lowers the selected component while keeping its fine detail, for turning a full 3D model into a low relief. The 3D view previews each change.",
+    "fields": [
+      {
+        "name": "Scale Height",
+        "text": "Slider from 1 to 100 percent: how tall the embossed component is compared to now."
+      },
+      {
+        "name": "Height",
+        "text": "Read only: the component's height at the current scale."
+      },
+      {
+        "name": "Detail Smoothness",
+        "text": "Slider: how much the kept detail is smoothed. Lower heights need more smoothing."
+      },
+      {
+        "name": "Apply",
+        "text": "Keeps the embossed component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form and takes back the preview if you did not apply it."
+      }
+    ],
+    "steps": [
+      "Select a full 3D component in the Components list.",
+      "Lower the Scale Height slider to the relief height you want.",
+      "Adjust Detail Smoothness until the detail looks clean.",
+      "Press Apply."
+    ]
+  },
+  "scaleModelHeight": {
+    "summary": "Scales the height of the whole model up or down. Every component keeps its shape; only its height scale changes. The 3D view previews the change.",
+    "fields": [
+      {
+        "name": "Model height",
+        "text": "Read only: the current height of the model."
+      },
+      {
+        "name": "Scale Both Sides",
+        "text": "Double sided jobs only: scales the model on both sides together."
+      },
+      {
+        "name": "Scale Height",
+        "text": "Slider: scales the model height by a percent; release it to preview."
+      },
+      {
+        "name": "Height",
+        "text": "Set Exact Height: type the height the model's top should reach."
+      },
+      {
+        "name": "Set Height",
+        "text": "Previews the model scaled to the typed height."
+      },
+      {
+        "name": "Apply",
+        "text": "Keeps the new model height."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form and takes back the preview if you did not apply it."
+      }
+    ],
+    "steps": [
+      "Open the form; the current model height is shown.",
+      "Move the slider, or type a height and press Set Height.",
+      "Check the 3D view and press Apply."
+    ]
+  },
+  "offsetModel": {
+    "summary": "Grows or shrinks the visible model in 3D by a distance. The result becomes one new component; the original components stay in the tree, hidden.",
+    "fields": [
+      {
+        "name": "Offset Distance",
+        "text": "How far to offset the surface: positive grows the model, negative shrinks it. It cannot be zero."
+      },
+      {
+        "name": "Clip Z values to the Zero Plane",
+        "text": "Stops the result dropping below the zero plane, so flat areas stay where they are."
+      },
+      {
+        "name": "Preview",
+        "text": "Shows the offset result; each Preview offsets the result again."
+      },
+      {
+        "name": "OK",
+        "text": "Keeps the offset model as a new component."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form and takes back any previews."
+      }
+    ],
+    "steps": [
+      "Show the components you want to offset.",
+      "Type the offset distance.",
+      "Press Preview to check it in the 3D view.",
+      "Press OK to keep it."
+    ]
+  },
+  "addDraft": {
+    "summary": "Makes a new component from the visible model with no wall steeper than the draft angle, useful for molds and vacuum forming. The original components stay visible under it.",
+    "fields": [
+      {
+        "name": "Draft Angle",
+        "text": "Slider and box: wall angle from vertical, above 0 and below 90 degrees; larger angles slope the walls more."
+      },
+      {
+        "name": "Apply",
+        "text": "Makes the drafted component from the visible model."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form."
+      }
+    ],
+    "steps": [
+      "Show the components that make up the model.",
+      "Set the draft angle.",
+      "Press Apply and check the new component in the 3D view."
+    ]
+  },
+  "rough3dToolpath": {
+    "summary": "Clears the bulk of the material above the 3D model, level by level, leaving an allowance for the finishing pass. Use a large end mill before a 3D finish toolpath.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The roughing cutter, usually a large end mill. Select... picks one; Edit... changes this copy."
+      },
+      {
+        "name": "Machining Limit Boundary",
+        "text": "Where to cut: Model Boundary, Material Boundary, Selected Vector(s) or a Selected Level."
+      },
+      {
+        "name": "Level",
+        "text": "With Selected Level: the model level whose components limit the toolpath."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "Grows the boundary outward by this much; a negative value shrinks it."
+      },
+      {
+        "name": "Machining Allowance",
+        "text": "Material left on the model for the finish pass; a small amount such as 0.5 mm."
+      },
+      {
+        "name": "Strategy",
+        "text": "Z Level clears flat layers with raster lines; 3D Raster follows the surface in passes."
+      },
+      {
+        "name": "Profile",
+        "text": "Z Level only: cut round the outline of each level First, Last or not at all."
+      },
+      {
+        "name": "Order",
+        "text": "Z Level only: Level by level clears whole levels; Depth first takes each area to the bottom."
+      },
+      {
+        "name": "Raster Direction",
+        "text": "Whether the raster lines run Along X or Along Y."
+      },
+      {
+        "name": "Reverse step direction",
+        "text": "Z Level only: raster lines start at the far edge instead."
+      },
+      {
+        "name": "Avoid machined areas",
+        "text": "3D Raster only: skips what an earlier level already cut to the allowance."
+      },
+      {
+        "name": "Ramp plunge moves",
+        "text": "Z Level only: ramps into the material over the Distance instead of plunging straight down."
+      },
+      {
+        "name": "Distance",
+        "text": "How long each ramp is."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath. It needs a 3D model, and vectors or a level if chosen as boundary."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Build the 3D model first.",
+      "Pick a large end mill.",
+      "Choose the boundary and machining allowance.",
+      "Pick a strategy and press Calculate.",
+      "Follow it with a 3D finish toolpath."
+    ]
+  },
+  "finish3dToolpath": {
+    "summary": "Follows the 3D model surface with raster passes or offset rings for a smooth finish. Add smaller tools to finish detail the first tool cannot reach.",
+    "fields": [
+      {
+        "name": "Tools",
+        "text": "The finishing tools, usually ball noses. The first cuts everything; later ones finish what earlier ones missed."
+      },
+      {
+        "name": "Machining Limit Boundary",
+        "text": "Where to cut: Model Boundary, Material Boundary, Selected Vector(s) or a Selected Level."
+      },
+      {
+        "name": "Level",
+        "text": "With Selected Level: the model level whose components limit the toolpath."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "Grows the boundary outward by this much; a negative value shrinks it."
+      },
+      {
+        "name": "Minimum Detail",
+        "text": "Slider from Coarse to Fine: material thinner than this is not worth another tool. Needs two or more tools."
+      },
+      {
+        "name": "Rest Boundary Offset",
+        "text": "How far each area left for a later tool is grown, so its cuts blend in."
+      },
+      {
+        "name": "Strategy",
+        "text": "Offset follows rings around the model; Raster runs parallel lines across it."
+      },
+      {
+        "name": "Cut Direction",
+        "text": "Offset only: Climb or Conventional."
+      },
+      {
+        "name": "Raster Angle",
+        "text": "Raster only: the angle of the lines in degrees; 0 runs along X."
+      },
+      {
+        "name": "Stepover Retract",
+        "text": "Offset only: how far the tool lifts between rings; 0 stays on the surface."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the toolpath. It needs a 3D model, and vectors or a level if chosen as boundary."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Rough the model first with a 3D roughing toolpath.",
+      "Pick a ball nose, and add smaller tools for fine detail if needed.",
+      "Choose the boundary and strategy.",
+      "Press Calculate and check it in Preview."
+    ]
+  },
+  "laserCutFillToolpath": {
+    "summary": "Burns along the selected vectors with a laser, fills closed shapes with hatch lines, or both. Use it to cut out parts or engrave filled areas.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The laser tool. Select... picks one from the Tool Database; it must be a laser."
+      },
+      {
+        "name": "Power",
+        "text": "Laser power in percent. Leave empty to use the tool's setting."
+      },
+      {
+        "name": "Move Speed",
+        "text": "How fast the laser moves while burning. Leave empty to use the tool's setting."
+      },
+      {
+        "name": "Cut Depth",
+        "text": "How deep to cut; deeper cuts step down in passes of the laser's pass depth. 0 burns at the surface."
+      },
+      {
+        "name": "No. Passes",
+        "text": "Read only: how many depth passes the cut depth needs."
+      },
+      {
+        "name": "No. Repeats",
+        "text": "How many times each pass is burned."
+      },
+      {
+        "name": "Overscan",
+        "text": "Hatch fill only: runs each fill line a little past the shape, as a percent, for even burning."
+      },
+      {
+        "name": "Strategy",
+        "text": "Cut Outside, Cut Inside or Cut On the vectors, or Hatch Fill closed shapes."
+      },
+      {
+        "name": "Allowance",
+        "text": "Outside or inside cuts: extra offset beyond the laser's kerf."
+      },
+      {
+        "name": "Stepover",
+        "text": "Hatch fill: the distance between fill lines."
+      },
+      {
+        "name": "Hatch Angle",
+        "text": "Hatch fill: the angle of the fill lines, in degrees."
+      },
+      {
+        "name": "Fill",
+        "text": "Fill Together treats all shapes as one area; Fill Regionally fills each area on its own."
+      },
+      {
+        "name": "Cross Hatch",
+        "text": "Hatch fill: adds a second set of lines across the first."
+      },
+      {
+        "name": "Outline",
+        "text": "Hatch fill: also burns around the outline of each shape."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Follows the model surface instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the laser toolpath. It needs a laser tool and selected vectors."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      },
+      {
+        "name": "Immediate Output",
+        "text": "Machine, Post Processor and Save Toolpath(s) ... save this toolpath right after calculating it."
+      }
+    ],
+    "steps": [
+      "Select the vectors to cut or fill.",
+      "Pick a laser tool and set power and speed.",
+      "Choose the strategy, and hatch settings for a fill.",
+      "Press Calculate, then save it for your laser."
+    ]
+  },
+  "sketchToolpath": {
+    "summary": "Finds the key lines of a bitmap or of the 3D model and carves them with a V-bit or ball nose, like a pencil sketch.",
+    "fields": [
+      {
+        "name": "Selection",
+        "text": "Sketch a Bitmap selected in the 2D view, or the 3D Model."
+      },
+      {
+        "name": "Left (X)",
+        "text": "Older toolpaths that read an image file only: the left edge of the picture."
+      },
+      {
+        "name": "Bottom (Y)",
+        "text": "Older toolpaths only: the bottom edge of the picture."
+      },
+      {
+        "name": "Width",
+        "text": "Older toolpaths only: the width of the picture."
+      },
+      {
+        "name": "Height",
+        "text": "Older toolpaths only: the height of the picture."
+      },
+      {
+        "name": "Start Depth (D)",
+        "text": "How far below the surface carving starts; usually 0."
+      },
+      {
+        "name": "Flat Depth (F)",
+        "text": "Tick to limit how deep the cut goes; unticked, the V goes as deep as each line needs."
+      },
+      {
+        "name": "Tool",
+        "text": "A V-bit, engraving tool, ball nose or tapered ball nose. Select... picks one."
+      },
+      {
+        "name": "Machining Limit Boundary",
+        "text": "Where to sketch: the Bitmap or Model Boundary, Selected Vector(s) or a Selected Level."
+      },
+      {
+        "name": "Level",
+        "text": "With Selected Level: the level whose components limit the sketch."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "Grows the boundary outward by this much; negative shrinks it."
+      },
+      {
+        "name": "Line Thickness",
+        "text": "Slider from Thin to Thick: how heavy the traced sketch lines are. The preview counts the areas found."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the sketch toolpath. It needs a carving tool."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Choose Bitmap and select the picture in the 2D view, or choose 3D Model.",
+      "Pick a V-bit or ball nose.",
+      "Set the boundary and move Line Thickness until the preview looks right.",
+      "Press Calculate."
+    ]
+  },
+  "laserSketchToolpath": {
+    "summary": "Finds the key lines of a bitmap or of the 3D model and burns them as hatching with a laser, for a pencil sketch look.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The laser tool. Select... picks one; it must be a laser."
+      },
+      {
+        "name": "Selection",
+        "text": "Sketch a Bitmap selected in the 2D view, or the 3D Model."
+      },
+      {
+        "name": "Left (X)",
+        "text": "Older toolpaths that read an image file only: the left edge of the picture."
+      },
+      {
+        "name": "Bottom (Y)",
+        "text": "Older toolpaths only: the bottom edge of the picture."
+      },
+      {
+        "name": "Width",
+        "text": "Older toolpaths only: the width of the picture."
+      },
+      {
+        "name": "Height",
+        "text": "Older toolpaths only: the height of the picture."
+      },
+      {
+        "name": "Power",
+        "text": "Laser power in percent. Leave empty to use the tool's setting."
+      },
+      {
+        "name": "Overscan",
+        "text": "How far each hatch line runs past the sketch, so the laser burns evenly."
+      },
+      {
+        "name": "Machining Limit Boundary",
+        "text": "Where to sketch: the Bitmap or Model Boundary, Selected Vector(s) or a Selected Level."
+      },
+      {
+        "name": "Level",
+        "text": "With Selected Level: the level whose components limit the sketch."
+      },
+      {
+        "name": "Boundary Offset",
+        "text": "Grows the boundary outward by this much; negative shrinks it."
+      },
+      {
+        "name": "Line Thickness",
+        "text": "Slider from Thin to Thick: how heavy the traced sketch lines are. The preview counts the areas found."
+      },
+      {
+        "name": "Stepover",
+        "text": "The distance between hatch lines."
+      },
+      {
+        "name": "Hatch Angle",
+        "text": "The angle of the hatch lines, in degrees."
+      },
+      {
+        "name": "Strategy",
+        "text": "Fill Together crosses the whole sketch; Fill Regionally does each area; within Vectors also keeps travel on the lines."
+      },
+      {
+        "name": "Cross Hatch",
+        "text": "Adds a second set of hatch lines across the first."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Measures depths down from the model surface instead of the flat top."
+      },
+      {
+        "name": "Vector Selection",
+        "text": "Manual uses the vectors you select; Selector... picks them with filters."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the laser sketch toolpath. It needs a laser tool."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      }
+    ],
+    "steps": [
+      "Choose Bitmap and select the picture in the 2D view, or choose 3D Model.",
+      "Pick a laser tool and set the power.",
+      "Move Line Thickness until the preview looks right.",
+      "Set the hatch stepover and angle, then press Calculate."
+    ]
+  },
+  "laserPictureToolpath": {
+    "summary": "Burns the bitmap selected in the drawing with a laser along raster or hatch lines, or along selected vectors. Each dot gets a power from its gray level, or is dithered fully on or off.",
+    "fields": [
+      {
+        "name": "Tool",
+        "text": "The laser tool. Select... picks one; it must be a laser."
+      },
+      {
+        "name": "Power",
+        "text": "Laser power in percent for the darkest parts. Leave empty to use the tool's setting."
+      },
+      {
+        "name": "Move Speed",
+        "text": "How fast the laser moves while burning. Leave empty to use the tool's setting."
+      },
+      {
+        "name": "No. Passes",
+        "text": "How many times the picture is burned."
+      },
+      {
+        "name": "Overscan",
+        "text": "Runs each line a little past the picture, as a percent, so the laser burns evenly to the edge."
+      },
+      {
+        "name": "Strategy",
+        "text": "Raster burns parallel lines, Hatch burns crossing lines, Selected Vectors burns along your vectors."
+      },
+      {
+        "name": "Dither Image",
+        "text": "Burns each dot fully on or off in a dot pattern instead of varying the power."
+      },
+      {
+        "name": "Line Spacing",
+        "text": "Slider from Dense to Sparse: the distance between burn lines. Match it to your laser's dot size."
+      },
+      {
+        "name": "Line Angle",
+        "text": "The angle of the burn lines, in degrees. Off with Selected Vectors."
+      },
+      {
+        "name": "Project toolpath onto 3D model",
+        "text": "Follows the model surface instead of the flat top."
+      },
+      {
+        "name": "Name",
+        "text": "The toolpath's name in the toolpath list."
+      },
+      {
+        "name": "Calculate",
+        "text": "Makes the picture toolpath. It needs a selected bitmap and a laser tool."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Calculated toolpaths stay."
+      },
+      {
+        "name": "Immediate Output",
+        "text": "Machine, Post Processor and Save Toolpath(s) ... save this toolpath right after calculating it."
+      }
+    ],
+    "steps": [
+      "Select the bitmap to burn, and vectors if you want to burn along them.",
+      "Pick a laser tool and set power and speed.",
+      "Choose raster or hatch, the line spacing and angle.",
+      "Press Calculate, then save it for your laser."
+    ]
+  },
+  "assemblyView": {
+    "summary": "Puts the machined parts together in the 3D view so you can check how they fit before cutting. Each part the toolpaths cut free becomes a piece you can move, mate, measure and check.",
+    "fields": [
+      {
+        "name": "How to build your own assembly",
+        "text": "Four steps from a drawing to an exploded view: draw the parts, cut them free with toolpaths, join them, then check the fit and explode. Open while the job has no pieces."
+      },
+      {
+        "name": "Joint Creator",
+        "text": "Opens the Joint Creator to cut matching joints between two parts. Open the Assembly View again afterward to see them together."
+      },
+      {
+        "name": "Snap to nearby pieces",
+        "text": "Makes a moved piece snap to faces of the pieces near it."
+      },
+      {
+        "name": "Pieces",
+        "text": "Lists the pieces; buttons on each row show, hide, isolate or ground it. Show All shows them all."
+      },
+      {
+        "name": "Remove Piece",
+        "text": "Takes an added component piece back out of the view."
+      },
+      {
+        "name": "Mates",
+        "text": "Lists the mates between pieces; edit, suppress or delete each one."
+      },
+      {
+        "name": "Add Component",
+        "text": "Brings a component from the Component Tree in as its own piece, such as a bought part."
+      },
+      {
+        "name": "Piece from",
+        "text": "Use the Machined simulation of the sheet or its Raw model for the picked piece."
+      },
+      {
+        "name": "Position",
+        "text": "Type the picked piece's X, Y and Z position, then press Apply."
+      },
+      {
+        "name": "Rotation",
+        "text": "Type the picked piece's turn about X, Y and Z in degrees, then press Apply."
+      },
+      {
+        "name": "Mate Pieces",
+        "text": "Pick a mate type, then Pick Faces: first the face that stays, then the face that moves."
+      },
+      {
+        "name": "Target clearance",
+        "text": "Fit: the gap you want between parts that fit together."
+      },
+      {
+        "name": "Tolerance (±)",
+        "text": "Fit: how far a gap may differ from the target and still be OK."
+      },
+      {
+        "name": "Include hidden pieces",
+        "text": "Fit: checks hidden pieces too; clear it to check only the pieces shown."
+      },
+      {
+        "name": "Verify Fit",
+        "text": "Measures every joint on the exact cut edges and marks each OK, Loose, Tight or Interference."
+      },
+      {
+        "name": "Show Fit",
+        "text": "Colors the joints in the 3D view by how well they fit."
+      },
+      {
+        "name": "Explode",
+        "text": "Slider that moves the pieces apart out of their joints; Explode Steps sets named moves."
+      },
+      {
+        "name": "Cut the pieces with a plane",
+        "text": "Section: slices the view so you can see inside the assembly."
+      },
+      {
+        "name": "Plane across",
+        "text": "Section: which axis the cutting plane lies across."
+      },
+      {
+        "name": "Offset",
+        "text": "Section: moves the cutting plane along its axis."
+      },
+      {
+        "name": "Flip (keep the other side)",
+        "text": "Section: shows the other side of the plane."
+      },
+      {
+        "name": "Pick Points",
+        "text": "Measure: click two points on the pieces to get the distance between them."
+      },
+      {
+        "name": "Cut List",
+        "text": "Lists each piece with its count, length, width and thickness; Refresh updates it."
+      },
+      {
+        "name": "Export CSV",
+        "text": "Saves the cut list as a CSV file."
+      },
+      {
+        "name": "Format",
+        "text": "The file type for Export Assembly: STL or 3MF."
+      },
+      {
+        "name": "Export Assembly...",
+        "text": "Saves the assembled pieces as a 3D file."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form and gives the 3D view back to the job."
+      }
+    ],
+    "steps": [
+      "Calculate the toolpaths that cut your parts free.",
+      "Open Assembly View; each cut part appears as a piece.",
+      "Click a piece and drag its arrows and rings, or mate its faces to another piece.",
+      "Press Verify Fit to check the joints.",
+      "Drag the Explode slider under Pieces to pull the parts apart; use Section and Measure to inspect, then export the cut list."
+    ]
+  },
+  "furnitureDesigner": {
+    "summary": "Designs a piece of furniture from a template: type its sizes, pick its joints and see it in the Assembly View as you go. Create makes the panels on sheets, the joints, the toolpaths and the pieces; Update makes them again after a change.",
+    "fields": [
+      {
+        "name": "Name",
+        "text": "The design's name; its layer and sheets are named after it."
+      },
+      {
+        "name": "Sizes and layout",
+        "text": "The template's settings by group. Boxes take calculations; the slider under a size or count drags it. The preview follows at once and a made design is made again when you stop."
+      },
+      {
+        "name": "Style",
+        "text": "Picks a joint for every kind of connection at once: Traditional, Flat pack, Quick build, Laser and thin stock, or Glue and screws."
+      },
+      {
+        "name": "Joint rows",
+        "text": "One row per kind of connection, such as Shelves to sides, with the joints valid there. Edit joint sizes changes their count, depth or diameter; empty boxes use the sizes worked out for the stock."
+      },
+      {
+        "name": "Fit and tool",
+        "text": "The fit, corner relief and tool every joint shares with the Joint Creator."
+      },
+      {
+        "name": "Cut List, Hardware, Estimate",
+        "text": "The panels with their finished sizes, the screws, dowels and fittings to buy, and the sheets and cutting time. Export CSV saves each list."
+      },
+      {
+        "name": "Seams",
+        "text": "Hover a seam in the Assembly View to see its joint; click it to pick another, or tick Use for all like this to change every seam of its kind."
+      },
+      {
+        "name": "Save as Template",
+        "text": "Keeps the design in your library with its sizes as the new defaults."
+      },
+      {
+        "name": "Remove",
+        "text": "Takes the design, with its panels, joints, toolpaths and pieces, out of the job."
+      }
+    ],
+    "steps": [
+      "In the Assembly View press New Furniture and pick a template.",
+      "Type the sizes or drag the sliders; pick a joinery style.",
+      "Press Create, then click any seam to change its joint."
+    ]
+  },
+  "jointCreator": {
+    "summary": "Joins two flat parts with a joint the end mill cuts from the top, such as fingers, dados, tabs, dovetails or dowels. Pick a joint, click the edge of one part and the edge or face of the other, check the preview and press Create.",
+    "fields": [
+      {
+        "name": "Joint",
+        "text": "The gallery of joint types; click one to use it. Each shows a one line description."
+      },
+      {
+        "name": "Box from Selection",
+        "text": "Joins the selected panels at every matching edge at once."
+      },
+      {
+        "name": "First part",
+        "text": "Shows the edge picked on the first part, or not picked. Esc or Pick again starts over."
+      },
+      {
+        "name": "Second part",
+        "text": "Shows the edge, or the place on the face, picked on the second part."
+      },
+      {
+        "name": "From the edge",
+        "text": "For joints on a face, such as a dado: exactly how far in from the edge the joint sits."
+      },
+      {
+        "name": "Pattern",
+        "text": "Living Hinge only: Straight, Sinuous or Spiral slots, each bending differently."
+      },
+      {
+        "name": "Count",
+        "text": "The joint's own sizes, such as Count, Width and Depth. Fields showing auto are sized for you."
+      },
+      {
+        "name": "Fits one way only",
+        "text": "Makes the first finger or tab wider so the parts go together only one way."
+      },
+      {
+        "name": "More",
+        "text": "Extra settings for the joint, such as corners, tab ends, blind or through, and the tool."
+      },
+      {
+        "name": "Tool",
+        "text": "In More: the end mill the joint is sized for; relief and fingers follow its diameter."
+      },
+      {
+        "name": "Fit",
+        "text": "All joints: Slip, Press, Glue, Knock-down or Custom, each with its clearance per side."
+      },
+      {
+        "name": "Clearance a side",
+        "text": "Custom fit: the gap left on each side of a joint."
+      },
+      {
+        "name": "Corner relief",
+        "text": "None, Dog-bone or T-bone cuts into inside corners so square parts fit despite the round tool."
+      },
+      {
+        "name": "Thickness",
+        "text": "The measured stock thickness; measure your material and type it for a good fit."
+      },
+      {
+        "name": "Assembled",
+        "text": "A 3D preview of the parts joined; the Explode slider pulls them apart."
+      },
+      {
+        "name": "Make the toolpaths too",
+        "text": "Also makes the toolpaths to cut the joint when you press Create."
+      },
+      {
+        "name": "Create",
+        "text": "Makes the joint on both parts as one undo step. It reads Apply when editing a joint."
+      },
+      {
+        "name": "Remove Joint",
+        "text": "Takes the joint off and puts both edges back as they were."
+      },
+      {
+        "name": "Test Coupon",
+        "text": "Makes a small sample of this joint to cut first and check the fit."
+      },
+      {
+        "name": "Joints in this job",
+        "text": "Lists every joint; click one to edit it."
+      },
+      {
+        "name": "Close",
+        "text": "Closes the form. Joints made stay."
+      }
+    ],
+    "steps": [
+      "Pick a joint type from the gallery.",
+      "Click the edge of the first part.",
+      "Click the matching edge, or the place on the face, of the second part.",
+      "Set the fit, relief and measured thickness, and check the preview.",
+      "Press Create, then cut a Test Coupon first if you are unsure of the fit."
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.set-size-form {
+  @include form.form-root;
+}
+
+.set-size-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.set-size-form__group {
+  @include form.form-group;
+}
+
+.set-size-form__legend {
+  @include form.form-legend;
+}
+
+.set-size-form__choice {
+  @include form.form-choice;
+}
+
+.set-size-form__hint {
+  @include form.form-hint;
+}
+
+.set-size-form__mode {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+}
+
+.set-size-form__picture {
+  display: flex;
+  flex: 0 0 auto;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  color: tokens.$text-muted;
+}
+
+.set-size-form__choices {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.boundary-form {
+  @include form.form-root;
+}
+
+.boundary-form__hint {
+  @include form.form-hint;
+}
+
+.boundary-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.boundary-form__group {
+  @include form.form-group;
+}
+
+.boundary-form__legend {
+  @include form.form-legend;
+}

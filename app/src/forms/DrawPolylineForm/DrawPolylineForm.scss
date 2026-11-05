@@ -1,0 +1,31 @@
+@use '../../styles/form';
+
+.draw-polyline {
+  @include form.form-root;
+}
+
+.draw-polyline__hint {
+  @include form.form-hint;
+}
+
+.draw-polyline__group {
+  @include form.form-group;
+}
+
+.draw-polyline__legend {
+  @include form.form-legend;
+}
+
+.draw-polyline__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.draw-polyline__button {
+  @include form.form-button;
+}
+
+.draw-polyline__choice {
+  @include form.form-choice;
+}

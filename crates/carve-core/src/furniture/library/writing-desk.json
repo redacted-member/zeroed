@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "id": "writing-desk",
+  "name": "Writing Desk",
+  "category": "Desks",
+  "description": "Mission writing desk: a top on slab ends with a back apron and low stretcher, and a detachable shelf cabinet standing on the back of the top.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"A Writing Desk\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "desk", "hutch", "study", "wedged tenon"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 1041, "min": 800, "max": 1400, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 572, "min": 450, "max": 700, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 800, "min": 720, "max": 820, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 19, "min": 18, "max": 25, "group": "Material" },
+    { "key": "apron", "label": "Back apron height", "kind": "length", "default": 159, "min": 100, "max": 180, "group": "Layout" },
+    { "key": "hutch", "label": "Shelf cabinet on top", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "hh", "label": "Cabinet height", "kind": "length", "default": 406, "min": 250, "max": 500, "group": "Layout" },
+    { "key": "hd", "label": "Cabinet depth", "kind": "length", "default": 203, "min": 150, "max": 260, "group": "Layout" }
+  ],
+  "derived": {
+    "ins": "25",
+    "leg_h": "{height}-{t}",
+    "span": "{width}-2*{ins}-2*{t}",
+    "hw": "{width}-100",
+    "hy": "{depth}-{t}-{hd}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "6" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{ins}", "y": "{ins}", "z": "0", "w": "{t}", "d": "{depth}-2*{ins}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "60" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{ins}-{t}", "y": "{ins}", "z": "0", "w": "{t}", "d": "{depth}-2*{ins}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "60" } ] },
+    { "id": "apron_b", "name": "Back apron", "material": "main", "grain": "long",
+      "box": { "x": "{ins}+{t}", "y": "{depth}-{ins}-2*{t}-6", "z": "{leg_h}-{apron}", "w": "{span}", "d": "{t}", "h": "{apron}" } },
+    { "id": "rail_f", "name": "Front rail", "material": "main", "grain": "long",
+      "box": { "x": "{ins}+{t}", "y": "{ins}+{t}+6", "z": "{leg_h}-60", "w": "{span}", "d": "{t}", "h": "60" } },
+    { "id": "stretcher", "name": "Stretcher", "material": "main", "grain": "long",
+      "box": { "x": "{ins}+{t}", "y": "{depth}/2-{t}/2", "z": "120", "w": "{span}", "d": "{t}", "h": "83" } },
+    { "id": "hend_l", "name": "Cabinet left end", "material": "main", "grain": "long", "when": "{hutch}",
+      "box": { "x": "50", "y": "{hy}", "z": "{height}", "w": "{t}", "d": "{hd}", "h": "{hh}" } },
+    { "id": "hend_r", "name": "Cabinet right end", "material": "main", "grain": "long", "when": "{hutch}",
+      "box": { "x": "50+{hw}-{t}", "y": "{hy}", "z": "{height}", "w": "{t}", "d": "{hd}", "h": "{hh}" } },
+    { "id": "htop", "name": "Cabinet top", "material": "main", "grain": "long", "when": "{hutch}",
+      "box": { "x": "50", "y": "{hy}", "z": "{height}+{hh}", "w": "{hw}", "d": "{hd}", "h": "{t}" } },
+    { "id": "hshelf", "name": "Cabinet shelf", "material": "main", "grain": "long", "when": "{hutch}",
+      "box": { "x": "50+{t}", "y": "{hy}", "z": "{height}+{hh}/2-{t}/2", "w": "{hw}-2*{t}", "d": "{hd}", "h": "{t}" } },
+    { "id": "hback", "name": "Cabinet back", "material": "main", "grain": "long", "when": "{hutch}",
+      "box": { "x": "50", "y": "{depth}-{t}", "z": "{height}", "w": "{hw}", "d": "{t}", "h": "{hh}+{t}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "end_l|end_r|apron_b|rail_f", "class": "top" },
+    { "a": "apron_b|rail_f", "b": "end_l|end_r", "class": "rail" },
+    { "a": "stretcher", "b": "end_l|end_r", "class": "stretcher" },
+    { "a": "hshelf", "b": "hend_l|hend_r", "class": "hshelf" },
+    { "a": "htop", "b": "hend_l|hend_r", "class": "hcase" },
+    { "a": "hend_l|hend_r|hback", "b": "top", "class": "hbase" },
+    { "a": "hback", "b": "*", "class": "hback" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to base", "default": "dowel" },
+    "rail": { "label": "Apron and rail to ends", "default": "mortiseTenon" },
+    "stretcher": { "label": "Stretcher to ends", "default": "wedgedTenon" },
+    "hshelf": { "label": "Cabinet shelf", "default": "dado" },
+    "hcase": { "label": "Cabinet top", "default": "rabbet" },
+    "hback": { "label": "Cabinet back", "default": "rabbet" },
+    "hbase": { "label": "Cabinet to desk top", "default": "none" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "6" },
+    { "name": "Cleats or screws to hold the cabinet", "count": "2*{hutch}", "note": "the 1912 cabinet lifts off; cleats on its back hold it to the top" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

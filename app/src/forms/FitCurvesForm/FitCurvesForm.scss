@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.fit-curves-form {
+  @include form.form-root;
+}
+
+.fit-curves-form__hint {
+  @include form.form-hint;
+}
+
+.fit-curves-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.fit-curves-form__group {
+  @include form.form-group;
+}
+
+.fit-curves-form__legend {
+  @include form.form-legend;
+}

@@ -1,0 +1,10 @@
+@use '../../styles/form';
+
+.project-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-field__hint {
+  @include form.form-hint;
+}

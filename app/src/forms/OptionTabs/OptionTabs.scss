@@ -1,0 +1,47 @@
+@use '../../styles/tokens';
+
+.option-tabs {
+  display: flex;
+  flex-direction: column;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.option-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.option-tabs__tab {
+  padding: tokens.$space-1 tokens.$space-2;
+  border: 0;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.option-tabs__tab:hover {
+  background: tokens.$panel-raised;
+}
+
+.option-tabs__tab[aria-selected='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.option-tabs__tab:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.option-tabs__panel {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3 tokens.$space-3;
+}

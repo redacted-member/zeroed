@@ -1,0 +1,7 @@
+@use '../../styles/tokens';
+
+.clearance-options {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}

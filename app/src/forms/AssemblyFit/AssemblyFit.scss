@@ -1,0 +1,139 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-fit {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.assembly-fit__heading {
+  margin: 0;
+  padding: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-fit__hint {
+  @include form.form-hint;
+}
+
+.assembly-fit__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-3;
+}
+
+.assembly-fit__button {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-fit__check {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-fit__status {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-fit__error {
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-fit__joints {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.assembly-fit__joint {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  padding: 3px tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-left-width: 4px;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  cursor: pointer;
+}
+
+.assembly-fit__joint[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$panel-sunken;
+}
+
+.assembly-fit__joint:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.assembly-fit__joint--interference {
+  border-left-color: #d93b3b;
+}
+
+.assembly-fit__joint--tight {
+  border-left-color: #e8a317;
+}
+
+.assembly-fit__joint--ok {
+  border-left-color: #2fa84f;
+}
+
+.assembly-fit__joint--loose {
+  border-left-color: #3d7fe0;
+}
+
+.assembly-fit__joint-head {
+  display: flex;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.assembly-fit__joint-name {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assembly-fit__badge {
+  flex: none;
+  font-weight: 600;
+}
+
+.assembly-fit__sides,
+.assembly-fit__overlap {
+  font-variant-numeric: tabular-nums;
+}
+
+.assembly-fit__overlap {
+  color: tokens.$danger;
+}
+
+.assembly-fit__source {
+  color: tokens.$text-muted;
+}

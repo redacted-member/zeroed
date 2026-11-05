@@ -1,0 +1,69 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.edit-passes {
+  width: min(480px, calc(100vw - 48px));
+}
+
+.edit-passes__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.edit-passes__group {
+  @include form.form-group;
+}
+
+.edit-passes__legend {
+  @include form.form-legend;
+}
+
+.edit-passes__lists {
+  display: flex;
+  gap: tokens.$space-3;
+  align-items: stretch;
+}
+
+.edit-passes__list {
+  flex: 1;
+  min-height: 180px;
+  font-family: tokens.$font-mono;
+}
+
+.edit-passes__diagram {
+  width: 72px;
+  height: 180px;
+  cursor: crosshair;
+}
+
+.edit-passes__material {
+  fill: tokens.$panel-sunken;
+  stroke: tokens.$border-strong;
+  stroke-width: 1;
+}
+
+.edit-passes__pass {
+  stroke: tokens.$text;
+  stroke-width: 2;
+}
+
+.edit-passes__pass--selected {
+  stroke: tokens.$danger;
+  stroke-width: 3;
+}
+
+.edit-passes__row {
+  @include form.form-row;
+}
+
+.edit-passes__button,
+.edit-passes__ok {
+  @include form.form-button;
+}
+
+.edit-passes__note {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

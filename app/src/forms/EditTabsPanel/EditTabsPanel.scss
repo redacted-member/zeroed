@@ -1,0 +1,40 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.edit-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.edit-tabs__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+}
+
+.edit-tabs__group {
+  @include form.form-group;
+}
+
+.edit-tabs__legend {
+  @include form.form-legend;
+}
+
+.edit-tabs__hint,
+.edit-tabs__count {
+  @include form.form-hint;
+}
+
+.edit-tabs__notice {
+  margin: 0;
+  color: tokens.$warning;
+}
+
+.edit-tabs__button,
+.edit-tabs__close {
+  @include form.form-button;
+}
+
+.edit-tabs__close {
+  align-self: flex-end;
+}

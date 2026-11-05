@@ -1,0 +1,52 @@
+{
+  "format": 1,
+  "id": "plant-stand",
+  "name": "Plant Stand",
+  "category": "Decor",
+  "description": "Mission plant stand: two arched slab ends with a top shelf and one to three lower shelves between them.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23770",
+  "credit": "After \"A Mission Plant Stand\", Mission Furniture: How to Make It, Part I, H. H. Windsor, 1909 (public domain)",
+  "tags": ["mission", "plants", "stand", "shelves"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 500, "min": 300, "max": 900, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 700, "min": 400, "max": 1000, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 420, "min": 250, "max": 500, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 18, "max": 25, "group": "Material" },
+    { "key": "lower", "label": "Lower shelves", "kind": "count", "default": 1, "min": 1, "max": 3, "group": "Layout" },
+    { "key": "arch", "label": "Arched ends", "kind": "toggle", "default": 1, "group": "Style" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "low_z": "120",
+    "pitch": "({height}-{t}-{low_z})/{lower}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{low_z}/2", "inset": "50", "when": "{arch}" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{low_z}/2", "inset": "50", "when": "{arch}" } ] },
+    { "id": "top", "name": "Top shelf", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{depth}", "h": "{t}" } },
+    { "id": "shelf", "name": "Lower shelf {i+1}", "material": "main", "grain": "long", "repeat": "{lower}",
+      "box": { "x": "{t}", "y": "0", "z": "{low_z}+{i}*{pitch}", "w": "{inner_w}", "d": "{depth}", "h": "{t}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "end_l|end_r", "class": "top" },
+    { "a": "shelf", "b": "end_l|end_r", "class": "shelf" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top shelf to ends", "default": "rabbet" },
+    "shelf": { "label": "Lower shelves to ends", "default": "dado" }
+  },
+  "hardware": [
+    { "name": "Round head brass screws", "count": "0", "note": "the 1909 plan screws the shelves on so the stand comes apart; add them if you pick butt joints" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

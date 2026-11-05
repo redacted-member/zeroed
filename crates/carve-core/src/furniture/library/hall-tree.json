@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "id": "hall-tree",
+  "name": "Hall Tree",
+  "category": "Storage",
+  "description": "Mission hall tree: two shaped boards cross lap into a post with four braced feet and four hook arms near the top.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"A Hall Tree\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "coat rack", "coat tree", "hall", "entry", "cross lap", "no glue"],
+  "params": [
+    { "key": "height", "label": "Height", "kind": "length", "default": 1499, "min": 1400, "max": 1900, "group": "Size" },
+    { "key": "spread", "label": "Foot spread", "kind": "length", "default": 533, "min": 450, "max": 650, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 25, "min": 18, "max": 30, "group": "Material" },
+    { "key": "pw", "label": "Post width", "kind": "length", "default": 76, "min": 60, "max": 120, "group": "Style" },
+    { "key": "fh", "label": "Foot height", "kind": "length", "default": 254, "min": 150, "max": 300, "group": "Style" },
+    { "key": "aw", "label": "Arm span", "kind": "length", "default": 300, "min": 200, "max": 440, "group": "Style" }
+  ],
+  "derived": {
+    "c": "{spread}/2",
+    "hp": "{pw}/2",
+    "ha": "{aw}/2",
+    "brace": "({spread}-{pw})/2",
+    "arm_top": "{height}-100",
+    "arm_bot": "{height}-151",
+    "mid": "{spread}/2-{t}/2"
+  },
+  "materials": {
+    "main": { "label": "Boards", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "blade_a", "name": "Blade A", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{mid}", "z": "0", "w": "{spread}", "d": "{t}", "h": "{height}" },
+      "outline": [
+        ["0", "0"], ["{spread}", "0"], ["{spread}", "{fh}"], ["{c}+{hp}", "{fh}+{brace}"],
+        ["{c}+{hp}", "{arm_bot}"], ["{c}+{ha}", "{arm_bot}"], ["{c}+{ha}", "{arm_top}"], ["{c}+{hp}", "{arm_top}"],
+        ["{c}+{hp}", "{height}-20"], ["{c}", "{height}"], ["{c}-{hp}", "{height}-20"],
+        ["{c}-{hp}", "{arm_top}"], ["{c}-{ha}", "{arm_top}"], ["{c}-{ha}", "{arm_bot}"], ["{c}-{hp}", "{arm_bot}"],
+        ["{c}-{hp}", "{fh}+{brace}"], ["0", "{fh}"]
+      ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "76" } ] },
+    { "id": "blade_b", "name": "Blade B", "material": "main", "grain": "long",
+      "box": { "x": "{mid}", "y": "0", "z": "0", "w": "{t}", "d": "{spread}", "h": "{height}" },
+      "outline": [
+        ["0", "0"], ["{spread}", "0"], ["{spread}", "{fh}"], ["{c}+{hp}", "{fh}+{brace}"],
+        ["{c}+{hp}", "{arm_bot}"], ["{c}+{ha}", "{arm_bot}"], ["{c}+{ha}", "{arm_top}"], ["{c}+{hp}", "{arm_top}"],
+        ["{c}+{hp}", "{height}-20"], ["{c}", "{height}"], ["{c}-{hp}", "{height}-20"],
+        ["{c}-{hp}", "{arm_top}"], ["{c}-{ha}", "{arm_top}"], ["{c}-{ha}", "{arm_bot}"], ["{c}-{hp}", "{arm_bot}"],
+        ["{c}-{hp}", "{fh}+{brace}"], ["0", "{fh}"]
+      ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "76" } ] }
+  ],
+  "connections": [
+    { "a": "blade_a", "b": "blade_b", "class": "cross" }
+  ],
+  "jointClasses": {
+    "cross": { "label": "Blades crossing", "default": "crossLap" }
+  },
+  "hardware": [
+    { "name": "Coat hooks", "count": "4", "note": "one on the end of each arm; add more on the post if wanted" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

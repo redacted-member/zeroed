@@ -1,0 +1,270 @@
+@use '../../styles/tokens';
+
+.toolpaths-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.toolpaths-panel__header {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+  padding: tokens.$space-1 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.toolpaths-panel__title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.toolpaths-panel__arrow {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.toolpaths-panel__arrow .tool-icon {
+  width: 14px;
+  height: 14px;
+  margin: auto;
+}
+
+.toolpaths-panel__arrow:hover:not(:disabled) {
+  border-color: tokens.$border;
+  background: tokens.$panel-raised;
+}
+
+.toolpaths-panel__arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.toolpaths-panel__arrow:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.toolpaths-panel__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.toolpaths-panel__empty,
+.toolpaths-panel__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: tokens.$space-2;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.toolpaths-panel__estimate {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: tokens.$accent;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toolpaths-panel__estimate:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.toolpaths-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.toolpaths-panel__row {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.toolpaths-panel__row:hover,
+.toolpaths-panel__row:focus-within {
+  background: tokens.$panel-raised;
+}
+
+.toolpaths-panel__row--selected {
+  background: tokens.$panel-sunken;
+}
+
+.toolpaths-panel__name {
+  display: flex;
+  flex: 1 1 auto;
+  gap: tokens.$space-2;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.toolpaths-panel__label {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toolpaths-panel__side {
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  white-space: nowrap;
+}
+
+.toolpaths-panel__side--bottom {
+  border-color: tokens.$accent;
+  color: tokens.$text;
+}
+
+.toolpaths-panel__time {
+  color: tokens.$text-muted;
+  font-family: tokens.$font-mono;
+  font-size: tokens.$font-size-small;
+}
+
+.toolpaths-panel__select {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 120px;
+  height: 22px;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.toolpaths-panel__list--drop {
+  outline: tokens.$border-width dashed tokens.$accent;
+}
+
+.toolpaths-panel__group,
+.toolpaths-panel__members {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toolpaths-panel__row--group {
+  font-weight: 600;
+}
+
+.toolpaths-panel__row--member {
+  padding-left: tokens.$space-4;
+}
+
+.toolpaths-panel__row--faded {
+  opacity: 0.55;
+}
+
+.toolpaths-panel__row--drop {
+  box-shadow: inset 0 2px 0 tokens.$accent;
+}
+
+.toolpaths-panel__twisty {
+  width: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toolpaths-panel__group-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toolpaths-panel__group-name:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.toolpaths-panel__tool {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  fill: tokens.$text-muted;
+}
+
+.toolpaths-panel__status {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.toolpaths-panel__status--ok {
+  background: tokens.$success;
+}
+
+.toolpaths-panel__status--stale {
+  background: tokens.$warning;
+}
+
+.toolpaths-panel__status--empty {
+  background: tokens.$danger;
+}
+
+.toolpaths-panel__swatch {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border: tokens.$border-width solid tokens.$border-strong;
+}
+
+.toolpaths-panel__swatch--none {
+  background: linear-gradient(
+    to top right,
+    transparent 45%,
+    tokens.$border-strong 45%,
+    tokens.$border-strong 55%,
+    transparent 55%
+  );
+}

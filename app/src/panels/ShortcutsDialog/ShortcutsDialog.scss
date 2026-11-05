@@ -1,0 +1,61 @@
+@use '../../styles/tokens';
+
+.shortcuts-dialog {
+  width: min(820px, calc(100vw - 48px));
+}
+
+.shortcuts-dialog__columns {
+  columns: 2 340px;
+  column-gap: tokens.$space-3;
+  padding: tokens.$space-2 tokens.$space-3;
+}
+
+.shortcuts-dialog__table {
+  width: 100%;
+  margin: 0 0 tokens.$space-3;
+  border-collapse: collapse;
+  break-inside: avoid;
+}
+
+.shortcuts-dialog__caption {
+  padding: 0 0 2px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.shortcuts-dialog__head {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.shortcuts-dialog__row {
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.shortcuts-dialog__keys {
+  width: 45%;
+  padding: 2px tokens.$space-1 2px 0;
+  vertical-align: top;
+}
+
+.shortcuts-dialog__label {
+  padding: 2px 0;
+}
+
+.shortcuts-dialog__kbd {
+  display: inline-block;
+  padding: 0 4px;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  font-family: inherit;
+  font-size: tokens.$font-size-small;
+}
+
+.shortcuts-dialog__or {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

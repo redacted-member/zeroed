@@ -1,0 +1,47 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.laser-picture {
+  @include form.form-root;
+}
+
+.laser-picture__hint {
+  @include form.form-hint;
+}
+
+.laser-picture__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.laser-picture__group {
+  @include form.form-group;
+}
+
+.laser-picture__legend {
+  @include form.form-legend;
+}
+
+.laser-picture__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.laser-picture__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.laser-picture__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}

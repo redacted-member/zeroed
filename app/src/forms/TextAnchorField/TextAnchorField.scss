@@ -1,0 +1,26 @@
+@use '../../styles/tokens';
+
+.text-anchor-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.text-anchor-field__label {
+  font-size: tokens.$font-size;
+}
+
+.text-anchor-field__grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: tokens.$space-1;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.text-anchor-field__point {
+  margin: 0;
+  cursor: pointer;
+}

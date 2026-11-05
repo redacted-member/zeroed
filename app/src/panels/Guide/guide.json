@@ -1,0 +1,236 @@
+{
+  "tour": {
+    "title": "Window tour",
+    "blurb": "A quick look around the window.",
+    "steps": [
+      {
+        "title": "Welcome",
+        "text": "This short tour shows where things are. Click Next to go on, or Close at any time."
+      },
+      {
+        "target": "designTab",
+        "title": "Design tab",
+        "text": "The Design tab holds the tools for drawing, editing and modeling. The tabs under it hold Sheets, Layers, Components and Clipart."
+      },
+      {
+        "target": "toolPanel",
+        "title": "Tools",
+        "text": "Tools sit in groups. Hover over a tool to see what it does, and click it to open its form here. The ? at the top of a form opens its help."
+      },
+      {
+        "target": "views",
+        "title": "The view",
+        "text": "Draw and pick things here. Scroll to zoom, and drag with the middle or right button (or hold Space) to pan. Press F to see the whole job."
+      },
+      {
+        "target": "view3d",
+        "title": "2D and 3D views",
+        "text": "Switch between the flat drawing and the 3D view with these tabs, or with F2 and F3. In 3D, drag to turn the view."
+      },
+      {
+        "target": "assembly",
+        "title": "Assembly View",
+        "text": "After you preview toolpaths, the Assembly View puts the cut parts together so you can check how they fit."
+      },
+      {
+        "target": "toolpaths",
+        "title": "Toolpaths panel",
+        "text": "Everything about cutting lives here: the material, the toolpaths, the preview and saving the file for your machine."
+      },
+      {
+        "title": "Help is always close",
+        "text": "Each panel title and each form has a ? button. Help > CarveStudio Help (F1) has every tool, and Help > Tutorial Browser brings this guide back."
+      }
+    ]
+  },
+  "sign": {
+    "title": "V-grooved sign",
+    "blurb": "Text carved with a V-bit inside a border.",
+    "steps": [
+      {
+        "target": "tool:jobSetup",
+        "click": true,
+        "title": "Set up the board",
+        "text": "Click Job Setup to tell CarveStudio the size and thickness of your board."
+      },
+      {
+        "target": "form",
+        "title": "Board size",
+        "text": "Type the width, height and thickness of the board, then click OK."
+      },
+      {
+        "target": "tool:drawRectangle",
+        "click": true,
+        "title": "Draw a border",
+        "text": "Click Draw Rectangle to draw the edge of the sign."
+      },
+      {
+        "target": "form",
+        "title": "Place the rectangle",
+        "text": "Drag in the view to draw it, or type its size and click Create. Click Close when it looks right."
+      },
+      {
+        "target": "tool:createText",
+        "click": true,
+        "title": "Add the words",
+        "text": "Click Create Text to write the words of the sign."
+      },
+      {
+        "target": "form",
+        "title": "Type the text",
+        "text": "Click in the view where the text goes, then type the words and pick a font and a height. Click Close when done."
+      },
+      {
+        "target": "views",
+        "title": "Pick what to carve",
+        "text": "Click the text in the view. Hold Shift and click the border to pick it too."
+      },
+      {
+        "target": "tool:vgroove",
+        "click": true,
+        "title": "V-Groove",
+        "text": "In the Toolpaths panel, click V-Groove / Engraving Toolpath."
+      },
+      {
+        "target": "form",
+        "title": "Choose the bit",
+        "text": "Next to Tool, click Select... and pick a V-bit. Keep the other settings and click Calculate."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to see the carving in 3D before you cut."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths, pick your machine's post processor and save the file. Read Before You Cut in the help before the first run."
+      }
+    ]
+  },
+  "relief": {
+    "title": "Relief",
+    "blurb": "A raised 3D shape carved with roughing and finishing passes.",
+    "steps": [
+      {
+        "target": "tool:drawEllipse",
+        "click": true,
+        "title": "Draw the outline",
+        "text": "Click Draw Ellipse. The relief grows from this outline."
+      },
+      {
+        "target": "form",
+        "title": "Place the ellipse",
+        "text": "Drag in the view to draw an oval, then click Close."
+      },
+      {
+        "target": "views",
+        "title": "Pick the outline",
+        "text": "Click the oval in the view so it shows as picked."
+      },
+      {
+        "target": "tool:createShape",
+        "click": true,
+        "title": "Make a shape",
+        "text": "Click Create Round Shape to raise a rounded dome from the outline."
+      },
+      {
+        "target": "form",
+        "title": "Shape and height",
+        "text": "Set the Profile Angle (lower is flatter), tick Limit or Scale to set the height, and click Apply. Click Close when you like it."
+      },
+      {
+        "target": "view3d",
+        "click": true,
+        "title": "Look at it in 3D",
+        "text": "Click 3D View to see the relief. Drag to turn it."
+      },
+      {
+        "target": "tool:rough3d",
+        "click": true,
+        "title": "Rough it out",
+        "text": "In the Toolpaths panel, click 3D Roughing Toolpath. It clears most of the wood with a bigger bit."
+      },
+      {
+        "target": "form",
+        "title": "Roughing bit",
+        "text": "Next to Tool, click Select... and pick a big end mill, then click Calculate."
+      },
+      {
+        "target": "tool:finish3d",
+        "click": true,
+        "title": "Finish it",
+        "text": "Click 3D Finishing Toolpath. A small ball nose bit leaves the smooth surface."
+      },
+      {
+        "target": "form",
+        "title": "Finishing bit",
+        "text": "Next to Tool, click Select... and pick a ball nose bit, then click Calculate."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to watch both passes carve the relief."
+      },
+      {
+        "target": "tool:saveToolpaths",
+        "click": true,
+        "title": "Save for your machine",
+        "text": "Click Save Toolpaths and save one file per bit if your machine has no tool changer."
+      }
+    ]
+  },
+  "box": {
+    "title": "Box with joints",
+    "blurb": "Flat panels joined with the Joint Creator, checked in the Assembly View.",
+    "steps": [
+      {
+        "target": "tool:drawRectangle",
+        "click": true,
+        "title": "Draw the panels",
+        "text": "Click Draw Rectangle. Each side of the box is one rectangle."
+      },
+      {
+        "target": "form",
+        "title": "One rectangle per side",
+        "text": "Draw four sides and a bottom with a gap between them. Sides that meet must have edges of the same length. Click Close when done."
+      },
+      {
+        "target": "views",
+        "title": "Pick all the panels",
+        "text": "Press Cmd+A, or drag a box around the panels, to pick them all."
+      },
+      {
+        "target": "tool:jointCreator",
+        "click": true,
+        "title": "Joint Creator",
+        "text": "Click Joint Creator. It cuts the joints into the edges for you."
+      },
+      {
+        "target": "form",
+        "title": "Box from Selection",
+        "text": "Click Box from Selection. Finger joints are picked. Tick Make the toolpaths too, then click Create."
+      },
+      {
+        "target": "tool:preview",
+        "click": true,
+        "title": "Preview",
+        "text": "Click Preview Toolpaths to see the panels cut out of the board."
+      },
+      {
+        "target": "assembly",
+        "click": true,
+        "title": "Assembly View",
+        "text": "Click Assembly View. The cut panels stand together as the finished box."
+      },
+      {
+        "target": "form",
+        "title": "Check the fit",
+        "text": "Click Verify Fit to check every joint, and open Cut List for the part sizes. Before the real parts, cut a Test Coupon from the Joint Creator to check the fit."
+      }
+    ]
+  }
+}

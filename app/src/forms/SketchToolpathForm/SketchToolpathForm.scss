@@ -1,0 +1,41 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.sketch-toolpath {
+  @include form.form-root;
+}
+
+.sketch-toolpath__hint {
+  @include form.form-hint;
+}
+
+.sketch-toolpath__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.sketch-toolpath__group {
+  @include form.form-group;
+}
+
+.sketch-toolpath__legend {
+  @include form.form-legend;
+}
+
+.sketch-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.sketch-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

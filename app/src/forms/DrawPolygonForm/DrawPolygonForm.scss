@@ -1,0 +1,21 @@
+@use '../../styles/form';
+
+.draw-polygon {
+  @include form.form-root;
+}
+
+.draw-polygon__hint {
+  @include form.form-hint;
+}
+
+.draw-polygon__group {
+  @include form.form-group;
+}
+
+.draw-polygon__legend {
+  @include form.form-legend;
+}
+
+.draw-polygon__button {
+  @include form.form-button;
+}

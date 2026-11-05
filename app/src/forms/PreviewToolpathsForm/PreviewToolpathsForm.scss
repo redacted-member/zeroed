@@ -1,0 +1,134 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.preview-toolpaths {
+  @include form.form-root;
+}
+
+.preview-toolpaths__hint {
+  @include form.form-hint;
+}
+
+.preview-toolpaths__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.preview-toolpaths__group {
+  @include form.form-group;
+}
+
+.preview-toolpaths__legend {
+  @include form.form-legend;
+}
+
+.preview-toolpaths__button {
+  @include form.form-button;
+}
+
+.preview-toolpaths__button--primary {
+  @include form.form-button-primary;
+}
+
+.preview-toolpaths__status {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.preview-toolpaths__colour {
+  width: tokens.$row-height;
+  height: tokens.$row-height;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: none;
+}
+
+.preview-toolpaths__progress {
+  width: 100%;
+}
+
+.preview-toolpaths__controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: tokens.$space-1;
+}
+
+.preview-toolpaths__readout {
+  margin: 0;
+  font-weight: 600;
+}
+
+.preview-toolpaths__sheet {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.preview-toolpaths__sheet-name {
+  flex: 1;
+  text-align: right;
+}
+
+.preview-toolpaths__palette {
+  @include form.form-button;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: tokens.$row-height;
+  padding: 0;
+}
+
+.preview-toolpaths__palette-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.2;
+}
+
+.preview-toolpaths__palette-dot {
+  fill: currentcolor;
+  stroke: none;
+}
+
+.preview-toolpaths__area {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  min-height: tokens.$row-height;
+  font-size: tokens.$font-size-small;
+}
+
+.preview-toolpaths__area-label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.preview-toolpaths__area-extra {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.preview-toolpaths__small {
+  @include form.form-button;
+
+  padding: 0 tokens.$space-2;
+}
+
+.preview-toolpaths__checks {
+  display: flex;
+  gap: tokens.$space-3;
+}
+
+.preview-toolpaths__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: tokens.$space-2;
+}

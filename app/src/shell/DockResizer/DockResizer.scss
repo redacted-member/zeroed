@@ -1,0 +1,29 @@
+@use '../../styles/tokens';
+
+.dock-resizer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 6px;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.dock-resizer--left {
+  right: 0;
+}
+
+.dock-resizer--right {
+  left: 0;
+}
+
+.dock-resizer:hover,
+.dock-resizer:active {
+  background: tokens.$accent;
+  opacity: 0.5;
+}
+
+.dock-resizer:focus-visible {
+  @include tokens.focus-ring;
+}

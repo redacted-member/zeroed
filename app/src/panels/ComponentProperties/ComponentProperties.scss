@@ -1,0 +1,70 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.component-properties__body {
+  @include form.form-root;
+}
+
+.component-properties__kind {
+  margin: 0;
+  font-weight: 600;
+}
+
+.component-properties__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+}
+
+.component-properties__hint {
+  @include form.form-hint;
+}
+
+.component-properties__error {
+  @include form.form-error;
+}
+
+.component-properties__row {
+  @include form.form-row;
+}
+
+.component-properties__label {
+  flex: 0 0 auto;
+}
+
+.component-properties__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.component-properties__swatch {
+  width: 48px;
+  height: 24px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: none;
+}
+
+.component-properties__swatch:disabled {
+  opacity: 0.4;
+}
+
+.component-properties__buttons {
+  display: flex;
+  gap: tokens.$space-2;
+  justify-content: flex-end;
+}
+
+.component-properties__button {
+  @include form.form-button;
+}
+
+.component-properties__button--primary {
+  @include form.form-button-primary;
+}

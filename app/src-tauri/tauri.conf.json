@@ -1,0 +1,122 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "CarveStudio",
+  "version": "../package.json",
+  "identifier": "com.carvestudio.app",
+  "build": {
+    "beforeDevCommand": "pnpm dev:web",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "CarveStudio",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1100,
+        "minHeight": 700,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "category": "GraphicsAndDesign",
+    "shortDescription": "CNC design and toolpath studio",
+    "fileAssociations": [
+      {
+        "ext": ["carve"],
+        "name": "CarveStudio Job",
+        "description": "CarveStudio job",
+        "role": "Editor",
+        "rank": "Owner",
+        "exportedType": {
+          "identifier": "com.carvestudio.job",
+          "conformsTo": ["public.data", "public.content"]
+        }
+      },
+      {
+        "ext": ["carveclip"],
+        "name": "CarveStudio Clipart",
+        "description": "CarveStudio clipart",
+        "role": "Viewer",
+        "rank": "Owner",
+        "exportedType": {
+          "identifier": "com.carvestudio.clipart",
+          "conformsTo": ["public.data", "public.content"]
+        }
+      },
+      {
+        "ext": ["cstemplate"],
+        "name": "CarveStudio Toolpath Template",
+        "description": "CarveStudio toolpath template",
+        "role": "Viewer",
+        "rank": "Owner",
+        "exportedType": {
+          "identifier": "com.carvestudio.template",
+          "conformsTo": ["public.data", "public.content"]
+        }
+      },
+      {
+        "ext": ["dxf", "dwg", "eps", "ai", "stl", "obj", "3ds", "3dm"],
+        "name": "Design File",
+        "description": "Vectors and 3D models CarveStudio can import",
+        "role": "Viewer"
+      },
+      {
+        "ext": ["svg"],
+        "name": "SVG Image",
+        "description": "Vectors CarveStudio can import",
+        "role": "Viewer"
+      },
+      {
+        "ext": ["pdf", "png", "jpg", "jpeg", "bmp", "gif", "tif", "tiff", "webp"],
+        "name": "Image or PDF",
+        "description": "Bitmaps to trace and PDF vectors CarveStudio can import",
+        "role": "Viewer",
+        "rank": "Alternate"
+      }
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "copyright": "Copyright 2026 the CarveStudio authors",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "signingIdentity": "-",
+      "hardenedRuntime": true,
+      "entitlements": "Entitlements.plist",
+      "files": {
+        "Resources/carve-document.icns": "icons/carve-document.icns",
+        "Resources/carveclip-document.icns": "icons/carveclip-document.icns"
+      },
+      "dmg": {
+        "windowSize": {
+          "width": 660,
+          "height": 400
+        },
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        }
+      }
+    }
+  }
+}

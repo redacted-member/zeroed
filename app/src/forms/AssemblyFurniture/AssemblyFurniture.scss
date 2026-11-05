@@ -1,0 +1,50 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-furniture {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding-bottom: tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.assembly-furniture__heading {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-furniture__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-furniture__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assembly-furniture__row {
+  width: 100%;
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  cursor: pointer;
+}
+
+.assembly-furniture__row:hover,
+.assembly-furniture__row:focus-visible {
+  border-color: tokens.$accent;
+}

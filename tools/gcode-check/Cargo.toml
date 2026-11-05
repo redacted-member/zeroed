@@ -1,0 +1,12 @@
+[package]
+name = "gcode-check"
+description = "An independent G-code reader and heightfield cutter that checks posted programs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+# No dependencies on purpose: the checker shares no code with the CAM, post
+# processor or preview it checks, so it can catch their mistakes.
+[dependencies]

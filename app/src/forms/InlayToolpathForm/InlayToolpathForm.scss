@@ -1,0 +1,56 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.inlay-toolpath {
+  @include form.form-root;
+}
+
+.inlay-toolpath__hint {
+  @include form.form-hint;
+}
+
+.inlay-toolpath__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.inlay-toolpath__group {
+  @include form.form-group;
+}
+
+.inlay-toolpath__legend {
+  @include form.form-legend;
+}
+
+.inlay-toolpath__row {
+  @include form.form-row;
+
+  font-size: tokens.$font-size-small;
+}
+
+.inlay-toolpath__select {
+  height: tokens.$row-height;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.inlay-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.inlay-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

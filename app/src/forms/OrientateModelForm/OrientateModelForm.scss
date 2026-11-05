@@ -1,0 +1,56 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.orientate-model {
+  @include form.form-root;
+}
+
+.orientate-model__hint {
+  @include form.form-hint;
+}
+
+.orientate-model__error {
+  @include form.form-error;
+}
+
+.orientate-model__group {
+  @include form.form-group;
+}
+
+.orientate-model__legend {
+  @include form.form-legend;
+}
+
+.orientate-model__row {
+  @include form.form-row;
+
+  justify-content: flex-start;
+}
+
+.orientate-model__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.orientate-model__button--primary {
+  @include form.form-button-primary;
+}
+
+.orientate-model__slider {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.orientate-model__range {
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.orientate-model__actions {
+  @include form.form-row;
+
+  justify-content: flex-end;
+}

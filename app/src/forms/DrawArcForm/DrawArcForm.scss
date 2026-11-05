@@ -1,0 +1,32 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.draw-arc {
+  @include form.form-root;
+}
+
+.draw-arc__hint {
+  @include form.form-hint;
+}
+
+.draw-arc__group {
+  @include form.form-group;
+}
+
+.draw-arc__legend {
+  @include form.form-legend;
+}
+
+.draw-arc__choices {
+  @include form.form-choices;
+}
+
+.draw-arc__choice {
+  @include form.form-choice;
+}
+
+.draw-arc__radius {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

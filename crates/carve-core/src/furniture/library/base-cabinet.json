@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "id": "base-cabinet",
+  "name": "Base Cabinet",
+  "category": "Kitchen",
+  "description": "Kitchen base cabinet with hinged doors, one drawer and a toe kick.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["kitchen", "doors", "drawer", "frameless"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 600, "min": 400, "max": 1000, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 720, "min": 600, "max": 900, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 560, "min": 400, "max": 650, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 22, "group": "Material" },
+    { "key": "doors", "label": "Doors", "kind": "count", "default": 2, "min": 1, "max": 2, "group": "Layout" },
+    { "key": "drawer", "label": "Drawer", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "drawer_h", "label": "Drawer height", "kind": "length", "default": 160, "min": 120, "max": 250, "group": "Layout" },
+    { "key": "kick", "label": "Toe kick", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "kick_h", "label": "Toe kick height", "kind": "length", "default": 100, "min": 60, "max": 150, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "inner_d": "{depth}-9",
+    "base": "{kick}*{kick_h}",
+    "rail_z": "{height}-{t}-{drawer_h}*{drawer}",
+    "door_top": "{rail_z}-2+{t}*(1-{drawer})",
+    "slide": "13",
+    "box_w": "{inner_w}-2*{slide}",
+    "box_d": "{inner_d}-40",
+    "box_h": "{drawer_h}-40",
+    "box_z": "{rail_z}+{t}+12"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "back": { "label": "Back", "thickness": "9" },
+    "drawer": { "label": "Drawer box", "thickness": "12" }
+  },
+  "panels": [
+    {
+      "id": "left", "name": "Left side", "material": "main",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [
+        { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "{base}", "when": "{kick}" }
+      ]
+    },
+    {
+      "id": "right", "name": "Right side", "material": "main",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [
+        { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "{base}", "when": "{kick}" }
+      ]
+    },
+    {
+      "id": "top", "name": "Top", "material": "main",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" }
+    },
+    {
+      "id": "bottom", "name": "Bottom", "material": "main",
+      "box": { "x": "{t}", "y": "0", "z": "{base}", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" }
+    },
+    {
+      "id": "rail", "name": "Drawer rail", "material": "main", "when": "{drawer}",
+      "box": { "x": "{t}", "y": "0", "z": "{rail_z}", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" }
+    },
+    {
+      "id": "kick", "name": "Toe kick", "material": "main", "when": "{kick}",
+      "box": { "x": "{t}", "y": "50", "z": "0", "w": "{inner_w}", "d": "{t}", "h": "{base}" }
+    },
+    {
+      "id": "back", "name": "Back", "material": "back",
+      "box": { "x": "{t}", "y": "{depth}-9", "z": "0", "w": "{inner_w}", "d": "9", "h": "{height}" }
+    },
+    {
+      "id": "door", "name": "Door {i+1}", "material": "main", "repeat": "{doors}",
+      "box": { "x": "1.5+{i}*{width}/{doors}", "y": "-{t}-2", "z": "{base}+2", "w": "{width}/{doors}-3", "d": "{t}", "h": "{door_top}-{base}-2" },
+      "features": [
+        { "kind": "hingeCups", "edge": "left", "when": "1-{i}" },
+        { "kind": "hingeCups", "edge": "right", "when": "{i}" },
+        { "kind": "handle", "u": "{width}/{doors}-60", "v": "{door_top}-{base}-80", "w": "90", "h": "28", "when": "1-{i}" },
+        { "kind": "handle", "u": "60", "v": "{door_top}-{base}-80", "w": "90", "h": "28", "when": "{i}" }
+      ]
+    },
+    {
+      "id": "front", "name": "Drawer front", "material": "main", "when": "{drawer}",
+      "box": { "x": "1.5", "y": "-{t}-2", "z": "{rail_z}+2", "w": "{width}-3", "d": "{t}", "h": "{height}-{rail_z}-4" },
+      "features": [
+        { "kind": "handle", "u": "{width}/2", "v": "{height}-{rail_z}-50", "w": "90", "h": "28" }
+      ]
+    },
+    {
+      "id": "box_side", "name": "Drawer side {i+1}", "material": "drawer", "repeat": "2*{drawer}",
+      "box": { "x": "{t}+{slide}+{i}*({box_w}-12)", "y": "-2", "z": "{box_z}", "w": "12", "d": "{box_d}", "h": "{box_h}" },
+      "features": [
+        { "kind": "slideHoles", "at": "{box_h}/2" }
+      ]
+    },
+    {
+      "id": "box_front", "name": "Drawer box front", "material": "drawer", "when": "{drawer}",
+      "box": { "x": "{t}+{slide}+12", "y": "-2", "z": "{box_z}", "w": "{box_w}-24", "d": "12", "h": "{box_h}" }
+    },
+    {
+      "id": "box_back", "name": "Drawer box back", "material": "drawer", "when": "{drawer}",
+      "box": { "x": "{t}+{slide}+12", "y": "{box_d}-14", "z": "{box_z}", "w": "{box_w}-24", "d": "12", "h": "{box_h}" }
+    },
+    {
+      "id": "box_bottom", "name": "Drawer bottom", "material": "back", "when": "{drawer}",
+      "box": { "x": "{t}+{slide}+12", "y": "10", "z": "{box_z}+10", "w": "{box_w}-24", "d": "{box_d}-24", "h": "9" }
+    }
+  ],
+  "connections": [
+    { "a": "top", "b": "left|right", "class": "top" },
+    { "a": "bottom|rail", "b": "left|right", "class": "bottom" },
+    { "a": "kick", "b": "*", "class": "kick" },
+    { "a": "back", "b": "*", "class": "back" },
+    { "a": "box_front|box_back", "b": "box_side", "class": "drawer" },
+    { "a": "box_bottom", "b": "*", "class": "drawerBottom" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to sides", "default": "rabbet" },
+    "bottom": { "label": "Bottom and rail to sides", "default": "dado" },
+    "kick": { "label": "Toe kick", "default": "none" },
+    "back": { "label": "Back", "default": "rabbet" },
+    "drawer": { "label": "Drawer box corners", "default": "rabbet" },
+    "drawerBottom": { "label": "Drawer bottom", "default": "none" }
+  },
+  "hardware": [
+    { "name": "Concealed hinge 35 mm", "count": "2*{doors}", "note": "full overlay" },
+    { "name": "Drawer slides", "count": "{drawer}", "note": "pair, 13 mm side clearance" },
+    { "name": "Handle", "count": "{doors}+{drawer}" },
+    { "name": "Adjustable foot", "count": "4*(1-{kick})" }
+  ]
+}

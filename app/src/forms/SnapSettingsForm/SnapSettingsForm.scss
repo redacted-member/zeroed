@@ -1,0 +1,17 @@
+@use '../../styles/form';
+
+.snap-settings {
+  @include form.form-root;
+}
+
+.snap-settings__group {
+  @include form.form-group;
+}
+
+.snap-settings__legend {
+  @include form.form-legend;
+}
+
+.snap-settings__choice {
+  @include form.form-choice;
+}

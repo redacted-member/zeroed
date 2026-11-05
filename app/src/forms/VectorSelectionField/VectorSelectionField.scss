@@ -1,0 +1,21 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.vector-selection {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.vector-selection__label {
+  flex: 1;
+}
+
+.vector-selection__status {
+  color: tokens.$text-muted;
+}
+
+.vector-selection__button {
+  @include form.form-button;
+}

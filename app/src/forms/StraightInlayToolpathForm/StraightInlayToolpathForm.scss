@@ -1,0 +1,23 @@
+@use '../../styles/form';
+
+.straight-inlay {
+  @include form.form-root;
+}
+
+.straight-inlay__hint {
+  @include form.form-hint;
+}
+
+.straight-inlay__group {
+  @include form.form-group;
+}
+
+.straight-inlay__legend {
+  @include form.form-legend;
+}
+
+.straight-inlay__choice {
+  @include form.form-button;
+
+  align-self: stretch;
+}

@@ -1,0 +1,63 @@
+@use '../../styles/tokens';
+
+.modal-dialog {
+  width: min(720px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size;
+}
+
+.modal-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-dialog__body {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 48px);
+}
+
+.modal-dialog__header {
+  padding: tokens.$space-2 tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.modal-dialog__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+}
+
+.modal-dialog__content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.modal-dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.modal-dialog__button {
+  padding: 3px tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  cursor: pointer;
+}
+
+.modal-dialog__button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}

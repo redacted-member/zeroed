@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.create-text-form {
+  @include form.form-root;
+}
+
+.create-text-form__hint {
+  @include form.form-hint;
+}
+
+.create-text-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.create-text-form__group {
+  @include form.form-group;
+}
+
+.create-text-form__legend {
+  @include form.form-legend;
+}

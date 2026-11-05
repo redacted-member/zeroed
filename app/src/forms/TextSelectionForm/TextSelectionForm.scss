@@ -1,0 +1,9 @@
+@use '../../styles/form';
+
+.text-selection {
+  @include form.form-root;
+}
+
+.text-selection__hint {
+  @include form.form-hint;
+}

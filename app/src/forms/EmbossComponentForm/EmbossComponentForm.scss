@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.emboss-component {
+  @include form.form-root;
+}
+
+.emboss-component__hint {
+  @include form.form-hint;
+}
+
+.emboss-component__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.emboss-component__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.emboss-component__group {
+  @include form.form-group;
+}
+
+.emboss-component__legend {
+  @include form.form-legend;
+}

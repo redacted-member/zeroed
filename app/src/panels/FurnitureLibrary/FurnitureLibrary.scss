@@ -1,0 +1,203 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.furniture-library {
+  width: min(980px, calc(100vw - 48px));
+}
+
+.furniture-library__body {
+  display: flex;
+  gap: tokens.$space-3;
+  min-height: 0;
+  padding: tokens.$space-3;
+  overflow: hidden;
+}
+
+.furniture-library__categories {
+  flex: 0 0 150px;
+  overflow-y: auto;
+}
+
+.furniture-library__category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.furniture-library__category {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: 0;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.furniture-library__category:hover {
+  background: tokens.$panel-raised;
+}
+
+.furniture-library__category[aria-pressed='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.furniture-library__category:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.furniture-library__count {
+  opacity: 0.7;
+}
+
+.furniture-library__main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+.furniture-library__search {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+}
+
+.furniture-library__label {
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-library__input {
+  flex: 1 1 auto;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.furniture-library__hint {
+  @include form.form-hint;
+}
+
+.furniture-library__error {
+  @include form.form-error;
+}
+
+.furniture-library__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: tokens.$space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.furniture-library__card {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.furniture-library__card:hover {
+  border-color: tokens.$accent;
+}
+
+.furniture-library__pick {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.furniture-library__pick:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 2px;
+}
+
+.furniture-library__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+}
+
+.furniture-library__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.furniture-library__no-thumb {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-library__name {
+  font-weight: 600;
+}
+
+.furniture-library__line,
+.furniture-library__author,
+.furniture-library__credit {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-library__meta {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+}
+
+.furniture-library__badge {
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.furniture-library__remove {
+  margin-left: auto;
+  padding: 2px;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  cursor: pointer;
+}
+
+.furniture-library__remove:hover {
+  border-color: tokens.$danger;
+}
+
+.furniture-library__button {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}

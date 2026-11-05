@@ -1,0 +1,74 @@
+@use '../../styles/tokens';
+
+.anchor-picker {
+  display: flex;
+  gap: tokens.$space-3;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.anchor-picker__legend {
+  float: left;
+  padding: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.anchor-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 16px);
+  gap: 2px;
+  padding: 3px;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.anchor-picker__cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.anchor-picker__cell--off {
+  cursor: default;
+  opacity: 0.25;
+}
+
+.anchor-picker__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.anchor-picker__dot {
+  width: 8px;
+  height: 8px;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: 50%;
+  background: tokens.$panel-bg;
+}
+
+.anchor-picker__radio:checked + .anchor-picker__dot {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+}
+
+.anchor-picker__radio:focus-visible + .anchor-picker__dot {
+  @include tokens.focus-ring;
+}
+
+.anchor-picker:disabled {
+  opacity: 0.5;
+}
+
+.anchor-picker:disabled .anchor-picker__cell {
+  cursor: default;
+}

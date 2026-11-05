@@ -1,0 +1,97 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.slice-model {
+  @include form.form-root;
+}
+
+.slice-model__hint {
+  @include form.form-hint;
+}
+
+.slice-model__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: tokens.$space-1 tokens.$space-2;
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.slice-model__term {
+  color: tokens.$text-muted;
+}
+
+.slice-model__value {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.slice-model__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.slice-model__error {
+  @include form.form-error;
+}
+
+.slice-model__group {
+  @include form.form-group;
+}
+
+.slice-model__legend {
+  @include form.form-legend;
+
+  margin: 0;
+}
+
+.slice-model__field {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.slice-model__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.slice-model__heights {
+  display: flex;
+  gap: tokens.$space-3;
+  align-items: flex-start;
+}
+
+.slice-model__height-edit {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+}
+
+.slice-model__list {
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.slice-model__height-buttons {
+  display: flex;
+  gap: tokens.$space-2;
+}
+
+.slice-model__button {
+  @include form.form-button;
+}

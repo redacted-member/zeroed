@@ -1,0 +1,223 @@
+@use '../../styles/tokens';
+
+.components-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.components-panel__toolbar {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.components-panel__picked {
+  grid-column: 1 / -1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.components-panel__empty {
+  margin: 0;
+  padding: tokens.$space-2;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.components-panel__empty--level {
+  padding-left: tokens.$space-5;
+}
+
+.components-panel__levels {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.components-panel__folder {
+  margin: 0;
+  padding: 0;
+}
+
+.components-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.components-panel__level-row,
+.components-panel__group-row,
+.components-panel__row {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  font-size: tokens.$font-size-small;
+}
+
+.components-panel__level-row {
+  background: tokens.$panel-raised;
+  font-weight: 600;
+}
+
+.components-panel__level-row--active {
+  box-shadow: inset 3px 0 0 tokens.$accent;
+}
+
+.components-panel__group-row {
+  padding-left: tokens.$space-4;
+}
+
+.components-panel__row {
+  padding-left: tokens.$space-5;
+}
+
+.components-panel__row--nested {
+  padding-left: calc(#{tokens.$space-5} + #{tokens.$space-4});
+}
+
+.components-panel__row:hover,
+.components-panel__row:focus-within,
+.components-panel__group-row:hover,
+.components-panel__group-row:focus-within {
+  background: tokens.$panel-raised;
+}
+
+.components-panel__row--selected,
+.components-panel__row--selected:hover {
+  background: tokens.$panel-sunken;
+  box-shadow: inset 2px 0 0 tokens.$accent;
+}
+
+.components-panel__drop--into {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.components-panel__drop--before {
+  box-shadow: inset 0 2px 0 tokens.$accent;
+}
+
+.components-panel__drop--after {
+  box-shadow: inset 0 -2px 0 tokens.$accent;
+}
+
+.components-panel__twisty {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: tokens.$font-size-small;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.components-panel__check {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.components-panel__swatch {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.components-panel__swatch-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.components-panel__name {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.components-panel__name--folder {
+  font-weight: 600;
+}
+
+.components-panel__label {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.components-panel__badge {
+  flex: 0 0 auto;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 400;
+}
+
+.components-panel__row--piece {
+  cursor: grab;
+  user-select: none;
+}
+
+.components-panel__row--piece .components-panel__name {
+  cursor: grab;
+}
+
+.components-panel__piece-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: tokens.$space-1 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.components-panel__piece-hint-icon {
+  display: flex;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: tokens.$accent;
+}
+
+.components-panel__drag-label {
+  position: fixed;
+  z-index: 1000;
+  padding: 2px tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(12px, 12px);
+}
+
+.components-panel__drag-label--over {
+  border-color: tokens.$accent;
+  color: tokens.$text;
+}

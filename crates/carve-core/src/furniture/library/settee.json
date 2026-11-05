@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "id": "settee",
+  "name": "Settee",
+  "category": "Seating",
+  "description": "Mission settle: slatted slab ends, a tall back and a front rail around a seat deck for a loose cushion, with a center support on long settees.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"Quarter-Sawed Oak Settee\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "settle", "sofa", "couch", "hall", "cushion"],
+  "params": [
+    { "key": "length", "label": "Length", "kind": "length", "default": 2210, "min": 1200, "max": 2400, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 813, "min": 600, "max": 900, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 927, "min": 800, "max": 1000, "group": "Size" },
+    { "key": "seat", "label": "Seat frame height", "kind": "length", "default": 400, "min": 360, "max": 450, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 25, "min": 18, "max": 30, "group": "Material" },
+    { "key": "pw", "label": "Post width in the ends", "kind": "length", "default": 83, "min": 60, "max": 120, "group": "Style" },
+    { "key": "gap", "label": "Slot width between end slats", "kind": "length", "default": 25, "min": 15, "max": 40, "group": "Style" }
+  ],
+  "derived": {
+    "fy": "({pw}-{t})/2",
+    "by": "{depth}-({pw}+{t})/2",
+    "deck_z": "{seat}-40-{t}",
+    "inner_l": "{length}-2*{t}",
+    "slat_w": "({depth}-2*{pw}-7*{gap})/6",
+    "sp": "{slat_w}+{gap}",
+    "slot_v": "({seat}+20+{height}-127)/2",
+    "slot_h": "{height}-147-{seat}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "{pw}" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+2*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+3*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+4*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+5*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+6*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" }
+      ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "{pw}" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+2*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+3*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+4*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+5*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" },
+        { "kind": "cutout", "u": "{pw}+{gap}/2+6*{sp}", "v": "{slot_v}", "w": "{gap}", "h": "{slot_h}", "r": "{gap}/2" }
+      ] },
+    { "id": "rail_f", "name": "Front rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{fy}", "z": "{seat}-178", "w": "{inner_l}", "d": "{t}", "h": "178" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "30", "inset": "100" } ] },
+    { "id": "back", "name": "Back", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{by}", "z": "{deck_z}", "w": "{inner_l}", "d": "{t}", "h": "{height}-25-{deck_z}" } },
+    { "id": "deck", "name": "Seat deck", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{fy}+{t}", "z": "{deck_z}", "w": "{inner_l}", "d": "{by}-{fy}-{t}", "h": "{t}" } },
+    { "id": "mid", "name": "Center support", "material": "main", "grain": "long", "when": "{length}-1500",
+      "box": { "x": "{length}/2-{t}/2", "y": "{fy}+{t}", "z": "0", "w": "{t}", "d": "{by}-{fy}-{t}", "h": "{deck_z}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "80" } ] }
+  ],
+  "connections": [
+    { "a": "deck", "b": "back", "class": "deck_back" },
+    { "a": "deck", "b": "*", "class": "deck" },
+    { "a": "rail_f|back", "b": "end_l|end_r", "class": "rail" },
+    { "a": "mid", "b": "*", "class": "mid" }
+  ],
+  "jointClasses": {
+    "deck": { "label": "Seat deck", "default": "dado" },
+    "deck_back": { "label": "Seat deck to back", "default": "dowel" },
+    "rail": { "label": "Front rail and back to ends", "default": "dowel" },
+    "mid": { "label": "Center support", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Seat cushion", "count": "1", "note": "loose, about 100 mm thick; the 1912 settee used leather" },
+    { "name": "Felt pads", "count": "6", "note": "two under the center support of a long settee" }
+  ]
+}

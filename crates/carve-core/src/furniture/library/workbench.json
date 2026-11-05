@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "id": "workbench",
+  "name": "Workbench",
+  "category": "Shop",
+  "description": "Panel workbench at counter height: slab ends, deep front and back aprons, a thick top with clamping overhang and a supported lower shelf.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["shop", "bench", "garage", "counter height"],
+  "params": [
+    { "key": "width", "label": "Length", "kind": "length", "default": 1500, "min": 1000, "max": 2400, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 650, "min": 500, "max": 800, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 900, "min": 750, "max": 1000, "group": "Size" },
+    { "key": "t", "label": "Frame thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "tt", "label": "Top thickness", "kind": "thickness", "default": 36, "min": 25, "max": 50, "group": "Material" },
+    { "key": "oh", "label": "Top overhang at the ends", "kind": "length", "default": 80, "min": 40, "max": 200, "group": "Layout" },
+    { "key": "shelf", "label": "Lower shelf", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{tt}",
+    "front_oh": "40",
+    "span": "{width}-2*{oh}-2*{t}",
+    "apron_h": "150",
+    "shelf_z": "150"
+  },
+  "materials": {
+    "main": { "label": "Frame", "thickness": "{t}" },
+    "top": { "label": "Top", "thickness": "{tt}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "top", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{tt}" } },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "{front_oh}", "z": "0", "w": "{t}", "d": "{depth}-2*{front_oh}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "80" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{oh}-{t}", "y": "{front_oh}", "z": "0", "w": "{t}", "d": "{depth}-2*{front_oh}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "80" } ] },
+    { "id": "apron_f", "name": "Front apron", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{front_oh}", "z": "{leg_h}-{apron_h}", "w": "{span}", "d": "{t}", "h": "{apron_h}" } },
+    { "id": "apron_b", "name": "Back apron", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-{front_oh}-{t}", "z": "{leg_h}-{apron_h}", "w": "{span}", "d": "{t}", "h": "{apron_h}" } },
+    { "id": "shelf", "name": "Lower shelf", "material": "main", "grain": "long", "when": "{shelf}",
+      "box": { "x": "{oh}+{t}", "y": "{front_oh}", "z": "{shelf_z}", "w": "{span}", "d": "{depth}-2*{front_oh}", "h": "{t}" } },
+    { "id": "support", "name": "Shelf support", "material": "main", "grain": "long", "when": "{shelf}",
+      "box": { "x": "{width}/2-{t}/2", "y": "{front_oh}", "z": "0", "w": "{t}", "d": "{depth}-2*{front_oh}", "h": "{shelf_z}" } },
+    { "id": "rail", "name": "Back lower rail", "material": "main", "grain": "long", "when": "{shelf}",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-{front_oh}-{t}", "z": "{shelf_z}+{t}", "w": "{span}", "d": "{t}", "h": "100" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "apron_f|apron_b|rail", "b": "end_l|end_r", "class": "apron" },
+    { "a": "support", "b": "shelf", "class": "support" },
+    { "a": "shelf|support", "b": "*", "class": "shelf" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to frame", "default": "none" },
+    "apron": { "label": "Aprons to ends", "default": "dowel" },
+    "shelf": { "label": "Shelf and support", "default": "dado" },
+    "support": { "label": "Support under the shelf", "default": "tabSlot" }
+  },
+  "hardware": [
+    { "name": "Screws 5 x 50 mm", "count": "12", "note": "top to aprons from below; replaceable top" },
+    { "name": "Leveling feet", "count": "4" }
+  ]
+}

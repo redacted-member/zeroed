@@ -1,0 +1,12 @@
+@use '../../styles/tokens';
+
+.joint-view-3d {
+  display: block;
+  width: 100%;
+  height: 180px;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  cursor: grab;
+  touch-action: none;
+}

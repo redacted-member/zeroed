@@ -1,0 +1,111 @@
+@use '../../styles/tokens';
+
+.right-dock {
+  position: relative;
+  display: flex;
+  min-height: 0;
+}
+
+.right-dock__tab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 28px;
+  padding: tokens.$space-3 0;
+  border: none;
+  border-left: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.right-dock__tab:hover,
+.right-dock__tab[aria-expanded='true'] {
+  background: tokens.$panel-raised;
+}
+
+.right-dock__tab-label {
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.right-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: tokens.$panel-width-right;
+  min-height: 0;
+  border-left: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-bg;
+}
+
+.right-panel--floating {
+  position: absolute;
+  top: 0;
+  right: 28px;
+  bottom: 0;
+  z-index: 20;
+  box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+}
+
+.right-panel__header {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: tokens.$doc-bar-height;
+  padding: tokens.$space-1 tokens.$space-2 tokens.$space-1 tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.right-panel__buttons {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.right-panel__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.right-panel__operations {
+  flex: 0 1 auto;
+  min-height: 120px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.right-panel__list {
+  display: flex;
+  flex: 1 1 45%;
+  flex-direction: column;
+  min-height: 160px;
+  border-top: tokens.$border-width solid tokens.$border-strong;
+}
+
+.right-panel__list-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.right-panel__list--sized {
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-height: calc(100% - 160px);
+}
+
+.right-panel__operations--above-form {
+  flex: 0 1 40%;
+  border-bottom: tokens.$border-width solid tokens.$border-strong;
+}
+
+.right-panel__operations:has(~ .right-panel__list--sized) {
+  flex-grow: 1;
+}

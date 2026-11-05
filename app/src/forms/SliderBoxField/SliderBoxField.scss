@@ -1,0 +1,61 @@
+@use '../../styles/tokens';
+
+.slider-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+  font-size: tokens.$font-size-small;
+}
+
+.slider-box__box {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+}
+
+.slider-box__input {
+  width: 64px;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  text-align: right;
+}
+
+.slider-box__input[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.slider-box__input:disabled {
+  opacity: 0.5;
+}
+
+.slider-box__unit {
+  color: tokens.$text-muted;
+}
+
+.slider-box__range {
+  grid-column: 1 / -1;
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.slider-box__range:disabled {
+  opacity: 0.5;
+}
+
+.slider-box__range:focus-visible {
+  outline: tokens.$border-width solid tokens.$accent;
+  outline-offset: tokens.$space-1;
+}
+
+.slider-box__ends {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  color: tokens.$text-muted;
+}

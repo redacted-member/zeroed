@@ -1,0 +1,39 @@
+@use '../../styles/tokens';
+
+.dock-buttons__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dock-buttons__button:hover {
+  border-color: tokens.$border;
+  background: tokens.$panel-raised;
+}
+
+.dock-buttons__button:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.dock-buttons__icon {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dock-buttons__text {
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}

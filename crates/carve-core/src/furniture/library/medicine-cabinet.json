@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "id": "medicine-cabinet",
+  "name": "Medicine Cabinet",
+  "category": "Storage",
+  "description": "Mission medicine cabinet for the wall: sides that run past the top and bottom like posts, up to four shelves and an inset door framed for a mirror.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23991",
+  "credit": "After \"A Medicine Cabinet\", Mission Furniture: How to Make It, Part II, H. H. Windsor, 1910 (public domain)",
+  "tags": ["mission", "bathroom", "wall", "mirror", "door"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 470, "min": 350, "max": 700, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 241, "min": 150, "max": 300, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 711, "min": 500, "max": 900, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 19, "min": 15, "max": 22, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 2, "min": 0, "max": 4, "group": "Layout" },
+    { "key": "mirror", "label": "Mirror in the door", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "bz": "50",
+    "tz": "{height}-60-{t}",
+    "inner_w": "{width}-2*{t}",
+    "bd": "{depth}-{t}-6",
+    "space": "({tz}-{bz}-{t}-{shelves}*{t})/({shelves}+1)",
+    "door_w": "{inner_w}-4",
+    "door_h": "{tz}+{t}-{bz}",
+    "open_w": "{door_w}-102",
+    "open_h": "{door_h}-153"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "back": { "label": "Back", "thickness": "6" }
+  },
+  "panels": [
+    { "id": "side_l", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "30", "inset": "30" } ] },
+    { "id": "side_r", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "30", "inset": "30" } ] },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{t}", "z": "{tz}", "w": "{inner_w}", "d": "{bd}", "h": "{t}" } },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{t}", "z": "{bz}", "w": "{inner_w}", "d": "{bd}", "h": "{t}" } },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{shelves}",
+      "box": { "x": "{t}", "y": "{t}", "z": "{bz}+{t}+({i}+1)*{space}+{i}*{t}", "w": "{inner_w}", "d": "{bd}", "h": "{t}" } },
+    { "id": "back", "name": "Back", "material": "back", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-6", "z": "{bz}", "w": "{inner_w}", "d": "6", "h": "{door_h}" } },
+    { "id": "door", "name": "Door", "material": "main", "grain": "long",
+      "box": { "x": "{t}+2", "y": "0", "z": "{bz}", "w": "{door_w}", "d": "{t}", "h": "{door_h}" },
+      "features": [
+        { "kind": "hingeCups", "edge": "left" },
+        { "kind": "cutout", "u": "{door_w}/2", "v": "102+{open_h}/2", "w": "{open_w}", "h": "{open_h}", "r": "3", "when": "{mirror}" },
+        { "kind": "pocket", "u": "{door_w}/2", "v": "102+{open_h}/2", "w": "{open_w}+20", "h": "{open_h}+20", "depth": "6", "face": "back", "when": "{mirror}" }
+      ] }
+  ],
+  "connections": [
+    { "a": "door", "b": "*", "class": "door" },
+    { "a": "shelf", "b": "side_l|side_r", "class": "shelf" },
+    { "a": "top|bottom", "b": "side_l|side_r", "class": "carcass" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "door": { "label": "Door", "default": "none" },
+    "shelf": { "label": "Shelves to sides", "default": "dado" },
+    "carcass": { "label": "Top and bottom to sides", "default": "dado" },
+    "back": { "label": "Back", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Cup hinges 35 mm, inset", "count": "2" },
+    { "name": "Magnetic catch", "count": "1" },
+    { "name": "Door knob", "count": "1" },
+    { "name": "Mirror, cut to the pocket behind the door opening", "count": "{mirror}", "note": "hold it with glazing points or a thin backing board" },
+    { "name": "Cabinet hangers", "count": "2", "note": "or a French cleat behind the back" }
+  ]
+}

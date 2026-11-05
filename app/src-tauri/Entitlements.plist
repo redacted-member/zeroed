@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Entitlements of the signed app under the hardened runtime. The app needs no
+  exceptions: the kernel is native code, gadgets run in an interpreter without
+  a JIT, the web view's JIT runs in WebKit's own processes, the DWG reader
+  starts the app's own signed binary, and files are reached through the open
+  and save panels or paths the user chose. It is not sandboxed (no App Store).
+-->
+<plist version="1.0">
+<dict/>
+</plist>

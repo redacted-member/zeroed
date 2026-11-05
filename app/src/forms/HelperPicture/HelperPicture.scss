@@ -1,0 +1,132 @@
+@use '../../styles/tokens';
+
+.helper-picture {
+  flex: none;
+  margin: 0;
+  color: tokens.$text;
+  line-height: 0;
+}
+
+.helper-picture--icon {
+  width: 22px;
+}
+
+.helper-picture--small {
+  width: 40px;
+}
+
+.helper-picture--medium {
+  width: 64px;
+}
+
+.helper-picture--large {
+  width: 112px;
+}
+
+.helper-picture__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.helper-picture__line {
+  fill: none;
+  stroke: tokens.$text;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.helper-picture__faint {
+  fill: none;
+  stroke: tokens.$text-muted;
+  stroke-width: 0.8;
+  stroke-dasharray: 2 2;
+}
+
+.helper-picture__material {
+  fill: tokens.$icon-material-fill;
+  stroke: tokens.$text;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.helper-picture__material-side {
+  fill: color-mix(in srgb, tokens.$icon-material-fill 70%, tokens.$text);
+  stroke: tokens.$text;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.helper-picture__model {
+  fill: tokens.$icon-model-fill;
+  stroke: tokens.$icon-model;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.helper-picture__cut {
+  fill: tokens.$panel-raised;
+  stroke: tokens.$text;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.helper-picture__tool {
+  fill: tokens.$panel-sunken;
+  stroke: tokens.$text-muted;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.helper-picture__vector {
+  fill: none;
+  stroke: tokens.$icon-vector;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.helper-picture__path {
+  fill: none;
+  stroke: tokens.$icon-toolpath;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.helper-picture__path-head {
+  fill: tokens.$icon-toolpath;
+}
+
+.helper-picture__dim {
+  fill: none;
+  stroke: tokens.$icon-result;
+  stroke-width: 0.9;
+}
+
+.helper-picture__dim-head {
+  fill: tokens.$icon-result;
+}
+
+.helper-picture__dot {
+  fill: tokens.$icon-result;
+}
+
+.helper-picture__mark {
+  fill: tokens.$icon-vector;
+}
+
+.helper-picture__plane {
+  fill: none;
+  stroke: tokens.$icon-result;
+  stroke-width: 1.6;
+}
+
+.helper-picture__label {
+  fill: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: 8px;
+  font-weight: 600;
+}

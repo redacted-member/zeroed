@@ -1,0 +1,71 @@
+@use '../../styles/tokens';
+
+.sheets-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
+.sheets-panel__list {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.sheets-panel__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: tokens.$space-1 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  cursor: default;
+  user-select: none;
+}
+
+.sheets-panel__row:hover {
+  background: tokens.$panel-raised;
+}
+
+.sheets-panel__row--picked,
+.sheets-panel__row--picked:hover {
+  background: tokens.$panel-sunken;
+}
+
+.sheets-panel__row:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.sheets-panel__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sheets-panel__name[aria-current='true'] {
+  font-weight: 700;
+}
+
+.sheets-panel__detail {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.sheets-panel__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sheets-panel__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border-top: tokens.$border-width solid tokens.$border;
+}

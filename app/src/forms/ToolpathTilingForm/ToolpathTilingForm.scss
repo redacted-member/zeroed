@@ -1,0 +1,52 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.toolpath-tiling {
+  @include form.form-root;
+}
+
+.toolpath-tiling__hint {
+  @include form.form-hint;
+}
+
+.toolpath-tiling__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.toolpath-tiling__group {
+  @include form.form-group;
+}
+
+.toolpath-tiling__legend {
+  @include form.form-legend;
+}
+
+.toolpath-tiling__field {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.toolpath-tiling__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.toolpath-tiling__select:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.toolpath-tiling__update {
+  @include form.form-button;
+
+  align-self: flex-start;
+}

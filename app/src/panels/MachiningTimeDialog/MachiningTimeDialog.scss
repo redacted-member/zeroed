@@ -1,0 +1,77 @@
+@use '../../styles/tokens';
+
+.machining-time {
+  width: min(420px, calc(100vw - 48px));
+}
+
+.machining-time__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+}
+
+.machining-time__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: tokens.$font-size-small;
+}
+
+.machining-time__table th,
+.machining-time__table td {
+  padding: 2px tokens.$space-1;
+  text-align: left;
+}
+
+.machining-time__table tfoot th,
+.machining-time__table tfoot td {
+  border-top: tokens.$border-width solid tokens.$border-strong;
+  font-weight: 600;
+}
+
+.machining-time__time {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.machining-time__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.machining-time__label {
+  font-weight: 600;
+}
+
+.machining-time__field {
+  width: 72px;
+  padding: tokens.$space-1;
+}
+
+.machining-time__error {
+  margin: 0;
+  color: tokens.$danger;
+}
+
+.machining-time__hint {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.machining-time__link {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: tokens.$accent;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.machining-time__link:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}

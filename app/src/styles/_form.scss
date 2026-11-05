@@ -1,0 +1,95 @@
+// Layout mixins shared by the left panel forms, so every form reads the
+// same way: grouped fieldsets, label and field rows, a button row.
+
+@use 'tokens';
+
+@mixin form-root {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$panel-gap;
+  padding: tokens.$panel-inset-y tokens.$panel-inset-x;
+}
+
+@mixin form-group {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: tokens.$space-2 tokens.$space-3 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+@mixin form-legend {
+  padding: 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@mixin form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin form-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2 tokens.$space-3;
+}
+
+@mixin form-choice {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  font-size: tokens.$font-size-small;
+}
+
+@mixin form-hint {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+@mixin form-error {
+  flex: 1 0 100%;
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+@mixin form-button {
+  min-width: 82px;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    border-color: tokens.$accent;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+@mixin form-button-primary {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+  @include tokens.tool-icon-mono;
+
+  &:hover:not(:disabled) {
+    background: tokens.$accent-hover;
+  }
+}

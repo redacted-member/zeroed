@@ -1,0 +1,4 @@
+{
+  "title": "Keyhole Toolpath",
+  "description": "Creates keyhole slot toolpaths for hanging a sign: the tool plunges at the entry point, runs along the slot at the slot depth, comes back to the entry point and retracts. Select one or more vectors first; the center of each is the entry point of a slot."
+}

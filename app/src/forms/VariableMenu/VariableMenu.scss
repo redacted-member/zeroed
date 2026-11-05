@@ -1,0 +1,42 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.variable-menu {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  min-width: 220px;
+  padding: tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+}
+
+.variable-menu__label {
+  font-size: tokens.$font-size-small;
+}
+
+.variable-menu__input {
+  width: 100%;
+  min-width: 0;
+}
+
+.variable-menu__error {
+  @include form.form-error;
+}
+
+.variable-menu__buttons {
+  display: flex;
+  gap: tokens.$space-2;
+  justify-content: flex-end;
+}
+
+.variable-menu__button {
+  @include form.form-button;
+}

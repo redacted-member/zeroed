@@ -1,0 +1,50 @@
+@use '../../styles/tokens';
+
+.view-cube {
+  display: block;
+  overflow: visible;
+}
+
+.view-cube__button {
+  cursor: pointer;
+}
+
+.view-cube__button:focus {
+  outline: none;
+}
+
+.view-cube__face {
+  fill: tokens.$panel-sunken;
+  stroke: tokens.$border-strong;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.view-cube__face--mid {
+  fill: tokens.$panel-bg;
+}
+
+.view-cube__face--lit {
+  fill: tokens.$panel-raised;
+}
+
+.view-cube__button:hover .view-cube__face,
+.view-cube__button:focus-visible .view-cube__face {
+  fill: tokens.$accent;
+  stroke: tokens.$accent;
+}
+
+.view-cube__label {
+  fill: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: 9px;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  user-select: none;
+}
+
+.view-cube__button:hover .view-cube__label,
+.view-cube__button:focus-visible .view-cube__label {
+  fill: tokens.$accent-text;
+}

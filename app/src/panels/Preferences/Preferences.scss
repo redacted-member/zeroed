@@ -1,0 +1,208 @@
+@use '../../styles/tokens';
+
+.preferences {
+  width: min(680px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size;
+}
+
+.preferences::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.preferences__body {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 48px);
+}
+
+.preferences__header {
+  padding: tokens.$space-2 tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.preferences__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+}
+
+.preferences__panes {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  min-height: 0;
+  height: 420px;
+}
+
+.preferences__tabs {
+  display: flex;
+  flex-direction: column;
+  padding: tokens.$space-2 0;
+  border-right: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.preferences__tab {
+  padding: tokens.$space-1 tokens.$space-3;
+  border: 0;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.preferences__tab:hover {
+  background: tokens.$panel-raised;
+}
+
+.preferences__tab[aria-selected='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.preferences__tab:focus-visible,
+.preferences__button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.preferences__panel {
+  padding: tokens.$space-2 tokens.$space-3;
+  overflow-y: auto;
+}
+
+.preferences__group {
+  margin: 0 0 tokens.$space-3;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.preferences__legend {
+  padding: 0 tokens.$space-1;
+  font-weight: 600;
+}
+
+.preferences__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: tokens.$space-2;
+  min-height: tokens.$row-height;
+}
+
+.preferences__row--check {
+  display: flex;
+  gap: tokens.$space-2;
+}
+
+.preferences__label,
+.preferences__check-label {
+  color: tokens.$text;
+}
+
+.preferences__control {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.preferences__number {
+  width: 80px;
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  text-align: right;
+}
+
+.preferences__number[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.preferences__unit {
+  min-width: 28px;
+  color: tokens.$text-muted;
+}
+
+.preferences__problem {
+  grid-column: 1 / -1;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.preferences__select {
+  min-width: 140px;
+  font: inherit;
+}
+
+.preferences__colour {
+  width: 48px;
+  height: 22px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  background: transparent;
+}
+
+.preferences__colour:disabled {
+  opacity: 0.4;
+}
+
+.preferences__note,
+.preferences__error {
+  margin: 0;
+  padding: tokens.$space-1 tokens.$space-3;
+  font-size: tokens.$font-size-small;
+}
+
+.preferences__error {
+  color: tokens.$danger;
+}
+
+.preferences__footer {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.preferences__path {
+  flex: 1;
+  margin: 0;
+  overflow: hidden;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preferences__button {
+  padding: 3px tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  cursor: pointer;
+}
+
+.preferences__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.preferences__button--primary {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+  @include tokens.tool-icon-mono;
+}

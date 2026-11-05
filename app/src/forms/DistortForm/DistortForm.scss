@@ -1,0 +1,28 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.distort-form {
+  @include form.form-root;
+}
+
+.distort-form__hint {
+  @include form.form-hint;
+}
+
+.distort-form__notice {
+  @include form.form-hint;
+}
+
+.distort-form__error {
+  @include form.form-error;
+}
+
+.distort-form__notice-text {
+  margin: 0;
+}
+
+.distort-form__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}

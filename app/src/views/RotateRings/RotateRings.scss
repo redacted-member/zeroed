@@ -1,0 +1,100 @@
+@use '../../styles/tokens';
+
+.rotate-rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.rotate-rings__ring {
+  fill: none;
+  stroke-width: 2.5;
+  pointer-events: stroke;
+  cursor: grab;
+}
+
+.rotate-rings__ring--x {
+  stroke: #e0443a;
+}
+
+.rotate-rings__ring--y {
+  stroke: #3fae4a;
+}
+
+.rotate-rings__ring--z {
+  stroke: #3a6fe0;
+}
+
+.rotate-rings__ring:hover,
+.rotate-rings__ring--active {
+  stroke: #f2c230;
+  stroke-width: 4;
+}
+
+.rotate-rings__ball {
+  fill: rgba(150, 150, 150, 0.55);
+  stroke: #6b6b6b;
+  stroke-width: 1.5;
+  pointer-events: all;
+  cursor: grab;
+}
+
+.rotate-rings__ball:hover,
+.rotate-rings__ball--active {
+  fill: rgba(242, 194, 48, 0.6);
+  stroke: #f2c230;
+}
+
+.rotate-rings__cube {
+  fill: #111111;
+  stroke: #6b6b6b;
+  stroke-width: 1.5;
+  pointer-events: all;
+  cursor: move;
+}
+
+.rotate-rings__cube:hover,
+.rotate-rings__cube--active {
+  stroke: #f2c230;
+  stroke-width: 2.5;
+}
+
+.rotate-rings__field {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font-size: tokens.$font-size-small;
+  transform: translate(12px, 12px);
+}
+
+.rotate-rings__label {
+  white-space: nowrap;
+}
+
+.rotate-rings__input {
+  width: 64px;
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.rotate-rings__input:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.rotate-rings__unit {
+  color: tokens.$text-muted;
+}

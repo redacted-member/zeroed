@@ -1,0 +1,16 @@
+@use '../../styles/tokens';
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+}
+
+.app-shell__body {
+  display: grid;
+  flex: 1;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  min-height: 0;
+}

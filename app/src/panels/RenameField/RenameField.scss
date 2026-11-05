@@ -1,0 +1,13 @@
+@use '../../styles/tokens';
+
+.rename-field {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 22px;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$accent;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

@@ -1,0 +1,98 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.validator-form {
+  @include form.form-root;
+}
+
+.validator-form__hint {
+  @include form.form-hint;
+}
+
+.validator-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.validator-form__group {
+  @include form.form-group;
+}
+
+.validator-form__legend {
+  @include form.form-legend;
+}
+
+.validator-form__summary {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.validator-form__list {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  max-height: 320px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.validator-form__issue {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  justify-content: space-between;
+  font-size: tokens.$font-size-small;
+}
+
+.validator-form__show {
+  @include form.form-button;
+
+  min-width: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.validator-form__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.validator-form__legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.validator-form__legend-row {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  font-size: tokens.$font-size-small;
+}
+
+.validator-form__mark {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+// The same colours the 2D view draws the marks in.
+.validator-form__mark--first {
+  stroke: var(--canvas-rail-first, #d62828);
+}
+
+.validator-form__mark--second {
+  stroke: var(--canvas-rail-second, #2e9e44);
+}
+
+.validator-form__mark--accent {
+  stroke: var(--canvas-selection, #e01ec8);
+}

@@ -1,0 +1,82 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.nest-form {
+  @include form.form-root;
+}
+
+.nest-form__hint {
+  @include form.form-hint;
+}
+
+.nest-form__notice {
+  @include form.form-hint;
+}
+
+.nest-form__group {
+  @include form.form-group;
+}
+
+.nest-form__legend {
+  @include form.form-legend;
+}
+
+.nest-form__apply {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.nest-form__button {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nest-form__button:hover:not(:disabled) {
+  border-color: tokens.$accent;
+}
+
+.nest-form__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.nest-form__button:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.nest-form__value {
+  color: tokens.$text-muted;
+}
+
+.nest-form__outcome {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.nest-form__error {
+  @include form.form-error;
+}
+
+.nest-form__row {
+  @include form.form-row;
+
+  font-size: tokens.$font-size-small;
+}
+
+.nest-form__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

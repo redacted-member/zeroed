@@ -1,0 +1,41 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.turn-spin {
+  @include form.form-root;
+}
+
+.turn-spin__hint {
+  @include form.form-hint;
+}
+
+.turn-spin__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.turn-spin__group {
+  @include form.form-group;
+}
+
+.turn-spin__legend {
+  @include form.form-legend;
+}
+
+.turn-spin__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.turn-spin__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

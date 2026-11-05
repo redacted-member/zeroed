@@ -1,0 +1,55 @@
+@use '../../styles/tokens';
+
+.check-number-field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-number-field__label {
+  display: inline-flex;
+  flex: 1 1 auto;
+  gap: tokens.$space-1;
+  align-items: center;
+  min-width: 96px;
+  font-size: tokens.$font-size-small;
+}
+
+.check-number-field__input {
+  display: inline-flex;
+  gap: tokens.$space-1;
+  align-items: baseline;
+}
+
+.check-number-field__field {
+  width: 96px;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  text-align: right;
+}
+
+.check-number-field__field[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.check-number-field__field:disabled {
+  opacity: 0.5;
+}
+
+.check-number-field__unit {
+  width: 34px;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.check-number-field__error {
+  flex: 1 0 100%;
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}

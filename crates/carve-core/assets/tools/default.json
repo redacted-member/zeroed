@@ -1,0 +1,526 @@
+{
+  "version": 2,
+  "nextId": 32,
+  "groups": [
+    {
+      "id": 1,
+      "name": "Metric Tools",
+      "parent": null
+    },
+    {
+      "id": 2,
+      "name": "End Mills",
+      "parent": 1
+    },
+    {
+      "id": 3,
+      "name": "Ball Nose",
+      "parent": 1
+    },
+    {
+      "id": 4,
+      "name": "V Bits",
+      "parent": 1
+    },
+    {
+      "id": 5,
+      "name": "Engraving",
+      "parent": 1
+    },
+    {
+      "id": 6,
+      "name": "Drills",
+      "parent": 1
+    },
+    {
+      "id": 7,
+      "name": "Imperial Tools",
+      "parent": null
+    },
+    {
+      "id": 8,
+      "name": "End Mills",
+      "parent": 7
+    },
+    {
+      "id": 9,
+      "name": "Ball Nose",
+      "parent": 7
+    },
+    {
+      "id": 10,
+      "name": "Tapered",
+      "parent": 7
+    },
+    {
+      "id": 29,
+      "name": "Lasers",
+      "parent": 1
+    }
+  ],
+  "tools": [
+    {
+      "group": 2,
+      "id": 11,
+      "name": "End Mill 3 mm",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 3.0
+      },
+      "notes": "Generic two flute cutter. Check the feeds against your machine and material.",
+      "units": "mm",
+      "number": 1,
+      "feedUnits": "mmPerMin",
+      "feedRate": 1800.0,
+      "plungeRate": 500.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 1.5,
+      "stepover": 1.2,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 2,
+      "id": 12,
+      "name": "End Mill 6 mm",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 6.0
+      },
+      "notes": "Generic two flute cutter. Check the feeds against your machine and material.",
+      "units": "mm",
+      "number": 2,
+      "feedUnits": "mmPerMin",
+      "feedRate": 2400.0,
+      "plungeRate": 600.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.0,
+      "stepover": 2.4,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 2,
+      "id": 13,
+      "name": "End Mill 12 mm",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 12.0
+      },
+      "notes": "Generic two flute cutter for roughing and bulk clearance.",
+      "units": "mm",
+      "number": 3,
+      "feedUnits": "mmPerMin",
+      "feedRate": 3000.0,
+      "plungeRate": 700.0,
+      "spindleSpeed": 16000.0,
+      "passDepth": 6.0,
+      "stepover": 4.8,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 3,
+      "id": 14,
+      "name": "Ball Nose 1.5 mm",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 1.5
+      },
+      "notes": "Detail finishing of relief models.",
+      "units": "mm",
+      "number": 4,
+      "feedUnits": "mmPerMin",
+      "feedRate": 1500.0,
+      "plungeRate": 400.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 0.75,
+      "stepover": 0.15,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 3,
+      "id": 15,
+      "name": "Ball Nose 3 mm",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 3.0
+      },
+      "notes": "General relief finishing.",
+      "units": "mm",
+      "number": 5,
+      "feedUnits": "mmPerMin",
+      "feedRate": 1800.0,
+      "plungeRate": 500.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 1.5,
+      "stepover": 0.3,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 3,
+      "id": 16,
+      "name": "Ball Nose 6 mm",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 6.0
+      },
+      "notes": "Fast relief finishing on large models.",
+      "units": "mm",
+      "number": 6,
+      "feedUnits": "mmPerMin",
+      "feedRate": 2400.0,
+      "plungeRate": 600.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.0,
+      "stepover": 0.6,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 4,
+      "id": 17,
+      "name": "V Bit 60 deg",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.0,
+        "includedAngle": 60.0
+      },
+      "notes": "Narrow V for lettering and fine detail.",
+      "units": "mm",
+      "number": 7,
+      "feedUnits": "mmPerMin",
+      "feedRate": 2000.0,
+      "plungeRate": 500.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.0,
+      "stepover": 4.8,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 4,
+      "id": 18,
+      "name": "V Bit 90 deg",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.0,
+        "includedAngle": 90.0
+      },
+      "notes": "General purpose V carving.",
+      "units": "mm",
+      "number": 8,
+      "feedUnits": "mmPerMin",
+      "feedRate": 2000.0,
+      "plungeRate": 500.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.0,
+      "stepover": 4.8,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 4,
+      "id": 19,
+      "name": "V Bit 120 deg",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.0,
+        "includedAngle": 120.0
+      },
+      "notes": "Shallow V for wide chamfers and large lettering.",
+      "units": "mm",
+      "number": 9,
+      "feedUnits": "mmPerMin",
+      "feedRate": 2000.0,
+      "plungeRate": 500.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.0,
+      "stepover": 4.8,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 5,
+      "id": 20,
+      "name": "Engraving 30 deg 0.1 mm tip",
+      "toolType": {
+        "kind": "engravingTool",
+        "diameter": 6.0,
+        "includedAngle": 30.0,
+        "flatDiameter": 0.1
+      },
+      "notes": "Fine line engraving and texture work.",
+      "units": "mm",
+      "number": 10,
+      "feedUnits": "mmPerMin",
+      "feedRate": 1500.0,
+      "plungeRate": 400.0,
+      "spindleSpeed": 20000.0,
+      "passDepth": 0.5,
+      "stepover": 0.06,
+      "stepoverPercent": 1.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 6,
+      "id": 21,
+      "name": "Drill 3 mm",
+      "toolType": {
+        "kind": "drill",
+        "diameter": 3.0,
+        "pointAngle": 118.0
+      },
+      "notes": "Peck drilling of small holes.",
+      "units": "mm",
+      "number": 11,
+      "feedUnits": "mmPerMin",
+      "feedRate": 300.0,
+      "plungeRate": 200.0,
+      "spindleSpeed": 3000.0,
+      "passDepth": 3.0,
+      "stepover": 3.0,
+      "stepoverPercent": 100.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 6,
+      "id": 22,
+      "name": "Drill 6 mm",
+      "toolType": {
+        "kind": "drill",
+        "diameter": 6.0,
+        "pointAngle": 118.0
+      },
+      "notes": "Peck drilling of dowel holes.",
+      "units": "mm",
+      "number": 12,
+      "feedUnits": "mmPerMin",
+      "feedRate": 300.0,
+      "plungeRate": 200.0,
+      "spindleSpeed": 2500.0,
+      "passDepth": 6.0,
+      "stepover": 6.0,
+      "stepoverPercent": 100.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 8,
+      "id": 23,
+      "name": "End Mill 1/8 inch",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 3.175
+      },
+      "notes": "Generic two flute cutter.",
+      "units": "inch",
+      "number": 13,
+      "feedUnits": "inchPerMin",
+      "feedRate": 60.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 1.5875,
+      "stepover": 1.27,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 8,
+      "id": 24,
+      "name": "End Mill 1/4 inch",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 6.35
+      },
+      "notes": "Generic two flute cutter.",
+      "units": "inch",
+      "number": 14,
+      "feedUnits": "inchPerMin",
+      "feedRate": 80.0,
+      "plungeRate": 25.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.175,
+      "stepover": 2.54,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 8,
+      "id": 25,
+      "name": "End Mill 1/2 inch",
+      "toolType": {
+        "kind": "endMill",
+        "diameter": 12.7
+      },
+      "notes": "Roughing and bulk clearance.",
+      "units": "inch",
+      "number": 15,
+      "feedUnits": "inchPerMin",
+      "feedRate": 100.0,
+      "plungeRate": 30.0,
+      "spindleSpeed": 16000.0,
+      "passDepth": 6.35,
+      "stepover": 5.08,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 9,
+      "id": 26,
+      "name": "Ball Nose 1/8 inch",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 3.175
+      },
+      "notes": "Detail relief finishing.",
+      "units": "inch",
+      "number": 16,
+      "feedUnits": "inchPerMin",
+      "feedRate": 60.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 1.5875,
+      "stepover": 0.3175,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 9,
+      "id": 27,
+      "name": "Ball Nose 1/4 inch",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 6.35
+      },
+      "notes": "General relief finishing.",
+      "units": "inch",
+      "number": 17,
+      "feedUnits": "inchPerMin",
+      "feedRate": 80.0,
+      "plungeRate": 25.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.175,
+      "stepover": 0.635,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 10,
+      "id": 28,
+      "name": "Tapered Ball Nose 1/16 inch",
+      "toolType": {
+        "kind": "taperedBallNose",
+        "diameter": 6.35,
+        "tipRadius": 0.79375,
+        "taperAngle": 5.0
+      },
+      "notes": "Deep detail finishing with a stiff tapered shank.",
+      "units": "inch",
+      "number": 18,
+      "feedUnits": "inchPerMin",
+      "feedRate": 60.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 1.0,
+      "stepover": 0.15875,
+      "stepoverPercent": 2.5,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 29,
+      "id": 30,
+      "name": "Diode Laser 0.1 mm",
+      "toolType": {
+        "kind": "laserTool",
+        "power": 80.0,
+        "speed": 1200.0,
+        "kerf": 0.1
+      },
+      "notes": "Generic diode laser module. Test power and speed on scrap before a job.",
+      "units": "mm",
+      "number": 20,
+      "feedUnits": "mmPerMin",
+      "feedRate": 1200.0,
+      "plungeRate": 1200.0,
+      "spindleSpeed": 0.0,
+      "passDepth": 0.1,
+      "stepover": 0.1,
+      "stepoverPercent": 50.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 0
+    },
+    {
+      "group": 29,
+      "id": 31,
+      "name": "CO2 Laser 0.2 mm",
+      "toolType": {
+        "kind": "laserTool",
+        "power": 60.0,
+        "speed": 3000.0,
+        "kerf": 0.2
+      },
+      "notes": "Generic CO2 laser tube. Test power and speed on scrap before a job.",
+      "units": "mm",
+      "number": 21,
+      "feedUnits": "mmPerMin",
+      "feedRate": 3000.0,
+      "plungeRate": 3000.0,
+      "spindleSpeed": 0.0,
+      "passDepth": 0.1,
+      "stepover": 0.1,
+      "stepoverPercent": 50.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 0
+    }
+  ],
+  "materials": [
+    "Aluminum",
+    "Hardwood",
+    "MDF",
+    "Plywood",
+    "Softwood"
+  ],
+  "machines": [
+    "Default"
+  ]
+}

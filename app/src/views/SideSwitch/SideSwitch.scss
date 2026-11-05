@@ -1,0 +1,38 @@
+@use '../../styles/tokens';
+
+.side-switch {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+}
+
+.side-switch__side,
+.side-switch__swap {
+  padding: tokens.$space-1 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.side-switch__side:hover,
+.side-switch__swap:hover {
+  border-color: tokens.$border-strong;
+}
+
+.side-switch__side:focus-visible,
+.side-switch__swap:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.side-switch__side[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.side-switch__swap {
+  margin-left: tokens.$space-2;
+}

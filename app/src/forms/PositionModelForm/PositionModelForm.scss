@@ -1,0 +1,56 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.position-model {
+  @include form.form-root;
+}
+
+.position-model__hint {
+  @include form.form-hint;
+}
+
+.position-model__error {
+  @include form.form-error;
+}
+
+.position-model__group {
+  @include form.form-group;
+}
+
+.position-model__legend {
+  @include form.form-legend;
+}
+
+.position-model__row {
+  @include form.form-row;
+
+  justify-content: flex-start;
+}
+
+.position-model__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.position-model__button--primary {
+  @include form.form-button-primary;
+}
+
+.position-model__slider {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.position-model__range {
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.position-model__actions {
+  @include form.form-row;
+
+  justify-content: flex-end;
+}

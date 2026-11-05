@@ -1,0 +1,119 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.tool-editor {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.tool-editor__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.tool-editor__grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.tool-editor__label {
+  font-size: tokens.$font-size-small;
+}
+
+.tool-editor__visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.tool-editor__input {
+  min-height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.tool-editor__notes {
+  padding: tokens.$space-1 tokens.$space-2;
+  resize: vertical;
+}
+
+.tool-editor__input:focus-visible,
+.tool-editor__button:focus-visible,
+.tool-editor__link:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.tool-editor__links {
+  font-size: tokens.$font-size-small;
+}
+
+.tool-editor__link-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tool-editor__link {
+  color: tokens.$accent;
+  word-break: break-all;
+}
+
+.tool-editor__group-box {
+  @include form.form-group;
+}
+
+.tool-editor__legend {
+  @include form.form-legend;
+}
+
+.tool-editor__hint {
+  @include form.form-hint;
+}
+
+.tool-editor__error {
+  @include form.form-error;
+}
+
+.tool-editor__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: tokens.$space-1;
+}
+
+.tool-editor__readout {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.tool-editor__value {
+  font-family: tokens.$font-mono;
+  font-size: tokens.$font-size-small;
+}
+
+.tool-editor__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tool-editor__button {
+  @include form.form-button;
+
+  min-width: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.tool-editor__button--primary {
+  @include form.form-button-primary;
+}

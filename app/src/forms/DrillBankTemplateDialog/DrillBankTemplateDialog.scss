@@ -1,0 +1,63 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.drill-bank-template {
+  width: min(440px, calc(100vw - 48px));
+}
+
+.drill-bank-template__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+  padding: tokens.$space-3;
+}
+
+.drill-bank-template__group {
+  @include form.form-group;
+}
+
+.drill-bank-template__legend {
+  @include form.form-legend;
+}
+
+.drill-bank-template__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.drill-bank-template__preview {
+  width: 100%;
+  max-height: 240px;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+}
+
+.drill-bank-template__drill {
+  cursor: pointer;
+  fill: tokens.$panel-raised;
+  stroke: tokens.$text;
+  stroke-width: 1.5;
+}
+
+.drill-bank-template__drill:focus-visible {
+  outline: none;
+  stroke: tokens.$accent;
+  stroke-width: 3;
+}
+
+.drill-bank-template__drill--empty {
+  stroke-dasharray: 3 2;
+  opacity: 0.6;
+}
+
+.drill-bank-template__drill--picked {
+  fill: tokens.$accent;
+}
+
+.drill-bank-template__cross {
+  fill: none;
+  stroke: tokens.$text;
+  stroke-width: 2;
+}

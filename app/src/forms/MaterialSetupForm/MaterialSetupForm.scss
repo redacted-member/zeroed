@@ -1,0 +1,88 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.material-setup {
+  @include form.form-root;
+}
+
+.material-setup__hint {
+  @include form.form-hint;
+}
+
+.material-setup__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.material-setup__group {
+  @include form.form-group;
+}
+
+.material-setup__legend {
+  @include form.form-legend;
+}
+
+.material-setup__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.material-setup__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.material-setup__readout {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  color: tokens.$text-muted;
+}
+
+.material-setup__thickness {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.material-setup__set {
+  @include form.form-button;
+}
+
+.material-setup__gap {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: tokens.$space-1 tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.material-setup__radio {
+  margin: 0;
+}
+
+.material-setup__gap-value {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.material-setup__gap-value .material-setup__input {
+  width: 6em;
+}
+
+.material-setup__gap .material-setup__notice {
+  grid-column: 1 / -1;
+}
+
+.material-setup__unit {
+  color: tokens.$text-muted;
+}

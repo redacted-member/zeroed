@@ -1,0 +1,5 @@
+@use '../../styles/form';
+
+.check-field {
+  @include form.form-choice;
+}

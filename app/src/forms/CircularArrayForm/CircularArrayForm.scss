@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.circular-array-form {
+  @include form.form-root;
+}
+
+.circular-array-form__hint {
+  @include form.form-hint;
+}
+
+.circular-array-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.circular-array-form__group {
+  @include form.form-group;
+}
+
+.circular-array-form__legend {
+  @include form.form-legend;
+}

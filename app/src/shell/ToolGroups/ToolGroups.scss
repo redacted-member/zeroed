@@ -1,0 +1,85 @@
+@use '../../styles/tokens';
+
+.tool-groups {
+  display: flex;
+  flex-direction: column;
+  padding: tokens.$panel-inset-y tokens.$panel-inset-x;
+}
+
+// Each group is a titled block; a rule above every group but the first
+// separates them so the panel reads as sections, not one pile of icons.
+.tool-groups__group {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$panel-gap 0;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.tool-groups__group:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.tool-groups__group:last-child {
+  padding-bottom: 0;
+}
+
+.tool-groups__title {
+  margin: 0;
+  color: tokens.$text;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.tool-groups__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tool-groups__caption {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-caption;
+  font-weight: 400;
+}
+
+.tool-groups__grid {
+  display: grid;
+  // Six columns in every dock, each at most the standard button size: a
+  // narrow dock shrinks the buttons instead of wrapping a row.
+  grid-template-columns: repeat(6, minmax(0, tokens.$tool-button-size));
+  gap: tokens.$tool-grid-gap;
+}
+
+.tool-groups__slot {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.tool-groups__slot:hover:not(:disabled) {
+  border-color: tokens.$accent;
+  color: tokens.$accent;
+}
+
+.tool-groups__slot[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.tool-groups__slot:disabled {
+  opacity: 0.55;
+}

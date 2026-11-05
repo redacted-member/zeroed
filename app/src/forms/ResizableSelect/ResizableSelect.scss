@@ -1,0 +1,107 @@
+@use '../../styles/tokens';
+
+.resizable-select {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.resizable-select:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.resizable-select:disabled {
+  color: tokens.$text-muted;
+}
+
+.resizable-select__value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.resizable-select__caret {
+  flex: 0 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 5px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.resizable-select__list {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1000;
+  box-sizing: border-box;
+  border: tokens.$border-width solid tokens.$border-strong;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.resizable-select__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.resizable-select__group {
+  padding: tokens.$space-1 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.resizable-select__option {
+  height: 22px;
+  box-sizing: border-box;
+  padding: 0 tokens.$space-2;
+  overflow: hidden;
+  line-height: 22px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.resizable-select__option[aria-selected='true'] {
+  font-weight: 600;
+}
+
+.resizable-select__option--active {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.resizable-select__grip {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    tokens.$border-strong 45%,
+    tokens.$border-strong 55%,
+    transparent 55%,
+    transparent 70%,
+    tokens.$border-strong 70%,
+    tokens.$border-strong 80%,
+    transparent 80%
+  );
+  cursor: nwse-resize;
+  touch-action: none;
+}

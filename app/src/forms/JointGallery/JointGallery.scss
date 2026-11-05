@@ -1,0 +1,66 @@
+@use '../../styles/tokens';
+
+.joint-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.joint-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: tokens.$space-1;
+}
+
+.joint-gallery__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  min-width: 0;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.joint-gallery__card:hover {
+  border-color: tokens.$accent;
+}
+
+.joint-gallery__card:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.joint-gallery__card[aria-checked='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.joint-gallery__picture {
+  display: flex;
+  width: 28px;
+  height: 28px;
+}
+
+.joint-gallery__picture svg {
+  width: 28px;
+  height: 28px;
+}
+
+.joint-gallery__name {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.joint-gallery__line {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

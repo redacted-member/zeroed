@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "id": "bookcase",
+  "name": "Bookcase",
+  "category": "Storage",
+  "description": "Open bookcase with fixed shelves, an optional back and a toe kick.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["shelves", "flat pack", "living room"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 800, "min": 250, "max": 1200, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 1800, "min": 400, "max": 2400, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 300, "min": 150, "max": 800, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 12, "max": 25, "group": "Material" },
+    { "key": "bt", "label": "Back thickness", "kind": "thickness", "default": 9, "min": 6, "max": 12, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 4, "min": 0, "max": 8, "group": "Layout" },
+    { "key": "back", "label": "Back", "kind": "choice", "default": "inset", "options": ["none", "inset", "overlay"], "group": "Layout" },
+    { "key": "kick", "label": "Toe kick", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "side_d": "{depth}-{bt}*{back_overlay}",
+    "inner_d": "{depth}-{bt}*({back_inset}+{back_overlay})",
+    "base": "{kick}*80",
+    "pitch": "({height}-{base}-2*{t})/({shelves}+1)"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "back": { "label": "Back", "thickness": "{bt}" }
+  },
+  "panels": [
+    {
+      "id": "left", "name": "Left side", "material": "main",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{side_d}", "h": "{height}" },
+      "grain": "long",
+      "features": [
+        { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "80", "when": "{kick}" }
+      ]
+    },
+    {
+      "id": "right", "name": "Right side", "material": "main",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{side_d}", "h": "{height}" },
+      "grain": "long",
+      "features": [
+        { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "80", "when": "{kick}" }
+      ]
+    },
+    {
+      "id": "top", "name": "Top", "material": "main",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" },
+      "grain": "long"
+    },
+    {
+      "id": "bottom", "name": "Bottom", "material": "main",
+      "box": { "x": "{t}", "y": "0", "z": "{base}", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" },
+      "grain": "long"
+    },
+    {
+      "id": "shelf", "name": "Shelf {i+1}", "material": "main", "repeat": "{shelves}",
+      "box": { "x": "{t}", "y": "0", "z": "{base}+{t}+({i}+1)*{pitch}-{t}/2", "w": "{inner_w}", "d": "{inner_d}", "h": "{t}" },
+      "grain": "long"
+    },
+    {
+      "id": "kick", "name": "Toe kick", "material": "main", "when": "{kick}",
+      "box": { "x": "{t}", "y": "50", "z": "0", "w": "{inner_w}", "d": "{t}", "h": "{base}" },
+      "grain": "long"
+    },
+    {
+      "id": "back", "name": "Back", "material": "back", "when": "{back_inset}+{back_overlay}",
+      "box": { "x": "{t}*{back_inset}", "y": "{depth}-{bt}", "z": "0", "w": "{width}-2*{t}*{back_inset}", "d": "{bt}", "h": "{height}" },
+      "grain": "long"
+    }
+  ],
+  "connections": [
+    { "a": "shelf", "b": "left|right", "class": "shelf" },
+    { "a": "top", "b": "left|right", "class": "top" },
+    { "a": "bottom", "b": "left|right", "class": "bottom" },
+    { "a": "kick", "b": "*", "class": "kick" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "shelf": { "label": "Shelves to sides", "default": "dado" },
+    "top": { "label": "Top to sides", "default": "rabbet" },
+    "bottom": { "label": "Bottom to sides", "default": "dado" },
+    "kick": { "label": "Toe kick", "default": "none" },
+    "back": { "label": "Back", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Wall anchor", "count": "1", "note": "fix tall bookcases to the wall" }
+  ]
+}

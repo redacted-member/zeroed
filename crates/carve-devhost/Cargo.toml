@@ -1,0 +1,11 @@
+[package]
+name = "carve-devhost"
+description = "Development only: serves the CarveStudio kernel over local HTTP so the web UI can run against it in a browser"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+carve-core.workspace = true

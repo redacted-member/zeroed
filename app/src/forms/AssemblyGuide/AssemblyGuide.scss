@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+
+.assembly-guide {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-guide__summary {
+  font-size: tokens.$font-size;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.assembly-guide__summary:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.assembly-guide__steps {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: tokens.$space-2 0;
+  padding-left: tokens.$space-4;
+  color: tokens.$text-muted;
+}
+
+.assembly-guide__step strong {
+  color: tokens.$text;
+}

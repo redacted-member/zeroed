@@ -1,0 +1,98 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.moulding-toolpath {
+  @include form.form-root;
+}
+
+.moulding-toolpath__hint {
+  @include form.form-hint;
+}
+
+.moulding-toolpath__group {
+  @include form.form-group;
+}
+
+.moulding-toolpath__legend {
+  @include form.form-legend;
+}
+
+.moulding-toolpath__check-legend {
+  padding: 0 tokens.$space-1;
+  font-weight: 600;
+}
+
+.moulding-toolpath__count {
+  @include form.form-hint;
+}
+
+.moulding-toolpath__count--error {
+  color: tokens.$danger;
+}
+
+.moulding-toolpath__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.moulding-toolpath__position {
+  display: flex;
+  gap: tokens.$space-3;
+  align-items: stretch;
+}
+
+.moulding-toolpath__slider {
+  min-height: 96px;
+  accent-color: tokens.$accent;
+  writing-mode: vertical-lr;
+}
+
+.moulding-toolpath__slider:focus-visible {
+  outline: tokens.$border-width solid tokens.$accent;
+  outline-offset: tokens.$space-1;
+}
+
+.moulding-toolpath__gaps {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.moulding-toolpath__gap {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: flex-start;
+}
+
+.moulding-toolpath__radio {
+  margin-top: tokens.$space-2;
+}
+
+.moulding-toolpath__readout {
+  @include form.form-hint;
+}
+
+.moulding-toolpath__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2 tokens.$space-3;
+}
+
+.moulding-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.moulding-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

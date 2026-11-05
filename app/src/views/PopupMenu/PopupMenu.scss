@@ -1,0 +1,97 @@
+@use '../../styles/tokens';
+
+.popup-menu {
+  position: fixed;
+  z-index: 100;
+  min-width: 220px;
+  margin: 0;
+  padding: tokens.$space-1 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  list-style: none;
+}
+
+.popup-menu__separator {
+  height: tokens.$border-width;
+  margin: tokens.$space-1 0;
+  background: tokens.$border;
+}
+
+.popup-menu__button {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  width: 100%;
+  height: 26px;
+  padding: 0 tokens.$space-3 0 tokens.$space-1;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.popup-menu__button:hover:not(:disabled),
+.popup-menu__button:focus-visible {
+  outline: none;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.popup-menu__button:disabled {
+  color: tokens.$text-muted;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.popup-menu__check {
+  flex: 0 0 auto;
+  width: 12px;
+  text-align: center;
+}
+
+.popup-menu__gutter {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+// Tool icons shrink to menu size. A disabled item greys its icon with its
+// label, a highlighted one draws it in its text color on the accent.
+.popup-menu__button:hover:not(:disabled) .tool-icon,
+.popup-menu__button:focus-visible .tool-icon {
+  @include tokens.tool-icon-mono;
+}
+
+.popup-menu__gutter .tool-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.popup-menu__label {
+  flex: 1;
+}
+
+.popup-menu__shortcut {
+  margin-left: tokens.$space-4;
+  font-size: tokens.$font-size-small;
+  opacity: 0.75;
+}
+
+.popup-menu__item--parent {
+  position: relative;
+}
+
+.popup-menu--sub {
+  position: absolute;
+  top: calc(-1 * tokens.$space-1 - tokens.$border-width);
+  left: 100%;
+}
+
+.popup-menu__arrow {
+  font-size: tokens.$font-size-small;
+}

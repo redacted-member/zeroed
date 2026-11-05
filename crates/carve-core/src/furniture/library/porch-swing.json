@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "id": "porch-swing",
+  "name": "Porch Swing",
+  "category": "Outdoor",
+  "description": "Porch swing: ends with back posts and arm rests, front and back rails that take the chain eyebolts, a solid seat and a slotted back.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"A Porch Swing\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["porch", "swing", "garden", "outdoor", "hanging"],
+  "params": [
+    { "key": "length", "label": "Length", "kind": "length", "default": 1700, "min": 1200, "max": 2000, "group": "Size" },
+    { "key": "depth", "label": "Seat depth", "kind": "length", "default": 610, "min": 500, "max": 700, "group": "Size" },
+    { "key": "arm_h", "label": "Arm height", "kind": "length", "default": 432, "min": 350, "max": 500, "group": "Size" },
+    { "key": "back_h", "label": "Back height", "kind": "length", "default": 635, "min": 550, "max": 750, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 25, "min": 18, "max": 45, "group": "Material" },
+    { "key": "pw", "label": "Back post width", "kind": "length", "default": 76, "min": 60, "max": 100, "group": "Style" },
+    { "key": "rh", "label": "Rail height", "kind": "length", "default": 76, "min": 60, "max": 100, "group": "Style" }
+  ],
+  "derived": {
+    "inner_l": "{length}-2*{t}",
+    "ow": "({inner_l}-5*127)/6",
+    "slot_h": "{back_h}-{rh}-101",
+    "slot_v": "25+{slot_h}/2"
+  },
+  "materials": {
+    "main": { "label": "Frame", "thickness": "{t}" },
+    "arm": { "label": "Arm rests", "thickness": "22" }
+  },
+  "panels": [
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{arm_h}" },
+      "features": [ { "kind": "cutout", "u": "{depth}/2-{pw}/2", "v": "{rh}+({arm_h}-{rh})/2", "w": "{depth}-{pw}-152", "h": "{arm_h}-{rh}-76", "r": "20" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{arm_h}" },
+      "features": [ { "kind": "cutout", "u": "{depth}/2-{pw}/2", "v": "{rh}+({arm_h}-{rh})/2", "w": "{depth}-{pw}-152", "h": "{arm_h}-{rh}-76", "r": "20" } ] },
+    { "id": "post_l", "name": "Left back post", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{depth}-{pw}", "z": "{arm_h}", "w": "{t}", "d": "{pw}", "h": "{back_h}-{arm_h}" } },
+    { "id": "post_r", "name": "Right back post", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{t}", "y": "{depth}-{pw}", "z": "{arm_h}", "w": "{t}", "d": "{pw}", "h": "{back_h}-{arm_h}" } },
+    { "id": "rail_f", "name": "Front rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "0", "w": "{inner_l}", "d": "{t}", "h": "{rh}" } },
+    { "id": "rail_b", "name": "Back rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "0", "w": "{inner_l}", "d": "{t}", "h": "{rh}" } },
+    { "id": "seat", "name": "Seat", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{t}", "z": "{rh}-{t}", "w": "{inner_l}", "d": "{depth}-2*{t}", "h": "{t}" } },
+    { "id": "back", "name": "Back", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "{rh}", "w": "{inner_l}", "d": "{t}", "h": "{back_h}-{rh}" },
+      "features": [
+        { "kind": "cutout", "u": "{ow}/2", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" },
+        { "kind": "cutout", "u": "{ow}/2+({ow}+127)", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" },
+        { "kind": "cutout", "u": "{ow}/2+2*({ow}+127)", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" },
+        { "kind": "cutout", "u": "{ow}/2+3*({ow}+127)", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" },
+        { "kind": "cutout", "u": "{ow}/2+4*({ow}+127)", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" },
+        { "kind": "cutout", "u": "{ow}/2+5*({ow}+127)", "v": "{slot_v}", "w": "{ow}", "h": "{slot_h}", "r": "10" }
+      ] },
+    { "id": "arm_l", "name": "Left arm rest", "material": "arm", "grain": "long",
+      "box": { "x": "{t}/2-51", "y": "0", "z": "{arm_h}", "w": "102", "d": "{depth}-{pw}", "h": "22" },
+      "features": [ { "kind": "radius", "r": "20" } ] },
+    { "id": "arm_r", "name": "Right arm rest", "material": "arm", "grain": "long",
+      "box": { "x": "{length}-{t}/2-51", "y": "0", "z": "{arm_h}", "w": "102", "d": "{depth}-{pw}", "h": "22" },
+      "features": [ { "kind": "radius", "r": "20" } ] }
+  ],
+  "connections": [
+    { "a": "arm_l|arm_r", "b": "*", "class": "arm" },
+    { "a": "seat", "b": "*", "class": "seat" },
+    { "a": "back", "b": "rail_b", "class": "back" },
+    { "a": "post_l|post_r", "b": "end_l|end_r", "class": "post" },
+    { "a": "rail_f|rail_b|back", "b": "*", "class": "frame" }
+  ],
+  "jointClasses": {
+    "arm": { "label": "Arm rests", "default": "dowel" },
+    "seat": { "label": "Seat to frame", "default": "dowel" },
+    "back": { "label": "Back on back rail", "default": "dowel" },
+    "post": { "label": "Back posts on ends", "default": "dowel" },
+    "frame": { "label": "Rails and back to ends", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Eyebolts 10 mm, galvanized", "count": "4", "note": "through the front and back rails near the ends, as in the 1912 plan" },
+    { "name": "Rust proof chain", "count": "2", "note": "two lengths, each splitting to a front and a back eyebolt" },
+    { "name": "Ceiling hooks rated for a swing", "count": "2" },
+    { "name": "Exterior wood screws", "count": "16" }
+  ]
+}

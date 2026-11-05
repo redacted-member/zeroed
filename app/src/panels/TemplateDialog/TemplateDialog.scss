@@ -1,0 +1,196 @@
+@use '../../styles/tokens';
+
+.template-dialog {
+  width: min(560px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size;
+}
+
+.template-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.template-dialog__body {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 48px);
+}
+
+.template-dialog__header {
+  padding: tokens.$space-2 tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.template-dialog__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+}
+
+.template-dialog__content {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-height: 0;
+  padding: tokens.$space-2 tokens.$space-3;
+  overflow-y: auto;
+}
+
+.template-dialog__hint,
+.template-dialog__field-hint {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.template-dialog__group {
+  margin: 0;
+  padding: tokens.$space-1 tokens.$space-2 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.template-dialog__legend {
+  padding: 0 tokens.$space-1;
+  font-weight: 600;
+}
+
+.template-dialog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.template-dialog__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: tokens.$space-2;
+  align-items: center;
+  padding: tokens.$space-1;
+  border-radius: tokens.$radius;
+  cursor: pointer;
+}
+
+.template-dialog__item:hover {
+  background: tokens.$panel-raised;
+}
+
+.template-dialog__item:has(.template-dialog__radio:checked) {
+  background: tokens.$panel-raised;
+  outline: tokens.$border-width solid tokens.$accent;
+}
+
+.template-dialog__radio {
+  grid-row: 1 / span 2;
+}
+
+.template-dialog__name {
+  font-weight: 600;
+}
+
+.template-dialog__size {
+  color: tokens.$text;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.template-dialog__details {
+  grid-column: 2 / -1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.template-dialog__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  column-gap: tokens.$space-2;
+  row-gap: tokens.$space-1;
+}
+
+.template-dialog__field-hint,
+.template-dialog__field-error {
+  grid-column: 2;
+}
+
+.template-dialog__field {
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.template-dialog__field[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.template-dialog__check {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+}
+
+.template-dialog__error,
+.template-dialog__field-error {
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.template-dialog__error {
+  padding: tokens.$space-1 tokens.$space-3;
+}
+
+.template-dialog__footer {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.template-dialog__path {
+  flex: 1;
+  margin: 0;
+  overflow: hidden;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.template-dialog__button {
+  padding: 3px tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  cursor: pointer;
+}
+
+.template-dialog__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.template-dialog__button--primary {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+  @include tokens.tool-icon-mono;
+}
+
+.template-dialog__button:focus-visible,
+.template-dialog__field:focus-visible,
+.template-dialog__radio:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}

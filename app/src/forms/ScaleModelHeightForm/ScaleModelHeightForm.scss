@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.scale-model-height {
+  @include form.form-root;
+}
+
+.scale-model-height__hint {
+  @include form.form-hint;
+}
+
+.scale-model-height__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.scale-model-height__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.scale-model-height__group {
+  @include form.form-group;
+}
+
+.scale-model-height__legend {
+  @include form.form-legend;
+}
+
+.scale-model-height__set {
+  @include form.form-button;
+
+  align-self: flex-end;
+}

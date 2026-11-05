@@ -1,0 +1,62 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.array-copy-form {
+  @include form.form-root;
+}
+
+.array-copy-form__hint {
+  @include form.form-hint;
+}
+
+.array-copy-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.array-copy-form__group {
+  @include form.form-group;
+}
+
+.array-copy-form__legend {
+  @include form.form-legend;
+}
+
+.array-copy-form__block {
+  display: grid;
+  grid-template-columns: repeat(2, 36px);
+  gap: tokens.$space-1;
+}
+
+.array-copy-form__turn {
+  @include form.form-button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-width: 0;
+  height: 36px;
+  padding: 0;
+}
+
+.array-copy-form__glyph {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+}
+
+.array-copy-form__glyph--mirrorX {
+  transform: scaleX(-1);
+}
+
+.array-copy-form__glyph--mirrorY {
+  transform: scaleY(-1);
+}
+
+.array-copy-form__glyph--rotate {
+  transform: rotate(180deg);
+}

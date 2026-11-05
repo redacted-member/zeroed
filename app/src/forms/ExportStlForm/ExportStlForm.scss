@@ -1,0 +1,56 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.export-stl {
+  @include form.form-root;
+}
+
+.export-stl__hint {
+  @include form.form-hint;
+}
+
+.export-stl__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.export-stl__group {
+  @include form.form-group;
+}
+
+.export-stl__legend {
+  @include form.form-legend;
+}
+
+.export-stl__stats {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.export-stl__calculate {
+  @include form.form-button;
+  align-self: flex-start;
+}
+
+.export-stl__result {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: tokens.$space-1 tokens.$space-2;
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.export-stl__term {
+  color: tokens.$text-muted;
+}
+
+.export-stl__value {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.export-stl__error {
+  @include form.form-error;
+}

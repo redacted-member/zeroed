@@ -1,0 +1,75 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.gadget-form {
+  @include form.form-root;
+}
+
+.gadget-form__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.gadget-form__hint {
+  @include form.form-hint;
+}
+
+.gadget-form__group {
+  @include form.form-group;
+}
+
+.gadget-form__legend {
+  @include form.form-legend;
+}
+
+.gadget-form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.gadget-form__text {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.gadget-form__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.gadget-form__messages {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  list-style: none;
+}
+
+.gadget-form__message {
+  font-size: tokens.$font-size-small;
+}
+
+.gadget-form__error {
+  @include form.form-error;
+}
+
+.gadget-form__notice {
+  @include form.form-hint;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+}

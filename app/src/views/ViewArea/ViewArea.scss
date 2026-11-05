@@ -1,0 +1,173 @@
+@use '../../styles/tokens';
+
+.view-area {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: tokens.$panel-sunken;
+}
+
+.view-area__bar {
+  display: flex;
+  flex: 0 0 auto;
+  gap: tokens.$space-3;
+  align-items: center;
+  box-sizing: border-box;
+  height: tokens.$doc-bar-height;
+  padding: 0 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.view-area__tabs {
+  display: flex;
+  padding: 2px;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.view-area__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: 2px tokens.$space-3;
+  border: none;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.view-area__tab-icon {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+
+.view-area__tab:hover {
+  color: tokens.$text;
+}
+
+.view-area__tab:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.view-area__tab[aria-pressed='true'] {
+  background: tokens.$text;
+  color: tokens.$panel-bg;
+  font-weight: 600;
+}
+
+.view-area__pickers {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+
+.view-area__tiles {
+  display: flex;
+  gap: 1px;
+}
+
+.view-area__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.view-area__tile:hover {
+  border-color: tokens.$border-strong;
+  background: tokens.$panel-raised;
+}
+
+.view-area__tile[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.view-area__tile-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.view-area__views {
+  display: grid;
+  flex: 1;
+  min-height: 0;
+  gap: tokens.$border-width;
+  background: tokens.$border;
+}
+
+.view-area__views--split {
+  grid-template-columns: 1fr 1fr;
+}
+
+.view-area__views--split.view-area__views--stacked {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.view-area__pane {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.view-area__loading {
+  margin: 0;
+  padding: tokens.$space-4;
+  text-align: center;
+  color: tokens.$text-muted;
+}
+
+.view-area__face-edit {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  padding: 2px tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-raised;
+  font-size: tokens.$font-size-small;
+}
+
+.view-area__face-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.view-area__face-back {
+  height: 22px;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$accent;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.view-area__face-back:focus-visible {
+  @include tokens.focus-ring;
+}

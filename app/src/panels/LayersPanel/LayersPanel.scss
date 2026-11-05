@@ -1,0 +1,159 @@
+@use '../../styles/tokens';
+
+.layers-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.layers-panel__toolbar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.layers-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.layers-panel__row {
+  position: relative;
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.layers-panel__row:hover,
+.layers-panel__row:focus-within {
+  background: tokens.$panel-raised;
+}
+
+.layers-panel__row--active {
+  background: tokens.$panel-sunken;
+}
+
+.layers-panel__colour {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: none;
+  cursor: pointer;
+}
+
+.layers-panel__toggle,
+.layers-panel__action {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  border-radius: tokens.$radius;
+  background: none;
+  font-size: tokens.$font-size-small;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.layers-panel__toggle .tool-icon,
+.layers-panel__action .tool-icon {
+  width: 14px;
+  height: 14px;
+  margin: auto;
+}
+
+.layers-panel__toggle[aria-pressed='false'] {
+  color: tokens.$text-muted;
+}
+
+.layers-panel__toggle:hover,
+.layers-panel__action:hover:not(:disabled) {
+  background: tokens.$panel-raised;
+}
+
+.layers-panel__action:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.layers-panel__name {
+  display: flex;
+  flex: 1 1 auto;
+  gap: tokens.$space-2;
+  align-items: baseline;
+  min-width: 0;
+  height: 22px;
+  padding: 0 tokens.$space-1;
+  border: none;
+  border-radius: tokens.$radius;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.layers-panel__name[aria-current='true'] .layers-panel__name-text {
+  font-weight: 600;
+}
+
+.layers-panel__name-text {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.layers-panel__count {
+  flex: 0 0 auto;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.layers-panel__name-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 22px;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$accent;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.layers-panel__actions {
+  position: absolute;
+  top: 0;
+  right: tokens.$space-1;
+  display: flex;
+  gap: 1px;
+  align-items: center;
+  height: 100%;
+  padding-left: tokens.$space-2;
+  background: inherit;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.layers-panel__row:hover .layers-panel__actions,
+.layers-panel__row:focus-within .layers-panel__actions {
+  opacity: 1;
+}
+
+.layers-panel__badge {
+  flex: none;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$danger;
+  border-radius: tokens.$radius;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.layers-panel__row--empty .layers-panel__count {
+  font-style: italic;
+}

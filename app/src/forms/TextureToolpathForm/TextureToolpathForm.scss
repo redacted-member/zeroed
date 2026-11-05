@@ -1,0 +1,56 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.texture-toolpath {
+  @include form.form-root;
+}
+
+.texture-toolpath__hint {
+  @include form.form-hint;
+}
+
+.texture-toolpath__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.texture-toolpath__group {
+  @include form.form-group;
+}
+
+.texture-toolpath__legend {
+  @include form.form-legend;
+}
+
+.texture-toolpath__heading {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.texture-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.texture-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.texture-toolpath__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.texture-toolpath__button {
+  @include form.form-button;
+}

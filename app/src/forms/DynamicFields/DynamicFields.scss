@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.dynamic-fields {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.dynamic-fields__group {
+  @include form.form-group;
+}
+
+.dynamic-fields__legend {
+  padding: 0 tokens.$space-1;
+}
+
+.dynamic-fields__row {
+  @include form.form-row;
+}
+
+.dynamic-fields__button {
+  @include form.form-button;
+}
+
+.dynamic-fields__status {
+  @include form.form-hint;
+
+  flex: 1;
+}

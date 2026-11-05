@@ -1,0 +1,172 @@
+@use '../../styles/tokens';
+
+.machine-config__layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 380px;
+}
+
+.machine-config__machines {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border-right: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.machine-config__heading {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.machine-config__list {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  border: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-bg;
+}
+
+.machine-config__item {
+  padding: 2px tokens.$space-2;
+  cursor: pointer;
+}
+
+.machine-config__item:hover {
+  background: tokens.$panel-raised;
+}
+
+.machine-config__item[aria-selected='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.machine-config__item:focus-visible,
+.machine-config__input:focus-visible,
+.machine-config__number:focus-visible,
+.machine-config__select:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.machine-config__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1;
+}
+
+.machine-config__details {
+  padding: tokens.$space-2 tokens.$space-3;
+  overflow-y: auto;
+}
+
+.machine-config__group {
+  margin: 0 0 tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.machine-config__legend {
+  padding: 0 tokens.$space-1;
+  font-weight: 600;
+}
+
+.machine-config__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  column-gap: tokens.$space-2;
+  min-height: tokens.$row-height;
+}
+
+.machine-config__label {
+  color: tokens.$text;
+}
+
+.machine-config__input,
+.machine-config__number,
+.machine-config__select {
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.machine-config__number {
+  width: 90px;
+  text-align: right;
+}
+
+.machine-config__input[aria-invalid='true'],
+.machine-config__number[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.machine-config__control,
+.machine-config__choices {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.machine-config__choice {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.machine-config__unit {
+  color: tokens.$text-muted;
+}
+
+.machine-config__posts {
+  margin: 0 0 tokens.$space-1;
+  padding: 0;
+  list-style: none;
+}
+
+.machine-config__post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: 2px 0;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.machine-config__add-post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.machine-config__select {
+  flex: 1;
+  min-width: 160px;
+}
+
+.machine-config__hint {
+  margin: 0 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.machine-config__problem {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.machine-config__status {
+  grid-column: 1 / -1;
+  padding: 0 tokens.$space-3;
+}

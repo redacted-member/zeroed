@@ -1,0 +1,60 @@
+@use '../../styles/tokens';
+
+.form-host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.form-host__header {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2 tokens.$space-3;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.form-host__title {
+  flex: 1;
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.form-host__button {
+  width: 22px;
+  height: 22px;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.form-host__help {
+  font-weight: 600;
+}
+
+.form-host__button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.form-host__button:hover {
+  border-color: tokens.$border;
+  background: tokens.$panel-raised;
+}
+
+.form-host__body {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.form-host__loading {
+  margin: 0;
+  padding: tokens.$space-3;
+  color: tokens.$text-muted;
+}

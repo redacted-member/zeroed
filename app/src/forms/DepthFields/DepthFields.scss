@@ -1,0 +1,9 @@
+@use '../../styles/form';
+
+.depth-fields {
+  @include form.form-group;
+}
+
+.depth-fields__legend {
+  @include form.form-legend;
+}

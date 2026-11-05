@@ -1,0 +1,62 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.plate-form {
+  @include form.form-root;
+}
+
+.plate-form__hint {
+  @include form.form-hint;
+}
+
+.plate-form__error {
+  @include form.form-error;
+}
+
+.plate-form__group {
+  @include form.form-group;
+}
+
+.plate-form__legend {
+  @include form.form-legend;
+}
+
+.plate-form__buttons {
+  display: flex;
+  gap: tokens.$space-1;
+}
+
+.plate-form__button {
+  @include form.form-button;
+}
+
+.plate-form__variables {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plate-form__variable {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.plate-form__label {
+  font-size: tokens.$font-size-small;
+}
+
+.plate-form__select {
+  width: 100%;
+  font: inherit;
+}
+
+.plate-form__counter {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding-left: tokens.$space-2;
+}

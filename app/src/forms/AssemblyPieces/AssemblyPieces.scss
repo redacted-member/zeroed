@@ -1,0 +1,158 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-pieces {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+}
+
+.assembly-pieces__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+}
+
+.assembly-pieces__heading {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-pieces__show-all {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-pieces__empty {
+  @include form.form-hint;
+}
+
+.assembly-pieces__status {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-pieces__list {
+  max-height: 200px;
+  margin: 0;
+  padding: tokens.$space-1 0;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  list-style: none;
+}
+
+.assembly-pieces__row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 tokens.$space-1;
+}
+
+.assembly-pieces__row--hidden .assembly-pieces__label {
+  color: tokens.$text-muted;
+}
+
+.assembly-pieces__toggle {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: tokens.$radius;
+  background: none;
+  color: tokens.$text-muted;
+  cursor: pointer;
+}
+
+.assembly-pieces__toggle:hover {
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+}
+
+.assembly-pieces__toggle[aria-pressed='true'] {
+  color: tokens.$text;
+}
+
+.assembly-pieces__toggle:focus-visible,
+.assembly-pieces__name:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.assembly-pieces__icon {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.assembly-pieces__strike {
+  stroke-width: 1.6;
+}
+
+.assembly-pieces__name {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: tokens.$space-1;
+  min-width: 0;
+  padding: 2px tokens.$space-1;
+  border: 0;
+  border-radius: tokens.$radius;
+  background: none;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.assembly-pieces__name:hover {
+  background: tokens.$panel-raised;
+}
+
+.assembly-pieces__name[aria-pressed='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.assembly-pieces__relief {
+  flex: none;
+  width: 14px;
+  height: 10px;
+  border: tokens.$border-width solid #8a6a3c;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #e8c98f 0%, #c79a5b 100%);
+}
+
+.assembly-pieces__relief--loading {
+  opacity: 0.4;
+}
+
+.assembly-pieces__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.assembly-pieces__tag {
+  flex: none;
+  padding: 0 4px;
+  border: tokens.$border-width solid currentcolor;
+  border-radius: 8px;
+  font-size: 10px;
+  opacity: 0.8;
+}

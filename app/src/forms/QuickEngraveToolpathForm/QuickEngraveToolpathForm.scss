@@ -1,0 +1,41 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.quick-engrave {
+  @include form.form-root;
+}
+
+.quick-engrave__hint {
+  @include form.form-hint;
+}
+
+.quick-engrave__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.quick-engrave__group {
+  @include form.form-group;
+}
+
+.quick-engrave__legend {
+  @include form.form-legend;
+}
+
+.quick-engrave__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.quick-engrave__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

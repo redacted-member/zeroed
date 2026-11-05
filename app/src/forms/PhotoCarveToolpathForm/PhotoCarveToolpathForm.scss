@@ -1,0 +1,41 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.photo-carve {
+  @include form.form-root;
+}
+
+.photo-carve__hint {
+  @include form.form-hint;
+}
+
+.photo-carve__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.photo-carve__group {
+  @include form.form-group;
+}
+
+.photo-carve__legend {
+  @include form.form-legend;
+}
+
+.photo-carve__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.photo-carve__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

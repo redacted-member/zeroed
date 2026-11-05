@@ -1,0 +1,22 @@
+@use '../../styles/tokens';
+
+.safe-z-readout {
+  margin: 0;
+  padding: tokens.$space-1 0;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.safe-z-readout__row {
+  display: flex;
+  gap: tokens.$space-3;
+  font-size: tokens.$font-size-small;
+}
+
+.safe-z-readout__label {
+  min-width: 96px;
+  color: tokens.$text-muted;
+}
+
+.safe-z-readout__value {
+  margin: 0;
+}

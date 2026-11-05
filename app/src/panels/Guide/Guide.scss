@@ -1,0 +1,169 @@
+@use '../../styles/tokens';
+
+$guide-layer: 900;
+$card-width: 340px;
+
+.guide__ring {
+  position: fixed;
+  z-index: $guide-layer;
+  border: 2px solid tokens.$accent;
+  border-radius: tokens.$radius;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  transition:
+    left 0.15s ease,
+    top 0.15s ease,
+    width 0.15s ease,
+    height 0.15s ease;
+}
+
+.guide__card {
+  position: fixed;
+  z-index: $guide-layer;
+  box-sizing: border-box;
+  width: $card-width;
+  padding: tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font-size: tokens.$font-size;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.guide__card--welcome {
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  transform: translate(-50%, -50%);
+}
+
+.guide__progress {
+  margin: 0 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.guide__title {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.guide__text {
+  margin: 0 0 tokens.$space-2;
+  line-height: 1.4;
+}
+
+.guide__hint {
+  margin: 0 0 tokens.$space-2;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.guide__choices {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0 0 tokens.$space-3;
+  padding: 0;
+  list-style: none;
+}
+
+.guide__choice {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  width: 100%;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.guide__choice:hover {
+  border-color: tokens.$accent;
+}
+
+.guide__choice-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.guide__choice-title {
+  font-weight: 600;
+}
+
+.guide__choice-blurb {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.guide__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.guide__spacer {
+  flex: 1;
+}
+
+.guide__check {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.guide__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.guide__button:hover:not(:disabled) {
+  border-color: tokens.$accent;
+}
+
+.guide__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.guide__button--primary {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.guide__button--primary:hover:not(:disabled) {
+  background: tokens.$accent-hover;
+}
+
+.guide__button:focus-visible,
+.guide__choice:focus-visible,
+.guide__check input:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide__ring {
+    transition: none;
+  }
+}

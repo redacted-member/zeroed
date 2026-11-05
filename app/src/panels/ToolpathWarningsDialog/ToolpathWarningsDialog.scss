@@ -1,0 +1,46 @@
+@use '../../styles/tokens';
+
+.toolpath-warnings {
+  width: min(480px, calc(100vw - 48px));
+}
+
+.toolpath-warnings__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2 tokens.$space-3;
+}
+
+.toolpath-warnings__intro {
+  margin: 0;
+}
+
+.toolpath-warnings__list {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toolpath-warnings__item {
+  padding-left: tokens.$space-2;
+  border-left: 3px solid tokens.$warning;
+}
+
+.toolpath-warnings__toolpath {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.toolpath-warnings__messages {
+  margin: 0;
+  padding-left: tokens.$space-3;
+  list-style: none;
+}
+
+.toolpath-warnings__message {
+  overflow-wrap: anywhere;
+}

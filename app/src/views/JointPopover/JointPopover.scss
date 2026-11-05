@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.joint-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  width: 300px;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.joint-popover__title {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.joint-popover__check {
+  @include form.form-choice;
+}
+
+.joint-popover__button {
+  @include form.form-button;
+
+  align-self: flex-end;
+  font-size: tokens.$font-size-small;
+}

@@ -1,0 +1,60 @@
+@use '../../styles/tokens';
+
+.material-appearance {
+  width: min(320px, calc(100vw - 48px));
+}
+
+.material-appearance__form {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+}
+
+.material-appearance__label {
+  font-size: tokens.$font-size-small;
+}
+
+.material-appearance__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.material-appearance__colour {
+  width: 48px;
+  height: 24px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border;
+  background: transparent;
+}
+
+.material-appearance__colour:disabled {
+  opacity: 0.5;
+}
+
+.material-appearance__select:focus-visible,
+.material-appearance__colour:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.material-appearance__remove {
+  grid-column: 1 / -1;
+  justify-self: start;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.material-appearance__remove:focus-visible {
+  @include tokens.focus-ring;
+}

@@ -1,0 +1,49 @@
+{
+  "format": 1,
+  "id": "side-table",
+  "name": "Side Table",
+  "category": "Tables",
+  "description": "Mission tabouret style side table: two arched slab legs that cross lap in an X under a square top.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23770",
+  "credit": "After \"How to Make a Tabouret\", Mission Furniture: How to Make It, Part I, H. H. Windsor, 1909 (public domain)",
+  "tags": ["tabouret", "mission", "cross lap", "end table", "no hardware"],
+  "params": [
+    { "key": "size", "label": "Top size", "kind": "length", "default": 430, "min": 350, "max": 600, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 550, "min": 450, "max": 700, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 18, "max": 25, "group": "Material" },
+    { "key": "inset", "label": "Leg inset from the top edge", "kind": "length", "default": 40, "min": 15, "max": 80, "group": "Layout" },
+    { "key": "corner", "label": "Top corner radius", "kind": "length", "default": 30, "min": 1, "max": 120, "group": "Style" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "leg_w": "{size}-2*{inset}",
+    "mid": "{size}/2-{t}/2"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{size}", "d": "{size}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "{corner}" } ] },
+    { "id": "leg_a", "name": "Leg A", "material": "main", "grain": "long",
+      "box": { "x": "{inset}", "y": "{mid}", "z": "0", "w": "{leg_w}", "d": "{t}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{leg_h}/5", "inset": "50" } ] },
+    { "id": "leg_b", "name": "Leg B", "material": "main", "grain": "long",
+      "box": { "x": "{mid}", "y": "{inset}", "z": "0", "w": "{t}", "d": "{leg_w}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{leg_h}/5", "inset": "50" } ] }
+  ],
+  "connections": [
+    { "a": "leg_a", "b": "leg_b", "class": "cross" },
+    { "a": "top", "b": "*", "class": "top" }
+  ],
+  "jointClasses": {
+    "cross": { "label": "Legs crossing", "default": "crossLap" },
+    "top": { "label": "Top to legs", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "4", "note": "or the dowels from the joint" }
+  ]
+}

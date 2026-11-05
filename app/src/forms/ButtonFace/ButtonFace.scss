@@ -1,0 +1,23 @@
+.button-face {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.button-face__icon {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.button-face__icon .tool-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.button-face__label {
+  min-width: 0;
+  line-height: 1.15;
+}

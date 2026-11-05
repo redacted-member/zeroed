@@ -1,0 +1,84 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.tool-variables {
+  @include form.form-group;
+
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.tool-variables__title {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.tool-variables__hint {
+  @include form.form-hint;
+}
+
+.tool-variables__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: tokens.$font-size-small;
+}
+
+.tool-variables__table th,
+.tool-variables__table td {
+  padding: 2px tokens.$space-1;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  text-align: left;
+}
+
+.tool-variables__new {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: tokens.$space-1;
+  margin: 0;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.tool-variables__legend {
+  @include form.form-legend;
+}
+
+.tool-variables__label {
+  font-size: tokens.$font-size-small;
+}
+
+.tool-variables__input {
+  min-height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.tool-variables__input:focus-visible,
+.tool-variables__button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.tool-variables__new > .tool-variables__button {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.tool-variables__button {
+  @include form.form-button;
+
+  min-width: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.tool-variables__error {
+  @include form.form-error;
+}

@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "id": "cedar-chest",
+  "name": "Cedar Chest",
+  "category": "Storage",
+  "description": "Blanket chest: front and back lap over the ends on a full bottom, a lid that overhangs all round and an arched plinth.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23991",
+  "credit": "After \"An Oak-Bound Cedar Chest\", Mission Furniture: How to Make It, Part II, H. H. Windsor, 1910 (public domain)",
+  "tags": ["blanket chest", "hope chest", "toy box", "bedroom", "lid", "cedar"],
+  "params": [
+    { "key": "length", "label": "Length", "kind": "length", "default": 876, "min": 600, "max": 1300, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 419, "min": 350, "max": 550, "group": "Size" },
+    { "key": "height", "label": "Box height", "kind": "length", "default": 479, "min": 350, "max": 600, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 15, "max": 25, "group": "Material" },
+    { "key": "bh", "label": "Plinth height", "kind": "length", "default": 60, "min": 40, "max": 120, "group": "Layout" },
+    { "key": "ov", "label": "Lid overhang", "kind": "length", "default": 25, "min": 0, "max": 40, "group": "Layout" }
+  ],
+  "derived": {
+    "z0": "{bh}+{t}",
+    "top_z": "{bh}+{t}+{height}",
+    "inner_d": "{depth}-2*{t}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "plinth_f", "name": "Plinth front", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{length}", "d": "{t}", "h": "{bh}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "19", "inset": "114" } ] },
+    { "id": "plinth_b", "name": "Plinth back", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{depth}-{t}", "z": "0", "w": "{length}", "d": "{t}", "h": "{bh}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "19", "inset": "114" } ] },
+    { "id": "plinth_l", "name": "Plinth left", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{t}", "z": "0", "w": "{t}", "d": "{inner_d}", "h": "{bh}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "19", "inset": "60" } ] },
+    { "id": "plinth_r", "name": "Plinth right", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{t}", "y": "{t}", "z": "0", "w": "{t}", "d": "{inner_d}", "h": "{bh}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "19", "inset": "60" } ] },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{bh}", "w": "{length}", "d": "{depth}", "h": "{t}" } },
+    { "id": "front", "name": "Front", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{z0}", "w": "{length}", "d": "{t}", "h": "{height}" } },
+    { "id": "back", "name": "Back", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{depth}-{t}", "z": "{z0}", "w": "{length}", "d": "{t}", "h": "{height}" } },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{t}", "z": "{z0}", "w": "{t}", "d": "{inner_d}", "h": "{height}" },
+      "features": [ { "kind": "handle", "u": "{inner_d}/2", "v": "{height}-60", "w": "100", "h": "30" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{t}", "y": "{t}", "z": "{z0}", "w": "{t}", "d": "{inner_d}", "h": "{height}" },
+      "features": [ { "kind": "handle", "u": "{inner_d}/2", "v": "{height}-60", "w": "100", "h": "30" } ] },
+    { "id": "lid", "name": "Lid", "material": "main", "grain": "long",
+      "box": { "x": "-{ov}", "y": "-{ov}", "z": "{top_z}", "w": "{length}+2*{ov}", "d": "{depth}+2*{ov}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "6" } ] }
+  ],
+  "connections": [
+    { "a": "lid", "b": "*", "class": "lid" },
+    { "a": "plinth_*", "b": "bottom", "class": "plinth" },
+    { "a": "plinth_l|plinth_r", "b": "plinth_f|plinth_b", "class": "pcorner" },
+    { "a": "end_l|end_r", "b": "front|back", "class": "corner" },
+    { "a": "front|back|end_l|end_r", "b": "bottom", "class": "bottom" }
+  ],
+  "jointClasses": {
+    "lid": { "label": "Lid (hinged)", "default": "none" },
+    "plinth": { "label": "Plinth to bottom", "default": "dowel" },
+    "pcorner": { "label": "Plinth corners", "default": "rabbet" },
+    "corner": { "label": "Box corners", "default": "finger" },
+    "bottom": { "label": "Box to bottom", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Butt hinges 75 mm", "count": "2" },
+    { "name": "Lid stays (soft close)", "count": "2", "note": "hold the lid open; needed if children use the chest" },
+    { "name": "Chest lock", "count": "1", "note": "optional, as in the 1910 chest" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

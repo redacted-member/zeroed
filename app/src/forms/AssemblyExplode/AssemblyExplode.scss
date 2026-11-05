@@ -1,0 +1,58 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-explode {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.assembly-explode__heading {
+  margin: 0;
+  padding: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-explode__hint {
+  @include form.form-hint;
+}
+
+.assembly-explode__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-explode__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.assembly-explode__slider {
+  flex: 1;
+  min-width: 0;
+  accent-color: tokens.$accent;
+}
+
+.assembly-explode__value {
+  flex: none;
+  min-width: 3em;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.assembly-explode__status {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

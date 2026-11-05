@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.text-spec {
+  @include form.form-group;
+}
+
+.text-spec__legend {
+  @include form.form-legend;
+}
+
+.text-spec__label {
+  font-size: tokens.$font-size-small;
+}
+
+.text-spec__content {
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.text-spec__content {
+  resize: vertical;
+}
+
+.text-spec__error {
+  @include form.form-error;
+}
+
+.text-spec__styles {
+  @include form.form-choices;
+}

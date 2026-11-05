@@ -1,0 +1,20 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.vector-unwrapper-form {
+  @include form.form-root;
+}
+
+.vector-unwrapper-form__hint {
+  @include form.form-hint;
+}
+
+.vector-unwrapper-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.vector-unwrapper-form__status {
+  @include form.form-hint;
+}

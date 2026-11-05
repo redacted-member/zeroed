@@ -1,0 +1,46 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.component-edit {
+  @include form.form-root;
+}
+
+.component-edit__hint {
+  @include form.form-hint;
+}
+
+.component-edit__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.component-edit__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.component-edit__group {
+  @include form.form-group;
+}
+
+.component-edit__legend {
+  @include form.form-legend;
+}
+
+.component-edit__op {
+  @include form.form-row;
+
+  font-size: tokens.$font-size-small;
+}
+
+.component-edit__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

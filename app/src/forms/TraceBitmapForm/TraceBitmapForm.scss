@@ -1,0 +1,83 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.trace-bitmap {
+  @include form.form-root;
+}
+
+.trace-bitmap__hint {
+  @include form.form-hint;
+}
+
+.trace-bitmap__error {
+  @include form.form-error;
+}
+
+.trace-bitmap__group {
+  @include form.form-group;
+}
+
+.trace-bitmap__legend {
+  @include form.form-legend;
+}
+
+.trace-bitmap__choose {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.trace-bitmap__group[hidden] {
+  display: none;
+}
+
+.trace-bitmap__range {
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.trace-bitmap__colours {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trace-bitmap__colour {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.trace-bitmap__colour--traced {
+  border-color: tokens.$accent;
+}
+
+.trace-bitmap__swatch {
+  width: 28px;
+  height: 14px;
+  border: 1px solid tokens.$border;
+  border-radius: 2px;
+}
+
+.trace-bitmap__pick {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: tokens.$font-size-small;
+}
+
+.trace-bitmap__slider {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+}
+
+.trace-bitmap__end {
+  font-size: tokens.$font-size-small;
+}

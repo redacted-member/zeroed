@@ -1,0 +1,65 @@
+@use '../../styles/tokens';
+
+.furniture-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.furniture-overlay > .joint-popover {
+  pointer-events: auto;
+}
+
+.furniture-overlay__dimension,
+.furniture-overlay__seam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px tokens.$space-1;
+  border-radius: tokens.$radius;
+  font-size: tokens.$font-size-small;
+  white-space: nowrap;
+  translate: -50% -50%;
+}
+
+.furniture-overlay__dimension {
+  border: tokens.$border-width solid tokens.$accent;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+}
+
+.furniture-overlay__seam {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+  translate: 8px -130%;
+}
+
+.furniture-overlay__arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.furniture-overlay__arrow {
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.furniture-overlay__arrow-hit {
+  stroke: transparent;
+  stroke-width: 14px;
+}
+
+.furniture-overlay__arrow-line {
+  fill: none;
+  stroke: tokens.$accent;
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+}
+
+.furniture-overlay__arrow:hover .furniture-overlay__arrow-line {
+  stroke-width: 3.5px;
+}

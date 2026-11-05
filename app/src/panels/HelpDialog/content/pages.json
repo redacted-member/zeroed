@@ -1,0 +1,86 @@
+{
+  "start": {
+    "title": "Start here",
+    "summary": "CarveStudio turns drawings into cutting files for a CNC router. You draw or bring in vectors, add toolpaths that say how the bit moves, preview the cut and save a file for your machine.",
+    "sections": [
+      {
+        "heading": "The usual order",
+        "items": [
+          "Job Setup: the size and thickness of your board.",
+          "Draw or import vectors on the Design tab.",
+          "Pick vectors and add a toolpath in the Toolpaths panel.",
+          "Preview Toolpaths to see the cut in 3D.",
+          "Save Toolpaths with your machine's post processor."
+        ]
+      },
+      {
+        "heading": "Finding help",
+        "items": [
+          "Hover over any button to see what it does.",
+          "The ? at the top of a form opens the help for that form.",
+          "The ? in a panel title opens the help for that panel.",
+          "Search this help for a tool, a form or a word.",
+          "Help > Tutorial Browser opens the walkthroughs below again."
+        ]
+      }
+    ],
+    "guides": true,
+    "related": ["page:beforeYouCut"]
+  },
+  "beforeYouCut": {
+    "title": "Before you cut",
+    "summary": "The preview proves the file matches the design. Only the machine proves the design, the post processor and the machine agree. Go through this list once for each machine and post processor, and again after any change to the post.",
+    "sections": [
+      {
+        "heading": "1. Before anything moves",
+        "items": [
+          "Machine Configuration: the right post processor, the same units as your controller (mm or inch) and the real bed size.",
+          "Tool Database: the real diameter, flute length, shank and holder size of each bit (the preview uses them to find collisions), feeds and speeds you trust, and the right tool numbers.",
+          "Job Setup: the thickness measured with calipers in a few places, Z zero where you will set it on the machine (top of the board or the bed) and the XY origin where you will touch off."
+        ]
+      },
+      {
+        "heading": "2. On screen",
+        "items": [
+          "Preview Toolpaths at High or better, and check it shows no collisions, gouges or rapid moves through the material.",
+          "Read the toolpath summary: are the depths what you expect?",
+          "If your machine has no tool changer, save one file per tool.",
+          "Open the saved file in another G-code viewer (your controller's preview is fine) and compare its shape and depths with the preview."
+        ]
+      },
+      {
+        "heading": "3. Try a tool change in the air",
+        "items": [
+          "Save two short toolpaths with different tools and run them with nothing under the spindle, spindle off or slow, hand on the stop button.",
+          "The spindle should stop and lift clear, the message should name the new tool, and after the change the tool must lift straight up before it moves across.",
+          "Then jog the new tool down to the top of the board and read Z: it should match the height you zeroed at. If Z is off by a whole tool length, the tool length was not applied.",
+          "The first tool of the file goes through the same change, so make sure Z zero is set for it."
+        ]
+      },
+      {
+        "heading": "4. Air cut",
+        "items": [
+          "Run the job with no material, or with Z zero set well above the board (about 25 mm or 1 inch).",
+          "Spindle on, feed override at 50%, hand on the stop button.",
+          "Watch: the first move goes up to safe Z before moving across, plunges happen where the preview shows them, tabs lift the tool, tool changes stop and ask, and the job ends lifted clear of the work."
+        ]
+      },
+      {
+        "heading": "5. Cut a scrap piece",
+        "items": [
+          "Cut a small test of each kind of toolpath you use: a pocket, a profile with tabs, V-grooved text, a drilled hole.",
+          "Measure with calipers: pocket depth, profile size inside and outside, hole size and depth. They should match the design as closely as your machine can cut.",
+          "Joints: make the Joint Creator's Test Coupon for the fit you use, cut it in the real material and try the fit by hand. If it is too tight or too loose, change the fit's clearance and cut another before cutting the parts."
+        ]
+      },
+      {
+        "heading": "6. Write it down",
+        "items": [
+          "Note the post processor, controller, material, bits and the joint clearances that worked, so the next job starts from them.",
+          "If the cut differs from the preview, keep the job and the G-code file and report it before the next real job."
+        ]
+      }
+    ],
+    "related": ["form:saveToolpaths", "panel:toolDatabase", "panel:machineConfiguration"]
+  }
+}

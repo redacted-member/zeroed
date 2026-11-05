@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "id": "shoe-rack",
+  "name": "Shoe Rack",
+  "category": "Storage",
+  "description": "Open shoe rack with raised shelves, a top you can sit on at bench height and a back rail against racking.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["hall", "entry", "shoes", "shelves"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 800, "min": 400, "max": 1200, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 450, "min": 300, "max": 1000, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 320, "min": 250, "max": 400, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 2, "min": 1, "max": 6, "group": "Layout" },
+    { "key": "lift", "label": "Lowest shelf height", "kind": "length", "default": 50, "min": 20, "max": 100, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "pitch": "({height}-{t}-{lift})/{shelves}",
+    "rail_h": "80"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}-{t}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{lift}-5", "inset": "40" } ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}-{t}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{lift}-5", "inset": "40" } ] },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{height}-{t}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "6" } ] },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{shelves}",
+      "box": { "x": "{t}", "y": "0", "z": "{lift}+{i}*{pitch}", "w": "{inner_w}", "d": "{depth}-{t}", "h": "{t}" } },
+    { "id": "rail", "name": "Back rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "{height}-{t}-{rail_h}", "w": "{inner_w}", "d": "{t}", "h": "{rail_h}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "shelf", "b": "left|right", "class": "shelf" },
+    { "a": "rail", "b": "left|right", "class": "rail" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to sides", "default": "dowel" },
+    "shelf": { "label": "Shelves to sides", "default": "dado" },
+    "rail": { "label": "Back rail to sides", "default": "dado" }
+  },
+  "hardware": [
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

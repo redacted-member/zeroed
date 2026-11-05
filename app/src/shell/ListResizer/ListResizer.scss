@@ -1,0 +1,21 @@
+@use '../../styles/tokens';
+
+.list-resizer {
+  flex: 0 0 auto;
+  height: 5px;
+  margin-bottom: -5px;
+  position: relative;
+  z-index: 2;
+  cursor: row-resize;
+  touch-action: none;
+}
+
+.list-resizer:hover,
+.list-resizer:active {
+  background: tokens.$accent;
+  opacity: 0.5;
+}
+
+.list-resizer:focus-visible {
+  @include tokens.focus-ring;
+}

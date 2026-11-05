@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.add-draft {
+  @include form.form-root;
+}
+
+.add-draft__hint {
+  @include form.form-hint;
+}
+
+.add-draft__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.add-draft__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.add-draft__group {
+  @include form.form-group;
+}
+
+.add-draft__legend {
+  @include form.form-legend;
+}

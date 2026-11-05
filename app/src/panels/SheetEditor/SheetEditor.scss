@@ -1,0 +1,48 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.sheet-editor {
+  @include form.form-root;
+}
+
+.sheet-editor__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.sheet-editor__hint {
+  @include form.form-hint;
+}
+
+.sheet-editor__group {
+  @include form.form-group;
+}
+
+.sheet-editor__legend {
+  @include form.form-legend;
+}
+
+.sheet-editor__row {
+  @include form.form-row;
+}
+
+.sheet-editor__label {
+  flex: 1 1 auto;
+  font-size: tokens.$font-size-small;
+}
+
+.sheet-editor__select {
+  height: tokens.$row-height;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.sheet-editor__choices {
+  @include form.form-choices;
+}
+
+.sheet-editor__choice {
+  @include form.form-choice;
+}

@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.offset-model {
+  @include form.form-root;
+}
+
+.offset-model__hint {
+  @include form.form-hint;
+}
+
+.offset-model__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.offset-model__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.offset-model__group {
+  @include form.form-group;
+}
+
+.offset-model__legend {
+  @include form.form-legend;
+}

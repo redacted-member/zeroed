@@ -1,0 +1,91 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+$thumb-size: 40px;
+
+.assembly-add__ways {
+  @include form.form-hint;
+
+  display: flex;
+  align-items: flex-start;
+  gap: tokens.$space-1;
+}
+
+.assembly-add__ways-icon {
+  display: flex;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: tokens.$accent;
+}
+
+.assembly-add__search {
+  min-width: 0;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-add__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 240px;
+  margin: 0;
+  padding: tokens.$space-1;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  list-style: none;
+}
+
+.assembly-add__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  padding: 2px;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+}
+
+.assembly-add__row--picked {
+  border-color: tokens.$accent;
+}
+
+.assembly-add__thumb {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: $thumb-size;
+  height: $thumb-size;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+}
+
+.assembly-add__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.assembly-add__name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: tokens.$font-size-small;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assembly-add__placing {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}

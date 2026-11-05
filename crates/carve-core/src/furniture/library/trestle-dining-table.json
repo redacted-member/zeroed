@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "id": "trestle-dining-table",
+  "name": "Trestle Dining Table",
+  "category": "Tables",
+  "description": "Dining table on two arched slab trestles joined by a deep beam that cross laps into both, under a thick top.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["dining", "trestle", "cross lap", "knock down"],
+  "params": [
+    { "key": "length", "label": "Length", "kind": "length", "default": 1800, "min": 1200, "max": 2400, "group": "Size" },
+    { "key": "width", "label": "Width", "kind": "length", "default": 900, "min": 750, "max": 1100, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 740, "min": 720, "max": 760, "group": "Size" },
+    { "key": "t", "label": "Trestle thickness", "kind": "thickness", "default": 25, "min": 18, "max": 40, "group": "Material" },
+    { "key": "tt", "label": "Top thickness", "kind": "thickness", "default": 25, "min": 18, "max": 40, "group": "Material" },
+    { "key": "oh", "label": "Top overhang past the trestles", "kind": "length", "default": 300, "min": 150, "max": 400, "group": "Layout" },
+    { "key": "beam_h", "label": "Beam depth", "kind": "length", "default": 150, "min": 100, "max": 220, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{tt}",
+    "foot": "50",
+    "beam_out": "40"
+  },
+  "materials": {
+    "main": { "label": "Trestles and beam", "thickness": "{t}" },
+    "top": { "label": "Top", "thickness": "{tt}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "top", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{length}", "d": "{width}", "h": "{tt}" },
+      "features": [ { "kind": "radius", "r": "40" } ] },
+    { "id": "leg_l", "name": "Left trestle", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "{foot}", "z": "0", "w": "{t}", "d": "{width}-2*{foot}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "80", "inset": "100" } ] },
+    { "id": "leg_r", "name": "Right trestle", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{oh}-{t}", "y": "{foot}", "z": "0", "w": "{t}", "d": "{width}-2*{foot}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "80", "inset": "100" } ] },
+    { "id": "beam", "name": "Beam", "material": "main", "grain": "long",
+      "box": { "x": "{oh}-{beam_out}", "y": "{width}/2-{t}/2", "z": "{leg_h}-{beam_h}", "w": "{length}-2*{oh}+2*{beam_out}", "d": "{t}", "h": "{beam_h}" },
+      "features": [ { "kind": "radius", "r": "20" } ] }
+  ],
+  "connections": [
+    { "a": "beam", "b": "leg_l|leg_r", "class": "cross" },
+    { "a": "top", "b": "*", "class": "top" }
+  ],
+  "jointClasses": {
+    "cross": { "label": "Beam to trestles", "default": "crossLap" },
+    "top": { "label": "Top to base", "default": "none" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "8", "note": "let the top move with the seasons" },
+    { "name": "Screws 4 x 20 mm", "count": "16" }
+  ]
+}

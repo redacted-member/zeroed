@@ -1,0 +1,22 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/carve-core",
+    "crates/carve-devhost",
+    "app/src-tauri",
+    "tools/gcode-check",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "AGPL-3.0-or-later"
+
+[workspace.dependencies]
+carve-core = { path = "crates/carve-core" }
+serde = { version = "1", features = ["derive"] }
+# float_roundtrip: a coordinate read back from a saved job or a host call is
+# the exact number written, not one a last digit off.
+serde_json = { version = "1", features = ["float_roundtrip"] }
+thiserror = "2"

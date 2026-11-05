@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+
+.snap-toggles {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.snap-toggles__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.snap-toggles__button:hover {
+  border-color: tokens.$border-strong;
+  background: tokens.$panel-raised;
+}
+
+.snap-toggles__button:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.snap-toggles__button[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}

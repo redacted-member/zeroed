@@ -1,0 +1,208 @@
+@use '../../styles/tokens';
+
+.help-dialog {
+  width: min(900px, calc(100vw - 48px));
+}
+
+.help-dialog__layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  height: min(600px, calc(100vh - 160px));
+}
+
+.help-dialog__nav {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  overflow-y: auto;
+  border-right: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.help-dialog__search-label {
+  font-weight: 600;
+}
+
+.help-dialog__search {
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.help-dialog__none {
+  margin: 0;
+  color: tokens.$text-muted;
+}
+
+.help-dialog__toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-dialog__toc .help-dialog__toc .help-dialog__toc {
+  padding-left: tokens.$space-2;
+}
+
+.help-dialog__toc-section {
+  margin: tokens.$space-2 0 2px;
+  font-size: tokens.$font-size;
+  font-weight: 700;
+}
+
+.help-dialog__toc-group {
+  margin: tokens.$space-1 0 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.help-dialog__toc-link {
+  display: block;
+  width: 100%;
+  padding: 1px tokens.$space-1;
+  border: 0;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.help-dialog__toc-link:hover {
+  text-decoration: underline;
+}
+
+.help-dialog__toc-link[aria-current='page'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.help-dialog__toc-link:focus-visible,
+.help-dialog__search:focus-visible,
+.help-dialog__link:focus-visible,
+.help-dialog__guide:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.help-dialog__article {
+  padding: tokens.$space-2 tokens.$space-4;
+  overflow-y: auto;
+  line-height: 1.45;
+}
+
+.help-dialog__title {
+  margin: tokens.$space-1 0 tokens.$space-2;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.help-dialog__summary {
+  margin: 0 0 tokens.$space-3;
+}
+
+.help-dialog__block {
+  margin: 0 0 tokens.$space-3;
+}
+
+.help-dialog__heading {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.help-dialog__fields {
+  margin: 0;
+}
+
+.help-dialog__field {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: tokens.$space-2;
+  padding: 3px 0;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.help-dialog__field-name {
+  font-weight: 600;
+}
+
+.help-dialog__field-text {
+  margin: 0;
+}
+
+.help-dialog__list {
+  margin: 0;
+  padding-left: tokens.$space-5;
+}
+
+.help-dialog__list li {
+  margin: 0 0 2px;
+}
+
+.help-dialog__related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-dialog__link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: tokens.$accent;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.help-dialog__guides {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: tokens.$space-2;
+  margin: 0 0 tokens.$space-3;
+  padding: 0;
+  list-style: none;
+}
+
+.help-dialog__guide {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  width: 100%;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.help-dialog__guide:hover {
+  border-color: tokens.$accent;
+}
+
+.help-dialog__guide-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-dialog__guide-title {
+  font-weight: 600;
+}
+
+.help-dialog__guide-blurb {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

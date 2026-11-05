@@ -1,0 +1,37 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.immediate-output {
+  @include form.form-group;
+}
+
+.immediate-output__legend {
+  @include form.form-legend;
+}
+
+.immediate-output__hint {
+  @include form.form-hint;
+}
+
+.immediate-output__field {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.immediate-output__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.immediate-output__save {
+  @include form.form-button;
+
+  align-self: stretch;
+}

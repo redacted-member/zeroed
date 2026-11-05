@@ -1,0 +1,49 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.profile-toolpath {
+  @include form.form-root;
+}
+
+.profile-toolpath__hint {
+  @include form.form-hint;
+}
+
+.profile-toolpath__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.profile-toolpath__group {
+  @include form.form-group;
+}
+
+.profile-toolpath__legend {
+  @include form.form-legend;
+}
+
+.profile-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.profile-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.profile-toolpath__row {
+  @include form.form-row;
+}
+
+.profile-toolpath__button {
+  @include form.form-button;
+}

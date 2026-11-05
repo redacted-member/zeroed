@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "id": "record-cabinet",
+  "name": "Record Cabinet",
+  "category": "Storage",
+  "description": "Cube storage for 12 inch records: full depth uprights cross lap the shelves, on a toe kick plinth with an optional back.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["vinyl", "records", "LP", "cube", "cross lap", "media"],
+  "params": [
+    { "key": "cols", "label": "Cubes across", "kind": "count", "default": 2, "min": 1, "max": 5, "group": "Layout" },
+    { "key": "rows", "label": "Cubes high", "kind": "count", "default": 2, "min": 1, "max": 2, "group": "Layout" },
+    { "key": "cell", "label": "Cube opening", "kind": "length", "default": 340, "min": 330, "max": 400, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 380, "min": 340, "max": 450, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "kick", "label": "Toe kick plinth", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "back", "label": "Back", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "kh": "{kick}*80",
+    "inner_w": "{cols}*{cell}+({cols}-1)*{t}",
+    "inner_h": "{rows}*{cell}+({rows}-1)*{t}",
+    "width": "{inner_w}+2*{t}",
+    "height": "{inner_h}+2*{t}+{kh}",
+    "body_d": "{depth}-{back}*6"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "back": { "label": "Back", "thickness": "6" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "{kh}", "when": "{kick}" } ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "notch", "edge": "bottom", "at": "front", "w": "50", "h": "{kh}", "when": "{kick}" } ] },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{kh}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "upright", "name": "Upright {i+1}", "material": "main", "grain": "long", "repeat": "{cols}-1",
+      "box": { "x": "{t}+({i}+1)*{cell}+{i}*{t}", "y": "0", "z": "{kh}+{t}", "w": "{t}", "d": "{body_d}", "h": "{inner_h}" } },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{rows}-1",
+      "box": { "x": "{t}", "y": "0", "z": "{kh}+{t}+({i}+1)*{cell}+{i}*{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "kick", "name": "Toe kick", "material": "main", "grain": "long", "when": "{kick}",
+      "box": { "x": "{t}", "y": "50", "z": "0", "w": "{inner_w}", "d": "{t}", "h": "{kh}" } },
+    { "id": "back", "name": "Back", "material": "back", "grain": "long", "when": "{back}",
+      "box": { "x": "{t}", "y": "{depth}-6", "z": "{kh}", "w": "{inner_w}", "d": "6", "h": "{height}-{kh}" } }
+  ],
+  "connections": [
+    { "a": "upright", "b": "shelf", "class": "grid" },
+    { "a": "upright", "b": "top|bottom", "class": "upright" },
+    { "a": "shelf", "b": "left|right", "class": "shelf" },
+    { "a": "top|bottom", "b": "left|right", "class": "carcass" },
+    { "a": "kick", "b": "bottom", "class": "kick_bottom" },
+    { "a": "kick", "b": "*", "class": "kick" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "grid": { "label": "Uprights crossing shelves", "default": "crossLap" },
+    "upright": { "label": "Uprights to top and bottom", "default": "dado" },
+    "shelf": { "label": "Shelves to sides", "default": "dado" },
+    "carcass": { "label": "Top and bottom", "default": "rabbet" },
+    "kick": { "label": "Toe kick", "default": "dowel" },
+    "kick_bottom": { "label": "Toe kick to bottom", "default": "tabSlot" },
+    "back": { "label": "Back", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Wall anchor strap", "count": "1", "note": "records are heavy; fix units over two cubes high to the wall" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

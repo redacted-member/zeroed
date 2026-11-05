@@ -1,0 +1,15 @@
+@use '../../styles/tokens';
+
+.helper-row {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: flex-start;
+}
+
+.helper-row__fields {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+}

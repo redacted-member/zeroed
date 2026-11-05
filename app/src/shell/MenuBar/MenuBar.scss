@@ -1,0 +1,143 @@
+@use '../../styles/tokens';
+
+.menu-bar {
+  position: relative;
+  z-index: 50;
+  flex: 0 0 auto;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-bg;
+}
+
+.menu-bar__bar {
+  display: flex;
+  margin: 0;
+  padding: 0 tokens.$space-1;
+  list-style: none;
+}
+
+.menu-bar__menu {
+  position: relative;
+}
+
+.menu-bar__title {
+  height: 24px;
+  padding: 0 tokens.$space-2;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.menu-bar__title:hover,
+.menu-bar__title[aria-expanded='true'] {
+  background: tokens.$panel-raised;
+}
+
+.menu-bar__title:focus-visible {
+  outline-offset: -2px;
+}
+
+.menu-bar__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  margin: 0;
+  padding: tokens.$space-1 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: 0 0 tokens.$radius tokens.$radius;
+  background: tokens.$panel-raised;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  list-style: none;
+}
+
+.menu-bar__list--sub {
+  top: -5px;
+  left: 100%;
+  border-radius: tokens.$radius;
+}
+
+.menu-bar__entry {
+  position: relative;
+}
+
+.menu-bar__separator {
+  height: tokens.$border-width;
+  margin: tokens.$space-1 0;
+  background: tokens.$border;
+}
+
+.menu-bar__item {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  width: 100%;
+  height: 24px;
+  padding: 0 tokens.$space-3 0 tokens.$space-1;
+  border: none;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.menu-bar__item:hover:not(:disabled),
+.menu-bar__item:focus-visible,
+.menu-bar__item[aria-expanded='true'] {
+  outline: none;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.menu-bar__item:disabled {
+  color: tokens.$text-muted;
+  opacity: 0.6;
+}
+
+.menu-bar__check {
+  flex: 0 0 auto;
+  width: 12px;
+  text-align: center;
+}
+
+.menu-bar__mark {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+// Tool icons shrink to menu size. A disabled item greys its icon with its
+// label, a highlighted one draws it in its text color on the accent.
+.menu-bar__item:hover:not(:disabled) .tool-icon,
+.menu-bar__item:focus-visible .tool-icon,
+.menu-bar__item[aria-expanded='true'] .tool-icon {
+  @include tokens.tool-icon-mono;
+}
+
+.menu-bar__mark .tool-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.menu-bar__label {
+  flex: 1;
+}
+
+.menu-bar__note {
+  margin-left: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+  opacity: 0.75;
+}
+
+.menu-bar__shortcut {
+  margin-left: tokens.$space-4;
+  font-size: tokens.$font-size-small;
+  opacity: 0.75;
+}
+
+.menu-bar__arrow {
+  font-size: 16px;
+  line-height: 1;
+}

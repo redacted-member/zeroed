@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "id": "bench",
+  "name": "Bench",
+  "category": "Seating",
+  "description": "Mission style bench: slab ends, seat rails under the seat and a low stretcher with wedged through tenons.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23770",
+  "credit": "After the piano bench in Mission Furniture: How to Make It, Part I, H. H. Windsor, 1909 (public domain)",
+  "tags": ["mission", "seat", "hall", "wedged tenon"],
+  "params": [
+    { "key": "length", "label": "Length", "kind": "length", "default": 930, "min": 500, "max": 1600, "group": "Size" },
+    { "key": "depth", "label": "Seat depth", "kind": "length", "default": 400, "min": 280, "max": 500, "group": "Size" },
+    { "key": "height", "label": "Seat height", "kind": "length", "default": 450, "min": 400, "max": 480, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 25, "min": 18, "max": 30, "group": "Material" },
+    { "key": "oh", "label": "Seat overhang past the ends", "kind": "length", "default": 40, "min": 0, "max": 120, "group": "Layout" },
+    { "key": "stretcher", "label": "Low stretcher", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "span": "{length}-2*{oh}-2*{t}",
+    "rail_h": "70"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "seat", "name": "Seat", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{length}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "15" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "15", "z": "0", "w": "{t}", "d": "{depth}-30", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "50" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{length}-{oh}-{t}", "y": "15", "z": "0", "w": "{t}", "d": "{depth}-30", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "50" } ] },
+    { "id": "rail_f", "name": "Front seat rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "50", "z": "{leg_h}-{rail_h}", "w": "{span}", "d": "{t}", "h": "{rail_h}" } },
+    { "id": "rail_b", "name": "Back seat rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-50-{t}", "z": "{leg_h}-{rail_h}", "w": "{span}", "d": "{t}", "h": "{rail_h}" } },
+    { "id": "stretcher", "name": "Stretcher", "material": "main", "grain": "long", "when": "{stretcher}",
+      "box": { "x": "{oh}+{t}", "y": "{depth}/2-{t}/2", "z": "100", "w": "{span}", "d": "{t}", "h": "90" } }
+  ],
+  "connections": [
+    { "a": "seat", "b": "*", "class": "seat" },
+    { "a": "stretcher", "b": "end_l|end_r", "class": "stretcher" },
+    { "a": "rail_f|rail_b", "b": "end_l|end_r", "class": "rail" }
+  ],
+  "jointClasses": {
+    "seat": { "label": "Seat to base", "default": "dowel" },
+    "stretcher": { "label": "Stretcher to ends", "default": "wedgedTenon" },
+    "rail": { "label": "Seat rails to ends", "default": "mortiseTenon" }
+  },
+  "hardware": [
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

@@ -1,0 +1,131 @@
+@use '../../styles/tokens';
+
+.snap-bar {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+  padding: 2px tokens.$space-1;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+}
+
+.snap-bar__group {
+  display: flex;
+  gap: 1px;
+  padding: 0 tokens.$space-1;
+}
+
+.snap-bar__group + .snap-bar__group {
+  border-left: tokens.$border-width solid tokens.$border;
+}
+
+.snap-bar__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.snap-bar__button:hover:not(:disabled) {
+  border-color: tokens.$border-strong;
+  background: tokens.$panel-raised;
+}
+
+.snap-bar__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.snap-bar__button[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.snap-bar__icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.snap-bar__thin {
+  stroke-width: 1;
+}
+
+.snap-bar__dash {
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.snap-bar__fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.snap-bar__row {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.snap-bar__row > .snap-bar__group {
+  flex: 0 0 auto;
+}
+
+.snap-bar__more {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: tokens.$text;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.snap-bar__more:hover,
+.snap-bar__more[aria-expanded='true'] {
+  border-color: tokens.$border-strong;
+  background: tokens.$panel-raised;
+}
+
+.snap-bar__more:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.snap-bar__overflow {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: tokens.$space-1;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 20;
+  max-width: 320px;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  background: tokens.$panel-bg;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}

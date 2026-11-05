@@ -1,0 +1,1102 @@
+{
+  "connectors": [
+    {
+      "id": "cam-15-b24",
+      "label": "Cam lock 15 mm, 24 mm edge distance",
+      "system": "metric",
+      "camDiameter": 15,
+      "camDepthByThickness": [
+        {
+          "panel": 16,
+          "depth": 12.5
+        },
+        {
+          "panel": 18,
+          "depth": 13.5
+        },
+        {
+          "panel": 19,
+          "depth": 14.5
+        }
+      ],
+      "camDepthTolerance": 0.5,
+      "edgeDistance": 24,
+      "edgeBoreDiameter": 8,
+      "edgeBoreDepth": 24,
+      "boltHoles": [
+        {
+          "kind": "screwIn",
+          "diameter": 5,
+          "depth": 11
+        },
+        {
+          "kind": "screwInHardwood",
+          "diameter": 7,
+          "depth": 11
+        },
+        {
+          "kind": "expandingDowel",
+          "diameter": 8,
+          "depth": 11.5
+        }
+      ],
+      "boltProtrusion": 24,
+      "boltLength": 35,
+      "minPanel": 16,
+      "maxPanel": 19,
+      "notes": "Cam housing bored into the face of the cam panel, centered on the cam panel's mid thickness line; the bolt axis runs at half the panel thickness. Edge bore runs from the joining edge to the cam. The bolt screws into the face of the mating panel. 18 mm depth is interpolated between the published 16 and 19 mm values. 3/4 in stock uses the 19 mm values."
+    },
+    {
+      "id": "cam-15-b34",
+      "label": "Cam lock 15 mm, 34 mm edge distance",
+      "system": "metric",
+      "camDiameter": 15,
+      "camDepthByThickness": [
+        {
+          "panel": 16,
+          "depth": 12.5
+        },
+        {
+          "panel": 18,
+          "depth": 13.5
+        },
+        {
+          "panel": 19,
+          "depth": 14.5
+        }
+      ],
+      "camDepthTolerance": 0.5,
+      "edgeDistance": 34,
+      "edgeBoreDiameter": 8,
+      "edgeBoreDepth": 34,
+      "boltHoles": [
+        {
+          "kind": "screwIn",
+          "diameter": 5,
+          "depth": 11
+        },
+        {
+          "kind": "screwInHardwood",
+          "diameter": 7,
+          "depth": 11
+        },
+        {
+          "kind": "expandingDowel",
+          "diameter": 8,
+          "depth": 11.5
+        }
+      ],
+      "boltProtrusion": 34,
+      "boltLength": 45,
+      "minPanel": 16,
+      "maxPanel": 19,
+      "notes": "Default cam lock for the furniture kernel (34 mm from the joining edge). Same housing as the 24 mm version with a longer bolt. Bolt length is protrusion plus about 11 mm of thread in the mating panel."
+    },
+    {
+      "id": "confirmat-7x50",
+      "label": "Confirmat screw 7 x 50",
+      "system": "metric",
+      "screwDiameter": 7,
+      "screwLength": 50,
+      "pilotDiameter": 5,
+      "pilotDepthRule": "screwLength - throughPanel + 2",
+      "clearanceDiameter": 7,
+      "countersinkDiameter": 10,
+      "countersinkAngle": 90,
+      "minEdgeDistance": 50,
+      "pitch": 128,
+      "minPanel": 16,
+      "maxPanel": 19,
+      "notes": "One piece screw for edge to face joints in 16 to 19 mm panels. Stepped drill: 5 mm pilot in the edge panel, 7 mm clearance through the face panel, 10 mm countersink. Edge distance and pitch are common defaults (keep screws 50 mm or more from panel ends, about 128 to 160 mm apart)."
+    },
+    {
+      "id": "confirmat-7x40",
+      "label": "Confirmat screw 7 x 40",
+      "system": "metric",
+      "screwDiameter": 7,
+      "screwLength": 40,
+      "pilotDiameter": 5,
+      "pilotDepthRule": "screwLength - throughPanel + 2",
+      "clearanceDiameter": 7,
+      "countersinkDiameter": 10,
+      "countersinkAngle": 90,
+      "minEdgeDistance": 50,
+      "pitch": 128,
+      "minPanel": 12,
+      "maxPanel": 16,
+      "notes": "Shorter confirmat for 12 to 16 mm panels. Same drill sizes as 7 x 50."
+    },
+    {
+      "id": "butterfly-key",
+      "label": "Butterfly key (bow tie)",
+      "system": "metric",
+      "length": 75,
+      "endWidth": 32,
+      "waistWidth": 12,
+      "depthRatio": 0.4,
+      "minDepth": 6,
+      "cornerRadiusRule": "toolDiameter / 2",
+      "notes": "Common default proportions: length about 2.5 times the end width, waist about one third of the end width, inlay depth one third to one half of the board thickness (0.4 default). Inside corners of the socket take the cutter radius; the key gets matching rounded corners or sharp corners with a V-bit cleanup."
+    }
+  ],
+  "hinges": [
+    {
+      "id": "cup-35-full-overlay",
+      "label": "Cup hinge 35 mm, full overlay",
+      "system": "metric",
+      "doorType": "fullOverlay",
+      "cupDiameter": 35,
+      "cupDepth": 12.5,
+      "cupDepthMin": 11.5,
+      "cupDepthMax": 13,
+      "boringDistance": 5,
+      "boringDistanceMin": 3,
+      "boringDistanceMax": 6,
+      "cupCenterFromEdgeRule": "boringDistance + 17.5",
+      "cupCenterFromEdge": 22.5,
+      "screwPattern": {
+        "spacing": 45,
+        "offset": 9.5,
+        "pressInDiameter": 8,
+        "pressInDepth": 10,
+        "screwPilotDiameter": 2.5
+      },
+      "altScrewPattern": {
+        "spacing": 48,
+        "offset": 6
+      },
+      "endDistance": 80,
+      "endDistanceMin": 70,
+      "endDistanceMax": 100,
+      "overlay": 16,
+      "revealGap": 2,
+      "doorGap": 3,
+      "plate": {
+        "setback": 37,
+        "holePitch": 32,
+        "screwPilotDiameter": 2.5,
+        "euroScrewDiameter": 5,
+        "euroScrewDepth": 13
+      },
+      "countByDoorHeight": [
+        {
+          "upTo": 900,
+          "count": 2
+        },
+        {
+          "upTo": 1600,
+          "count": 3
+        },
+        {
+          "upTo": 2000,
+          "count": 4
+        },
+        {
+          "upTo": 2400,
+          "count": 5
+        }
+      ],
+      "notes": "Door covers the side panel's front edge. Overlay is the side thickness less the reveal: 16 mm on 18 mm sides, 17 mm on 19 mm sides. Cup center sits boringDistance + 17.5 mm from the hinge edge (22.5 mm at the 5 mm default). Hinge count rises with door weight and width too; the table is for doors up to about 600 mm wide."
+    },
+    {
+      "id": "cup-35-half-overlay",
+      "label": "Cup hinge 35 mm, half overlay",
+      "system": "metric",
+      "doorType": "halfOverlay",
+      "cupDiameter": 35,
+      "cupDepth": 12.5,
+      "cupDepthMin": 11.5,
+      "cupDepthMax": 13,
+      "boringDistance": 5,
+      "boringDistanceMin": 3,
+      "boringDistanceMax": 6,
+      "cupCenterFromEdgeRule": "boringDistance + 17.5",
+      "cupCenterFromEdge": 22.5,
+      "screwPattern": {
+        "spacing": 45,
+        "offset": 9.5,
+        "pressInDiameter": 8,
+        "pressInDepth": 10,
+        "screwPilotDiameter": 2.5
+      },
+      "altScrewPattern": {
+        "spacing": 48,
+        "offset": 6
+      },
+      "endDistance": 80,
+      "endDistanceMin": 70,
+      "endDistanceMax": 100,
+      "overlayRule": "(partitionThickness - doorGap) / 2",
+      "overlay": 7.5,
+      "revealGap": 2,
+      "doorGap": 3,
+      "plate": {
+        "setback": 37,
+        "holePitch": 32,
+        "screwPilotDiameter": 2.5,
+        "euroScrewDiameter": 5,
+        "euroScrewDepth": 13
+      },
+      "countByDoorHeight": [
+        {
+          "upTo": 900,
+          "count": 2
+        },
+        {
+          "upTo": 1600,
+          "count": 3
+        },
+        {
+          "upTo": 2000,
+          "count": 4
+        },
+        {
+          "upTo": 2400,
+          "count": 5
+        }
+      ],
+      "notes": "Two doors share one partition; each covers about half of it. 7.5 mm overlay on an 18 mm partition with a 3 mm gap between the doors. Uses a cranked (half overlay) hinge arm."
+    },
+    {
+      "id": "cup-35-inset",
+      "label": "Cup hinge 35 mm, inset",
+      "system": "metric",
+      "doorType": "inset",
+      "cupDiameter": 35,
+      "cupDepth": 12.5,
+      "cupDepthMin": 11.5,
+      "cupDepthMax": 13,
+      "boringDistance": 5,
+      "boringDistanceMin": 3,
+      "boringDistanceMax": 6,
+      "cupCenterFromEdgeRule": "boringDistance + 17.5",
+      "cupCenterFromEdge": 22.5,
+      "screwPattern": {
+        "spacing": 45,
+        "offset": 9.5,
+        "pressInDiameter": 8,
+        "pressInDepth": 10,
+        "screwPilotDiameter": 2.5
+      },
+      "altScrewPattern": {
+        "spacing": 48,
+        "offset": 6
+      },
+      "endDistance": 80,
+      "endDistanceMin": 70,
+      "endDistanceMax": 100,
+      "overlay": 0,
+      "revealGap": 2,
+      "doorGap": 3,
+      "plate": {
+        "setback": 37,
+        "holePitch": 32,
+        "screwPilotDiameter": 2.5,
+        "euroScrewDiameter": 5,
+        "euroScrewDepth": 13
+      },
+      "countByDoorHeight": [
+        {
+          "upTo": 900,
+          "count": 2
+        },
+        {
+          "upTo": 1600,
+          "count": 3
+        },
+        {
+          "upTo": 2000,
+          "count": 4
+        },
+        {
+          "upTo": 2400,
+          "count": 5
+        }
+      ],
+      "notes": "Door sits inside the opening, flush with the carcass front. Door size is the opening less 2 x revealGap (2 mm all around). Uses a strongly cranked (inset) hinge arm."
+    },
+    {
+      "id": "cup-35-inch-full-overlay",
+      "label": "Cup hinge 35 mm, full overlay on 3/4 in stock",
+      "system": "inch",
+      "doorType": "fullOverlay",
+      "cupDiameter": 35,
+      "cupDepth": 12.5,
+      "cupDepthMin": 11.5,
+      "cupDepthMax": 13,
+      "boringDistance": 5,
+      "boringDistanceMin": 3,
+      "boringDistanceMax": 6,
+      "cupCenterFromEdgeRule": "boringDistance + 17.5",
+      "cupCenterFromEdge": 22.5,
+      "screwPattern": {
+        "spacing": 45,
+        "offset": 9.5,
+        "pressInDiameter": 8,
+        "pressInDepth": 10,
+        "screwPilotDiameter": 2.5
+      },
+      "altScrewPattern": {
+        "spacing": 48,
+        "offset": 6
+      },
+      "endDistance": 76.2,
+      "endDistanceMin": 70,
+      "endDistanceMax": 100,
+      "overlay": 15.875,
+      "revealGap": 3.175,
+      "doorGap": 3.175,
+      "plate": {
+        "setback": 37,
+        "holePitch": 32,
+        "screwPilotDiameter": 2.5,
+        "euroScrewDiameter": 5,
+        "euroScrewDepth": 13
+      },
+      "countByDoorHeight": [
+        {
+          "upTo": 914.4,
+          "count": 2
+        },
+        {
+          "upTo": 1600,
+          "count": 3
+        },
+        {
+          "upTo": 2000,
+          "count": 4
+        },
+        {
+          "upTo": 2400,
+          "count": 5
+        }
+      ],
+      "notes": "Same metric hinge on inch stock: 5/8 in (15.875 mm) overlay with a 1/8 in reveal, cups 3 in (76.2 mm) from the door ends, a third hinge from 36 in (914.4 mm). The 35 mm cup is metric everywhere; a 1-3/8 in (34.9 mm) bit is a usual substitute. Face frame cabinets use a 1/2 in overlay hinge instead."
+    }
+  ],
+  "slides": [
+    {
+      "id": "side-mount-ball-bearing",
+      "label": "Side mount ball bearing slide",
+      "system": "metric",
+      "mount": "side",
+      "clearancePerSide": 12.7,
+      "clearanceTolerancePlus": 0.5,
+      "clearanceToleranceMinus": 0,
+      "clearanceRule": "drawerBoxWidth = openingWidth - 2 * clearancePerSide",
+      "slideHeight": 45,
+      "minDrawerSideHeight": 60,
+      "lengths": [
+        250,
+        300,
+        350,
+        400,
+        450,
+        500,
+        550,
+        600,
+        650,
+        700
+      ],
+      "cabinetDepthAllowance": 10,
+      "screwRow": {
+        "setbackFront": 37,
+        "pitch": 32,
+        "holeDiameter": 4.5,
+        "pilotDiameter": 2.5
+      },
+      "mountHeightRule": "slide centerline = drawer side bottom + slideHeight / 2 + 3",
+      "notes": "Clearance is the slide thickness, 12.7 mm (1/2 in) each side; aim for 12.9 to 13.2 mm, never less. Cabinet member holes follow System 32 (first hole 37 mm from the front edge, 32 mm pitch). Drawer box length usually equals the slide length; the cabinet inside depth needs about 10 mm more."
+    },
+    {
+      "id": "side-mount-ball-bearing-inch",
+      "label": "Side mount ball bearing slide (inch lengths)",
+      "system": "inch",
+      "mount": "side",
+      "clearancePerSide": 12.7,
+      "clearanceTolerancePlus": 0.5,
+      "clearanceToleranceMinus": 0,
+      "clearanceRule": "drawerBoxWidth = openingWidth - 2 * clearancePerSide",
+      "slideHeight": 45,
+      "minDrawerSideHeight": 60,
+      "lengths": [
+        254,
+        304.8,
+        355.6,
+        406.4,
+        457.2,
+        508,
+        558.8,
+        609.6,
+        660.4,
+        711.2
+      ],
+      "cabinetDepthAllowance": 10,
+      "screwRow": {
+        "setbackFront": 37,
+        "pitch": 32,
+        "holeDiameter": 4.5,
+        "pilotDiameter": 2.5
+      },
+      "mountHeightRule": "slide centerline = drawer side bottom + slideHeight / 2 + 3",
+      "notes": "Lengths 10 to 28 in, 2 in steps. Same 1/2 in side clearance."
+    },
+    {
+      "id": "undermount-concealed",
+      "label": "Undermount concealed slide",
+      "system": "metric",
+      "mount": "under",
+      "insideWidthRule": "drawerInsideWidth = openingWidth - 42",
+      "insideWidthDeduction": 42,
+      "insideWidthTolerancePlus": 0,
+      "insideWidthToleranceMinus": 1.5,
+      "drawerSideMin": 12,
+      "drawerSideMax": 16,
+      "bottomRecess": 13,
+      "rearNotchHeight": 13,
+      "rearNotchWidth": 35,
+      "rearHookHole": {
+        "diameter": 6,
+        "depth": 10
+      },
+      "clearanceAbove": 7,
+      "clearanceBelow": 14,
+      "runnerHeightFrameless": 37,
+      "lengths": [
+        250,
+        300,
+        350,
+        400,
+        450,
+        500,
+        550,
+        600
+      ],
+      "drawerLengthRule": "drawerLength = slideLength",
+      "cabinetDepthAllowance": 3,
+      "notes": "Drawer bottom is recessed 13 mm up from the side's lower edge so the runner hides under it. The back is notched at each end (13 mm tall, at least 35 mm from the side) and bored for the rear hook. For 16 to 19 mm drawer sides the deduction is 49 mm instead of 42. Height: the drawer box is the opening less about 22 mm."
+    },
+    {
+      "id": "undermount-concealed-inch",
+      "label": "Undermount concealed slide (inch lengths)",
+      "system": "inch",
+      "mount": "under",
+      "insideWidthRule": "drawerInsideWidth = openingWidth - 42",
+      "insideWidthDeduction": 42,
+      "insideWidthTolerancePlus": 0,
+      "insideWidthToleranceMinus": 1.5,
+      "drawerSideMin": 12.7,
+      "drawerSideMax": 15.875,
+      "bottomRecess": 12.7,
+      "rearNotchHeight": 12.7,
+      "rearNotchWidth": 34.925,
+      "rearHookHole": {
+        "diameter": 6.35,
+        "depth": 10.3
+      },
+      "clearanceAbove": 7.1,
+      "clearanceBelow": 14.3,
+      "runnerHeightFrameless": 37,
+      "lengths": [
+        228.6,
+        304.8,
+        381,
+        457.2,
+        533.4
+      ],
+      "drawerLengthRule": "drawerLength = slideLength",
+      "cabinetDepthAllowance": 3,
+      "notes": "Inch version: 1/2 to 5/8 in drawer sides, 1-21/32 in (42 mm) width deduction, 1/2 in bottom recess, notch 1/2 x 1-3/8 in, hook hole 1/4 in by 13/32 in. Lengths 9, 12, 15, 18, 21 in."
+    }
+  ],
+  "shelfPins": [
+    {
+      "id": "shelf-pin-5mm",
+      "label": "Shelf pins 5 mm, System 32",
+      "system": "metric",
+      "holeDiameter": 5,
+      "holeDepth": 10,
+      "maxDepthRule": "panelThickness - 6",
+      "setbackFront": 37,
+      "setbackBack": 37,
+      "pitch": 32,
+      "firstHoleFromBottom": 200,
+      "notes": "System 32: hole rows 37 mm in from the front and back edges, holes every 32 mm. Hole depth 10 mm suits common pins; never closer than 6 mm to the outer face. First and last hole positions are a common default and depend on the design."
+    },
+    {
+      "id": "shelf-pin-quarter-inch",
+      "label": "Shelf pins 1/4 in",
+      "system": "inch",
+      "holeDiameter": 6.35,
+      "holeDepth": 9.525,
+      "maxDepthRule": "panelThickness - 6",
+      "setbackFront": 38.1,
+      "setbackBack": 38.1,
+      "pitch": 31.75,
+      "firstHoleFromBottom": 203.2,
+      "notes": "1/4 in holes 3/8 in deep, rows 1-1/2 in from the edges, 1-1/4 in pitch (many inch jigs use 32 mm pitch instead). 1/4 in pins also fit 6 mm holes."
+    }
+  ],
+  "screws": [
+    {
+      "id": "wood-screw-4x30",
+      "label": "Wood screw 4 x 30 (18 mm stock)",
+      "system": "metric",
+      "diameter": 4,
+      "length": 30,
+      "headDiameter": 8,
+      "pilotDiameter": 2.5,
+      "pilotDiameterHardwood": 3,
+      "clearanceDiameter": 4.5,
+      "countersinkDiameter": 8.5,
+      "countersinkAngle": 90,
+      "use": "butt",
+      "notes": "Butt joint screw through 18 mm stock into a panel edge: at least 12 mm of thread in the edge. 4 x 35 for 19 mm stock. Pilot in the edge only; clearance hole through the face panel."
+    },
+    {
+      "id": "wood-screw-8-1-1-4",
+      "label": "Wood screw #8 x 1-1/4 in (3/4 in stock)",
+      "system": "inch",
+      "diameter": 4.166,
+      "length": 31.75,
+      "headDiameter": 8.4,
+      "pilotDiameter": 2.8,
+      "pilotDiameterHardwood": 3.2,
+      "clearanceDiameter": 4.5,
+      "countersinkDiameter": 9,
+      "countersinkAngle": 82,
+      "use": "butt",
+      "notes": "#8 screw (0.164 in) through 3/4 in stock into an edge. 7/64 in pilot in softwood and plywood, 1/8 in in hardwood, 11/64 in clearance. Flat head screws are 82 degrees in inch sizes, 90 degrees in metric."
+    },
+    {
+      "id": "hardware-screw-3-5x16",
+      "label": "Hardware screw 3.5 x 16 (#6 x 5/8 in)",
+      "system": "metric",
+      "diameter": 3.5,
+      "length": 16,
+      "headDiameter": 7,
+      "pilotDiameter": 2.5,
+      "pilotDiameterHardwood": 2.5,
+      "clearanceDiameter": 4,
+      "countersinkDiameter": 0,
+      "countersinkAngle": 0,
+      "use": "hardware",
+      "notes": "Pan head screw for hinge plates, slides and hinge cups. 16 mm keeps the tip inside 18 mm and 3/4 in stock. #6 x 5/8 in is the inch equivalent."
+    },
+    {
+      "id": "euro-screw-6-3x13",
+      "label": "System screw 6.3 x 13 (Euro screw)",
+      "system": "metric",
+      "diameter": 6.3,
+      "length": 13,
+      "headDiameter": 9,
+      "pilotDiameter": 5,
+      "pilotDiameterHardwood": 5,
+      "clearanceDiameter": 0,
+      "countersinkDiameter": 0,
+      "countersinkAngle": 0,
+      "use": "system32",
+      "notes": "Screw for 5 mm System 32 holes (hinge plates, slides). Hole 5 mm, 13 mm deep."
+    }
+  ],
+  "inserts": [
+    {
+      "id": "insert-m6",
+      "label": "Threaded insert M6 (hex drive)",
+      "system": "metric",
+      "thread": "M6",
+      "holeDiameterSoft": 8.9,
+      "holeDiameterHard": 9.4,
+      "holeDepth": 15,
+      "boltClearance": 6.5,
+      "crossDowelDiameter": 10,
+      "notes": "Hole for a knife thread wood insert: low end of the range in softwood and MDF, high end in hardwood and plywood. Hole depth is insert length plus 2 mm (13 mm insert default). Cross dowel (barrel nut) alternative needs a 10 mm hole; bolt clearance 6.5 mm."
+    },
+    {
+      "id": "insert-m8",
+      "label": "Threaded insert M8 (hex drive)",
+      "system": "metric",
+      "thread": "M8",
+      "holeDiameterSoft": 10.9,
+      "holeDiameterHard": 11.4,
+      "holeDepth": 17,
+      "boltClearance": 8.5,
+      "crossDowelDiameter": 12,
+      "notes": "Same rules as M6. Cross dowel for M8 needs a 12 mm hole; bolt clearance 8.5 mm. Insert length default 15 mm."
+    },
+    {
+      "id": "insert-quarter-20",
+      "label": "Threaded insert 1/4-20 (hex drive)",
+      "system": "inch",
+      "thread": "1/4-20",
+      "holeDiameterSoft": 8.731,
+      "holeDiameterHard": 10.319,
+      "holeDepth": 15,
+      "boltClearance": 7.144,
+      "crossDowelDiameter": 10,
+      "notes": "11/32 in hole in softwood, 13/32 in in hardwood (25/64 in is also published). Bolt clearance 9/32 in. 1/4-20 cross dowels are made with a 10 mm barrel."
+    }
+  ],
+  "dowels": [
+    {
+      "id": "dowel-6x30",
+      "label": "Dowel 6 x 30",
+      "system": "metric",
+      "diameter": 6,
+      "length": 30,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 10,
+      "edgeDepth": 22,
+      "pitch": 32,
+      "setback": 37,
+      "minPanel": 12,
+      "notes": "For 12 to 16 mm stock. Diameter about one third to one half of the panel thickness."
+    },
+    {
+      "id": "dowel-8x30",
+      "label": "Dowel 8 x 30",
+      "system": "metric",
+      "diameter": 8,
+      "length": 30,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 12,
+      "edgeDepth": 20,
+      "pitch": 32,
+      "setback": 37,
+      "minPanel": 16,
+      "notes": "Default carcass dowel for 18 mm stock: 12 mm into the face, 20 mm into the edge (2 mm total spare for glue). Holes on the 32 mm grid, the first 37 mm in from the edge."
+    },
+    {
+      "id": "dowel-8x35",
+      "label": "Dowel 8 x 35",
+      "system": "metric",
+      "diameter": 8,
+      "length": 35,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 13,
+      "edgeDepth": 24,
+      "pitch": 32,
+      "setback": 37,
+      "minPanel": 19,
+      "notes": "For 19 mm and 3/4 in stock."
+    },
+    {
+      "id": "dowel-10x40",
+      "label": "Dowel 10 x 40",
+      "system": "metric",
+      "diameter": 10,
+      "length": 40,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 15,
+      "edgeDepth": 27,
+      "pitch": 64,
+      "setback": 37,
+      "minPanel": 22,
+      "notes": "For 22 mm and thicker stock, tables and frames."
+    },
+    {
+      "id": "dowel-quarter-1-1-4",
+      "label": "Dowel 1/4 x 1-1/4 in",
+      "system": "inch",
+      "diameter": 6.35,
+      "length": 31.75,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 10,
+      "edgeDepth": 23.75,
+      "pitch": 31.75,
+      "setback": 38.1,
+      "minPanel": 12.7,
+      "notes": "For 1/2 to 5/8 in stock."
+    },
+    {
+      "id": "dowel-5-16-1-1-2",
+      "label": "Dowel 5/16 x 1-1/2 in",
+      "system": "inch",
+      "diameter": 7.938,
+      "length": 38.1,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 12.7,
+      "edgeDepth": 27.4,
+      "pitch": 31.75,
+      "setback": 38.1,
+      "minPanel": 19.05,
+      "notes": "Default dowel for 3/4 in stock: 1/2 in into the face."
+    },
+    {
+      "id": "dowel-3-8-2",
+      "label": "Dowel 3/8 x 2 in",
+      "system": "inch",
+      "diameter": 9.525,
+      "length": 50.8,
+      "holeDepthRule": "length / 2 + 1 each side; face hole no deeper than panelThickness - 6",
+      "faceDepth": 15.875,
+      "edgeDepth": 36.9,
+      "pitch": 63.5,
+      "setback": 38.1,
+      "minPanel": 22.225,
+      "notes": "For 7/8 in and thicker stock, frames and tables."
+    }
+  ],
+  "edgeBanding": [
+    {
+      "id": "band-0-5x22",
+      "label": "Edge banding 0.5 x 22 mm",
+      "kind": "band",
+      "system": "metric",
+      "thickness": 0.5,
+      "width": 22,
+      "forPanelMax": 19,
+      "sizeDeduction": 0,
+      "notes": "Thin veneer or paper band for 16 to 19 mm stock. Too thin to change cut sizes."
+    },
+    {
+      "id": "band-1x22",
+      "label": "Edge banding 1 x 22 mm",
+      "kind": "band",
+      "system": "metric",
+      "thickness": 1,
+      "width": 22,
+      "forPanelMax": 19,
+      "sizeDeduction": 1,
+      "notes": "Common PVC or ABS band for 16 to 19 mm stock."
+    },
+    {
+      "id": "band-2x22",
+      "label": "Edge banding 2 x 22 mm",
+      "kind": "band",
+      "system": "metric",
+      "thickness": 2,
+      "width": 22,
+      "forPanelMax": 19,
+      "sizeDeduction": 2,
+      "notes": "Heavy PVC or ABS band for doors, drawer fronts and worktop edges."
+    },
+    {
+      "id": "band-1x23",
+      "label": "Edge banding 1 x 23 mm",
+      "kind": "band",
+      "system": "metric",
+      "thickness": 1,
+      "width": 23,
+      "forPanelMax": 19,
+      "sizeDeduction": 1,
+      "notes": "Slightly wider band for 19 mm stock or 18 mm plywood that runs thick."
+    },
+    {
+      "id": "band-2x23",
+      "label": "Edge banding 2 x 23 mm",
+      "kind": "band",
+      "system": "metric",
+      "thickness": 2,
+      "width": 23,
+      "forPanelMax": 19,
+      "sizeDeduction": 2,
+      "notes": "Heavy band for 19 mm stock."
+    },
+    {
+      "id": "band-veneer-3-4",
+      "label": "Veneer edge banding 3/4 in",
+      "kind": "band",
+      "system": "inch",
+      "thickness": 0.5,
+      "width": 19.05,
+      "forPanelMax": 18.5,
+      "sizeDeduction": 0,
+      "notes": "Iron on wood veneer for 3/4 in nominal plywood (actual 18 to 18.5 mm)."
+    },
+    {
+      "id": "band-veneer-13-16",
+      "label": "Veneer edge banding 13/16 in",
+      "kind": "band",
+      "system": "inch",
+      "thickness": 0.5,
+      "width": 20.6375,
+      "forPanelMax": 19.05,
+      "sizeDeduction": 0,
+      "notes": "Wider veneer band that leaves trim allowance on 3/4 in stock."
+    },
+    {
+      "id": "band-defaults",
+      "label": "Which edges get banded",
+      "kind": "defaults",
+      "overhang": 1.5,
+      "carcass": [
+        "front"
+      ],
+      "shelf": [
+        "front"
+      ],
+      "door": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "drawerFront": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "back": [],
+      "drawerBox": [
+        "top"
+      ],
+      "notes": "Common default: exposed front edges of sides, top, bottom, fixed and adjustable shelves; all four edges of doors and drawer fronts; top edges of drawer box sides; nothing on backs or hidden edges. The band is 3 to 5 mm wider than the panel and trimmed flush (about 1.5 mm overhang each face). With 1 mm and thicker bands, sizeDeduction comes off the cut size at each banded edge so the finished size stays true."
+    }
+  ],
+  "sheets": [
+    {
+      "id": "sheet-2440x1220",
+      "label": "2440 x 1220 mm",
+      "kind": "size",
+      "system": "metric",
+      "width": 2440,
+      "height": 1220,
+      "notes": "Common European and Asian plywood, MDF and particleboard size (8 x 4 ft rounded)."
+    },
+    {
+      "id": "sheet-2500x1250",
+      "label": "2500 x 1250 mm",
+      "kind": "size",
+      "system": "metric",
+      "width": 2500,
+      "height": 1250,
+      "notes": "Common European board size; also sold as Baltic birch."
+    },
+    {
+      "id": "sheet-3050x1525",
+      "label": "3050 x 1525 mm",
+      "kind": "size",
+      "system": "metric",
+      "width": 3050,
+      "height": 1525,
+      "notes": "Large format Baltic birch and some plywoods (10 x 5 ft)."
+    },
+    {
+      "id": "sheet-1525x1525",
+      "label": "1525 x 1525 mm",
+      "kind": "size",
+      "system": "metric",
+      "width": 1525,
+      "height": 1525,
+      "notes": "Traditional Baltic birch size (5 x 5 ft)."
+    },
+    {
+      "id": "sheet-96x48",
+      "label": "96 x 48 in",
+      "kind": "size",
+      "system": "inch",
+      "width": 2438.4,
+      "height": 1219.2,
+      "notes": "North American 4 x 8 ft sheet."
+    },
+    {
+      "id": "sheet-97x49",
+      "label": "97 x 49 in",
+      "kind": "size",
+      "system": "inch",
+      "width": 2463.8,
+      "height": 1244.6,
+      "notes": "Oversize North American MDF and melamine sheet, 1/2 in extra each way for trimming."
+    },
+    {
+      "id": "ply-3-4",
+      "label": "Plywood 3/4 in nominal",
+      "kind": "thickness",
+      "nominal": 19.05,
+      "actual": 18.3,
+      "actualMin": 17.8,
+      "actualMax": 18.5,
+      "notes": "Sold as 23/32 in (18.26 mm). Hardwood plywood runs 18 to 18.5 mm. Measure before cutting joints.",
+      "system": "inch"
+    },
+    {
+      "id": "ply-5-8",
+      "label": "Plywood 5/8 in nominal",
+      "kind": "thickness",
+      "nominal": 15.875,
+      "actual": 15.1,
+      "actualMin": 14.7,
+      "actualMax": 15.5,
+      "notes": "Sold as 19/32 in (15.08 mm).",
+      "system": "inch"
+    },
+    {
+      "id": "ply-1-2",
+      "label": "Plywood 1/2 in nominal",
+      "kind": "thickness",
+      "nominal": 12.7,
+      "actual": 11.9,
+      "actualMin": 11.5,
+      "actualMax": 12.3,
+      "notes": "Sold as 15/32 in (11.91 mm).",
+      "system": "inch"
+    },
+    {
+      "id": "ply-1-4",
+      "label": "Plywood 1/4 in nominal",
+      "kind": "thickness",
+      "nominal": 6.35,
+      "actual": 5.2,
+      "actualMin": 5,
+      "actualMax": 6,
+      "notes": "Hardwood plywood 1/4 in is usually 5.2 to 5.5 mm (often 7/32 in).",
+      "system": "inch"
+    },
+    {
+      "id": "birch-18",
+      "label": "Baltic birch 18 mm",
+      "kind": "thickness",
+      "nominal": 18,
+      "actual": 18,
+      "actualMin": 17.5,
+      "actualMax": 18.3,
+      "notes": "13 plies. Metric nominal, close to true.",
+      "system": "metric"
+    },
+    {
+      "id": "birch-15",
+      "label": "Baltic birch 15 mm",
+      "kind": "thickness",
+      "nominal": 15,
+      "actual": 15,
+      "actualMin": 14.5,
+      "actualMax": 15.3,
+      "notes": "11 plies.",
+      "system": "metric"
+    },
+    {
+      "id": "birch-12",
+      "label": "Baltic birch 12 mm",
+      "kind": "thickness",
+      "nominal": 12,
+      "actual": 12,
+      "actualMin": 11.6,
+      "actualMax": 12.3,
+      "notes": "9 plies. Sold as 1/2 in in North America.",
+      "system": "metric"
+    },
+    {
+      "id": "birch-9",
+      "label": "Baltic birch 9 mm",
+      "kind": "thickness",
+      "nominal": 9,
+      "actual": 9,
+      "actualMin": 8.7,
+      "actualMax": 9.3,
+      "notes": "7 plies.",
+      "system": "metric"
+    },
+    {
+      "id": "birch-6",
+      "label": "Baltic birch 6 mm",
+      "kind": "thickness",
+      "nominal": 6,
+      "actual": 6.5,
+      "actualMin": 6,
+      "actualMax": 6.5,
+      "notes": "5 plies, often 6.5 mm. Sold as 1/4 in.",
+      "system": "metric"
+    },
+    {
+      "id": "mdf-3-4",
+      "label": "MDF 3/4 in",
+      "kind": "thickness",
+      "nominal": 19.05,
+      "actual": 19,
+      "actualMin": 18.7,
+      "actualMax": 19.2,
+      "notes": "MDF is made to its nominal thickness within about 0.2 mm.",
+      "system": "inch"
+    },
+    {
+      "id": "mdf-1-2",
+      "label": "MDF 1/2 in",
+      "kind": "thickness",
+      "nominal": 12.7,
+      "actual": 12.7,
+      "actualMin": 12.5,
+      "actualMax": 12.9,
+      "notes": "Close to nominal.",
+      "system": "inch"
+    },
+    {
+      "id": "mdf-18",
+      "label": "MDF 18 mm",
+      "kind": "thickness",
+      "nominal": 18,
+      "actual": 18,
+      "actualMin": 17.8,
+      "actualMax": 18.2,
+      "notes": "Metric MDF; also made in 6, 9, 12, 15, 22 and 25 mm.",
+      "system": "metric"
+    },
+    {
+      "id": "mdf-12",
+      "label": "MDF 12 mm",
+      "kind": "thickness",
+      "nominal": 12,
+      "actual": 12,
+      "actualMin": 11.8,
+      "actualMax": 12.2,
+      "notes": "Drawer bottoms and backs.",
+      "system": "metric"
+    },
+    {
+      "id": "mdf-6",
+      "label": "MDF 6 mm",
+      "kind": "thickness",
+      "nominal": 6,
+      "actual": 6,
+      "actualMin": 5.8,
+      "actualMax": 6.2,
+      "notes": "Backs and drawer bottoms.",
+      "system": "metric"
+    },
+    {
+      "id": "ply-18",
+      "label": "Plywood 18 mm",
+      "kind": "thickness",
+      "nominal": 18,
+      "actual": 18,
+      "actualMin": 17.5,
+      "actualMax": 18.5,
+      "notes": "Metric plywood (poplar, pine, eucalyptus cores).",
+      "system": "metric"
+    },
+    {
+      "id": "ply-15",
+      "label": "Plywood 15 mm",
+      "kind": "thickness",
+      "nominal": 15,
+      "actual": 15,
+      "actualMin": 14.5,
+      "actualMax": 15.3,
+      "notes": "Metric plywood.",
+      "system": "metric"
+    },
+    {
+      "id": "ply-12",
+      "label": "Plywood 12 mm",
+      "kind": "thickness",
+      "nominal": 12,
+      "actual": 12,
+      "actualMin": 11.5,
+      "actualMax": 12.3,
+      "notes": "Metric plywood.",
+      "system": "metric"
+    },
+    {
+      "id": "ply-6",
+      "label": "Plywood 6 mm",
+      "kind": "thickness",
+      "nominal": 6,
+      "actual": 6,
+      "actualMin": 5.5,
+      "actualMax": 6.3,
+      "notes": "Metric plywood.",
+      "system": "metric"
+    }
+  ]
+}

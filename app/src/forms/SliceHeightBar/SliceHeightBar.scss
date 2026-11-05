@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+
+.slice-height-bar {
+  position: relative;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 160px;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  cursor: crosshair;
+  overflow: hidden;
+}
+
+.slice-height-bar__band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: tokens.$panel-raised;
+}
+
+.slice-height-bar__band--even {
+  background: tokens.$panel-sunken;
+}
+
+.slice-height-bar__cut {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 2px solid tokens.$text-muted;
+}
+
+.slice-height-bar__cut--active {
+  border-top-color: tokens.$accent;
+}

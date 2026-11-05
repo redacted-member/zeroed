@@ -1,0 +1,34 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.align-form {
+  @include form.form-root;
+}
+
+.align-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.align-form__group {
+  @include form.form-group;
+}
+
+.align-form__legend {
+  @include form.form-legend;
+}
+
+.align-form__choices {
+  @include form.form-choices;
+}
+
+.align-form__choice {
+  @include form.form-choice;
+}
+
+.align-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: tokens.$space-1;
+}

@@ -1,0 +1,44 @@
+@use '../../styles/tokens';
+
+.notes-dialog {
+  width: min(560px, calc(100vw - 48px));
+}
+
+.notes-dialog__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2 tokens.$space-3;
+}
+
+.notes-dialog__label {
+  font-weight: 600;
+}
+
+.notes-dialog__text {
+  min-height: 220px;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  font: inherit;
+  resize: vertical;
+}
+
+.notes-dialog__text:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.notes-dialog__hint {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.notes-dialog__error {
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}

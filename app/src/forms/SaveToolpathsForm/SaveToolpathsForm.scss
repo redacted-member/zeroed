@@ -1,0 +1,123 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.save-toolpaths {
+  @include form.form-root;
+}
+
+.save-toolpaths__hint {
+  @include form.form-hint;
+}
+
+.save-toolpaths__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.save-toolpaths__group {
+  @include form.form-group;
+
+  // A fieldset is as wide as its widest content by default: the long post
+  // processor names then pushed the panel sideways.
+  min-width: 0;
+}
+
+.save-toolpaths__legend {
+  @include form.form-legend;
+}
+
+.save-toolpaths__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  min-width: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.save-toolpaths__input {
+  width: 100%;
+  min-width: 0;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.save-toolpaths__machines {
+  align-self: flex-start;
+  margin: 0 0 tokens.$space-1;
+  padding: 2px tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.save-toolpaths__machines:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.save-toolpaths__list {
+  display: flex;
+  flex-direction: column;
+  max-height: 180px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  list-style: none;
+}
+
+.save-toolpaths__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  min-width: 0;
+  padding: 0 tokens.$space-1;
+}
+
+.save-toolpaths__row--selected {
+  background: tokens.$panel-sunken;
+}
+
+.save-toolpaths__name-button {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  min-height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.save-toolpaths__name-button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.save-toolpaths__tool {
+  overflow: hidden;
+  color: tokens.$text-muted;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.save-toolpaths__save {
+  @include form.form-button-primary;
+
+  align-self: stretch;
+}

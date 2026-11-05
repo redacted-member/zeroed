@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "id": "library-table",
+  "name": "Library Table",
+  "category": "Tables",
+  "description": "Mission library table: a heavy top on slab ends, open book shelves at each end between corner legs, aprons under the top and a low stretcher.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"A Library Table\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "library", "book shelves", "writing table", "hall table"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 1067, "min": 900, "max": 1600, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 762, "min": 600, "max": 900, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 768, "min": 700, "max": 790, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 19, "min": 18, "max": 25, "group": "Material" },
+    { "key": "tt", "label": "Top thickness", "kind": "thickness", "default": 28, "min": 19, "max": 32, "group": "Material" },
+    { "key": "sd", "label": "End shelf depth", "kind": "length", "default": 178, "min": 150, "max": 250, "group": "Layout" },
+    { "key": "end_shelves", "label": "Shelves at each end", "kind": "count", "default": 2, "min": 1, "max": 3, "group": "Layout" },
+    { "key": "apron", "label": "Apron height", "kind": "length", "default": 140, "min": 80, "max": 160, "group": "Layout" },
+    { "key": "stretcher", "label": "Low stretcher", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{tt}",
+    "span": "{width}-2*{sd}-2*{t}",
+    "pitch": "({leg_h}-80)/{end_shelves}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" },
+    "top": { "label": "Top", "thickness": "{tt}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "top", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{tt}" },
+      "features": [ { "kind": "radius", "r": "6" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{sd}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "80" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{sd}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "80" } ] },
+    { "id": "leg_lf", "name": "Left front leg", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{sd}", "d": "{t}", "h": "{leg_h}" } },
+    { "id": "leg_lb", "name": "Left back leg", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{depth}-{t}", "z": "0", "w": "{sd}", "d": "{t}", "h": "{leg_h}" } },
+    { "id": "leg_rf", "name": "Right front leg", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{sd}", "y": "0", "z": "0", "w": "{sd}", "d": "{t}", "h": "{leg_h}" } },
+    { "id": "leg_rb", "name": "Right back leg", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{sd}", "y": "{depth}-{t}", "z": "0", "w": "{sd}", "d": "{t}", "h": "{leg_h}" } },
+    { "id": "eshelf_l", "name": "Left shelf {i+1}", "material": "main", "grain": "long", "repeat": "{end_shelves}",
+      "box": { "x": "0", "y": "{t}", "z": "80+{i}*{pitch}", "w": "{sd}", "d": "{depth}-2*{t}", "h": "{t}" } },
+    { "id": "eshelf_r", "name": "Right shelf {i+1}", "material": "main", "grain": "long", "repeat": "{end_shelves}",
+      "box": { "x": "{width}-{sd}", "y": "{t}", "z": "80+{i}*{pitch}", "w": "{sd}", "d": "{depth}-2*{t}", "h": "{t}" } },
+    { "id": "apron_f", "name": "Front apron", "material": "main", "grain": "long",
+      "box": { "x": "{sd}+{t}", "y": "{t}+6", "z": "{leg_h}-{apron}", "w": "{span}", "d": "{t}", "h": "{apron}" } },
+    { "id": "apron_b", "name": "Back apron", "material": "main", "grain": "long",
+      "box": { "x": "{sd}+{t}", "y": "{depth}-2*{t}-6", "z": "{leg_h}-{apron}", "w": "{span}", "d": "{t}", "h": "{apron}" } },
+    { "id": "stretcher", "name": "Stretcher", "material": "main", "grain": "long", "when": "{stretcher}",
+      "box": { "x": "{sd}+{t}", "y": "{depth}/2-{t}/2", "z": "100", "w": "{span}", "d": "{t}", "h": "75" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "eshelf_l|eshelf_r", "b": "*", "class": "shelf" },
+    { "a": "leg_*", "b": "end_l|end_r", "class": "leg" },
+    { "a": "apron_f|apron_b", "b": "end_l|end_r", "class": "apron" },
+    { "a": "stretcher", "b": "end_l|end_r", "class": "stretcher" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to base", "default": "dowel" },
+    "shelf": { "label": "End shelves", "default": "dado" },
+    "leg": { "label": "Legs to ends", "default": "dowel" },
+    "apron": { "label": "Aprons to ends", "default": "mortiseTenon" },
+    "stretcher": { "label": "Stretcher to ends", "default": "wedgedTenon" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "6", "note": "let the top move across the grain" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

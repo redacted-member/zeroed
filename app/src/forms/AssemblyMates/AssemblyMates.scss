@@ -1,0 +1,145 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-mates {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+}
+
+.assembly-mates__heading {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-mates__empty {
+  @include form.form-hint;
+}
+
+.assembly-mates__list {
+  max-height: 160px;
+  margin: 0;
+  padding: tokens.$space-1 0;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  list-style: none;
+}
+
+.assembly-mates__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  width: 100%;
+  padding: 2px tokens.$space-2;
+  border: 0;
+  background: none;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.assembly-mates__row:hover {
+  background: tokens.$panel-raised;
+}
+
+.assembly-mates__row[aria-pressed='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.assembly-mates__row:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.assembly-mates__row--suppressed .assembly-mates__label {
+  color: tokens.$text-muted;
+  text-decoration: line-through;
+}
+
+.assembly-mates__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.assembly-mates__state {
+  flex: none;
+  padding: 0 4px;
+  border: tokens.$border-width solid currentcolor;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+.assembly-mates__row--conflict .assembly-mates__state,
+.assembly-mates__row--missing .assembly-mates__state {
+  color: tokens.$danger;
+}
+
+.assembly-mates__row--conflict[aria-pressed='true'] .assembly-mates__state,
+.assembly-mates__row--missing[aria-pressed='true'] .assembly-mates__state {
+  color: inherit;
+}
+
+.assembly-mates__conflicts,
+.assembly-mates__off {
+  margin: 0;
+  color: tokens.$danger;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-mates__editor {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  margin: 0;
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+}
+
+.assembly-mates__legend {
+  padding: 0 tokens.$space-1;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.assembly-mates__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-mates__select {
+  font: inherit;
+}
+
+.assembly-mates__check {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-mates__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.assembly-mates__button {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}

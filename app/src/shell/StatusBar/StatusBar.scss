@@ -1,0 +1,54 @@
+@use '../../styles/tokens';
+
+.status-bar {
+  display: flex;
+  gap: tokens.$space-4;
+  align-items: center;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-3;
+  border-top: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-bg;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.status-bar__item {
+  min-width: 0;
+  overflow: hidden;
+  font-family: tokens.$font-mono;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status-bar__spacer {
+  flex: 1;
+}
+
+.status-bar__item--line {
+  flex-shrink: 1;
+  font-family: inherit;
+}
+
+.status-bar__item[data-status='offline'] {
+  color: tokens.$danger;
+}
+
+.status-bar__item--error {
+  color: tokens.$danger;
+}
+
+.status-bar__item--quick {
+  color: tokens.$text;
+}
+
+.status-bar__busy {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  font-family: inherit;
+}
+
+.status-bar__progress {
+  width: 160px;
+  height: 8px;
+}

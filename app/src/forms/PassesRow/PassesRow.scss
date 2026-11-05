@@ -1,0 +1,16 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.passes-row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.passes-row__count {
+  flex: 1;
+}
+
+.passes-row__button {
+  @include form.form-button;
+}

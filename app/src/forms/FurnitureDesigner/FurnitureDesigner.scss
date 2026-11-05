@@ -1,0 +1,77 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.furniture-designer {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.furniture-designer__hint,
+.furniture-designer__status {
+  @include form.form-hint;
+}
+
+.furniture-designer__error {
+  @include form.form-error;
+}
+
+.furniture-designer__name,
+.furniture-designer__save {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.furniture-designer__label {
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-designer__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.furniture-designer__input:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -1px;
+}
+
+.furniture-designer__issues {
+  padding: tokens.$space-2;
+  border: tokens.$border-width solid tokens.$warning;
+  border-radius: tokens.$radius;
+}
+
+.furniture-designer__heading {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.furniture-designer__list {
+  margin: 0;
+  padding-left: tokens.$space-4;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-designer__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.furniture-designer__button {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-designer__button--primary {
+  @include form.form-button-primary;
+}

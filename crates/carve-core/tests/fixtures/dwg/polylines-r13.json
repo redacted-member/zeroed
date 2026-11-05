@@ -1,0 +1,81 @@
+{
+  "paths": [
+    {
+      "layer": "0",
+      "path": {
+        "subpaths": [
+          {
+            "closed": true,
+            "segments": [
+              {
+                "bulge": 0.5,
+                "kind": "arc",
+                "to": {
+                  "x": 10.0,
+                  "y": 0.0
+                }
+              },
+              {
+                "kind": "line",
+                "to": {
+                  "x": 10.0,
+                  "y": 10.0
+                }
+              },
+              {
+                "bulge": -1.0,
+                "kind": "arc",
+                "to": {
+                  "x": 0.0,
+                  "y": 10.0
+                }
+              },
+              {
+                "kind": "line",
+                "to": {
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              }
+            ],
+            "start": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "layer": "0",
+      "path": {
+        "subpaths": [
+          {
+            "closed": false,
+            "segments": [
+              {
+                "kind": "line",
+                "to": {
+                  "x": 5.0,
+                  "y": 7.0
+                }
+              },
+              {
+                "kind": "line",
+                "to": {
+                  "x": 9.0,
+                  "y": -3.0
+                }
+              }
+            ],
+            "start": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": []
+}

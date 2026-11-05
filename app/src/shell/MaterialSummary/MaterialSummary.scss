@@ -1,0 +1,61 @@
+@use '../../styles/tokens';
+
+.material-summary {
+  flex: 0 0 auto;
+  padding: tokens.$space-1 tokens.$space-3 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.material-summary__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.material-summary__title {
+  margin: 0;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.material-summary__set {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.material-summary__set:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.material-summary__body {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: flex-start;
+  margin: tokens.$space-1 0 0;
+}
+
+.material-summary__rows {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.material-summary__row {
+  display: flex;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.material-summary__label {
+  color: tokens.$text-muted;
+}
+
+.material-summary__value {
+  margin: 0;
+}

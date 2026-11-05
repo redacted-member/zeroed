@@ -1,0 +1,43 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-measure {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.assembly-measure__heading {
+  margin: 0;
+  padding: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.assembly-measure__status {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-measure__results {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  font-size: tokens.$font-size-small;
+  font-variant-numeric: tabular-nums;
+  list-style: none;
+}
+
+.assembly-measure__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+  font-size: tokens.$font-size-small;
+}

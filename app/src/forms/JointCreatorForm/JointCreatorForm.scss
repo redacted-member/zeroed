@@ -1,0 +1,159 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.joint-creator {
+  @include form.form-root;
+}
+
+.joint-creator__hint {
+  margin: 0;
+  padding: tokens.$space-2;
+  border-left: 3px solid tokens.$accent;
+  background: tokens.$panel-raised;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.joint-creator__problem {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+  font-weight: 600;
+}
+
+.joint-creator__small {
+  @include form.form-hint;
+}
+
+.joint-creator__notes {
+  @include form.form-hint;
+
+  margin: 0;
+  padding-left: 1em;
+}
+
+.joint-creator__group {
+  @include form.form-group;
+}
+
+.joint-creator__legend {
+  @include form.form-legend;
+}
+
+.joint-creator__picks {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px tokens.$space-2;
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.joint-creator__picks dt {
+  color: tokens.$text-muted;
+}
+
+.joint-creator__picks dd {
+  margin: 0;
+}
+
+.joint-creator__box {
+  @include form.form-row;
+
+  padding: tokens.$space-2;
+  border: tokens.$border-width dashed tokens.$accent;
+  border-radius: tokens.$radius;
+}
+
+.joint-creator__box-text {
+  font-size: tokens.$font-size-small;
+}
+
+.joint-creator__more summary {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.joint-creator__more-body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  margin-top: tokens.$space-2;
+}
+
+.joint-creator__relief {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.joint-creator__relief-label {
+  font-size: tokens.$font-size-small;
+}
+
+.joint-creator__relief-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: tokens.$space-1;
+}
+
+.joint-creator__view {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.joint-creator__explode {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  font-size: tokens.$font-size-small;
+}
+
+.joint-creator__explode input {
+  flex: 1 1 auto;
+}
+
+.joint-creator__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: tokens.$space-1;
+}
+
+.joint-creator__list-title {
+  margin: 0 0 tokens.$space-1;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.joint-creator__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.joint-creator__row {
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: none;
+  color: tokens.$text;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  cursor: pointer;
+}
+
+.joint-creator__row:hover {
+  border-color: tokens.$border-strong;
+}
+
+.joint-creator__row[aria-pressed='true'] {
+  border-color: tokens.$accent;
+}

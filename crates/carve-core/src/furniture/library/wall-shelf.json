@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "id": "wall-shelf",
+  "name": "Wall Shelf",
+  "category": "Decor",
+  "description": "Hanging shelf with rounded ends that run past the shelves, two to six shelves and top and bottom hanging rails to screw through.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["wall", "shelves", "hanging", "spice rack"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 600, "min": 300, "max": 1000, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 500, "min": 300, "max": 900, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 180, "min": 100, "max": 300, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 12, "max": 25, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 3, "min": 2, "max": 6, "group": "Layout" },
+    { "key": "corner", "label": "End corner radius", "kind": "length", "default": 40, "min": 1, "max": 45, "group": "Style" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "run": "50",
+    "pitch": "({height}-2*{run}-{t})/({shelves}-1)",
+    "rail_h": "60"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "radius", "r": "{corner}" } ] },
+    { "id": "right", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "radius", "r": "{corner}" } ] },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{shelves}",
+      "box": { "x": "{t}", "y": "0", "z": "{run}+{i}*{pitch}", "w": "{inner_w}", "d": "{depth}-{t}", "h": "{t}" } },
+    { "id": "rail_top", "name": "Top hanging rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "{height}-{run}-{t}-{rail_h}", "w": "{inner_w}", "d": "{t}", "h": "{rail_h}" } },
+    { "id": "rail_low", "name": "Bottom hanging rail", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "{run}+{t}", "w": "{inner_w}", "d": "{t}", "h": "{rail_h}" } }
+  ],
+  "connections": [
+    { "a": "shelf", "b": "left|right", "class": "shelf" },
+    { "a": "rail_top|rail_low", "b": "left|right", "class": "rail" }
+  ],
+  "jointClasses": {
+    "shelf": { "label": "Shelves to ends", "default": "dado" },
+    "rail": { "label": "Hanging rails to ends", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Wall screws 5 x 60 mm with anchors", "count": "4", "note": "through the hanging rails into studs where you can" }
+  ]
+}

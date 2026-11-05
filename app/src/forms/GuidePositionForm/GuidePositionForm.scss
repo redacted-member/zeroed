@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.guide-position {
+  @include form.form-root;
+}
+
+.guide-position__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.guide-position__group {
+  @include form.form-group;
+}
+
+.guide-position__legend {
+  @include form.form-legend;
+}
+
+.guide-position__choice {
+  @include form.form-choice;
+}

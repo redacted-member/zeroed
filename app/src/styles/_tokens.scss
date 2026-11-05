@@ -1,0 +1,208 @@
+// Design tokens. Values live here, the custom properties they feed are emitted
+// once by global.scss through the theme mixin below. Components use the Sass
+// variables, never the raw hex values.
+
+$light: (
+  panel-bg: #f0f0f0,
+  panel-raised: #f7f7f7,
+  panel-sunken: #e4e4e4,
+  border: #c8c8c8,
+  border-strong: #a5a5a5,
+  text: #1c1c1c,
+  text-muted: #5b5b5b,
+  accent: #1f6fd6,
+  accent-hover: #1a5fb8,
+  accent-text: #ffffff,
+  danger: #b3261e,
+  warning: #b86e00,
+  success: #2e7d32,
+  canvas-bg: #ffffff,
+  canvas-grid: #e8e8e8,
+  canvas-grid-major: #d2d2d2,
+  canvas-job-fill: #ffffff,
+  canvas-job-border: #6f6f6f,
+  canvas-ruler-bg: #ebebeb,
+  canvas-ruler-line: #bdbdbd,
+  canvas-ruler-text: #4a4a4a,
+  canvas-datum: #1f6fd6,
+  canvas-selection: #e01ec8,
+  canvas-hover: #ff7f00,
+  canvas-handle: #1f6fd6,
+  canvas-handle-fill: #ffffff,
+  canvas-guide: #00a5b8,
+  canvas-snap: #d62828,
+  canvas-rubber-band: #1f6fd6,
+  canvas-rubber-band-fill: rgba(31, 111, 214, 0.08),
+  canvas-node: #1c1c1c,
+  canvas-node-fill: #ffffff,
+  canvas-node-smooth: #1f6fd6,
+  canvas-control-handle: #8a8a8a,
+  canvas-open-vector: #d62828,
+  view3d-top: #4c525a,
+  view3d-bottom: #23262b,
+  view3d-material: #bda684,
+  view3d-grid: #5c636c,
+  // Icon roles (shell/ToolIcons/iconSpec.ts): each at least 3:1 against the
+  // panels, the surfaces at least 3:1 against every stroke drawn on them.
+  icon-vector: #1f64c8,
+  icon-node: #c95a00,
+  icon-model: #7f5500,
+  icon-toolpath: #8a3cc2,
+  icon-result: #cc2936,
+  icon-ok: #23852f,
+  icon-warning: #a86400,
+  icon-model-fill: #f8dc92,
+  icon-material-fill: #f3dcbb,
+);
+
+$dark: (
+  panel-bg: #2b2e33,
+  panel-raised: #34383e,
+  panel-sunken: #232529,
+  border: #43474e,
+  border-strong: #5a5f67,
+  text: #eceef1,
+  text-muted: #a7adb6,
+  accent: #4b93ec,
+  accent-hover: #6aa8f2,
+  accent-text: #10161f,
+  danger: #f2867d,
+  warning: #f0b35a,
+  success: #7cc47f,
+  canvas-bg: #181a1e,
+  canvas-grid: #262a30,
+  canvas-grid-major: #343942,
+  canvas-job-fill: #202328,
+  canvas-job-border: #8a919b,
+  canvas-ruler-bg: #2b2e33,
+  canvas-ruler-line: #5a5f67,
+  canvas-ruler-text: #a7adb6,
+  canvas-datum: #4b93ec,
+  canvas-selection: #e01ec8,
+  canvas-hover: #ff7f00,
+  canvas-handle: #4b93ec,
+  canvas-handle-fill: #2b2e33,
+  canvas-guide: #2ec4d6,
+  canvas-snap: #f2867d,
+  canvas-rubber-band: #4b93ec,
+  canvas-rubber-band-fill: rgba(31, 111, 214, 0.1),
+  canvas-node: #eceef1,
+  canvas-node-fill: #2b2e33,
+  canvas-node-smooth: #4b93ec,
+  canvas-control-handle: #9aa1aa,
+  canvas-open-vector: #f2867d,
+  canvas-toolpath-cut: #6aa8f2,
+  canvas-toolpath-rapid: #f2867d,
+  canvas-toolpath-solid: #7fa8f5,
+  canvas-toolpath-plunge: #36c6e0,
+  canvas-toolpath-retract: #63c96f,
+  canvas-toolpath-join: #b58cff,
+  view3d-top: #3a3f46,
+  view3d-bottom: #16181c,
+  view3d-material: #a68f70,
+  view3d-grid: #4a5058,
+  icon-vector: #6aa7ff,
+  icon-node: #ff9c45,
+  icon-model: #f0c050,
+  icon-toolpath: #c79bff,
+  icon-result: #ff6b6b,
+  icon-ok: #63c96f,
+  icon-warning: #f0b35a,
+  icon-model-fill: #574010,
+  icon-material-fill: #54402c,
+);
+
+// Colour handles used by components.
+$panel-bg: var(--panel-bg);
+$panel-raised: var(--panel-raised);
+$panel-sunken: var(--panel-sunken);
+$border: var(--border);
+$border-strong: var(--border-strong);
+$text: var(--text);
+$text-muted: var(--text-muted);
+$accent: var(--accent);
+$accent-hover: var(--accent-hover);
+$accent-text: var(--accent-text);
+$danger: var(--danger);
+$warning: var(--warning);
+$success: var(--success);
+$canvas-bg: var(--canvas-bg);
+$view3d-top: var(--view3d-top);
+$view3d-bottom: var(--view3d-bottom);
+$icon-vector: var(--icon-vector);
+$icon-node: var(--icon-node);
+$icon-model: var(--icon-model);
+$icon-toolpath: var(--icon-toolpath);
+$icon-result: var(--icon-result);
+$icon-ok: var(--icon-ok);
+$icon-warning: var(--icon-warning);
+$icon-model-fill: var(--icon-model-fill);
+$icon-material-fill: var(--icon-material-fill);
+
+// Metrics.
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$radius: 3px;
+$border-width: 1px;
+$panel-width-left: 268px;
+$panel-width-right: 248px;
+// Docked panel content: every panel body (a left or right dock form, the
+// tool grids) insets its content by these, so panels line up edge to edge.
+$panel-inset-x: $space-3;
+$panel-inset-y: $space-3;
+$panel-gap: $space-3;
+// Tool grids: one button size in both docks, a caption over each row.
+$tool-button-size: 34px;
+$tool-grid-gap: $space-1;
+$row-height: 26px;
+// The document bar: the dock titles and the view bar share this height.
+$doc-bar-height: 32px;
+$font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$font-size: 13px;
+$font-size-small: 12px;
+$font-size-heading: 13px;
+$font-size-caption: 11px;
+
+@mixin emit-scheme($scheme) {
+  @each $name, $value in $scheme {
+    --#{$name}: #{$value};
+  }
+}
+
+// Emitted once, by global.scss.
+@mixin theme-custom-properties {
+  :root {
+    color-scheme: light dark;
+    @include emit-scheme($light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      @include emit-scheme($dark);
+    }
+  }
+}
+
+// Draws the icons inside in one color, the text color of the control: for
+// a disabled control (grey), and for a highlighted or pressed one whose
+// accent background the role colors would not stand out on.
+@mixin tool-icon-mono {
+  --icon-vector: currentColor;
+  --icon-node: currentColor;
+  --icon-model: currentColor;
+  --icon-toolpath: currentColor;
+  --icon-result: currentColor;
+  --icon-ok: currentColor;
+  --icon-warning: currentColor;
+  --icon-model-fill: color-mix(in srgb, currentColor 25%, transparent);
+  --icon-material-fill: color-mix(in srgb, currentColor 25%, transparent);
+}
+
+@mixin focus-ring {
+  outline: 2px solid $accent;
+  outline-offset: 1px;
+}

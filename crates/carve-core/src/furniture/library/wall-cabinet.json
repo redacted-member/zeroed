@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "id": "wall-cabinet",
+  "name": "Wall Cabinet",
+  "category": "Kitchen",
+  "description": "Hanging cabinet with fixed shelves, one or two overlay doors on cup hinges and an inset back.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["cabinet", "kitchen", "doors", "wall"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 600, "min": 300, "max": 1000, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 720, "min": 300, "max": 1000, "group": "Size" },
+    { "key": "depth", "label": "Carcass depth", "kind": "length", "default": 320, "min": 200, "max": 400, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 12, "max": 25, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 2, "min": 0, "max": 4, "group": "Layout" },
+    { "key": "doors", "label": "Doors", "kind": "choice", "default": "two", "options": ["none", "one", "two"], "group": "Layout" },
+    { "key": "back", "label": "Back", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "body_d": "{depth}-{back}*6",
+    "space": "({height}-2*{t}-{shelves}*{t})/({shelves}+1)",
+    "door_w": "({width}-4)/2"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "back": { "label": "Back", "thickness": "6" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" } },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" } },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "0", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{shelves}",
+      "box": { "x": "{t}", "y": "0", "z": "{t}+({i}+1)*{space}+{i}*{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "back", "name": "Back", "material": "back", "grain": "long", "when": "{back}",
+      "box": { "x": "{t}", "y": "{depth}-6", "z": "0", "w": "{inner_w}", "d": "6", "h": "{height}" } },
+    { "id": "door", "name": "Door", "material": "main", "grain": "long", "when": "{doors_one}",
+      "box": { "x": "1", "y": "-{t}", "z": "1", "w": "{width}-2", "d": "{t}", "h": "{height}-2" },
+      "features": [ { "kind": "hingeCups", "edge": "left" } ] },
+    { "id": "door_l", "name": "Left door", "material": "main", "grain": "long", "when": "{doors_two}",
+      "box": { "x": "1", "y": "-{t}", "z": "1", "w": "{door_w}", "d": "{t}", "h": "{height}-2" },
+      "features": [ { "kind": "hingeCups", "edge": "left" } ] },
+    { "id": "door_r", "name": "Right door", "material": "main", "grain": "long", "when": "{doors_two}",
+      "box": { "x": "{width}/2+1", "y": "-{t}", "z": "1", "w": "{door_w}", "d": "{t}", "h": "{height}-2" },
+      "features": [ { "kind": "hingeCups", "edge": "right" } ] }
+  ],
+  "connections": [
+    { "a": "door|door_l|door_r", "b": "*", "class": "door" },
+    { "a": "shelf", "b": "left|right", "class": "shelf" },
+    { "a": "top|bottom", "b": "left|right", "class": "carcass" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "carcass": { "label": "Top and bottom", "default": "rabbet" },
+    "shelf": { "label": "Shelves to sides", "default": "dado" },
+    "back": { "label": "Back", "default": "rabbet" },
+    "door": { "label": "Doors", "default": "none" }
+  },
+  "hardware": [
+    { "name": "Cup hinges 35 mm, full overlay", "count": "2*{doors_one}+4*{doors_two}", "note": "two per door; add a third above 900 mm" },
+    { "name": "Door pulls", "count": "{doors_one}+2*{doors_two}" },
+    { "name": "Cabinet hangers", "count": "2", "note": "or a French cleat behind the back" }
+  ]
+}

@@ -1,0 +1,54 @@
+@use '../../styles/tokens';
+
+.node-properties {
+  position: absolute;
+  top: tokens.$space-4;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 200px;
+  padding: tokens.$space-3;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+}
+
+.node-properties__title {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.node-properties__row {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  font-size: tokens.$font-size-small;
+}
+
+.node-properties__label {
+  width: 1.5em;
+}
+
+.node-properties__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.node-properties__unit {
+  color: tokens.$text-muted;
+}
+
+.node-properties__buttons {
+  display: flex;
+  gap: tokens.$space-2;
+  justify-content: flex-end;
+}
+
+.node-properties__button {
+  padding: tokens.$space-1 tokens.$space-3;
+}

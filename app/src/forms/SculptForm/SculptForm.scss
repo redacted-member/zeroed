@@ -1,0 +1,63 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.sculpt-form {
+  @include form.form-root;
+}
+
+.sculpt-form__hint {
+  @include form.form-hint;
+}
+
+.sculpt-form__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.sculpt-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.sculpt-form__group {
+  @include form.form-group;
+}
+
+.sculpt-form__legend {
+  @include form.form-legend;
+}
+
+.sculpt-form__row {
+  @include form.form-row;
+
+  font-size: tokens.$font-size-small;
+}
+
+.sculpt-form__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.sculpt-form__load {
+  justify-self: start;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  font: inherit;
+}
+
+.sculpt-form__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: tokens.$space-2;
+}
+
+.sculpt-form__load--primary {
+  @include form.form-button-primary;
+}

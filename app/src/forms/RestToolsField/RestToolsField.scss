@@ -1,0 +1,61 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.rest-tools {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.rest-tools__empty {
+  @include form.form-hint;
+}
+
+.rest-tools__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rest-tools__row {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+}
+
+.rest-tools__name {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.rest-tools__size {
+  color: tokens.$text-muted;
+}
+
+.rest-tools__button {
+  min-width: tokens.$row-height;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rest-tools__button:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.rest-tools__button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}

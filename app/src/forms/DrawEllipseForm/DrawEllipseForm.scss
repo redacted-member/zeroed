@@ -1,0 +1,21 @@
+@use '../../styles/form';
+
+.draw-ellipse {
+  @include form.form-root;
+}
+
+.draw-ellipse__hint {
+  @include form.form-hint;
+}
+
+.draw-ellipse__group {
+  @include form.form-group;
+}
+
+.draw-ellipse__legend {
+  @include form.form-legend;
+}
+
+.draw-ellipse__button {
+  @include form.form-button;
+}

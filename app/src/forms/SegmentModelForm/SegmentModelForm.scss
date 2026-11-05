@@ -1,0 +1,88 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.segment-model {
+  @include form.form-root;
+}
+
+.segment-model__hint {
+  @include form.form-hint;
+}
+
+.segment-model__error {
+  @include form.form-error;
+}
+
+.segment-model__group {
+  @include form.form-group;
+}
+
+.segment-model__legend {
+  @include form.form-legend;
+}
+
+.segment-model__row {
+  @include form.form-row;
+
+  justify-content: flex-start;
+}
+
+.segment-model__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.segment-model__button--primary {
+  @include form.form-button-primary;
+}
+
+.segment-model__slider {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.segment-model__range {
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.segment-model__actions {
+  @include form.form-row;
+
+  justify-content: flex-end;
+}
+
+.segment-model__tree,
+.segment-model__children {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.segment-model__children {
+  padding-left: tokens.$space-3;
+}
+
+.segment-model__node-button {
+  width: 100%;
+  min-height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    border-color: tokens.$border-strong;
+  }
+}
+
+.segment-model__node-button--selected {
+  border-color: tokens.$accent;
+  background: tokens.$panel-sunken;
+}

@@ -1,0 +1,4752 @@
+[
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/lion_head.gltf",
+  "name": "Lion Head",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "lion",
+   "head",
+   "mane",
+   "big cat",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/lion_head",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.13,
+   1,
+   1
+  ],
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 12,
+  "size": 120,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/bull_head.gltf",
+  "name": "Bull Head",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "bull",
+   "head",
+   "horns",
+   "cattle",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/bull_head",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.08,
+   1,
+   1
+  ],
+  "keep": 0.85,
+  "alpha": 1.0,
+  "height": 12,
+  "size": 120,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/horse_statue_01.gltf",
+  "name": "Rearing Horse",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "horse",
+   "rearing",
+   "stallion",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/horse_statue_01",
+  "author": "Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.06,
+   1,
+   1
+  ],
+  "keep": 0.7,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 130,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/concrete_cat_statue.gltf",
+  "name": "Sitting Cat",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "cat",
+   "kitten",
+   "pet",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/concrete_cat_statue",
+  "author": "Rico Cilliers, Riley Queen",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "keep": 0.7,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 110,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/bronze_whale_statue.gltf",
+  "name": "Humpback Whale",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "whale",
+   "humpback",
+   "sea",
+   "ocean",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/bronze_whale_statue",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "rot": [
+   0,
+   90,
+   0
+  ],
+  "crop": [
+   0,
+   0.38,
+   1,
+   1
+  ],
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 150,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/bronze_shark_statue.gltf",
+  "name": "Shark",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "shark",
+   "fish",
+   "sea",
+   "ocean",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/bronze_shark_statue",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "rot": [
+   0,
+   90,
+   0
+  ],
+  "crop": [
+   0,
+   0.42,
+   1,
+   1
+  ],
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 150,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/marble_bust_01.gltf",
+  "name": "Classical Bust",
+  "category": "Faces and Figures/Busts and Statues",
+  "tags": [
+   "bust",
+   "head",
+   "face",
+   "man",
+   "classical",
+   "roman"
+  ],
+  "url": "https://polyhaven.com/a/marble_bust_01",
+  "author": "Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.22,
+   1,
+   1
+  ],
+  "keep": 0.7,
+  "alpha": 1.0,
+  "height": 12,
+  "size": 120,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/garden_gnome.gltf",
+  "name": "Garden Gnome",
+  "category": "Faces and Figures/Busts and Statues",
+  "tags": [
+   "gnome",
+   "garden",
+   "beard",
+   "hat",
+   "figure"
+  ],
+  "url": "https://polyhaven.com/a/garden_gnome",
+  "author": "Bhargav Kubal",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.03,
+   1,
+   1
+  ],
+  "keep": 0.7,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 140,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/gothic_statue.gltf",
+  "name": "Gothic King",
+  "category": "Faces and Figures/Busts and Statues",
+  "tags": [
+   "king",
+   "crown",
+   "statue",
+   "gothic",
+   "medieval",
+   "figure"
+  ],
+  "url": "https://polyhaven.com/a/gothic_statue",
+  "author": "Benny Weimer",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.04,
+   1,
+   1
+  ],
+  "keep": 0.7,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 160,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/ornate_mirror_01.gltf",
+  "name": "Mirror Crest",
+  "category": "Architectural/Carved Panels",
+  "tags": [
+   "crest",
+   "ornament",
+   "scroll",
+   "mirror",
+   "top"
+  ],
+  "url": "https://polyhaven.com/a/ornate_mirror_01",
+  "author": "James Ray Cock",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0.25,
+   0.9,
+   0.75,
+   1
+  ],
+  "keep": 1.0,
+  "alpha": 0.5,
+  "height": 6,
+  "size": 120,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/fancy_picture_frame_02.gltf",
+  "name": "Baroque Frame",
+  "category": "Frames and Plaques/Carved Frames",
+  "tags": [
+   "frame",
+   "baroque",
+   "ornate",
+   "picture",
+   "acanthus"
+  ],
+  "url": "https://polyhaven.com/a/fancy_picture_frame_02",
+  "author": "Rob Tuytel, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "keep": 0.6,
+  "alpha": 0.5,
+  "height": 8,
+  "size": 180,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/lambis_shell.gltf",
+  "name": "Spider Conch",
+  "category": "Nautical/Sea Shells",
+  "tags": [
+   "shell",
+   "conch",
+   "spider conch",
+   "sea",
+   "beach"
+  ],
+  "url": "https://polyhaven.com/a/lambis_shell",
+  "author": "Kuutti Siitonen",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "rot": [
+   90,
+   0,
+   0
+  ],
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 120,
+  "renormal": true
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/dc9e437b.glb",
+  "name": "Tree of Life Panel",
+  "category": "Architectural/Carved Panels",
+  "tags": [
+   "panel",
+   "tree",
+   "door",
+   "carved",
+   "cabinet",
+   "garden"
+  ],
+  "url": "https://collection.cooperhewitt.org/view/objects/asitem/id/122727",
+  "author": "Smithsonian Institution (Panel for a cabinet door)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "keep": 1.0,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 150,
+  "fill": true,
+  "base": 1.0
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/476ad7f6.glb",
+  "name": "Temple Frieze",
+  "category": "Architectural/Carved Panels",
+  "tags": [
+   "frieze",
+   "temple",
+   "figures",
+   "stone",
+   "panel"
+  ],
+  "url": "https://asia.si.edu/object/F1921.1/",
+  "author": "Smithsonian Institution (Gathering of Buddhas and bodhisattvas)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "keep": 1.0,
+  "alpha": 1.0,
+  "height": 6,
+  "size": 190,
+  "fill": true,
+  "base": 1.0
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/727b4bb6.glb",
+  "name": "Paradise Frieze",
+  "category": "Architectural/Carved Panels",
+  "tags": [
+   "frieze",
+   "temple",
+   "figures",
+   "stone",
+   "panel"
+  ],
+  "url": "https://asia.si.edu/object/F1921.2/",
+  "author": "Smithsonian Institution (Western Paradise of the Buddha Amitabha)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "keep": 1.0,
+  "alpha": 1.0,
+  "height": 6,
+  "size": 190,
+  "fill": true,
+  "base": 1.0
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/082c87e9.glb",
+  "name": "Arrow Maker and Daughter",
+  "category": "Faces and Figures/Busts and Statues",
+  "tags": [
+   "figures",
+   "statue",
+   "father",
+   "daughter",
+   "seated"
+  ],
+  "url": "https://americanart.si.edu/collections/search/artwork/?id=14630",
+  "author": "Smithsonian Institution (Old Arrow Maker)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "crop": [
+   0,
+   0.05,
+   1,
+   1
+  ],
+  "keep": 0.95,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 140,
+  "renormal": true
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/bark_brown_01.png",
+  "name": "Brown Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "trunk"
+  ],
+  "url": "https://polyhaven.com/a/bark_brown_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/bark_brown_02.png",
+  "name": "Knotted Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "knots"
+  ],
+  "url": "https://polyhaven.com/a/bark_brown_02",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/bark_willow.png",
+  "name": "Willow Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "willow"
+  ],
+  "url": "https://polyhaven.com/a/bark_willow",
+  "author": "Dario Barresi, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/pine_bark.png",
+  "name": "Pine Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "pine",
+   "plates"
+  ],
+  "url": "https://polyhaven.com/a/pine_bark",
+  "author": "Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/palm_bark.png",
+  "name": "Palm Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "palm",
+   "fibers"
+  ],
+  "url": "https://polyhaven.com/a/palm_bark",
+  "author": "Charlotte Baglioni",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/tree_bark_03.png",
+  "name": "Furrowed Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "furrows"
+  ],
+  "url": "https://polyhaven.com/a/tree_bark_03",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/japanese_cedar_bark.png",
+  "name": "Cedar Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "cedar",
+   "strips"
+  ],
+  "url": "https://polyhaven.com/a/japanese_cedar_bark",
+  "author": "Charlotte Baglioni",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/sakura_bark.png",
+  "name": "Cherry Bark",
+  "category": "Textures/Tree Bark",
+  "tags": [
+   "texture",
+   "tileable",
+   "bark",
+   "tree",
+   "cherry"
+  ],
+  "url": "https://polyhaven.com/a/sakura_bark",
+  "author": "Charlotte Baglioni",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/weathered_planks.png",
+  "name": "Weathered Planks",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "planks",
+   "boards",
+   "grain"
+  ],
+  "url": "https://polyhaven.com/a/weathered_planks",
+  "author": "Dario Barresi, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rough_wood.png",
+  "name": "Split Wood",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "grain",
+   "split",
+   "rough"
+  ],
+  "url": "https://polyhaven.com/a/rough_wood",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/old_planks_02.png",
+  "name": "Old Planks",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "planks",
+   "boards",
+   "grain"
+  ],
+  "url": "https://polyhaven.com/a/old_planks_02",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/medieval_wood.png",
+  "name": "Studded Planks",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "planks",
+   "studs",
+   "nails",
+   "door"
+  ],
+  "url": "https://polyhaven.com/a/medieval_wood",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/wooden_rough_planks.png",
+  "name": "Log Siding",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "logs",
+   "siding",
+   "cabin"
+  ],
+  "url": "https://polyhaven.com/a/wooden_rough_planks",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/herringbone_parquet.png",
+  "name": "Herringbone Parquet",
+  "category": "Textures/Wood",
+  "tags": [
+   "texture",
+   "tileable",
+   "wood",
+   "parquet",
+   "floor",
+   "herringbone"
+  ],
+  "url": "https://polyhaven.com/a/herringbone_parquet",
+  "author": "Jenelle van Heerden, Sergej Majboroda",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 1.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/castle_brick_01.png",
+  "name": "Castle Brick",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "brick",
+   "wall",
+   "castle"
+  ],
+  "url": "https://polyhaven.com/a/castle_brick_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/castle_wall_slates.png",
+  "name": "Slate Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "slate",
+   "wall"
+  ],
+  "url": "https://polyhaven.com/a/castle_wall_slates",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/cobblestone_floor_01.png",
+  "name": "Cobblestones",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "cobblestones",
+   "street",
+   "paving"
+  ],
+  "url": "https://polyhaven.com/a/cobblestone_floor_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/cobblestone_large_01.png",
+  "name": "Rubble Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "rubble",
+   "wall",
+   "cobblestones"
+  ],
+  "url": "https://polyhaven.com/a/cobblestone_large_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/japanese_stone_wall.png",
+  "name": "Fitted Stone Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "wall",
+   "blocks",
+   "fitted"
+  ],
+  "url": "https://polyhaven.com/a/japanese_stone_wall",
+  "author": "Rico Cilliers, Charlotte Baglioni, Dario Barresi",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/large_pebbles.png",
+  "name": "Pebble Floor",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "pebbles",
+   "river stones"
+  ],
+  "url": "https://polyhaven.com/a/large_pebbles",
+  "author": "Charlotte Baglioni",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/medieval_blocks_02.png",
+  "name": "Worn Blocks",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "blocks",
+   "wall",
+   "worn"
+  ],
+  "url": "https://polyhaven.com/a/medieval_blocks_02",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/red_brick.png",
+  "name": "Running Bond Brick",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "brick",
+   "wall",
+   "running bond"
+  ],
+  "url": "https://polyhaven.com/a/red_brick",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rock_wall_08.png",
+  "name": "Stone Block Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "blocks",
+   "wall"
+  ],
+  "url": "https://polyhaven.com/a/rock_wall_08",
+  "author": "Amal Kumar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rustic_stone_wall.png",
+  "name": "Rustic Stone Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "wall",
+   "rustic"
+  ],
+  "url": "https://polyhaven.com/a/rustic_stone_wall",
+  "author": "Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/stacked_stone_wall.png",
+  "name": "Stacked Stone",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "stacked",
+   "dry stone",
+   "wall"
+  ],
+  "url": "https://polyhaven.com/a/stacked_stone_wall",
+  "author": "Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/stone_wall.png",
+  "name": "Flagstone Wall",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "stone",
+   "flagstone",
+   "wall"
+  ],
+  "url": "https://polyhaven.com/a/stone_wall",
+  "author": "Dario Barresi, Charlotte Baglioni",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/roof_slates_02.png",
+  "name": "Roof Slates",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "slate",
+   "roof",
+   "shingles"
+  ],
+  "url": "https://polyhaven.com/a/roof_slates_02",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/clay_roof_tiles.png",
+  "name": "Clay Roof Tiles",
+  "category": "Textures/Stone Walls",
+  "tags": [
+   "texture",
+   "tileable",
+   "roof",
+   "tiles",
+   "clay",
+   "barrel"
+  ],
+  "url": "https://polyhaven.com/a/clay_roof_tiles",
+  "author": "Amal Kumar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rock_boulder_cracked.png",
+  "name": "Cracked Boulder",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "stone",
+   "cracks"
+  ],
+  "url": "https://polyhaven.com/a/rock_boulder_cracked",
+  "author": "Dario Barresi, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/lichen_rock.png",
+  "name": "Layered Rock",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "stone",
+   "layers",
+   "strata"
+  ],
+  "url": "https://polyhaven.com/a/lichen_rock",
+  "author": "Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/marble_cliff_01.png",
+  "name": "Marble Cliff",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "marble",
+   "cliff"
+  ],
+  "url": "https://polyhaven.com/a/marble_cliff_01",
+  "author": "Amal Kumar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/mossy_rock.png",
+  "name": "Weathered Rock",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "stone",
+   "weathered"
+  ],
+  "url": "https://polyhaven.com/a/mossy_rock",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rock_face.png",
+  "name": "Rock Face",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "stone",
+   "cliff"
+  ],
+  "url": "https://polyhaven.com/a/rock_face",
+  "author": "Greg Zaal, Dario Barresi",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/cliff_side.png",
+  "name": "Cliff Face",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "cliff",
+   "ledges"
+  ],
+  "url": "https://polyhaven.com/a/cliff_side",
+  "author": "James Ray Cock, Jenelle van Heerden, Dario Barresi",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/sandstone_cracks.png",
+  "name": "Cracked Sandstone",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "sandstone",
+   "cracks"
+  ],
+  "url": "https://polyhaven.com/a/sandstone_cracks",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/dry_riverbed_rock.png",
+  "name": "Riverbed Rock",
+  "category": "Textures/Rock",
+  "tags": [
+   "texture",
+   "tileable",
+   "rock",
+   "stone",
+   "riverbed"
+  ],
+  "url": "https://polyhaven.com/a/dry_riverbed_rock",
+  "author": "Amal Kumar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/mud_cracked_dry_03.png",
+  "name": "Cracked Mud",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "mud",
+   "earth",
+   "cracks",
+   "dry"
+  ],
+  "url": "https://polyhaven.com/a/mud_cracked_dry_03",
+  "author": "Dario Barresi, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/sand_01.png",
+  "name": "Rippled Sand",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "sand",
+   "ripples",
+   "beach",
+   "dune"
+  ],
+  "url": "https://polyhaven.com/a/sand_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/forest_floor.png",
+  "name": "Forest Floor",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "forest",
+   "ground",
+   "twigs",
+   "leaves"
+  ],
+  "url": "https://polyhaven.com/a/forest_floor",
+  "author": "eye-candy.xyz",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/dry_decay_leaves.png",
+  "name": "Fallen Leaves",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "leaves",
+   "autumn",
+   "ground"
+  ],
+  "url": "https://polyhaven.com/a/dry_decay_leaves",
+  "author": "Amal Kumar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/snow_01.png",
+  "name": "Snow Drift",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "snow",
+   "winter",
+   "drift"
+  ],
+  "url": "https://polyhaven.com/a/snow_01",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/moon_01.png",
+  "name": "Moon Surface",
+  "category": "Textures/Ground and Leaves",
+  "tags": [
+   "texture",
+   "tileable",
+   "moon",
+   "craters",
+   "lunar"
+  ],
+  "url": "https://polyhaven.com/a/moon_01",
+  "author": "Greg Zaal, Rico Cilliers, Jenelle van Heerden, Dario Barresi",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/hessian_230.png",
+  "name": "Burlap",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "burlap",
+   "hessian",
+   "weave"
+  ],
+  "url": "https://polyhaven.com/a/hessian_230",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/poly_wool_herringbone.png",
+  "name": "Herringbone Wool",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "wool",
+   "herringbone",
+   "tweed"
+  ],
+  "url": "https://polyhaven.com/a/poly_wool_herringbone",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/quatrefoil_jacquard_fabric.png",
+  "name": "Quatrefoil Jacquard",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "jacquard",
+   "quatrefoil",
+   "woven"
+  ],
+  "url": "https://polyhaven.com/a/quatrefoil_jacquard_fabric",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/floral_jacquard.png",
+  "name": "Floral Jacquard",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "jacquard",
+   "floral",
+   "brocade"
+  ],
+  "url": "https://polyhaven.com/a/floral_jacquard",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/ribbed_corduroy.png",
+  "name": "Corduroy",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "corduroy",
+   "ribbed"
+  ],
+  "url": "https://polyhaven.com/a/ribbed_corduroy",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/waffle_pique_cotton.png",
+  "name": "Waffle Weave",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "waffle",
+   "cotton",
+   "weave"
+  ],
+  "url": "https://polyhaven.com/a/waffle_pique_cotton",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/knitted_fleece.png",
+  "name": "Knit",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "knit",
+   "wool",
+   "sweater"
+  ],
+  "url": "https://polyhaven.com/a/knitted_fleece",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 1.0
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rough_linen.png",
+  "name": "Linen",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "fabric",
+   "linen",
+   "weave"
+  ],
+  "url": "https://polyhaven.com/a/rough_linen",
+  "author": "colormass, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 0.8
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/brown_leather.png",
+  "name": "Leather",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "leather",
+   "hide",
+   "grain"
+  ],
+  "url": "https://polyhaven.com/a/brown_leather",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 0.8
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/corrugated_iron.png",
+  "name": "Corrugated Iron",
+  "category": "Textures/Metal",
+  "tags": [
+   "texture",
+   "tileable",
+   "metal",
+   "corrugated",
+   "sheet",
+   "roof"
+  ],
+  "url": "https://polyhaven.com/a/corrugated_iron",
+  "author": "Jenelle van Heerden, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/metal_plate.png",
+  "name": "Diamond Plate",
+  "category": "Textures/Metal",
+  "tags": [
+   "texture",
+   "tileable",
+   "metal",
+   "diamond plate",
+   "tread",
+   "checker plate"
+  ],
+  "url": "https://polyhaven.com/a/metal_plate",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 1.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rust_coarse_01.png",
+  "name": "Pitted Rust",
+  "category": "Textures/Metal",
+  "tags": [
+   "texture",
+   "tileable",
+   "metal",
+   "rust",
+   "pitted"
+  ],
+  "url": "https://polyhaven.com/a/rust_coarse_01",
+  "author": "Dimitrios Savva, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 1.5
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/rusty_metal.png",
+  "name": "Ribbed Sheet Metal",
+  "category": "Textures/Metal",
+  "tags": [
+   "texture",
+   "tileable",
+   "metal",
+   "ribbed",
+   "sheet"
+  ],
+  "url": "https://polyhaven.com/a/rusty_metal",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/thatch_roof_angled.png",
+  "name": "Thatch",
+  "category": "Textures/Thatch and Reed",
+  "tags": [
+   "texture",
+   "tileable",
+   "thatch",
+   "straw",
+   "roof"
+  ],
+  "url": "https://polyhaven.com/a/thatch_roof_angled",
+  "author": "Rob Tuytel, Dimitrios Savva",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "polyhaven-textures",
+  "file": "phtex/reed_roof_03.png",
+  "name": "Reed Roof",
+  "category": "Textures/Thatch and Reed",
+  "tags": [
+   "texture",
+   "tileable",
+   "reed",
+   "thatch",
+   "roof"
+  ],
+  "url": "https://polyhaven.com/a/reed_roof_03",
+  "author": "Rob Tuytel",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100,
+  "px": 512,
+  "height": 3
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/aquarium.svg",
+  "name": "Fish",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "fish",
+   "aquarium",
+   "sea",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/aquarium.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/animal-shelter.svg",
+  "name": "Cat and Dog",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "cat",
+   "dog",
+   "pets",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/animal-shelter.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/dog-park.svg",
+  "name": "Dog",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "dog",
+   "pet",
+   "puppy",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/dog-park.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/horse-riding.svg",
+  "name": "Horse and Rider",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "horse",
+   "rider",
+   "equestrian",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/horse-riding.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/zoo.svg",
+  "name": "Lion",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "lion",
+   "big cat",
+   "zoo",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/zoo.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/veterinary.svg",
+  "name": "Paw Print",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "paw",
+   "pet",
+   "dog",
+   "cat",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/veterinary.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/bicycle.svg",
+  "name": "Bicycle",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "bicycle",
+   "bike",
+   "cycling",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/bicycle.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/car.svg",
+  "name": "Car",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "car",
+   "auto",
+   "vehicle",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/car.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/bus.svg",
+  "name": "Bus",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "bus",
+   "transit",
+   "vehicle",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/bus.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/rocket.svg",
+  "name": "Rocket",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "rocket",
+   "space",
+   "launch",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/rocket.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/airport.svg",
+  "name": "Airplane",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "airplane",
+   "plane",
+   "flight",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/airport.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/ferry.svg",
+  "name": "Ferry",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "ferry",
+   "boat",
+   "ship",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/ferry.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/harbor.svg",
+  "name": "Anchor",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "anchor",
+   "harbor",
+   "nautical",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/harbor.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/rail.svg",
+  "name": "Train",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "train",
+   "rail",
+   "locomotive",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/rail.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/lighthouse.svg",
+  "name": "Lighthouse",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "lighthouse",
+   "coast",
+   "beacon",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/lighthouse.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/castle.svg",
+  "name": "Castle",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "castle",
+   "fort",
+   "tower",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/castle.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/windmill.svg",
+  "name": "Windmill",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "windmill",
+   "farm",
+   "mill",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/windmill.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/watermill.svg",
+  "name": "Watermill",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "watermill",
+   "mill",
+   "wheel",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/watermill.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/mountain.svg",
+  "name": "Mountain",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "mountain",
+   "peak",
+   "summit",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/mountain.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/volcano.svg",
+  "name": "Volcano",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "volcano",
+   "mountain",
+   "eruption",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/volcano.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/park.svg",
+  "name": "Pine Tree",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "tree",
+   "pine",
+   "forest",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/park.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/park-alt1.svg",
+  "name": "Round Tree",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "tree",
+   "park",
+   "leaf",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/park-alt1.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/garden.svg",
+  "name": "Tulip",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "flower",
+   "tulip",
+   "garden",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/garden.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/florist.svg",
+  "name": "Flower",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "flower",
+   "florist",
+   "bloom",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/florist.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/farm.svg",
+  "name": "Barn and Silo",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "barn",
+   "farm",
+   "country",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/farm.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/campsite.svg",
+  "name": "Tent",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "tent",
+   "camping",
+   "outdoors",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/campsite.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/picnic-site.svg",
+  "name": "Picnic Table",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "picnic",
+   "table",
+   "outdoors",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/picnic-site.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/home.svg",
+  "name": "House",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "house",
+   "home",
+   "cottage",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/home.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/fire-station.svg",
+  "name": "Flame",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "fire",
+   "flame",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/fire-station.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/skiing.svg",
+  "name": "Skier",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "ski",
+   "skier",
+   "winter",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/skiing.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/swimming.svg",
+  "name": "Swimmer",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "swim",
+   "swimmer",
+   "pool",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/swimming.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/soccer.svg",
+  "name": "Soccer Player",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "soccer",
+   "football",
+   "sport",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/soccer.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/basketball.svg",
+  "name": "Basketball Player",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "basketball",
+   "sport",
+   "player",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/basketball.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/golf.svg",
+  "name": "Golfer",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "golf",
+   "golfer",
+   "sport",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/golf.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/tennis.svg",
+  "name": "Tennis Player",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "tennis",
+   "sport",
+   "player",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/tennis.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/american-football.svg",
+  "name": "Football",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "football",
+   "american football",
+   "sport",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/american-football.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/baseball.svg",
+  "name": "Baseball Player",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "baseball",
+   "sport",
+   "player",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/baseball.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/music.svg",
+  "name": "Music Note",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "music",
+   "note",
+   "song",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/music.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/heart.svg",
+  "name": "Heart Symbol",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "heart",
+   "love",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/heart.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/globe.svg",
+  "name": "Globe",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "globe",
+   "world",
+   "earth",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/globe.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/beer.svg",
+  "name": "Beer Mug",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "beer",
+   "mug",
+   "pub",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/beer.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/cafe.svg",
+  "name": "Coffee Cup",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "coffee",
+   "cup",
+   "cafe",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/cafe.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/ice-cream.svg",
+  "name": "Ice Cream Cone",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "ice cream",
+   "cone",
+   "dessert",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/ice-cream.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/bakery.svg",
+  "name": "Croissant",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "croissant",
+   "bakery",
+   "bread",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/bakery.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/restaurant.svg",
+  "name": "Fork and Knife",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "fork",
+   "knife",
+   "restaurant",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/restaurant.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/fast-food.svg",
+  "name": "Burger",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "burger",
+   "food",
+   "fast food",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/fast-food.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/religious-christian.svg",
+  "name": "Christian Cross",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "cross",
+   "church",
+   "christian",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/religious-christian.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/religious-jewish.svg",
+  "name": "Star of David",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "star",
+   "jewish",
+   "synagogue",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/religious-jewish.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/religious-muslim.svg",
+  "name": "Crescent and Star",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "crescent",
+   "star",
+   "mosque",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/religious-muslim.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/religious-shinto.svg",
+  "name": "Torii Gate",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "torii",
+   "gate",
+   "shinto",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/religious-shinto.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/religious-buddhist.svg",
+  "name": "Dharma Wheel",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "wheel",
+   "buddhist",
+   "dharma",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/religious-buddhist.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/hardware.svg",
+  "name": "Wrench",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "wrench",
+   "spanner",
+   "tools",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/hardware.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/logging.svg",
+  "name": "Chainsaw",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "chainsaw",
+   "logging",
+   "tools",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/logging.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/paint.svg",
+  "name": "Paint Roller",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "paint",
+   "roller",
+   "painter",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/paint.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/scooter.svg",
+  "name": "Scooter",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "scooter",
+   "motor scooter",
+   "vehicle",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/scooter.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/snowmobile.svg",
+  "name": "Snowmobile",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "snowmobile",
+   "winter",
+   "vehicle",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/snowmobile.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/watch.svg",
+  "name": "Wristwatch",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "watch",
+   "clock",
+   "time",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/watch.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/shoe.svg",
+  "name": "Shoe",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "shoe",
+   "footwear",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/shoe.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/suitcase.svg",
+  "name": "Suitcase",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "suitcase",
+   "luggage",
+   "travel",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/suitcase.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/gift.svg",
+  "name": "Gift Box",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "gift",
+   "present",
+   "box",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/gift.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/racetrack-horse.svg",
+  "name": "Racehorse",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "horse",
+   "racing",
+   "jockey",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/racetrack-horse.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/slaughterhouse.svg",
+  "name": "Cow",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "cow",
+   "cattle",
+   "farm",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/slaughterhouse.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/hot-spring.svg",
+  "name": "Hot Spring",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "steam",
+   "spring",
+   "bath",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/hot-spring.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/theatre.svg",
+  "name": "Theater Masks",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "theater",
+   "masks",
+   "drama",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/theatre.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/information.svg",
+  "name": "Information",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "information",
+   "info",
+   "sign",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/information.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/telephone.svg",
+  "name": "Telephone",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "telephone",
+   "phone",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/telephone.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/toilet.svg",
+  "name": "Restroom",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "restroom",
+   "toilet",
+   "sign",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/toilet.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/wheelchair.svg",
+  "name": "Wheelchair",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "wheelchair",
+   "accessible",
+   "sign",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/wheelchair.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/recycling.svg",
+  "name": "Recycling",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "recycling",
+   "recycle",
+   "sign",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/recycling.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/danger.svg",
+  "name": "Skull and Crossbones",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "skull",
+   "crossbones",
+   "danger",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/danger.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/caution.svg",
+  "name": "Caution",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "caution",
+   "warning",
+   "sign",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/caution.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/embassy.svg",
+  "name": "Flag",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "flag",
+   "banner",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/embassy.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/marae.svg",
+  "name": "Marae",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "marae",
+   "meeting house",
+   "building",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/marae.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/monument.svg",
+  "name": "Obelisk",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "obelisk",
+   "monument",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/monument.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/jewelry-store.svg",
+  "name": "Ring",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "ring",
+   "jewelry",
+   "diamond",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/jewelry-store.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "maki",
+  "file": "maki/maki-main/icons/optician.svg",
+  "name": "Eyeglasses",
+  "category": "Signs and Arrows/Map Symbols",
+  "tags": [
+   "glasses",
+   "eyeglasses",
+   "optician",
+   "icon",
+   "symbol"
+  ],
+  "url": "https://github.com/mapbox/maki/blob/main/icons/optician.svg",
+  "author": "Mapbox",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/171a1fd1-797b-404c-b942-604cc2c508af.svg",
+  "name": "Wolf",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "wolf",
+   "canine",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/171a1fd1-797b-404c-b942-604cc2c508af",
+  "author": "Richard Rich",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b8ceb3e3-5d4f-4d26-9195-20c3dffc26aa.svg",
+  "name": "Red Fox",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "fox",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b8ceb3e3-5d4f-4d26-9195-20c3dffc26aa",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/c7fbe213-1eac-4f81-80d0-674c3bd2d6b0.svg",
+  "name": "Brown Bear",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "bear",
+   "grizzly",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/c7fbe213-1eac-4f81-80d0-674c3bd2d6b0",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/c11b4873-aa21-4394-9f5e-6996033c379f.svg",
+  "name": "Polar Bear",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "bear",
+   "polar",
+   "arctic",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/c11b4873-aa21-4394-9f5e-6996033c379f",
+  "author": "Tracy A. Heath",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b9a9382d-cb9f-4499-b14e-60faad285bb4.svg",
+  "name": "Elk",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "elk",
+   "antlers",
+   "wapiti",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b9a9382d-cb9f-4499-b14e-60faad285bb4",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/49a5a5db-047e-4e17-849b-9f96a93f0d2b.svg",
+  "name": "Whitetail Deer",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "deer",
+   "buck",
+   "antlers",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/49a5a5db-047e-4e17-849b-9f96a93f0d2b",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/1a20a65d-1342-4833-a9dd-1611b9fb383c.svg",
+  "name": "Moose",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "moose",
+   "antlers",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/1a20a65d-1342-4833-a9dd-1611b9fb383c",
+  "author": "PhyloPic contributor",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/dbf2f035-6c04-4c4f-a9aa-f01a1e35ea9c.svg",
+  "name": "Bison",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "bison",
+   "buffalo",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/dbf2f035-6c04-4c4f-a9aa-f01a1e35ea9c",
+  "author": "Caleb M. Gordon",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b302ceef-072c-471c-bc7d-164c428dd57a.svg",
+  "name": "Horse",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "horse",
+   "pony",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b302ceef-072c-471c-bc7d-164c428dd57a",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/76a5e7ce-53fa-46ae-af9e-fabd8b863dcf.svg",
+  "name": "Lion",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "lion",
+   "big cat",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/76a5e7ce-53fa-46ae-af9e-fabd8b863dcf",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/e148eabb-f138-43c6-b1e4-5cda2180485a.svg",
+  "name": "Tiger",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "tiger",
+   "big cat",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/e148eabb-f138-43c6-b1e4-5cda2180485a",
+  "author": "Steven Traver",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/e25f1863-331b-4891-8084-fe8602e4cf8d.svg",
+  "name": "Cat",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "cat",
+   "kitten",
+   "pet",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/e25f1863-331b-4891-8084-fe8602e4cf8d",
+  "author": "PhyloPic contributor",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/22689036-9e7f-44b7-aab9-1436aa4de091.svg",
+  "name": "Dog",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "dog",
+   "pet",
+   "hound",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/22689036-9e7f-44b7-aab9-1436aa4de091",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/d71fcd12-90f6-40c4-b918-0dac0ba3e809.svg",
+  "name": "Rabbit",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "rabbit",
+   "bunny",
+   "hare",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/d71fcd12-90f6-40c4-b918-0dac0ba3e809",
+  "author": "Anthony Caravaggi",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/23c700c9-e695-404a-8d0c-146e1fc4bada.svg",
+  "name": "Squirrel",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "squirrel",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/23c700c9-e695-404a-8d0c-146e1fc4bada",
+  "author": "Ferran Sayol",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/fb1daf6a-0db6-4b3f-ab84-289760c9c5b2.svg",
+  "name": "Raccoon",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "raccoon",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/fb1daf6a-0db6-4b3f-ab84-289760c9c5b2",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/2a070808-0874-409d-81c0-d0c1995e54bb.svg",
+  "name": "African Elephant",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "elephant",
+   "tusks",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/2a070808-0874-409d-81c0-d0c1995e54bb",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/e130f877-a96c-48d8-9f26-bb131021397f.svg",
+  "name": "Hippopotamus",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "hippo",
+   "hippopotamus",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/e130f877-a96c-48d8-9f26-bb131021397f",
+  "author": "An Ignorant Atheist",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/74542562-bb0f-4323-b85d-6056c2729db8.svg",
+  "name": "Rhinoceros",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "rhino",
+   "rhinoceros",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/74542562-bb0f-4323-b85d-6056c2729db8",
+  "author": "An Ignorant Atheist",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/142e0571-3b5f-443d-a887-b572a224ea22.svg",
+  "name": "Gorilla",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "gorilla",
+   "ape",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/142e0571-3b5f-443d-a887-b572a224ea22",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b3dd721e-6084-4413-8300-44e10d8fd3ca.svg",
+  "name": "Beaver",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "beaver",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b3dd721e-6084-4413-8300-44e10d8fd3ca",
+  "author": "PhyloPic contributor",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/fbe25684-0b48-4569-947b-2702822cf5b0.svg",
+  "name": "Sheep",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "sheep",
+   "lamb",
+   "ram",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/fbe25684-0b48-4569-947b-2702822cf5b0",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/2c7d7efa-371e-4ff7-8754-11559792e199.svg",
+  "name": "Goat",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "goat",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/2c7d7efa-371e-4ff7-8754-11559792e199",
+  "author": "Katy Lawler",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/5cf39625-0de7-4ffe-a28f-9c88670af448.svg",
+  "name": "Wild Boar",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "boar",
+   "pig",
+   "hog",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/5cf39625-0de7-4ffe-a28f-9c88670af448",
+  "author": "Kai Caspar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/415714b4-859c-4d1c-9ce0-9e1081613df7.svg",
+  "name": "Cow",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "cow",
+   "cattle",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/415714b4-859c-4d1c-9ce0-9e1081613df7",
+  "author": "Steven Traver",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/d3aa9186-85bf-466d-8810-79c690b2f38d.svg",
+  "name": "Camel",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "camel",
+   "dromedary",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/d3aa9186-85bf-466d-8810-79c690b2f38d",
+  "author": "An Ignorant Atheist",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/6f55522e-264a-430a-9d52-f14c31055f3c.svg",
+  "name": "Zebra",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "zebra",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/6f55522e-264a-430a-9d52-f14c31055f3c",
+  "author": "Kai Caspar",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/e4ab0438-794b-4030-8e2a-7b5c1f23bf03.svg",
+  "name": "Fruit Bat",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "bat",
+   "flying fox",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/e4ab0438-794b-4030-8e2a-7b5c1f23bf03",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b1e0d893-a8e2-48e9-9850-4045d29ec2be.svg",
+  "name": "Mouse",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "mouse",
+   "rodent",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b1e0d893-a8e2-48e9-9850-4045d29ec2be",
+  "author": "Arcadia Science",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/d3882718-65d6-43ce-9a25-90d1c583f2fc.svg",
+  "name": "Otter",
+  "category": "Animals/Wildlife Silhouettes",
+  "tags": [
+   "otter",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/d3882718-65d6-43ce-9a25-90d1c583f2fc",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/804de116-5dbe-4e53-bedb-ddbfb4e895eb.svg",
+  "name": "Bald Eagle",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "eagle",
+   "bird",
+   "raptor",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/804de116-5dbe-4e53-bedb-ddbfb4e895eb",
+  "author": "Steve Hillebrand/U. S. Fish and Wildlife Service (source photo), T. Michael Keesey (vectorization)",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/5672d2a9-8f5f-449c-a6dd-ba4ebe3f768b.svg",
+  "name": "Barn Owl",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "owl",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/5672d2a9-8f5f-449c-a6dd-ba4ebe3f768b",
+  "author": "Ferran Sayol",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/1c044a03-f1ba-49fd-857e-f10aa8778e30.svg",
+  "name": "Mallard",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "duck",
+   "mallard",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/1c044a03-f1ba-49fd-857e-f10aa8778e30",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b677ec7b-a2ef-46be-9d78-a997a88e1a9c.svg",
+  "name": "Canada Goose",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "goose",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b677ec7b-a2ef-46be-9d78-a997a88e1a9c",
+  "author": "Xavier Giroux-Bougard",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/05cd7d8c-6b2c-4b97-b7b8-053559019eeb.svg",
+  "name": "Swan",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "swan",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/05cd7d8c-6b2c-4b97-b7b8-053559019eeb",
+  "author": "An Ignorant Atheist",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/2de1c95c-7e1f-429b-9c08-17f0a27d176f.svg",
+  "name": "Rooster",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "rooster",
+   "chicken",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/2de1c95c-7e1f-429b-9c08-17f0a27d176f",
+  "author": "Steven Traver",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/101ad9ab-dae8-442f-b102-8109b02b2a69.svg",
+  "name": "Turkey",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "turkey",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/101ad9ab-dae8-442f-b102-8109b02b2a69",
+  "author": "T. Michael Keesey",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/618b6a9d-6aa6-4316-bf25-2a7a3f788e88.svg",
+  "name": "Hummingbird",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "hummingbird",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/618b6a9d-6aa6-4316-bf25-2a7a3f788e88",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/73ae2599-c13c-45a9-811d-5c75ef7c8037.svg",
+  "name": "Raven",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "raven",
+   "crow",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/73ae2599-c13c-45a9-811d-5c75ef7c8037",
+  "author": "Caleb M. Gordon",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/f2e02022-2700-484d-a66d-b2a900030371.svg",
+  "name": "Penguin",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "penguin",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/f2e02022-2700-484d-a66d-b2a900030371",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/13c0e1b9-e3b2-461d-ba61-1ff8b9daee39.svg",
+  "name": "Flamingo",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "flamingo",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/13c0e1b9-e3b2-461d-ba61-1ff8b9daee39",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/10dcf852-73c6-4e19-b6e4-6041a0350f02.svg",
+  "name": "Pelican",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "pelican",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/10dcf852-73c6-4e19-b6e4-6041a0350f02",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/9324412d-2c91-4612-b00e-a9d588c6c350.svg",
+  "name": "Woodpecker",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "woodpecker",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/9324412d-2c91-4612-b00e-a9d588c6c350",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/c0b1a522-8d0d-4dbb-86f7-93072a19d69d.svg",
+  "name": "Cardinal",
+  "category": "Animals/Bird Silhouettes",
+  "tags": [
+   "cardinal",
+   "bird",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/c0b1a522-8d0d-4dbb-86f7-93072a19d69d",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/c8cbec13-a69c-40d8-836b-902a6b1defcf.svg",
+  "name": "Orca",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "orca",
+   "killer whale",
+   "whale",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/c8cbec13-a69c-40d8-836b-902a6b1defcf",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/fd8d3e5e-24a0-4aa2-9211-987ff86007dd.svg",
+  "name": "Humpback Whale",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "whale",
+   "humpback",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/fd8d3e5e-24a0-4aa2-9211-987ff86007dd",
+  "author": "PhyloPic contributor",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/6682f694-1c10-4386-a6e5-361581400f15.svg",
+  "name": "Dolphin",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "dolphin",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/6682f694-1c10-4386-a6e5-361581400f15",
+  "author": "Steven Traver",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/af8e51f1-6bd8-4c09-8ab0-e7d0c364d2d2.svg",
+  "name": "Trout",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "trout",
+   "fish",
+   "fishing",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/af8e51f1-6bd8-4c09-8ab0-e7d0c364d2d2",
+  "author": "PhyloPic contributor",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/172f60da-2129-4d3d-b680-686cff376d24.svg",
+  "name": "Bass",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "bass",
+   "fish",
+   "fishing",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/172f60da-2129-4d3d-b680-686cff376d24",
+  "author": "Carlos Cano-Barbacil",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/6cf73e55-4e10-47ad-9b7e-33645536863f.svg",
+  "name": "Seahorse",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "seahorse",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/6cf73e55-4e10-47ad-9b7e-33645536863f",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/36d54b94-35a6-4a66-a41e-b8f28534e70c.svg",
+  "name": "Great White Shark",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "shark",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/36d54b94-35a6-4a66-a41e-b8f28534e70c",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/f400b519-3564-4183-b4bd-c3b922cc7c5e.svg",
+  "name": "Octopus",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "octopus",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/f400b519-3564-4183-b4bd-c3b922cc7c5e",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/4256e839-f525-47a2-8bb8-fd56f2623cc3.svg",
+  "name": "Lobster",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "lobster",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/4256e839-f525-47a2-8bb8-fd56f2623cc3",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/7197c71a-0653-4e82-bcbb-b156c150826a.svg",
+  "name": "Crab",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "crab",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/7197c71a-0653-4e82-bcbb-b156c150826a",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b76ae98d-894d-4490-a587-edf66650bc25.svg",
+  "name": "Sea Turtle",
+  "category": "Animals/Sea Life Silhouettes",
+  "tags": [
+   "turtle",
+   "sea turtle",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b76ae98d-894d-4490-a587-edf66650bc25",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b58a7ca7-8d14-4d7b-88a5-f2b05de79c85.svg",
+  "name": "Rattlesnake",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "snake",
+   "rattlesnake",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b58a7ca7-8d14-4d7b-88a5-f2b05de79c85",
+  "author": "Blair Perry",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/6e8933c0-d49b-49e8-a8fd-5dbb40ab77f3.svg",
+  "name": "Chameleon",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "chameleon",
+   "lizard",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/6e8933c0-d49b-49e8-a8fd-5dbb40ab77f3",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/5170633b-b867-4c98-acc0-fbb823fc0aaa.svg",
+  "name": "Tortoise",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "tortoise",
+   "turtle",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/5170633b-b867-4c98-acc0-fbb823fc0aaa",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/264fa655-afd7-451c-8f27-e0a9557376e6.svg",
+  "name": "Gecko",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "gecko",
+   "lizard",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/264fa655-afd7-451c-8f27-e0a9557376e6",
+  "author": "Birgit Szabo",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/e6705593-91ba-4b6e-9dfd-515005e35fc6.svg",
+  "name": "Monarch Butterfly",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "butterfly",
+   "monarch",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/e6705593-91ba-4b6e-9dfd-515005e35fc6",
+  "author": "Andy Wilson",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/2ef6d810-dc60-4dd2-aaba-bc0313c66ff6.svg",
+  "name": "Dragonfly",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "dragonfly",
+   "insect",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/2ef6d810-dc60-4dd2-aaba-bc0313c66ff6",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/b199a5f5-20c4-4cc9-9c54-1b51578c2487.svg",
+  "name": "Honey Bee",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "bee",
+   "insect",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/b199a5f5-20c4-4cc9-9c54-1b51578c2487",
+  "author": "Mattia Menchetti",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/87b5e182-6fcf-40c7-af75-af41a04ca5fd.svg",
+  "name": "Ladybug",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "ladybug",
+   "beetle",
+   "insect",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/87b5e182-6fcf-40c7-af75-af41a04ca5fd",
+  "author": "Amy Beauvois",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/46a593c0-4a20-428b-8a0f-ba61921b3146.svg",
+  "name": "Stag Beetle",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "beetle",
+   "stag beetle",
+   "insect",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/46a593c0-4a20-428b-8a0f-ba61921b3146",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/9ac10b55-c483-4076-b4e6-f98050d543d7.svg",
+  "name": "Scorpion",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "scorpion",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/9ac10b55-c483-4076-b4e6-f98050d543d7",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/d8f236a7-e36b-4313-9162-8f2dead31a8a.svg",
+  "name": "Snail",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "snail",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/d8f236a7-e36b-4313-9162-8f2dead31a8a",
+  "author": "Martin R. Smith, from photo by J\u00fcrgen Schoner",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/efecbd35-8143-40a7-9163-ea3120caa15b.svg",
+  "name": "Ant",
+  "category": "Animals/Reptiles and Insects",
+  "tags": [
+   "ant",
+   "insect",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/efecbd35-8143-40a7-9163-ea3120caa15b",
+  "author": "Encyclop\u00e6dia Britannica",
+  "license": "PDM",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/ccb9b896-20b5-4e0b-8979-001742a884c5.svg",
+  "name": "Tyrannosaurus",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "dinosaur",
+   "t rex",
+   "tyrannosaurus",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/ccb9b896-20b5-4e0b-8979-001742a884c5",
+  "author": "Richard Rich",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/075de9e2-1b71-49d3-8d22-9eb2a78248e4.svg",
+  "name": "Triceratops",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "dinosaur",
+   "triceratops",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/075de9e2-1b71-49d3-8d22-9eb2a78248e4",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/caba4158-01c7-4dfe-a02c-b136852a4b68.svg",
+  "name": "Stegosaurus",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "dinosaur",
+   "stegosaurus",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/caba4158-01c7-4dfe-a02c-b136852a4b68",
+  "author": "artrociraptor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/2003b4f6-7b8d-4c98-9797-1aca028dc2ac.svg",
+  "name": "Brachiosaurus",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "dinosaur",
+   "brachiosaurus",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/2003b4f6-7b8d-4c98-9797-1aca028dc2ac",
+  "author": "Amy Beauvois",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/9c50dadb-146e-472b-afe3-6224c80d4afa.svg",
+  "name": "Velociraptor",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "dinosaur",
+   "raptor",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/9c50dadb-146e-472b-afe3-6224c80d4afa",
+  "author": "Tasman Dixon",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/0b4b95c2-615a-45df-adaa-a63fbd039eb2.svg",
+  "name": "Pteranodon",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "pterosaur",
+   "pteranodon",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/0b4b95c2-615a-45df-adaa-a63fbd039eb2",
+  "author": "PhyloPic contributor",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/f39f0aa9-97f1-4982-976c-07ffb78a4682.svg",
+  "name": "Woolly Mammoth",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "mammoth",
+   "ice age",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/f39f0aa9-97f1-4982-976c-07ffb78a4682",
+  "author": "Kamil S. Jaron",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "shape",
+  "set": "phylopic",
+  "file": "phylopic/svg/472e87b9-368f-47b3-a923-d46cfedb51a4.svg",
+  "name": "Saber Tooth Cat",
+  "category": "Animals/Dinosaurs",
+  "tags": [
+   "sabertooth",
+   "smilodon",
+   "ice age",
+   "silhouette",
+   "animal"
+  ],
+  "url": "https://www.phylopic.org/images/472e87b9-368f-47b3-a923-d46cfedb51a4",
+  "author": "Margot Michaud",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 100
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/horse_head.gltf",
+  "name": "Horse Head",
+  "category": "Animals/Sculpted Animals",
+  "tags": [
+   "horse",
+   "head",
+   "mane",
+   "sculpture"
+  ],
+  "url": "https://polyhaven.com/a/horse_head",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": true,
+  "crop": [
+   0,
+   0.55,
+   1,
+   1
+  ],
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 110
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/antique_ceramic_vase_01.gltf",
+  "name": "Ceramic Vase",
+  "category": "Shapes/Vases and Urns",
+  "tags": [
+   "vase",
+   "urn",
+   "ceramic",
+   "half round"
+  ],
+  "url": "https://polyhaven.com/a/antique_ceramic_vase_01",
+  "author": "James Ray Cock",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": true,
+  "keep": 0.5,
+  "alpha": 0.0,
+  "height": 12,
+  "size": 130
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/brass_candleholders.gltf",
+  "name": "Candelabra",
+  "category": "Architectural/Ornaments and Details",
+  "tags": [
+   "candelabra",
+   "candles",
+   "candlestick",
+   "holiday"
+  ],
+  "url": "https://polyhaven.com/a/brass_candleholders",
+  "author": "Tina",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": true,
+  "crop": [
+   0.55,
+   0,
+   1,
+   1
+  ],
+  "keep": 0.9,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 150
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/mantel_clock_01.gltf",
+  "name": "Mantel Clock",
+  "category": "Architectural/Ornaments and Details",
+  "tags": [
+   "clock",
+   "mantel",
+   "case",
+   "scroll"
+  ],
+  "url": "https://polyhaven.com/a/mantel_clock_01",
+  "author": "Yann Kervran, Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": true,
+  "keep": 0.6,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 150
+ },
+ {
+  "kind": "relief",
+  "set": "polyhaven",
+  "file": "polyhaven/treasure_chest.gltf",
+  "name": "Chest Front",
+  "category": "Architectural/Ornaments and Details",
+  "tags": [
+   "chest",
+   "trunk",
+   "straps",
+   "ornament",
+   "panel"
+  ],
+  "url": "https://polyhaven.com/a/treasure_chest",
+  "author": "Rico Cilliers",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": true,
+  "crop": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "keep": 0.4,
+  "alpha": 1.0,
+  "height": 6,
+  "size": 170
+ },
+ {
+  "kind": "tile",
+  "set": "ambientcg",
+  "file": "ambientcg/Wicker004.png",
+  "name": "Wicker Weave",
+  "category": "Textures/Thatch and Reed",
+  "tags": [
+   "texture",
+   "tileable",
+   "wicker",
+   "basket",
+   "weave",
+   "rattan"
+  ],
+  "url": "https://ambientcg.com/view?id=Wicker004",
+  "author": "ambientCG (Lennart Demes)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 2
+ },
+ {
+  "kind": "tile",
+  "set": "ambientcg",
+  "file": "ambientcg/Rope001.png",
+  "name": "Twisted Rope",
+  "category": "Textures/Thatch and Reed",
+  "tags": [
+   "texture",
+   "tileable",
+   "rope",
+   "twisted",
+   "cord",
+   "nautical"
+  ],
+  "url": "https://ambientcg.com/view?id=Rope001",
+  "author": "ambientCG (Lennart Demes)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 80,
+  "px": 800,
+  "height": 3
+ },
+ {
+  "kind": "tile",
+  "set": "ambientcg",
+  "file": "ambientcg/Leather030.png",
+  "name": "Pebbled Leather",
+  "category": "Textures/Fabric and Leather",
+  "tags": [
+   "texture",
+   "tileable",
+   "leather",
+   "pebbled",
+   "grain"
+  ],
+  "url": "https://ambientcg.com/view?id=Leather030",
+  "author": "ambientCG (Lennart Demes)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "size": 60,
+  "px": 600,
+  "height": 0.8
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/0dc68216.glb",
+  "name": "Winged Guardian",
+  "category": "Faces and Figures/Busts and Statues",
+  "tags": [
+   "guardian",
+   "monster",
+   "winged",
+   "temple",
+   "carving"
+  ],
+  "url": "https://asia.si.edu/object/F1916.345/",
+  "author": "Smithsonian Institution (Kneeling winged monster)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": false,
+  "keep": 0.8,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 150
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/e4518faa.glb",
+  "name": "Trilobite Fossil",
+  "category": "Nautical/Sea Life Reliefs",
+  "tags": [
+   "trilobite",
+   "fossil",
+   "prehistoric"
+  ],
+  "url": "https://n2t.net/ark:/65665/38feef8a9-c39d-4a7c-a0bb-47fc82ca5f17",
+  "author": "Smithsonian Institution (Psychopyge elegans Termier & Termier, 1950)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": false,
+  "keep": 1.0,
+  "alpha": 1.0,
+  "height": 8,
+  "size": 130,
+  "fill": true,
+  "base": 1.0
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/2f8ceec0.glb",
+  "name": "Fossil Leaf",
+  "category": "Leaves and Floral/Leaf Reliefs",
+  "tags": [
+   "leaf",
+   "fossil",
+   "sycamore"
+  ],
+  "url": "https://n2t.net/ark:/65665/334d35371-4db8-4fc8-aa4f-3811e6bea363",
+  "author": "Smithsonian Institution (Genus indet. sp indet.: Sycamore-like leaf)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": false,
+  "keep": 0.9,
+  "alpha": 1.0,
+  "height": 6,
+  "size": 120
+ },
+ {
+  "kind": "relief",
+  "set": "smithsonian",
+  "file": "smithsonian/ce850625.glb",
+  "name": "Mountain Censer",
+  "category": "Shapes/Vases and Urns",
+  "tags": [
+   "censer",
+   "incense",
+   "vase",
+   "mountain",
+   "bronze"
+  ],
+  "url": "https://asia.si.edu/object/F1947.15a-b/",
+  "author": "Smithsonian Institution (Lidded incense burner (xianglu) with geometric decoration and narrative scenes)",
+  "license": "CC0-1.0",
+  "downloaded": "2026-09-27",
+  "renormal": false,
+  "keep": 0.9,
+  "alpha": 1.0,
+  "height": 10,
+  "size": 140
+ }
+]

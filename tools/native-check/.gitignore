@@ -1,0 +1,6 @@
+# outputs of the native checks
+*.png
+files/
+tauri.log
+smoke_*.txt
+mouse

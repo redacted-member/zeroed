@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "id": "drawer-unit",
+  "name": "Drawer Unit",
+  "category": "Storage",
+  "description": "Chest of drawers on full extension slides, with false fronts, an inset back and an optional toe kick.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["drawers", "chest", "dresser", "slides"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 500, "min": 300, "max": 900, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 720, "min": 450, "max": 1200, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 500, "min": 350, "max": 650, "group": "Size" },
+    { "key": "t", "label": "Carcass thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "dt", "label": "Drawer box thickness", "kind": "thickness", "default": 12, "min": 9, "max": 15, "group": "Material" },
+    { "key": "drawers", "label": "Drawers", "kind": "count", "default": 4, "min": 1, "max": 6, "group": "Layout" },
+    { "key": "slide_gap", "label": "Slide clearance per side", "kind": "length", "default": 12.7, "min": 10, "max": 15, "group": "Layout" },
+    { "key": "kick", "label": "Toe kick", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "back", "label": "Back", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "kh": "{kick}*90",
+    "inner_w": "{width}-2*{t}",
+    "body_d": "{depth}-{back}*6",
+    "front_h": "({height}-{kh}-({drawers}+1)*3)/{drawers}",
+    "slot": "({height}-{kh}-2*{t})/{drawers}",
+    "box_h": "{slot}-30",
+    "box_w": "{inner_w}-2*{slide_gap}",
+    "box_d": "{body_d}-20",
+    "box_x": "{t}+{slide_gap}"
+  },
+  "materials": {
+    "main": { "label": "Carcass and fronts", "thickness": "{t}" },
+    "drawer": { "label": "Drawer boxes", "thickness": "{dt}" },
+    "back": { "label": "Back and drawer bottoms", "thickness": "6" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "notch", "edge": "bottom", "at": "front", "w": "60", "h": "{kh}", "when": "{kick}" } ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "notch", "edge": "bottom", "at": "front", "w": "60", "h": "{kh}", "when": "{kick}" } ] },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{kh}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "kick", "name": "Toe kick", "material": "main", "grain": "long", "when": "{kick}",
+      "box": { "x": "{t}", "y": "60", "z": "0", "w": "{inner_w}", "d": "{t}", "h": "{kh}" } },
+    { "id": "back", "name": "Back", "material": "back", "grain": "long", "when": "{back}",
+      "box": { "x": "{t}", "y": "{depth}-6", "z": "{kh}", "w": "{inner_w}", "d": "6", "h": "{height}-{kh}" } },
+    { "id": "front", "name": "Drawer front {i+1}", "material": "main", "grain": "long", "repeat": "{drawers}",
+      "box": { "x": "1.5", "y": "-{t}", "z": "{kh}+3+{i}*({front_h}+3)", "w": "{width}-3", "d": "{t}", "h": "{front_h}" } },
+    { "id": "box_l", "name": "Drawer {i+1} left side", "material": "drawer", "grain": "long", "repeat": "{drawers}",
+      "box": { "x": "{box_x}", "y": "0", "z": "{kh}+{t}+{i}*{slot}+10", "w": "{dt}", "d": "{box_d}", "h": "{box_h}" },
+      "features": [ { "kind": "slideHoles", "at": "{box_h}/2" } ] },
+    { "id": "box_r", "name": "Drawer {i+1} right side", "material": "drawer", "grain": "long", "repeat": "{drawers}",
+      "box": { "x": "{box_x}+{box_w}-{dt}", "y": "0", "z": "{kh}+{t}+{i}*{slot}+10", "w": "{dt}", "d": "{box_d}", "h": "{box_h}" },
+      "features": [ { "kind": "slideHoles", "at": "{box_h}/2" } ] },
+    { "id": "box_f", "name": "Drawer {i+1} box front", "material": "drawer", "grain": "long", "repeat": "{drawers}",
+      "box": { "x": "{box_x}+{dt}", "y": "0", "z": "{kh}+{t}+{i}*{slot}+10", "w": "{box_w}-2*{dt}", "d": "{dt}", "h": "{box_h}" } },
+    { "id": "box_b", "name": "Drawer {i+1} box back", "material": "drawer", "grain": "long", "repeat": "{drawers}",
+      "box": { "x": "{box_x}+{dt}", "y": "{box_d}-{dt}", "z": "{kh}+{t}+{i}*{slot}+10", "w": "{box_w}-2*{dt}", "d": "{dt}", "h": "{box_h}" } },
+    { "id": "box_bottom", "name": "Drawer {i+1} bottom", "material": "back", "grain": "none", "repeat": "{drawers}",
+      "box": { "x": "{box_x}+{dt}", "y": "{dt}", "z": "{kh}+{t}+{i}*{slot}+20", "w": "{box_w}-2*{dt}", "d": "{box_d}-2*{dt}", "h": "6" } }
+  ],
+  "connections": [
+    { "a": "front", "b": "*", "class": "front" },
+    { "a": "box_bottom", "b": "*", "class": "drawer_bottom" },
+    { "a": "box_f|box_b", "b": "box_l|box_r", "class": "drawer" },
+    { "a": "top|bottom", "b": "left|right", "class": "carcass" },
+    { "a": "kick", "b": "bottom", "class": "kick_bottom" },
+    { "a": "kick", "b": "*", "class": "kick" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "carcass": { "label": "Top and bottom", "default": "rabbet" },
+    "back": { "label": "Back", "default": "rabbet" },
+    "kick": { "label": "Toe kick", "default": "dowel" },
+    "kick_bottom": { "label": "Toe kick to bottom", "default": "tabSlot" },
+    "drawer": { "label": "Drawer box corners", "default": "finger" },
+    "drawer_bottom": { "label": "Drawer bottoms", "default": "groove" },
+    "front": { "label": "False fronts", "default": "none" }
+  },
+  "hardware": [
+    { "name": "Full extension drawer slides, pair", "count": "{drawers}", "note": "length to suit the drawer box depth, rounded down to the next slide size" },
+    { "name": "Drawer pulls", "count": "{drawers}" },
+    { "name": "Screws 4 x 25 mm", "count": "4*{drawers}", "note": "false front to drawer box, from inside" }
+  ]
+}

@@ -1,0 +1,28 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.rotate-form {
+  @include form.form-root;
+}
+
+.rotate-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.rotate-form__group {
+  @include form.form-group;
+}
+
+.rotate-form__legend {
+  @include form.form-legend;
+}
+
+.rotate-form__choices {
+  @include form.form-choices;
+}
+
+.rotate-form__choice {
+  @include form.form-choice;
+}

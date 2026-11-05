@@ -1,0 +1,54 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.vector-selector__body {
+  @include form.form-root;
+
+  min-width: 280px;
+}
+
+.vector-selector__counts {
+  @include form.form-hint;
+
+  min-height: 1.4em;
+  font-variant-numeric: tabular-nums;
+}
+
+.vector-selector__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.vector-selector__hint {
+  @include form.form-hint;
+}
+
+.vector-selector__group {
+  @include form.form-group;
+}
+
+.vector-selector__legend {
+  @include form.form-legend;
+}
+
+.vector-selector__layers {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  max-height: 160px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.vector-selector__layer {
+  margin: 0;
+}
+
+.vector-selector__apply {
+  @include form.form-button-primary;
+
+  align-self: flex-end;
+}

@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.fillet-form {
+  @include form.form-root;
+}
+
+.fillet-form__hint {
+  @include form.form-hint;
+}
+
+.fillet-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.fillet-form__group {
+  @include form.form-group;
+}
+
+.fillet-form__legend {
+  @include form.form-legend;
+}

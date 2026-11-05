@@ -1,0 +1,37 @@
+@use '../../styles/form';
+
+.form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.form-buttons__slot {
+  display: flex;
+}
+
+.form-buttons__button {
+  @include form.form-button;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-buttons__button:disabled {
+  pointer-events: none;
+}
+
+.form-buttons__button--primary {
+  @include form.form-button-primary;
+}
+
+.form-buttons__icon {
+  display: flex;
+}
+
+.form-buttons__icon .tool-icon {
+  width: 16px;
+  height: 16px;
+}

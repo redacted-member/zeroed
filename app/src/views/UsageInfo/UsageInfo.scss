@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+
+.usage-info {
+  position: absolute;
+  right: tokens.$space-2;
+  bottom: tokens.$space-2;
+  left: tokens.$space-2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: tokens.$space-1 tokens.$space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.usage-info__item {
+  padding: 1px tokens.$space-2;
+  border-radius: tokens.$radius;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-size: tokens.$font-size-small;
+}

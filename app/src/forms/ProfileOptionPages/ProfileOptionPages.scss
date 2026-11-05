@@ -1,0 +1,17 @@
+@use '../../styles/form';
+
+.profile-options__group {
+  @include form.form-group;
+}
+
+.profile-options__hint {
+  @include form.form-hint;
+}
+
+.profile-options__row {
+  @include form.form-row;
+}
+
+.profile-options__button {
+  @include form.form-button;
+}

@@ -1,0 +1,46 @@
+@use '../../styles/tokens';
+
+.add-layer-dialog {
+  width: min(340px, calc(100vw - 48px));
+}
+
+.add-layer-dialog__form {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+}
+
+.add-layer-dialog__label {
+  font-size: tokens.$font-size-small;
+}
+
+.add-layer-dialog__input {
+  padding: 2px tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.add-layer-dialog__colour {
+  width: 48px;
+  height: 24px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border;
+  background: transparent;
+}
+
+.add-layer-dialog__check {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: tokens.$space-2;
+}
+
+.add-layer-dialog__input:focus-visible,
+.add-layer-dialog__colour:focus-visible {
+  @include tokens.focus-ring;
+}

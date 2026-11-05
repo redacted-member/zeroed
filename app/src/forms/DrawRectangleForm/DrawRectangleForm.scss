@@ -1,0 +1,29 @@
+@use '../../styles/form';
+
+.draw-rectangle {
+  @include form.form-root;
+}
+
+.draw-rectangle__hint {
+  @include form.form-hint;
+}
+
+.draw-rectangle__group {
+  @include form.form-group;
+}
+
+.draw-rectangle__legend {
+  @include form.form-legend;
+}
+
+.draw-rectangle__choices {
+  @include form.form-choices;
+}
+
+.draw-rectangle__choice {
+  @include form.form-choice;
+}
+
+.draw-rectangle__button {
+  @include form.form-button;
+}

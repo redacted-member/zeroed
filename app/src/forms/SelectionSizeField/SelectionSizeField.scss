@@ -1,0 +1,13 @@
+@use '../../styles/form';
+
+.selection-size {
+  @include form.form-group;
+}
+
+.selection-size__legend {
+  @include form.form-legend;
+}
+
+.selection-size__value {
+  @include form.form-hint;
+}

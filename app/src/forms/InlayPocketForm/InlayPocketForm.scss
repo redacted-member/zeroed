@@ -1,0 +1,47 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.inlay-pocket {
+  @include form.form-root;
+}
+
+.inlay-pocket__title {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.inlay-pocket__hint {
+  @include form.form-hint;
+}
+
+.inlay-pocket__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.inlay-pocket__group {
+  @include form.form-group;
+}
+
+.inlay-pocket__legend {
+  @include form.form-legend;
+}
+
+.inlay-pocket__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.inlay-pocket__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.smooth-components {
+  @include form.form-root;
+}
+
+.smooth-components__hint {
+  @include form.form-hint;
+}
+
+.smooth-components__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.smooth-components__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.smooth-components__group {
+  @include form.form-group;
+}
+
+.smooth-components__legend {
+  @include form.form-legend;
+}

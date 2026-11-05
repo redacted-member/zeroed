@@ -1,0 +1,33 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.freehand-form {
+  @include form.form-root;
+}
+
+.freehand-form__hint {
+  @include form.form-hint;
+}
+
+.freehand-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.freehand-form__note {
+  @include form.form-hint;
+}
+
+.freehand-form__group {
+  @include form.form-group;
+}
+
+.freehand-form__legend {
+  @include form.form-legend;
+}
+
+.freehand-form__range {
+  width: 100%;
+  accent-color: tokens.$accent;
+}

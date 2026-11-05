@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "id": "telephone-stand",
+  "name": "Telephone Stand",
+  "category": "Tables",
+  "description": "Mission telephone stand: a top on slab ends with a deep back rail, a thin front rail and a low shelf with room for a stool underneath. Today a hall or lamp stand.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23991",
+  "credit": "After \"A Telephone Stand and Stool\", Mission Furniture: How to Make It, Part II, H. H. Windsor, 1910 (public domain)",
+  "tags": ["mission", "hall", "lamp table", "end table", "shelf"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 508, "min": 400, "max": 650, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 457, "min": 350, "max": 550, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 759, "min": 700, "max": 800, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 18, "max": 25, "group": "Material" },
+    { "key": "oh", "label": "Top overhang", "kind": "length", "default": 51, "min": 20, "max": 80, "group": "Layout" },
+    { "key": "shelf_z", "label": "Shelf height", "kind": "length", "default": 430, "min": 300, "max": 430, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "ed": "{depth}-2*{oh}",
+    "inner": "{width}-2*{oh}-2*{t}",
+    "cut_h": "{leg_h}-187-{shelf_z}-{t}",
+    "cut_v": "({shelf_z}+{t}+30+{leg_h}-157)/2"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "6" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "{oh}", "z": "0", "w": "{t}", "d": "{ed}", "h": "{leg_h}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "51" },
+        { "kind": "cutout", "u": "{ed}/2", "v": "{cut_v}", "w": "{ed}-102", "h": "{cut_h}", "r": "10" }
+      ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{oh}-{t}", "y": "{oh}", "z": "0", "w": "{t}", "d": "{ed}", "h": "{leg_h}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "60", "inset": "51" },
+        { "kind": "cutout", "u": "{ed}/2", "v": "{cut_v}", "w": "{ed}-102", "h": "{cut_h}", "r": "10" }
+      ] },
+    { "id": "rail_b", "name": "Back rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-{oh}-2*{t}-6", "z": "{leg_h}-127", "w": "{inner}", "d": "{t}", "h": "127" } },
+    { "id": "rail_f", "name": "Front rail", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{oh}+{t}+6", "z": "{leg_h}-38", "w": "{inner}", "d": "{t}", "h": "38" } },
+    { "id": "shelf", "name": "Shelf", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "{oh}", "z": "{shelf_z}", "w": "{inner}", "d": "{ed}", "h": "{t}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "rail_b|rail_f", "b": "end_l|end_r", "class": "rail" },
+    { "a": "shelf", "b": "end_l|end_r", "class": "shelf" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to base", "default": "dowel" },
+    "rail": { "label": "Rails to ends", "default": "dowel" },
+    "shelf": { "label": "Shelf to ends", "default": "dado" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "4" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

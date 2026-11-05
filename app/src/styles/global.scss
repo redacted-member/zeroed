@@ -1,0 +1,35 @@
+@use 'tokens';
+
+@include tokens.theme-custom-properties;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  @include tokens.focus-ring;
+}

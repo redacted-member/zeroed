@@ -1,0 +1,29 @@
+@use '../../styles/form';
+
+.draw-circle {
+  @include form.form-root;
+}
+
+.draw-circle__hint {
+  @include form.form-hint;
+}
+
+.draw-circle__group {
+  @include form.form-group;
+}
+
+.draw-circle__legend {
+  @include form.form-legend;
+}
+
+.draw-circle__choices {
+  @include form.form-choices;
+}
+
+.draw-circle__choice {
+  @include form.form-choice;
+}
+
+.draw-circle__button {
+  @include form.form-button;
+}

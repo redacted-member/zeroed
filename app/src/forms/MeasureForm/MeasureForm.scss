@@ -1,0 +1,50 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.measure-form {
+  @include form.form-root;
+}
+
+.measure-form__hint {
+  @include form.form-hint;
+}
+
+.measure-form__group {
+  @include form.form-group;
+}
+
+.measure-form__legend {
+  @include form.form-legend;
+
+  margin: 0;
+}
+
+.measure-form__empty {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.measure-form__readout {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin: 0;
+}
+
+.measure-form__row {
+  display: flex;
+  gap: tokens.$space-2;
+  justify-content: space-between;
+  font-size: tokens.$font-size-small;
+}
+
+.measure-form__label {
+  color: tokens.$text-muted;
+}
+
+.measure-form__value {
+  margin: 0;
+  font-family: tokens.$font-mono;
+  font-variant-numeric: tabular-nums;
+}

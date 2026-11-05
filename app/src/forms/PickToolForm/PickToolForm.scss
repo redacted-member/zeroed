@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.pick-tool-form {
+  @include form.form-root;
+}
+
+.pick-tool-form__hint {
+  @include form.form-hint;
+}
+
+.pick-tool-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.pick-tool-form__group {
+  @include form.form-group;
+}
+
+.pick-tool-form__legend {
+  @include form.form-legend;
+}

@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "id": "desk",
+  "name": "Desk",
+  "category": "Desks",
+  "description": "Panel end desk with a front apron, a modesty panel for stiffness and a cable grommet.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["office", "writing", "table", "flat pack"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 1200, "min": 800, "max": 1800, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 600, "min": 450, "max": 800, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 740, "min": 680, "max": 780, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "oh", "label": "Top overhang at the ends", "kind": "length", "default": 40, "min": 0, "max": 150, "group": "Layout" },
+    { "key": "apron", "label": "Front apron", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "modesty", "label": "Modesty panel", "kind": "toggle", "default": 1, "group": "Layout" },
+    { "key": "grommet", "label": "Cable grommet", "kind": "toggle", "default": 1, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "span": "{width}-2*{oh}-2*{t}",
+    "modesty_h": "350"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [
+        { "kind": "radius", "r": "10" },
+        { "kind": "hole", "u": "{width}-150", "v": "{depth}-70", "diameter": "60", "when": "{grommet}" }
+      ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "20", "z": "0", "w": "{t}", "d": "{depth}-40", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "30", "inset": "60" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{oh}-{t}", "y": "20", "z": "0", "w": "{t}", "d": "{depth}-40", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "30", "inset": "60" } ] },
+    { "id": "apron", "name": "Front apron", "material": "main", "grain": "long", "when": "{apron}",
+      "box": { "x": "{oh}+{t}", "y": "60", "z": "{leg_h}-80", "w": "{span}", "d": "{t}", "h": "80" } },
+    { "id": "modesty", "name": "Modesty panel", "material": "main", "grain": "long", "when": "{modesty}",
+      "box": { "x": "{oh}+{t}", "y": "{depth}-50-{t}", "z": "{leg_h}-{modesty_h}", "w": "{span}", "d": "{t}", "h": "{modesty_h}" } }
+  ],
+  "connections": [
+    { "a": "top", "b": "*", "class": "top" },
+    { "a": "apron|modesty", "b": "end_l|end_r", "class": "frame" }
+  ],
+  "jointClasses": {
+    "top": { "label": "Top to frame", "default": "dowel" },
+    "frame": { "label": "Apron and modesty panel to ends", "default": "tabSlot" }
+  },
+  "hardware": [
+    { "name": "Cable grommet 60 mm", "count": "{grommet}" },
+    { "name": "Felt or nylon glides", "count": "4" }
+  ]
+}

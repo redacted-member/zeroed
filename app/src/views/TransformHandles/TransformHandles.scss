@@ -1,0 +1,84 @@
+@use '../../styles/tokens';
+
+.transform-handles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.transform-handles__outline {
+  fill: none;
+  stroke: #e040e0;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 3;
+}
+
+.transform-handles__stalk {
+  stroke: #1c1c1c;
+  stroke-width: 1.5;
+}
+
+.transform-handles__handle {
+  stroke: #1c1c1c;
+  stroke-width: 1.5;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.transform-handles__handle--corner {
+  fill: #ffffff;
+  cursor: nwse-resize;
+}
+
+.transform-handles__handle--edge {
+  fill: #1c1c1c;
+  stroke: #ffffff;
+  cursor: ew-resize;
+}
+
+.transform-handles__handle--rotate {
+  fill: #1c1c1c;
+  stroke: #ffffff;
+  cursor: grab;
+}
+
+.transform-handles__handle--move {
+  fill: rgba(255, 255, 255, 0.35);
+  stroke: #e040e0;
+  cursor: move;
+}
+
+.transform-handles__handle--centre {
+  fill: #ffffff;
+  stroke: #1c1c1c;
+  stroke-width: 3;
+  cursor: crosshair;
+}
+
+.transform-handles__post {
+  stroke: #1c1c1c;
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2;
+}
+
+.transform-handles__handle--base,
+.transform-handles__handle--shape,
+.transform-handles__handle--total {
+  fill: #2a7de1;
+  stroke: #ffffff;
+  cursor: ns-resize;
+}
+
+.transform-handles__handle--profile {
+  fill: #f0a020;
+  stroke: #1c1c1c;
+  cursor: ns-resize;
+}
+
+.transform-handles__handle--active {
+  stroke: #e040e0;
+  stroke-width: 2.5;
+}

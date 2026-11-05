@@ -1,0 +1,59 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.extrude-weave {
+  @include form.form-root;
+}
+
+.extrude-weave__hint {
+  @include form.form-hint;
+}
+
+.extrude-weave__group {
+  @include form.form-group;
+}
+
+.extrude-weave__legend {
+  @include form.form-legend;
+}
+
+.extrude-weave__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1;
+}
+
+.extrude-weave__pick {
+  @include form.form-button;
+
+  flex: 1 1 auto;
+}
+
+.extrude-weave__count {
+  @include form.form-hint;
+}
+
+.extrude-weave__count--error {
+  color: tokens.$danger;
+}
+
+.extrude-weave__field {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.extrude-weave__label {
+  font-weight: 600;
+}
+
+.extrude-weave__select {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

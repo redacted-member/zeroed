@@ -1,0 +1,49 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.vgroove-toolpath {
+  @include form.form-root;
+}
+
+.vgroove-toolpath__hint {
+  @include form.form-hint;
+}
+
+.vgroove-toolpath__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.vgroove-toolpath__group {
+  @include form.form-group;
+}
+
+.vgroove-toolpath__legend {
+  @include form.form-legend;
+}
+
+.vgroove-toolpath__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.vgroove-toolpath__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.vgroove-toolpath__sharpen {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+  white-space: nowrap;
+}

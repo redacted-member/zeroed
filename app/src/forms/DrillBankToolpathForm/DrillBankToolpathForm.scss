@@ -1,0 +1,52 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.drill-bank {
+  @include form.form-root;
+}
+
+.drill-bank__hint {
+  @include form.form-hint;
+}
+
+.drill-bank__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.drill-bank__group {
+  @include form.form-group;
+}
+
+.drill-bank__legend {
+  @include form.form-legend;
+}
+
+.drill-bank__readout {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.drill-bank__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+}
+
+.drill-bank__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.drill-bank__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

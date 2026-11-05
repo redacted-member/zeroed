@@ -1,0 +1,148 @@
+@use '../../styles/tokens';
+
+.custom-sheets {
+  width: min(460px, calc(100vw - 48px));
+}
+
+.custom-sheets__form {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+}
+
+.custom-sheets__hint {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.custom-sheets__body {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: flex-start;
+}
+
+.custom-sheets__list {
+  flex: 1;
+  height: 180px;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.custom-sheets__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-sheets__table th {
+  padding: tokens.$space-1 tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  font-size: tokens.$font-size-small;
+  font-weight: 400;
+  text-align: left;
+}
+
+.custom-sheets__table td {
+  padding: 2px tokens.$space-2;
+}
+
+.custom-sheets__row {
+  cursor: default;
+}
+
+.custom-sheets__row[aria-selected='true'] {
+  background: tokens.$panel-raised;
+}
+
+.custom-sheets__index {
+  width: 24px;
+  color: tokens.$text-muted;
+}
+
+.custom-sheets__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.custom-sheets__field {
+  width: 100%;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font: inherit;
+}
+
+.custom-sheets__quantity {
+  width: 88px;
+}
+
+.custom-sheets__cell {
+  display: block;
+  width: 100%;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: none;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.custom-sheets__cell--invalid {
+  border-color: tokens.$danger;
+}
+
+.custom-sheets__field[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.custom-sheets__order,
+.custom-sheets__edit {
+  display: flex;
+  gap: tokens.$space-1;
+}
+
+.custom-sheets__order {
+  flex-direction: column;
+}
+
+.custom-sheets__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: tokens.$text;
+  cursor: pointer;
+}
+
+.custom-sheets__icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentcolor;
+}
+
+.custom-sheets__icon:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.custom-sheets__field:focus-visible,
+.custom-sheets__cell:focus-visible,
+.custom-sheets__icon:focus-visible {
+  @include tokens.focus-ring;
+}

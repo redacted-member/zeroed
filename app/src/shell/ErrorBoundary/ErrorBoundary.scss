@@ -1,0 +1,20 @@
+@use '../../styles/tokens';
+
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding: tokens.$space-3;
+}
+
+.error-boundary__title {
+  margin: 0;
+  color: tokens.$danger;
+  font-weight: 600;
+}
+
+.error-boundary__message {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}

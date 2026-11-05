@@ -1,0 +1,79 @@
+@use '../../styles/tokens';
+
+// The flags of the icon spec format (iconSpec.ts): line styles, surfaces
+// and color roles. A shape with no role draws in the control's text color.
+.tool-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tool-icon__thin {
+  stroke-width: 1;
+}
+
+.tool-icon__dash {
+  stroke-dasharray: 2 2.5;
+}
+
+.tool-icon__fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.tool-icon__tint {
+  fill: currentColor;
+  fill-opacity: 0.3;
+}
+
+.tool-icon__surface {
+  fill: tokens.$icon-model-fill;
+}
+
+.tool-icon__wood {
+  fill: tokens.$icon-material-fill;
+}
+
+.tool-icon__vector {
+  color: tokens.$icon-vector;
+}
+
+.tool-icon__node {
+  color: tokens.$icon-node;
+}
+
+.tool-icon__model {
+  color: tokens.$icon-model;
+}
+
+.tool-icon__toolpath {
+  color: tokens.$icon-toolpath;
+}
+
+.tool-icon__result {
+  color: tokens.$icon-result;
+}
+
+.tool-icon__ok {
+  color: tokens.$icon-ok;
+}
+
+.tool-icon__warning {
+  color: tokens.$icon-warning;
+}
+
+// A disabled control greys its whole icon with its label; a pressed,
+// selected or current one (drawn on the accent) shows it in its text color.
+:disabled .tool-icon,
+[aria-disabled='true'] .tool-icon,
+[aria-pressed='true'] .tool-icon,
+[aria-selected='true'] .tool-icon,
+[aria-checked='true'] .tool-icon,
+[aria-current='true'] .tool-icon {
+  @include tokens.tool-icon-mono;
+}

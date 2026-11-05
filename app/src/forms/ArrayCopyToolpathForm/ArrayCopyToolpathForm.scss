@@ -1,0 +1,58 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.array-copy {
+  @include form.form-root;
+}
+
+.array-copy__hint {
+  @include form.form-hint;
+}
+
+.array-copy__notice {
+  @include form.form-error;
+}
+
+.array-copy__group {
+  @include form.form-group;
+}
+
+.array-copy__legend {
+  @include form.form-legend;
+}
+
+.array-copy__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.array-copy__item {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  min-height: tokens.$row-height;
+}
+
+.array-copy__tool {
+  margin-left: auto;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.array-copy__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.array-copy__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

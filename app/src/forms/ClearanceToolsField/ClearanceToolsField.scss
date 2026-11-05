@@ -1,0 +1,29 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.clearance-tools {
+  @include form.form-group;
+}
+
+.clearance-tools__legend {
+  padding: 0 tokens.$space-1;
+  font-weight: 600;
+}
+
+.clearance-tools__options {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.clearance-tools__heading {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.clearance-tools__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

@@ -1,0 +1,84 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.furniture-params {
+  @include form.form-group;
+}
+
+.furniture-params__legend {
+  @include form.form-legend;
+}
+
+.furniture-params__number {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.furniture-params__slider {
+  width: 100%;
+  accent-color: tokens.$accent;
+}
+
+.furniture-params__toggle {
+  @include form.form-choice;
+}
+
+.furniture-params__choice {
+  @include form.form-row;
+}
+
+.furniture-params__label {
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-params__segments {
+  display: inline-flex;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  overflow: hidden;
+}
+
+.furniture-params__segment {
+  position: relative;
+  display: flex;
+}
+
+.furniture-params__segment + .furniture-params__segment {
+  border-left: tokens.$border-width solid tokens.$border-strong;
+}
+
+.furniture-params__segment-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.furniture-params__segment-face {
+  padding: 2px tokens.$space-2;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.furniture-params__segment-input:checked + .furniture-params__segment-face {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.furniture-params__segment-input:focus-visible + .furniture-params__segment-face {
+  outline: 2px solid tokens.$accent;
+  outline-offset: -2px;
+}
+
+.furniture-params__stock {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-params__select {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+}

@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "id": "smoking-stand",
+  "name": "Smoking Stand",
+  "category": "Tables",
+  "description": "Mission smoking stand: four arched legs made from two cross lapped boards, triangle shelves in the corners between the legs and a square top. Works as a small side stand.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23991",
+  "credit": "After \"A Smoking Stand\", Mission Furniture: How to Make It, Part II, H. H. Windsor, 1910 (public domain)",
+  "tags": ["mission", "side stand", "end table", "cross lap", "corner shelves"],
+  "params": [
+    { "key": "top", "label": "Top size", "kind": "length", "default": 508, "min": 400, "max": 600, "group": "Size" },
+    { "key": "spread", "label": "Leg spread", "kind": "length", "default": 457, "min": 300, "max": 560, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 657, "min": 550, "max": 750, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 18, "max": 25, "group": "Material" },
+    { "key": "shelf_z", "label": "Shelf height", "kind": "length", "default": 254, "min": 180, "max": 400, "group": "Layout" },
+    { "key": "arch", "label": "Arch between the feet", "kind": "length", "default": 120, "min": 50, "max": 140, "group": "Style" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "c": "{spread}/2",
+    "q": "{spread}/2-{t}/2",
+    "p": "{spread}/2+{t}/2"
+  },
+  "materials": {
+    "main": { "label": "Boards", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{c}-{top}/2", "y": "{c}-{top}/2", "z": "{leg_h}", "w": "{top}", "d": "{top}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "10" } ] },
+    { "id": "blade_a", "name": "Legs A", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{q}", "z": "0", "w": "{spread}", "d": "{t}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{arch}", "inset": "60" } ] },
+    { "id": "blade_b", "name": "Legs B", "material": "main", "grain": "long",
+      "box": { "x": "{q}", "y": "0", "z": "0", "w": "{t}", "d": "{spread}", "h": "{leg_h}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{arch}", "inset": "60" } ] },
+    { "id": "shelf_fl", "name": "Shelf front left", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{shelf_z}", "w": "{q}", "d": "{q}", "h": "{t}" },
+      "outline": [ ["{q}", "0"], ["{q}", "{q}"], ["0", "{q}"] ] },
+    { "id": "shelf_fr", "name": "Shelf front right", "material": "main", "grain": "long",
+      "box": { "x": "{p}", "y": "0", "z": "{shelf_z}", "w": "{q}", "d": "{q}", "h": "{t}" },
+      "outline": [ ["0", "0"], ["0", "{q}"], ["{q}", "{q}"] ] },
+    { "id": "shelf_bl", "name": "Shelf back left", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{p}", "z": "{shelf_z}", "w": "{q}", "d": "{q}", "h": "{t}" },
+      "outline": [ ["0", "0"], ["{q}", "0"], ["{q}", "{q}"] ] },
+    { "id": "shelf_br", "name": "Shelf back right", "material": "main", "grain": "long",
+      "box": { "x": "{p}", "y": "{p}", "z": "{shelf_z}", "w": "{q}", "d": "{q}", "h": "{t}" },
+      "outline": [ ["0", "0"], ["{q}", "0"], ["0", "{q}"] ] }
+  ],
+  "connections": [
+    { "a": "blade_a", "b": "blade_b", "class": "cross" },
+    { "a": "shelf_*", "b": "blade_a|blade_b", "class": "shelf" },
+    { "a": "top", "b": "*", "class": "top" }
+  ],
+  "jointClasses": {
+    "cross": { "label": "Legs crossing", "default": "crossLap" },
+    "shelf": { "label": "Corner shelves", "default": "tabSlot" },
+    "top": { "label": "Top to legs", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Tabletop fasteners (figure 8)", "count": "4" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

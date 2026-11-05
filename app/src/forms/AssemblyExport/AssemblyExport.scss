@@ -1,0 +1,19 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.assembly-export {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.assembly-export__select {
+  font: inherit;
+}
+
+.assembly-export__button {
+  @include form.form-button;
+
+  font-size: tokens.$font-size-small;
+}

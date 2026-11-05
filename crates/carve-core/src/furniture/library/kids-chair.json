@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "id": "kids-chair",
+  "name": "Kid's Chair",
+  "category": "Kids",
+  "description": "Sturdy chair for ages 3 to 8: profiled sides, a seat, a back board and two stretchers.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["kids", "chair", "playroom", "child"],
+  "params": [
+    { "key": "seat_h", "label": "Seat height", "kind": "length", "default": 280, "min": 220, "max": 350, "group": "Size" },
+    { "key": "width", "label": "Width", "kind": "length", "default": 330, "min": 260, "max": 420, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 320, "min": 260, "max": 400, "group": "Size" },
+    { "key": "back_h", "label": "Back height above the seat", "kind": "length", "default": 260, "min": 180, "max": 350, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" }
+  ],
+  "derived": {
+    "height": "{seat_h}+{back_h}",
+    "post": "70",
+    "seat_d": "{depth}-{post}",
+    "inner_w": "{width}-2*{t}"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{seat_d}", "{height}"], ["{seat_d}", "{seat_h}"], ["0", "{seat_h}"] ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "50" } ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{seat_d}", "{height}"], ["{seat_d}", "{seat_h}"], ["0", "{seat_h}"] ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "50" } ] },
+    { "id": "seat", "name": "Seat", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{seat_h}-{t}", "w": "{inner_w}", "d": "{seat_d}", "h": "{t}" } },
+    { "id": "back", "name": "Back board", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{seat_d}+20", "z": "{seat_h}+60", "w": "{inner_w}", "d": "{t}", "h": "{back_h}-100" },
+      "features": [ { "kind": "handle", "u": "{inner_w}/2", "v": "{back_h}-150", "w": "90", "h": "28" } ] },
+    { "id": "apron", "name": "Front apron", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "30", "z": "{seat_h}-{t}-60", "w": "{inner_w}", "d": "{t}", "h": "60" } },
+    { "id": "stretcher", "name": "Back stretcher", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}-30", "z": "60", "w": "{inner_w}", "d": "{t}", "h": "60" } }
+  ],
+  "connections": [
+    { "a": "seat", "b": "left|right", "class": "seat" },
+    { "a": "back|apron|stretcher", "b": "left|right", "class": "frame" }
+  ],
+  "jointClasses": {
+    "seat": { "label": "Seat to sides", "default": "dado" },
+    "frame": { "label": "Back, apron and stretcher to sides", "default": "tabSlot" }
+  },
+  "hardware": [
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

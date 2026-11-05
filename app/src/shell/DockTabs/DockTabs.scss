@@ -1,0 +1,43 @@
+@use '../../styles/tokens';
+
+.dock-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  width: 28px;
+  padding: tokens.$space-2 0;
+  border-right: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+}
+
+.dock-tabs__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: tokens.$space-3 0;
+  margin: 0 (-(tokens.$border-width)) 0 3px;
+  border: tokens.$border-width solid transparent;
+  border-right: none;
+  border-radius: tokens.$radius 0 0 tokens.$radius;
+  background: transparent;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.dock-tabs__tab:hover {
+  color: tokens.$text;
+}
+
+.dock-tabs__tab[aria-selected='true'] {
+  border-color: tokens.$border;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font-weight: 600;
+}
+
+.dock-tabs__label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}

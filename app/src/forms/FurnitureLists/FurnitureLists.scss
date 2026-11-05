@@ -1,0 +1,60 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.furniture-lists {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+}
+
+.furniture-lists__hint {
+  @include form.form-hint;
+}
+
+.furniture-lists__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-lists__table th,
+.furniture-lists__table td {
+  padding: 2px tokens.$space-1;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  text-align: left;
+}
+
+.furniture-lists__table thead th {
+  color: tokens.$text-muted;
+  font-weight: 600;
+}
+
+.furniture-lists__table tbody th {
+  font-weight: 400;
+}
+
+.furniture-lists__button {
+  @include form.form-button;
+
+  align-self: flex-start;
+  margin-top: tokens.$space-2;
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-lists__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-2;
+}
+
+.furniture-lists__caption {
+  padding: tokens.$space-1 0;
+  color: tokens.$text-muted;
+  font-weight: 600;
+  text-align: left;
+}
+
+.furniture-lists__check {
+  margin: 0;
+  accent-color: tokens.$accent;
+}

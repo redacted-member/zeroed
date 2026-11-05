@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.copy-along-form {
+  @include form.form-root;
+}
+
+.copy-along-form__hint {
+  @include form.form-hint;
+}
+
+.copy-along-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.copy-along-form__group {
+  @include form.form-group;
+}
+
+.copy-along-form__legend {
+  @include form.form-legend;
+}

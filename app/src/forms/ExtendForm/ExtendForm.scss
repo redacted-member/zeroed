@@ -1,0 +1,16 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.extend-form {
+  @include form.form-root;
+}
+
+.extend-form__hint {
+  @include form.form-hint;
+}
+
+.extend-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

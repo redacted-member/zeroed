@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "id": "flat-pack-chair",
+  "name": "Flat Pack Chair",
+  "category": "Seating",
+  "description": "CNC slot together chair: seat, back and two stretchers cross lap through profiled sides. No glue, no screws.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["flat pack", "cross lap", "slot together", "knock down", "chair"],
+  "params": [
+    { "key": "seat_h", "label": "Seat height", "kind": "length", "default": 450, "min": 430, "max": 460, "group": "Size" },
+    { "key": "width", "label": "Width", "kind": "length", "default": 460, "min": 400, "max": 550, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 480, "min": 420, "max": 560, "group": "Size" },
+    { "key": "back_h", "label": "Back height above the seat", "kind": "length", "default": 380, "min": 300, "max": 480, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "ov", "label": "Sides in from the seat edge", "kind": "length", "default": 30, "min": 20, "max": 60, "group": "Layout" }
+  ],
+  "derived": {
+    "height": "{seat_h}+{back_h}",
+    "post": "90",
+    "seat_d": "{depth}-{post}",
+    "back_y": "{depth}-60"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "{ov}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{seat_d}", "{height}"], ["{seat_d}", "{seat_h}+20"], ["0", "{seat_h}+20"] ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "80", "inset": "70" } ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{ov}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{seat_d}", "{height}"], ["{seat_d}", "{seat_h}+20"], ["0", "{seat_h}+20"] ],
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "80", "inset": "70" } ] },
+    { "id": "seat", "name": "Seat", "material": "main", "grain": "short",
+      "box": { "x": "0", "y": "0", "z": "{seat_h}-{t}", "w": "{width}", "d": "{seat_d}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "20" } ] },
+    { "id": "back", "name": "Back", "material": "main", "grain": "short",
+      "box": { "x": "0", "y": "{back_y}", "z": "{seat_h}+80", "w": "{width}", "d": "{t}", "h": "{back_h}-100" },
+      "features": [ { "kind": "radius", "r": "20" } ] },
+    { "id": "stretcher_f", "name": "Front stretcher", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "30", "z": "120", "w": "{width}", "d": "{t}", "h": "90" } },
+    { "id": "stretcher_b", "name": "Back stretcher", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{back_y}", "z": "120", "w": "{width}", "d": "{t}", "h": "90" } }
+  ],
+  "connections": [
+    { "a": "seat|back|stretcher_f|stretcher_b", "b": "left|right", "class": "cross" }
+  ],
+  "jointClasses": {
+    "cross": { "label": "Parts through the sides", "default": "crossLap" }
+  },
+  "hardware": [
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "id": "magazine-table",
+  "name": "Magazine Table",
+  "category": "Tables",
+  "description": "Mission magazine table: a top on two slab ends with a high shelf for magazines, slatted openings above the shelf and an open leg frame below.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23991",
+  "credit": "After \"A Magazine Table\", Mission Furniture: How to Make It, Part II, H. H. Windsor, 1910 (public domain)",
+  "tags": ["mission", "magazines", "den", "library", "sofa table"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 914, "min": 700, "max": 1200, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 457, "min": 380, "max": 600, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 762, "min": 650, "max": 800, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 22, "min": 18, "max": 25, "group": "Material" },
+    { "key": "drop", "label": "Shelf below the top", "kind": "length", "default": 229, "min": 150, "max": 300, "group": "Layout" },
+    { "key": "oh", "label": "Top overhang past the ends", "kind": "length", "default": 76, "min": 30, "max": 120, "group": "Layout" }
+  ],
+  "derived": {
+    "leg_h": "{height}-{t}",
+    "ed": "{depth}-50",
+    "shelf_z": "{leg_h}-{drop}-{t}",
+    "inner": "{width}-2*{oh}-2*{t}",
+    "ow": "({ed}-204)/3",
+    "up_v": "({shelf_z}+{t}+20+{leg_h}-25)/2",
+    "up_h": "{drop}-45",
+    "lo_v": "({shelf_z}+90)/2",
+    "lo_h": "{shelf_z}-210"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "{leg_h}", "w": "{width}", "d": "{depth}", "h": "{t}" },
+      "features": [ { "kind": "radius", "r": "6" } ] },
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "{oh}", "y": "25", "z": "0", "w": "{t}", "d": "{ed}", "h": "{leg_h}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "51" },
+        { "kind": "cutout", "u": "{ed}/2", "v": "{lo_v}", "w": "{ed}-102", "h": "{lo_h}", "r": "20" },
+        { "kind": "cutout", "u": "51+{ow}/2", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" },
+        { "kind": "cutout", "u": "51+{ow}/2+({ow}+51)", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" },
+        { "kind": "cutout", "u": "51+{ow}/2+2*({ow}+51)", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" }
+      ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{oh}-{t}", "y": "25", "z": "0", "w": "{t}", "d": "{ed}", "h": "{leg_h}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "50", "inset": "51" },
+        { "kind": "cutout", "u": "{ed}/2", "v": "{lo_v}", "w": "{ed}-102", "h": "{lo_h}", "r": "20" },
+        { "kind": "cutout", "u": "51+{ow}/2", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" },
+        { "kind": "cutout", "u": "51+{ow}/2+({ow}+51)", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" },
+        { "kind": "cutout", "u": "51+{ow}/2+2*({ow}+51)", "v": "{up_v}", "w": "{ow}", "h": "{up_h}", "r": "6" }
+      ] },
+    { "id": "shelf", "name": "Shelf", "material": "main", "grain": "long",
+      "box": { "x": "{oh}+{t}", "y": "25", "z": "{shelf_z}", "w": "{inner}", "d": "{ed}", "h": "{t}" } }
+  ],
+  "connections": [
+    { "a": "shelf", "b": "end_l|end_r", "class": "shelf" },
+    { "a": "top", "b": "end_l|end_r", "class": "top" }
+  ],
+  "jointClasses": {
+    "shelf": { "label": "Shelf to ends", "default": "wedgedTenon" },
+    "top": { "label": "Top to ends", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Small angle brackets", "count": "4", "note": "the 1910 table holds its top with four brass angles" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

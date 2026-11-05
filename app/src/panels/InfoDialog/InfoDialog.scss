@@ -1,0 +1,47 @@
+@use '../../styles/tokens';
+
+.info-dialog {
+  width: min(520px, calc(100vw - 48px));
+}
+
+.info-dialog__body {
+  padding: tokens.$space-2 tokens.$space-3;
+}
+
+.info-dialog__list {
+  margin: 0;
+  padding: tokens.$space-2 tokens.$space-3 tokens.$space-2 tokens.$space-4;
+}
+
+.info-dialog__item {
+  padding: 2px 0;
+}
+
+.info-dialog__name {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size-heading;
+  font-weight: 600;
+}
+
+.info-dialog__text {
+  margin: 0 0 tokens.$space-1;
+}
+
+.info-dialog__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-dialog__head {
+  padding: 2px 0;
+  border-bottom: tokens.$border-width solid tokens.$border-strong;
+  text-align: left;
+}
+
+.info-dialog__row {
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.info-dialog__cell {
+  padding: 2px tokens.$space-1 2px 0;
+}

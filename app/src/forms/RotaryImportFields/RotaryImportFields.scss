@@ -1,0 +1,22 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.rotary-import__group {
+  @include form.form-group;
+}
+
+.rotary-import__legend {
+  @include form.form-legend;
+}
+
+.rotary-import__hint {
+  @include form.form-hint;
+}
+
+.rotary-import__row {
+  @include form.form-row;
+}
+
+.rotary-import__button {
+  @include form.form-button;
+}

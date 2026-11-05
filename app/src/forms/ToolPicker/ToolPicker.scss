@@ -1,0 +1,37 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.tool-picker {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.tool-picker__label {
+  font-size: tokens.$font-size-small;
+}
+
+.tool-picker__name {
+  display: block;
+  min-height: tokens.$row-height;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  line-height: 1.4;
+}
+
+.tool-picker__buttons {
+  display: flex;
+  gap: tokens.$space-2;
+}
+
+.tool-picker__button {
+  @include form.form-button;
+
+  flex: 1;
+}
+
+.tool-picker__summary {
+  @include form.form-hint;
+}

@@ -1,0 +1,36 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.vector-texture-form {
+  @include form.form-root;
+}
+
+.vector-texture-form__hint {
+  @include form.form-hint;
+}
+
+.vector-texture-form__error {
+  @include form.form-error;
+}
+
+.vector-texture-form__group {
+  @include form.form-group;
+}
+
+.vector-texture-form__legend {
+  @include form.form-legend;
+}
+
+.vector-texture-form__label {
+  font-size: tokens.$font-size-small;
+}
+
+.vector-texture-form__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}

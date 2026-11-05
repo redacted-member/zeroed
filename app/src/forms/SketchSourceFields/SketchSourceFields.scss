@@ -1,0 +1,20 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.sketch-source {
+  @include form.form-group;
+}
+
+.sketch-source__legend {
+  @include form.form-legend;
+}
+
+.sketch-source__hint {
+  @include form.form-hint;
+}
+
+.sketch-source__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

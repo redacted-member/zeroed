@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "id": "umbrella-stand",
+  "name": "Umbrella Stand",
+  "category": "Storage",
+  "description": "Mission umbrella stand: a square open box with a center slat on each side, a raised bottom and a hole for a drip pan.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"An Umbrella Stand\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "hall", "entry", "umbrellas", "walking sticks"],
+  "params": [
+    { "key": "size", "label": "Width and depth", "kind": "length", "default": 286, "min": 260, "max": 400, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 711, "min": 550, "max": 850, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 19, "min": 15, "max": 22, "group": "Material" },
+    { "key": "foot", "label": "Bottom height above the floor", "kind": "length", "default": 50, "min": 30, "max": 80, "group": "Layout" },
+    { "key": "pan", "label": "Drip pan diameter", "kind": "length", "default": 165, "min": 120, "max": 200, "group": "Layout" }
+  ],
+  "derived": {
+    "inner": "{size}-2*{t}",
+    "ow": "({size}-152)/2",
+    "z_lo": "{foot}+76",
+    "z_hi": "{height}-51",
+    "open_h": "{z_hi}-{z_lo}",
+    "open_v": "({z_lo}+{z_hi})/2"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "front", "name": "Front", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{size}", "d": "{t}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "{foot}-10", "inset": "38" },
+        { "kind": "cutout", "u": "38+{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" },
+        { "kind": "cutout", "u": "{size}-38-{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" }
+      ] },
+    { "id": "back", "name": "Back", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{size}-{t}", "z": "0", "w": "{size}", "d": "{t}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "{foot}-10", "inset": "38" },
+        { "kind": "cutout", "u": "38+{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" },
+        { "kind": "cutout", "u": "{size}-38-{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" }
+      ] },
+    { "id": "side_l", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "{t}", "z": "0", "w": "{t}", "d": "{inner}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "{foot}-10", "inset": "38-{t}" },
+        { "kind": "cutout", "u": "38-{t}+{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" },
+        { "kind": "cutout", "u": "{size}-{t}-38-{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" }
+      ] },
+    { "id": "side_r", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{size}-{t}", "y": "{t}", "z": "0", "w": "{t}", "d": "{inner}", "h": "{height}" },
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "{foot}-10", "inset": "38-{t}" },
+        { "kind": "cutout", "u": "38-{t}+{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" },
+        { "kind": "cutout", "u": "{size}-{t}-38-{ow}/2", "v": "{open_v}", "w": "{ow}", "h": "{open_h}", "r": "6" }
+      ] },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{t}", "z": "{foot}", "w": "{inner}", "d": "{inner}", "h": "{t}" },
+      "features": [ { "kind": "hole", "u": "{inner}/2", "v": "{inner}/2", "diameter": "{pan}" } ] }
+  ],
+  "connections": [
+    { "a": "bottom", "b": "*", "class": "bottom" },
+    { "a": "side_l|side_r", "b": "front|back", "class": "corner" }
+  ],
+  "jointClasses": {
+    "bottom": { "label": "Bottom to sides", "default": "dado" },
+    "corner": { "label": "Corners", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Drip pan (round, metal)", "count": "1", "note": "sits in the hole in the bottom" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

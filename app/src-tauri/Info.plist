@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Merged into the bundle's Info.plist by the Tauri bundler, key by key: these
+  two lists replace the ones it makes from bundle.fileAssociations in
+  tauri.conf.json, to add the Finder document icons, which the configuration
+  has no field for. Keep both in step: app/src/lib/bundleTypes.test.ts
+  compares them.
+-->
+<plist version="1.0">
+<dict>
+  <key>CFBundleDocumentTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>CarveStudio Job</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSHandlerRank</key>
+      <string>Owner</string>
+      <key>LSItemContentTypes</key>
+      <array>
+        <string>com.carvestudio.job</string>
+      </array>
+      <key>CFBundleTypeIconFile</key>
+      <string>carve-document.icns</string>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>CarveStudio Clipart</string>
+      <key>CFBundleTypeRole</key>
+      <string>Viewer</string>
+      <key>LSHandlerRank</key>
+      <string>Owner</string>
+      <key>LSItemContentTypes</key>
+      <array>
+        <string>com.carvestudio.clipart</string>
+      </array>
+      <key>CFBundleTypeIconFile</key>
+      <string>carveclip-document.icns</string>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>CarveStudio Toolpath Template</string>
+      <key>CFBundleTypeRole</key>
+      <string>Viewer</string>
+      <key>LSHandlerRank</key>
+      <string>Owner</string>
+      <key>LSItemContentTypes</key>
+      <array>
+        <string>com.carvestudio.template</string>
+      </array>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>Design File</string>
+      <key>CFBundleTypeRole</key>
+      <string>Viewer</string>
+      <key>LSHandlerRank</key>
+      <string>Default</string>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>dxf</string>
+        <string>dwg</string>
+        <string>eps</string>
+        <string>ai</string>
+        <string>stl</string>
+        <string>obj</string>
+        <string>3ds</string>
+        <string>3dm</string>
+      </array>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>SVG Image</string>
+      <key>CFBundleTypeRole</key>
+      <string>Viewer</string>
+      <key>LSHandlerRank</key>
+      <string>Default</string>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>svg</string>
+      </array>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>Image or PDF</string>
+      <key>CFBundleTypeRole</key>
+      <string>Viewer</string>
+      <key>LSHandlerRank</key>
+      <string>Alternate</string>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>pdf</string>
+        <string>png</string>
+        <string>jpg</string>
+        <string>jpeg</string>
+        <string>bmp</string>
+        <string>gif</string>
+        <string>tif</string>
+        <string>tiff</string>
+        <string>webp</string>
+      </array>
+    </dict>
+  </array>
+  <key>UTExportedTypeDeclarations</key>
+  <array>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>com.carvestudio.job</string>
+      <key>UTTypeDescription</key>
+      <string>CarveStudio Job</string>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.data</string>
+        <string>public.content</string>
+      </array>
+      <key>UTTypeIconFile</key>
+      <string>carve-document.icns</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>carve</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>com.carvestudio.clipart</string>
+      <key>UTTypeDescription</key>
+      <string>CarveStudio Clipart</string>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.data</string>
+        <string>public.content</string>
+      </array>
+      <key>UTTypeIconFile</key>
+      <string>carveclip-document.icns</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>carveclip</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>com.carvestudio.template</string>
+      <key>UTTypeDescription</key>
+      <string>CarveStudio Toolpath Template</string>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.data</string>
+        <string>public.content</string>
+      </array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>cstemplate</string>
+        </array>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>

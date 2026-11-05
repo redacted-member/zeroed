@@ -1,0 +1,382 @@
+@use '../../styles/tokens';
+
+// Thumbnails are pictures drawn for a light backdrop (dark vector strokes,
+// wood coloured reliefs), so the backdrop stays light in both themes.
+$thumb-bg: #ebe8e2;
+$thumb-size: 96px;
+$thumb-small: 64px;
+$thumb-large: 144px;
+
+.clipart-panel {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.clipart-panel__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+  padding: tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.clipart-panel__label {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.clipart-panel__input {
+  min-width: 0;
+  height: 22px;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-sunken;
+  color: tokens.$text;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+}
+
+.clipart-panel__input:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.clipart-panel__input--scale {
+  width: 64px;
+}
+
+.clipart-panel__input[aria-invalid='true'] {
+  border-color: tokens.$danger;
+}
+
+.clipart-panel__categories {
+  flex: 0 0 auto;
+  max-height: 220px;
+  overflow-y: auto;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.clipart-panel__heading {
+  margin: 0;
+  padding: tokens.$space-1 tokens.$space-2;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.clipart-panel__category-list {
+  margin: 0;
+  padding: 0 0 tokens.$space-1;
+  list-style: none;
+}
+
+.clipart-panel__category {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  width: 100%;
+  height: 22px;
+  padding: 0 tokens.$space-2;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  text-align: left;
+  cursor: pointer;
+}
+
+.clipart-panel__category--depth-1 {
+  padding-left: tokens.$space-2 + 14px;
+}
+
+.clipart-panel__category--depth-2 {
+  padding-left: tokens.$space-2 + 28px;
+}
+
+.clipart-panel__category--depth-3 {
+  padding-left: tokens.$space-2 + 42px;
+}
+
+.clipart-panel__category-icon {
+  display: flex;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.clipart-panel__category:hover {
+  background: tokens.$panel-raised;
+}
+
+.clipart-panel__category:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.clipart-panel__category[aria-current='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.clipart-panel__category-name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clipart-panel__category-count {
+  opacity: 0.7;
+}
+
+.clipart-panel__library {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: tokens.$space-2;
+}
+
+.clipart-panel__note {
+  margin: 0 0 tokens.$space-2;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.clipart-panel__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1;
+  min-width: 0;
+}
+
+.clipart-panel__size {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  height: 22px;
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.clipart-panel__size:hover {
+  border-color: tokens.$accent;
+}
+
+.clipart-panel__size:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.clipart-panel__size[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.clipart-panel__button-icon {
+  display: flex;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.clipart-panel__button-label {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.clipart-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($thumb-size + 12px, 1fr));
+  gap: tokens.$space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clipart-panel__grid--small {
+  grid-template-columns: repeat(auto-fill, minmax($thumb-small + 12px, 1fr));
+}
+
+.clipart-panel__grid--large {
+  grid-template-columns: repeat(auto-fill, minmax($thumb-large + 12px, 1fr));
+}
+
+.clipart-panel__grid--small .clipart-panel__thumb {
+  width: $thumb-small;
+  height: $thumb-small;
+}
+
+.clipart-panel__grid--large .clipart-panel__thumb {
+  width: $thumb-large;
+  height: $thumb-large;
+}
+
+.clipart-panel__cell {
+  min-width: 0;
+}
+
+.clipart-panel__tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  width: 100%;
+  padding: tokens.$space-1;
+  border: tokens.$border-width solid transparent;
+  border-radius: tokens.$radius;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.clipart-panel__tile--dragging {
+  cursor: copy;
+}
+
+.clipart-panel__ghost {
+  position: fixed;
+  z-index: 1000;
+  width: $thumb-size;
+  height: $thumb-size;
+  border: tokens.$border-width solid tokens.$accent;
+  border-radius: tokens.$radius;
+  background: $thumb-bg;
+  opacity: 0.8;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.clipart-panel__tile:hover {
+  border-color: tokens.$border;
+  background: tokens.$panel-raised;
+}
+
+.clipart-panel__tile:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.clipart-panel__tile[aria-pressed='true'] {
+  border-color: tokens.$accent;
+  background: tokens.$panel-sunken;
+}
+
+.clipart-panel__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $thumb-size;
+  height: $thumb-size;
+  border-radius: tokens.$radius;
+  background: $thumb-bg;
+  overflow: hidden;
+}
+
+.clipart-panel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.clipart-panel__thumb-wait {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: tokens.$border;
+  opacity: 0.4;
+}
+
+.clipart-panel__thumb-missing {
+  padding: tokens.$space-1;
+  color: #555;
+  font-size: tokens.$font-size-small;
+  text-align: center;
+}
+
+.clipart-panel__name {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: tokens.$font-size-small;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clipart-panel__kind {
+  color: tokens.$text-muted;
+  font-size: 11px;
+}
+
+.clipart-panel__footer {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  padding: tokens.$space-2;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.clipart-panel__hint,
+.clipart-panel__status,
+.clipart-panel__error {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  overflow-wrap: anywhere;
+}
+
+.clipart-panel__hint {
+  color: tokens.$text-muted;
+}
+
+.clipart-panel__error {
+  color: tokens.$danger;
+}
+
+.clipart-panel__buttons {
+  display: flex;
+  gap: tokens.$space-1;
+}
+
+.clipart-panel__button {
+  display: flex;
+  gap: tokens.$space-1;
+  align-items: center;
+  height: 24px;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.clipart-panel__button:hover:not(:disabled) {
+  border-color: tokens.$accent;
+}
+
+.clipart-panel__button:focus-visible {
+  @include tokens.focus-ring;
+}
+
+.clipart-panel__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.clipart-panel__button-icon .tool-icon,
+.clipart-panel__category-icon .tool-icon {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "id": "wine-rack",
+  "name": "Wine Rack",
+  "category": "Kitchen",
+  "description": "Wine rack of square cubbies, one bottle each: thin egg crate dividers cross lap inside a carcass sized from the bottle count.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["wine", "bottles", "egg crate", "cross lap", "cubbies"],
+  "params": [
+    { "key": "cols", "label": "Bottles across", "kind": "count", "default": 6, "min": 2, "max": 12, "group": "Layout" },
+    { "key": "rows", "label": "Bottles high", "kind": "count", "default": 4, "min": 2, "max": 10, "group": "Layout" },
+    { "key": "cell", "label": "Cubby size", "kind": "length", "default": 100, "min": 85, "max": 130, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 300, "min": 220, "max": 400, "group": "Size" },
+    { "key": "t", "label": "Carcass thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "dt", "label": "Divider thickness", "kind": "thickness", "default": 9, "min": 6.35, "max": 12, "group": "Material" },
+    { "key": "back", "label": "Back", "kind": "toggle", "default": 0, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{cols}*{cell}+({cols}-1)*{dt}",
+    "inner_h": "{rows}*{cell}+({rows}-1)*{dt}",
+    "width": "{inner_w}+2*{t}",
+    "height": "{inner_h}+2*{t}",
+    "body_d": "{depth}-{back}*6"
+  },
+  "materials": {
+    "main": { "label": "Carcass", "thickness": "{t}" },
+    "div": { "label": "Dividers", "thickness": "{dt}" },
+    "back": { "label": "Back", "thickness": "6" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" } },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" } },
+    { "id": "top", "name": "Top", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "bottom", "name": "Bottom", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "0", "w": "{inner_w}", "d": "{body_d}", "h": "{t}" } },
+    { "id": "vdiv", "name": "Upright {i+1}", "material": "div", "grain": "long", "repeat": "{cols}-1",
+      "box": { "x": "{t}+({i}+1)*{cell}+{i}*{dt}", "y": "0", "z": "{t}", "w": "{dt}", "d": "{body_d}", "h": "{inner_h}" } },
+    { "id": "hdiv", "name": "Rack {i+1}", "material": "div", "grain": "long", "repeat": "{rows}-1",
+      "box": { "x": "{t}", "y": "0", "z": "{t}+({i}+1)*{cell}+{i}*{dt}", "w": "{inner_w}", "d": "{body_d}", "h": "{dt}" } },
+    { "id": "back", "name": "Back", "material": "back", "grain": "long", "when": "{back}",
+      "box": { "x": "{t}", "y": "{depth}-6", "z": "0", "w": "{inner_w}", "d": "6", "h": "{height}" } }
+  ],
+  "connections": [
+    { "a": "vdiv", "b": "hdiv", "class": "grid" },
+    { "a": "vdiv|hdiv", "b": "*", "class": "divider" },
+    { "a": "top|bottom", "b": "left|right", "class": "carcass" },
+    { "a": "back", "b": "*", "class": "back" }
+  ],
+  "jointClasses": {
+    "grid": { "label": "Dividers crossing", "default": "crossLap" },
+    "divider": { "label": "Dividers to carcass", "default": "dado" },
+    "carcass": { "label": "Top and bottom", "default": "rabbet" },
+    "back": { "label": "Back", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Wall anchors with screws", "count": "2", "note": "fix tall racks to the wall" }
+  ]
+}

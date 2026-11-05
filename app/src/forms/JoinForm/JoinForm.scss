@@ -1,0 +1,24 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.join-form {
+  @include form.form-root;
+}
+
+.join-form__hint {
+  @include form.form-hint;
+}
+
+.join-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.join-form__group {
+  @include form.form-group;
+}
+
+.join-form__legend {
+  @include form.form-legend;
+}

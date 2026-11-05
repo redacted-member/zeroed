@@ -1,0 +1,44 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.modeling-actions__group {
+  @include form.form-group;
+}
+
+.modeling-actions__legend {
+  @include form.form-legend;
+}
+
+.modeling-actions__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.modeling-actions__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.modeling-actions__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: tokens.$space-2;
+}
+
+.modeling-actions__button {
+  @include form.form-button;
+  height: auto;
+  min-height: tokens.$row-height;
+  padding-block: 2px;
+}
+
+.modeling-actions__button--primary {
+  @include form.form-button-primary;
+}

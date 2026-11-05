@@ -1,0 +1,39 @@
+@use '../../styles/tokens';
+
+.plane-handles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.plane-handles__stem,
+.plane-handles__arm {
+  stroke: tokens.$accent;
+  stroke-width: 2;
+}
+
+.plane-handles__arm {
+  stroke-dasharray: 4 3;
+}
+
+.plane-handles__grip {
+  stroke: tokens.$panel-bg;
+  stroke-width: 2;
+  cursor: grab;
+  pointer-events: all;
+}
+
+.plane-handles__grip--move {
+  fill: tokens.$accent;
+}
+
+.plane-handles__grip--tilt {
+  fill: tokens.$warning;
+}
+
+.plane-handles__grip--active {
+  fill: tokens.$danger;
+}

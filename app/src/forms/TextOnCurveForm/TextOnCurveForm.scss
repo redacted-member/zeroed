@@ -1,0 +1,16 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.text-on-curve-form {
+  @include form.form-root;
+}
+
+.text-on-curve-form__hint {
+  @include form.form-hint;
+}
+
+.text-on-curve-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

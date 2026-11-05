@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.component-transform {
+  @include form.form-root;
+}
+
+.component-transform__hint {
+  @include form.form-hint;
+}
+
+.component-transform__target {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.component-transform__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.component-transform__group {
+  @include form.form-group;
+}
+
+.component-transform__legend {
+  @include form.form-legend;
+}

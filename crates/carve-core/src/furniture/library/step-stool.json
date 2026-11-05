@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "id": "step-stool",
+  "name": "Step Stool",
+  "category": "Kids",
+  "description": "Two step stool with stepped sides, two treads, aprons under each tread and a hand hold.",
+  "license": "CC0-1.0",
+  "author": "CarveStudio contributors",
+  "source": null,
+  "credit": null,
+  "tags": ["step", "kitchen", "bathroom", "kids", "two step"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 400, "min": 300, "max": 600, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 450, "min": 300, "max": 500, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 400, "min": 320, "max": 500, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 18, "min": 15, "max": 25, "group": "Material" },
+    { "key": "handhold", "label": "Hand hold in the sides", "kind": "toggle", "default": 1, "group": "Style" }
+  ],
+  "derived": {
+    "low": "{height}/2",
+    "step_d": "{depth}/2",
+    "inner_w": "{width}-2*{t}",
+    "apron_h": "70"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "left", "name": "Left side", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{step_d}", "{height}"], ["{step_d}", "{low}"], ["0", "{low}"] ],
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "50" },
+        { "kind": "handle", "u": "{depth}*3/4", "v": "{height}-60", "w": "90", "h": "28", "when": "{handhold}" }
+      ] },
+    { "id": "right", "name": "Right side", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "outline": [ ["0", "0"], ["{depth}", "0"], ["{depth}", "{height}"], ["{step_d}", "{height}"], ["{step_d}", "{low}"], ["0", "{low}"] ],
+      "features": [
+        { "kind": "arch", "edge": "bottom", "rise": "40", "inset": "50" },
+        { "kind": "handle", "u": "{depth}*3/4", "v": "{height}-60", "w": "90", "h": "28", "when": "{handhold}" }
+      ] },
+    { "id": "tread_low", "name": "Lower tread", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{low}-{t}", "w": "{inner_w}", "d": "{step_d}", "h": "{t}" } },
+    { "id": "tread_high", "name": "Upper tread", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{step_d}", "z": "{height}-{t}", "w": "{inner_w}", "d": "{step_d}", "h": "{t}" } },
+    { "id": "apron_low", "name": "Lower apron", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "30", "z": "{low}-{t}-{apron_h}", "w": "{inner_w}", "d": "{t}", "h": "{apron_h}" } },
+    { "id": "apron_high", "name": "Upper apron", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "{depth}-{t}", "z": "{height}-{t}-{apron_h}", "w": "{inner_w}", "d": "{t}", "h": "{apron_h}" } }
+  ],
+  "connections": [
+    { "a": "tread_low|tread_high", "b": "left|right", "class": "tread" },
+    { "a": "apron_low|apron_high", "b": "*", "class": "apron" }
+  ],
+  "jointClasses": {
+    "tread": { "label": "Treads to sides", "default": "dado" },
+    "apron": { "label": "Aprons", "default": "dowel" }
+  },
+  "hardware": [
+    { "name": "Non slip pads", "count": "4" },
+    { "name": "Screws 4 x 40 mm", "count": "8", "note": "through the sides into the treads if not glued" }
+  ]
+}

@@ -1,0 +1,30 @@
+@use '../../styles/tokens';
+
+.tooltip {
+  position: fixed;
+  inset: auto;
+  max-width: 320px;
+  margin: 0;
+  padding: 3px tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: tokens.$text;
+  font-family: tokens.$font-ui;
+  font-size: tokens.$font-size-small;
+  line-height: 1.35;
+  white-space: pre-line;
+  pointer-events: none;
+}
+
+.tooltip::first-line {
+  font-weight: 600;
+}
+
+// A disabled button lets the pointer through to what holds it, alike in
+// every engine (WebKit sends a disabled control no pointer events at all),
+// and the tooltip layer finds it under the pointer from there.
+button:disabled[data-tip] {
+  pointer-events: none;
+}

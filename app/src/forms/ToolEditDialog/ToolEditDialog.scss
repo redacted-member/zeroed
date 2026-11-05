@@ -1,0 +1,35 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.tool-edit {
+  width: min(420px, calc(100vw - 48px));
+}
+
+.tool-edit__body {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-3;
+}
+
+.tool-edit__name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.tool-edit__hint {
+  margin: 0;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.tool-edit__group {
+  @include form.form-group;
+}
+
+.tool-edit__legend {
+  @include form.form-legend;
+}
+
+.tool-edit__ok {
+  @include form.form-button;
+}

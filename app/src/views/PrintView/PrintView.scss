@@ -1,0 +1,27 @@
+.print-view {
+  display: none;
+  margin: 0;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-view,
+  .print-view * {
+    visibility: visible;
+  }
+
+  .print-view {
+    display: block;
+    position: fixed;
+    inset: 0;
+  }
+
+  .print-view__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

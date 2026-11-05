@@ -1,0 +1,51 @@
+{
+  "format": 1,
+  "id": "magazine-rack",
+  "name": "Magazine Rack",
+  "category": "Storage",
+  "description": "Mission magazine rack: tall slab ends with five wide shelves, the top one flush with the tops of the ends.",
+  "license": "PD",
+  "author": "H. H. Windsor (Popular Mechanics Co.), adapted by CarveStudio contributors",
+  "source": "https://www.gutenberg.org/ebooks/23666",
+  "credit": "After \"Magazine Rack\", Mission Furniture: How to Make It, Part III, H. H. Windsor, 1912 (public domain)",
+  "tags": ["mission", "magazines", "books", "shelves", "knock down"],
+  "params": [
+    { "key": "width", "label": "Width", "kind": "length", "default": 660, "min": 400, "max": 1000, "group": "Size" },
+    { "key": "depth", "label": "Depth", "kind": "length", "default": 380, "min": 280, "max": 450, "group": "Size" },
+    { "key": "height", "label": "Height", "kind": "length", "default": 1016, "min": 700, "max": 1400, "group": "Size" },
+    { "key": "t", "label": "Panel thickness", "kind": "thickness", "default": 25, "min": 18, "max": 30, "group": "Material" },
+    { "key": "shelves", "label": "Shelves", "kind": "count", "default": 5, "min": 3, "max": 7, "group": "Layout" },
+    { "key": "low", "label": "Bottom shelf height", "kind": "length", "default": 100, "min": 60, "max": 200, "group": "Layout" }
+  ],
+  "derived": {
+    "inner_w": "{width}-2*{t}",
+    "pitch": "({height}-{t}-{low})/({shelves}-1)"
+  },
+  "materials": {
+    "main": { "label": "Panels", "thickness": "{t}" }
+  },
+  "panels": [
+    { "id": "end_l", "name": "Left end", "material": "main", "grain": "long",
+      "box": { "x": "0", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{low}/2", "inset": "51" } ] },
+    { "id": "end_r", "name": "Right end", "material": "main", "grain": "long",
+      "box": { "x": "{width}-{t}", "y": "0", "z": "0", "w": "{t}", "d": "{depth}", "h": "{height}" },
+      "features": [ { "kind": "arch", "edge": "bottom", "rise": "{low}/2", "inset": "51" } ] },
+    { "id": "shelf", "name": "Shelf {i+1}", "material": "main", "grain": "long", "repeat": "{shelves}-1",
+      "box": { "x": "{t}", "y": "0", "z": "{low}+{i}*{pitch}", "w": "{inner_w}", "d": "{depth}", "h": "{t}" } },
+    { "id": "top", "name": "Top shelf", "material": "main", "grain": "long",
+      "box": { "x": "{t}", "y": "0", "z": "{height}-{t}", "w": "{inner_w}", "d": "{depth}", "h": "{t}" } }
+  ],
+  "connections": [
+    { "a": "shelf", "b": "end_l|end_r", "class": "shelf" },
+    { "a": "top", "b": "end_l|end_r", "class": "top" }
+  ],
+  "jointClasses": {
+    "shelf": { "label": "Shelves to ends", "default": "dado" },
+    "top": { "label": "Top shelf to ends", "default": "rabbet" }
+  },
+  "hardware": [
+    { "name": "Flat head screws 50 mm", "count": "4*{shelves}", "note": "two through each end into every shelf, as in the 1912 rack; plug the holes" },
+    { "name": "Felt pads", "count": "4" }
+  ]
+}

@@ -1,0 +1,16 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.trim-objects-form {
+  @include form.form-root;
+}
+
+.trim-objects-form__hint {
+  @include form.form-hint;
+}
+
+.trim-objects-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}

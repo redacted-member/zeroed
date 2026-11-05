@@ -1,0 +1,28 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.move-form {
+  @include form.form-root;
+}
+
+.move-form__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.move-form__group {
+  @include form.form-group;
+}
+
+.move-form__legend {
+  @include form.form-legend;
+}
+
+.move-form__choices {
+  @include form.form-choices;
+}
+
+.move-form__choice {
+  @include form.form-choice;
+}

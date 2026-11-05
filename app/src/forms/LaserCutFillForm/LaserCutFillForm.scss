@@ -1,0 +1,46 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.laser-cut-fill {
+  @include form.form-root;
+}
+
+.laser-cut-fill__hint {
+  @include form.form-hint;
+}
+
+.laser-cut-fill__notice {
+  @include form.form-hint;
+
+  color: tokens.$danger;
+}
+
+.laser-cut-fill__group {
+  @include form.form-group;
+}
+
+.laser-cut-fill__legend {
+  @include form.form-legend;
+}
+
+.laser-cut-fill__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.laser-cut-fill__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.laser-cut-fill__readout {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}

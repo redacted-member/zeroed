@@ -1,0 +1,27 @@
+@use '../../styles/tokens';
+
+.slider-field {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: tokens.$space-1 tokens.$space-2;
+  align-items: center;
+}
+
+.slider-field__label {
+  font-size: tokens.$font-size-small;
+}
+
+.slider-field__value {
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+  font-variant-numeric: tabular-nums;
+}
+
+.slider-field__range {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.slider-field__range:disabled {
+  opacity: 0.5;
+}

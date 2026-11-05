@@ -1,0 +1,39 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.optional-tool-picker {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.optional-tool-picker__label {
+  font-size: tokens.$font-size-small;
+}
+
+.optional-tool-picker__select {
+  width: 100%;
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.optional-tool-picker__select:disabled {
+  opacity: 0.6;
+}
+
+.optional-tool-picker__summary {
+  @include form.form-hint;
+}
+
+.optional-tool-picker__hint {
+  @include form.form-hint;
+}
+
+.optional-tool-picker__warning {
+  color: tokens.$danger;
+}

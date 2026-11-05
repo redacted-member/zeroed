@@ -1,0 +1,190 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.post-management {
+  width: min(960px, calc(100vw - 48px));
+}
+
+.post-management__layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.post-management__top {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-2;
+  padding: tokens.$space-2;
+  border-bottom: tokens.$border-width solid tokens.$border;
+}
+
+.post-management__label {
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__input {
+  flex: 1;
+  min-height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.post-management__panes {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 3fr 2fr;
+  min-height: 0;
+}
+
+.post-management__list-pane {
+  max-height: 60vh;
+  padding: tokens.$space-2;
+  overflow-y: auto;
+  border-right: tokens.$border-width solid tokens.$border;
+}
+
+.post-management__heading {
+  margin: 0 0 tokens.$space-1;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.post-management__subheading {
+  margin: 0;
+  font-size: tokens.$font-size-small;
+  font-weight: 600;
+}
+
+.post-management__hint {
+  @include form.form-hint;
+}
+
+.post-management__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__table th,
+.post-management__table td {
+  padding: 2px tokens.$space-1;
+  border-bottom: tokens.$border-width solid tokens.$border;
+  text-align: left;
+}
+
+.post-management__row[aria-selected='true'] {
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.post-management__pick {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.post-management__badge {
+  padding: 0 tokens.$space-1;
+  border: tokens.$border-width solid currentcolor;
+  border-radius: tokens.$radius;
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__details {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  min-width: 0;
+  padding: tokens.$space-2;
+}
+
+.post-management__facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px tokens.$space-2;
+  margin: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__facts dt {
+  color: tokens.$text-muted;
+}
+
+.post-management__facts dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.post-management__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.$space-1;
+}
+
+.post-management__button {
+  @include form.form-button;
+
+  min-width: 0;
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__pick:focus-visible,
+.post-management__input:focus-visible,
+.post-management__button:focus-visible,
+.post-management__text:focus-visible {
+  outline: 2px solid tokens.$accent;
+  outline-offset: 1px;
+}
+
+.post-management__contents {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  min-height: 0;
+}
+
+.post-management__contents-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-management__text {
+  max-height: 260px;
+  margin: 0;
+  padding: tokens.$space-2;
+  overflow: auto;
+  border: tokens.$border-width solid tokens.$border;
+  background: tokens.$panel-sunken;
+  font-family: tokens.$font-mono;
+  font-size: tokens.$font-size-small;
+}
+
+.post-management__status {
+  @include form.form-hint;
+}
+
+.post-management__error {
+  @include form.form-error;
+}
+
+.post-management__log {
+  margin-top: tokens.$space-1;
+}
+
+.post-management__log td:nth-child(2) {
+  white-space: nowrap;
+}

@@ -1,0 +1,94 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.furniture-joinery {
+  @include form.form-group;
+}
+
+.furniture-joinery__legend {
+  @include form.form-legend;
+}
+
+.furniture-joinery__hint,
+.furniture-joinery__source {
+  @include form.form-hint;
+}
+
+.furniture-joinery__error {
+  @include form.form-error;
+}
+
+.furniture-joinery__style,
+.furniture-joinery__row {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: flex-start;
+}
+
+.furniture-joinery__row {
+  padding-top: tokens.$space-2;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.furniture-joinery__picture {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+}
+
+.furniture-joinery__pick {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  min-width: 0;
+}
+
+.furniture-joinery__summary {
+  font-size: tokens.$font-size-small;
+  cursor: pointer;
+}
+
+.furniture-joinery__summary:focus-visible {
+  outline: 2px solid tokens.$accent;
+}
+
+.furniture-joinery__size-fields {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  margin-top: tokens.$space-1;
+}
+
+.furniture-joinery__settings {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-2;
+  padding-top: tokens.$space-2;
+  border-top: tokens.$border-width solid tokens.$border;
+}
+
+.furniture-joinery__heading {
+  margin: 0;
+  font-size: tokens.$font-size;
+  font-weight: 600;
+}
+
+.furniture-joinery__relief {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.furniture-joinery__relief-label {
+  font-size: tokens.$font-size-small;
+}
+
+.furniture-joinery__relief-buttons {
+  display: flex;
+  gap: tokens.$space-1;
+}

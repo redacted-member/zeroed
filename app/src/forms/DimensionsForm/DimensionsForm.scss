@@ -1,0 +1,99 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.dimensions {
+  @include form.form-root;
+}
+
+.dimensions__hint {
+  @include form.form-hint;
+}
+
+.dimensions__group {
+  @include form.form-group;
+}
+
+.dimensions__legend {
+  @include form.form-legend;
+}
+
+.dimensions__kinds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: tokens.$space-1;
+}
+
+// Each type is a tile: the radio is kept for keyboard and screen readers,
+// visually hidden, and the tile shows the checked state.
+.dimensions__kind {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  padding: tokens.$space-1 2px;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  cursor: pointer;
+}
+
+.dimensions__kind:hover {
+  border-color: tokens.$accent;
+}
+
+.dimensions__kind:has(.dimensions__kind-radio:checked) {
+  border-color: tokens.$accent;
+  background: tokens.$accent;
+  color: tokens.$accent-text;
+}
+
+.dimensions__kind:has(.dimensions__kind-radio:focus-visible) {
+  @include tokens.focus-ring;
+}
+
+.dimensions__kind-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.dimensions__kind-icon {
+  display: flex;
+}
+
+.dimensions__kind-label {
+  font-size: 10px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.dimensions__note {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+}
+
+.dimensions__label {
+  font-size: tokens.$font-size-small;
+}
+
+.dimensions__input {
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
+
+.dimensions__error {
+  @include form.form-error;
+}
+
+.dimensions__button {
+  @include form.form-button;
+}

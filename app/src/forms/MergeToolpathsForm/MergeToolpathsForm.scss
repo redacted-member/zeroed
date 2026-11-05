@@ -1,0 +1,60 @@
+@use '../../styles/tokens';
+@use '../../styles/form';
+
+.merge-toolpaths {
+  @include form.form-root;
+}
+
+.merge-toolpaths__hint {
+  @include form.form-hint;
+}
+
+.merge-toolpaths__notice {
+  @include form.form-error;
+}
+
+.merge-toolpaths__group {
+  @include form.form-group;
+}
+
+.merge-toolpaths__legend {
+  @include form.form-legend;
+
+  margin: 0;
+}
+
+.merge-toolpaths__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.merge-toolpaths__option {
+  display: flex;
+  gap: tokens.$space-2;
+  align-items: center;
+  min-height: tokens.$row-height;
+}
+
+.merge-toolpaths__tool {
+  margin-left: auto;
+  color: tokens.$text-muted;
+  font-size: tokens.$font-size-small;
+}
+
+.merge-toolpaths__name {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$space-1;
+  font-size: tokens.$font-size-small;
+}
+
+.merge-toolpaths__input {
+  height: tokens.$row-height;
+  padding: 0 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border-strong;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-raised;
+  color: inherit;
+  font: inherit;
+}
