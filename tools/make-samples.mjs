@@ -203,10 +203,6 @@ for (const sample of SAMPLES.filter((s) => only.length === 0 || only.includes(s)
     if (info.kind === 'rotary' && inches.params?.profilePass !== undefined) {
       inches.params.profilePass = false;
     }
-    // Offset rings skip patches of this model at some job sizes; a raster does not.
-    if (inches.strategy === 'finish3d') {
-      inches.params.strategy = 'raster';
-    }
     await call('cam.recalculate', {
       id,
       request: { ...inches, name: inchName(request.name, inches.tool) },

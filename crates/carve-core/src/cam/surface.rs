@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::doc::{Document, JobSetup};
 use crate::error::CoreError;
-use crate::geom::{rect, reduce_subpath, Point, Region, Tolerance};
+use crate::geom::{path_bbox, rect, reduce_subpath, subpath_length, Point, Region, Tolerance};
 use crate::model::contour;
 use crate::model::field::{distance_to, Field};
 use crate::model::shape::{inside_cells, Grid};
@@ -1019,25 +1019,115 @@ fn try_offset(region: &Region, delta: f64, tol: Tolerance) -> Option<Region> {
     None
 }
 
-/// The region and its inward offsets a stepover apart, outermost first.
-fn rings(region: &Region, stepover: f64, tol: Tolerance) -> Vec<Region> {
-    // Each ring is offset from the region itself: offsetting the ring before
-    // piles up tiny arcs that the offsetter cannot handle.
-    // A ring the offsetter fails on is left out, not the rings inside it:
-    // stopping there left the whole middle of the area uncut.
-    let mut rings = vec![region.clone()];
-    let mut failed = 0;
-    for k in 1..10_000 {
-        match try_offset(region, stepover * k as f64, tol) {
-            Some(next) if next.is_empty() => break,
-            Some(next) => rings.push(next),
-            None => {
-                failed += 1;
-                if failed > 50 {
-                    break;
-                }
-            }
+/// The total length of every loop of `region`.
+fn region_length(region: &Region, tol: Tolerance) -> f64 {
+    region.loops.iter().map(|s| subpath_length(s, tol)).sum()
+}
+
+/// True when `ring` could be `from` offset inward by `gap`: every point taken
+/// away lies within `gap` of an edge, so the area can fall by little more
+/// than the edges' length times `gap`, the rounded inside corners being the
+/// little. The offsetter can answer with whole pieces of a ring gone, which
+/// takes away far more, or with a hole gone, which adds area.
+fn ring_is_whole(from: &Region, ring: &Region, gap: f64, tol: Tolerance) -> bool {
+    let removed = from.area() - ring.area();
+    let corners = from.loops.len() as f64 * std::f64::consts::TAU * gap * gap;
+    let most = region_length(from, tol) * gap * 1.25 + corners;
+    removed >= -tol.get() && removed <= most
+}
+
+/// The cells of `region` with how far each is inside it, in cells, for tracing
+/// a ring where the offsetter cannot make one. Past the grid counts as outside,
+/// so an area that fills the grid is measured from the grid's edge.
+fn depth_cells(region: &Region, grid: &Grid, tol: Tolerance) -> Vec<f32> {
+    let cells = inside_cells(region, grid, tol);
+    let (w, h) = (grid.width + 2, grid.height + 2);
+    let mut inside = vec![false; w * h];
+    for (row, from) in inside
+        .chunks_mut(w)
+        .skip(1)
+        .zip(cells.chunks(grid.width.max(1)))
+    {
+        row[1..=from.len()].copy_from_slice(from);
+    }
+    let outside: Vec<bool> = inside.iter().map(|c| !c).collect();
+    let to_inside = distance_to(&inside, w, h);
+    let to_outside = distance_to(&outside, w, h);
+    let mut depths = Vec::with_capacity(cells.len());
+    for j in 1..=grid.height {
+        for i in 1..=grid.width {
+            let k = j * w + i;
+            depths.push(if inside[k] {
+                (to_outside[k] - 0.5) as f32
+            } else {
+                (0.5 - to_inside[k]) as f32
+            });
         }
+    }
+    depths
+}
+
+/// The ring `depth` millimetres inside the area `depths` describes, traced on
+/// the grid. It follows the area to within about a cell, which is why it only
+/// stands in for a ring the offsetter broke.
+fn traced_ring(depths: &[f32], grid: &Grid, depth: f64, tol: Tolerance) -> Region {
+    let mut field = Field::empty(grid.width, grid.height, grid.cell, grid.origin);
+    let level = depth / grid.cell;
+    for (value, inside) in field.z.iter_mut().zip(depths) {
+        *value = (f64::from(*inside) - level) as f32;
+    }
+    let paths = contour::boundary(&field, 0.0, 0.0, tol).unwrap_or_default();
+    let merge = Tolerance::new(grid.cell * 0.1).unwrap_or(tol);
+    Region {
+        loops: paths
+            .into_iter()
+            .flat_map(|p| p.subpaths)
+            .map(|s| reduce_subpath(&s, merge))
+            .collect(),
+    }
+}
+
+/// The region and its inward offsets a stepover apart, outermost first.
+fn rings(region: &Region, stepover: f64, grid: &Grid, tol: Tolerance) -> Vec<Region> {
+    rings_by(region, stepover, grid, tol, |depth| {
+        try_offset(region, depth, tol)
+    })
+}
+
+/// [`rings`] with what `offset` answers for each depth.
+fn rings_by(
+    region: &Region,
+    stepover: f64,
+    grid: &Grid,
+    tol: Tolerance,
+    offset: impl Fn(f64) -> Option<Region>,
+) -> Vec<Region> {
+    let mut rings = vec![region.clone()];
+    let Some(bbox) = path_bbox(&region.as_path()) else {
+        return rings;
+    };
+    // No ring can be further in than half the area's narrower side.
+    let side = (bbox.max.x - bbox.min.x).min(bbox.max.y - bbox.min.y);
+    let last = (side / 2.0 / stepover).ceil() as usize + 1;
+    let mut depths: Option<Vec<f32>> = None;
+    for k in 1..=last {
+        // Each ring is offset from the region itself: offsetting the ring
+        // before piles up tiny arcs that the offsetter cannot handle. Where it
+        // still fails or answers with pieces missing, the ring is traced
+        // instead: leaving rings out left ridges, and stopping at too many
+        // left the whole middle of the area uncut.
+        let depth = stepover * k as f64;
+        let before = rings.last().unwrap_or(region);
+        let ring = offset(depth)
+            .filter(|ring| ring_is_whole(before, ring, stepover, tol))
+            .unwrap_or_else(|| {
+                let depths = depths.get_or_insert_with(|| depth_cells(region, grid, tol));
+                traced_ring(depths, grid, depth, tol)
+            });
+        if ring.is_empty() {
+            break;
+        }
+        rings.push(ring);
     }
     rings
 }
@@ -1324,7 +1414,7 @@ impl Finisher<'_> {
     fn offset(&self, out: &mut Emitter, area: &Region, tol: Tolerance) -> Result<(), CoreError> {
         let step = self.surface.grid().cell;
         let mut points: Vec<Point> = Vec::new();
-        let rings = rings(area, self.stepover, tol);
+        let rings = rings(area, self.stepover, self.surface.grid(), tol);
         let total = rings.len();
         for (k, ring) in rings.into_iter().enumerate() {
             crate::progress::check()?;
@@ -1572,7 +1662,7 @@ impl Rougher<'_> {
             |c| c.loops.first().map_or(Point::new(0.0, 0.0), |s| s.start),
         );
         for part in parts {
-            for ring in rings(&part, self.stepover, tol).iter().rev() {
+            for ring in rings(&part, self.stepover, &grid.grid, tol).iter().rev() {
                 for chain in nearest_loops(ring, out.at().xy(), tol) {
                     cut_loop(out, grid, &chain, z, self.link_limit, entry);
                 }
@@ -2899,6 +2989,130 @@ mod tests {
             .count();
         assert!(lifts > 5, "{lifts}");
         assert_no_gouge(&surface, &tool, &c.moves, 0.0);
+    }
+
+    #[test]
+    fn offset_rings_on_a_traced_outline_are_whole_and_a_stepover_apart() {
+        let document = crate::io::native::read_bytes(
+            include_bytes!("../../assets/samples/relief-plaque.carve"),
+            "relief-plaque",
+            1,
+        )
+        .expect("the sample opens");
+        let surface = Surface::of(&document);
+        let bounds = Bounds {
+            boundary: Boundary::Model,
+            level: 0,
+            offset: 0.0,
+        };
+        let limits = Limits::new(&surface, bounds, None, document.job(), tol()).expect("limits");
+        let area = boundary_region(&limits, bounds, None, tol()).expect("an outline");
+        let stepover = 0.635;
+        let found = rings(&area, stepover, &limits.grid, tol());
+
+        // What each ring should enclose, worked out apart from the offsetter:
+        // the cells further than its distance from the traced outline.
+        let grid = limits.grid;
+        let cells = limits.mask.as_ref().expect("a model outline");
+        let outside: Vec<bool> = cells.iter().map(|c| !c).collect();
+        let depth: Vec<f64> = distance_to(&outside, grid.width, grid.height)
+            .iter()
+            .map(|d| (*d - 0.5) * grid.cell)
+            .collect();
+        let deepest = depth.iter().fold(0.0f64, |a, b| a.max(*b));
+        assert!(
+            found.len() as f64 >= deepest / stepover - 2.0,
+            "{} rings stop short of {deepest}",
+            found.len()
+        );
+        let bad: Vec<(usize, f64, f64)> = found
+            .iter()
+            .enumerate()
+            .map(|(k, ring)| {
+                let want = depth.iter().filter(|d| **d > k as f64 * stepover).count() as f64
+                    * grid.cell
+                    * grid.cell;
+                (k, ring, want)
+            })
+            .filter(|(_, ring, want)| {
+                let band = region_length(ring, tol()) * grid.cell + 4.0 * grid.cell * grid.cell;
+                (ring.area() - want).abs() > band
+            })
+            .map(|(k, ring, want)| (k, ring.area(), want))
+            .collect();
+        assert!(bad.is_empty(), "{} rings are wrong: {bad:?}", bad.len());
+    }
+
+    #[test]
+    fn a_ring_with_pieces_gone_is_not_whole() {
+        let square = |lo: f64, hi: f64| {
+            Region::from_paths(
+                &[rect(Point::new(lo, lo), Point::new(hi, hi)).expect("a square")],
+                tol(),
+            )
+        };
+        let from = square(0.0, 100.0);
+        // A true offset by 1 takes 396 from a square with edges 400 long.
+        assert!(ring_is_whole(&from, &square(1.0, 99.0), 1.0, tol()));
+        // The limit is 500 and a little for the corners: just past it fails.
+        assert!(ring_is_whole(&from, &square(2.0, 98.0), 2.0, tol()));
+        assert!(!ring_is_whole(&from, &square(3.0, 97.0), 1.0, tol()));
+        // Most of the ring gone, or all of it while the middle is still wide.
+        assert!(!ring_is_whole(&from, &square(40.0, 60.0), 1.0, tol()));
+        assert!(!ring_is_whole(
+            &from,
+            &Region { loops: Vec::new() },
+            1.0,
+            tol()
+        ));
+        // The last ring of a thin area really can leave nothing.
+        assert!(ring_is_whole(
+            &square(0.0, 2.0),
+            &Region { loops: Vec::new() },
+            1.0,
+            tol()
+        ));
+        // Area can only fall as a ring moves in: a dropped hole adds some.
+        let holed = Region::from_paths(
+            &[
+                rect(Point::new(0.0, 0.0), Point::new(100.0, 100.0)).expect("a square"),
+                rect(Point::new(40.0, 40.0), Point::new(60.0, 60.0)).expect("a square"),
+            ],
+            tol(),
+        );
+        assert!(!ring_is_whole(&holed, &square(1.0, 99.0), 1.0, tol()));
+    }
+
+    #[test]
+    fn a_ring_the_offsetter_fails_on_or_breaks_is_traced_in_its_place() {
+        let square = |lo: f64, hi: f64| {
+            Region::from_paths(
+                &[rect(Point::new(lo, lo), Point::new(hi, hi)).expect("a square")],
+                tol(),
+            )
+        };
+        let grid = Grid {
+            origin: Point::new(0.125, 0.125),
+            cell: 0.25,
+            width: 160,
+            height: 160,
+        };
+        let region = square(0.0, 40.0);
+        // A failure, a ring with most of it gone, and nothing at all while the
+        // middle is still 20 wide, none of which may stop or thin the rings.
+        let found = rings_by(&region, 2.0, &grid, tol(), |depth| match depth as i64 {
+            4 => None,
+            6 => Some(square(19.0, 21.0)),
+            10 => Some(Region { loops: Vec::new() }),
+            20.. => Some(Region { loops: Vec::new() }),
+            _ => Some(square(depth, 40.0 - depth)),
+        });
+        let sides: Vec<f64> = found.iter().map(|ring| ring.area().sqrt()).collect();
+        assert!(sides.len() >= 10, "{sides:?}");
+        for (k, side) in sides.iter().take(10).enumerate() {
+            let want = 40.0 - 4.0 * k as f64;
+            assert!((side - want).abs() < 1.0, "ring {k}: {sides:?}");
+        }
     }
 
     #[test]
