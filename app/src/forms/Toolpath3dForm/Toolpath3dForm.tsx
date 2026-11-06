@@ -33,6 +33,7 @@ import {
   angleFor,
   convert3dUnits,
   finish3dParams,
+  form3dOnRotary,
   initial3dState,
   isZLevel,
   minimumDetailRange,
@@ -140,15 +141,12 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
     setState((current) => ({ ...current, [field]: value }));
   const patch = (next: Partial<Form3dState>) => setState((current) => ({ ...current, ...next }));
   const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  const editing = useUiStore((store) => store.editingToolpath !== null);
   useEffect(() => {
     if (alongBlank !== null) {
-      setState((current) => ({
-        ...current,
-        finishStrategy: 'raster',
-        angle: String(alongBlank),
-      }));
+      setState((current) => form3dOnRotary(current, alongBlank, editing));
     }
-  }, [alongBlank, setState]);
+  }, [alongBlank, editing, setState]);
   const errorFor = (field: Field3d) => (showErrors ? errors[field] : undefined);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {

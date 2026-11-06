@@ -762,6 +762,7 @@ mod tests {
         job.kind = JobKind::Rotary;
         job.rotary.diameter = 40.0;
         job.rotary.length = 200.0;
+        job.rotary.axis = crate::doc::RotaryAxis::X;
         doc.begin("job");
         doc.set_job(job).expect("job");
         doc.commit();

@@ -38,7 +38,7 @@ app, with no subscription and no cloud account.
 </tr>
 </table>
 
-<img src="docs/images/details.jpg" alt="Close views of a carved flower, a V-bit in a cut, and parts nested on a sheet" width="100%">
+<img src="docs/images/details.jpg" alt="Close views of a carved flower, V-groove lettering on a sign, and parts nested on a sheet" width="100%">
 
 ### Draw
 

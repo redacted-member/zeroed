@@ -121,6 +121,23 @@ export function usesAngle(kind: Kind3d, state: Form3dState): boolean {
   return kind === 'rough3d' || state.finishStrategy !== 'offset';
 }
 
+/**
+ * The form on a rotary job: a raster along the blank. A new toolpath also starts
+ * with no profile pass; one being edited keeps its own choice.
+ */
+export function form3dOnRotary(
+  state: Form3dState,
+  alongBlank: number,
+  editing: boolean,
+): Form3dState {
+  return {
+    ...state,
+    finishStrategy: 'raster',
+    angle: String(alongBlank),
+    profile: editing ? state.profile : 'none',
+  };
+}
+
 /** Z level options (profile, order, ramps) apply to Z Level roughing. */
 export function isZLevel(state: Form3dState): boolean {
   return state.roughStrategy !== 'raster3d';

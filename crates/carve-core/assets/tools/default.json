@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "nextId": 32,
+  "nextId": 45,
   "groups": [
     {
       "id": 1,
       "name": "Metric Tools",
-      "parent": null
+      "parent": null,
+      "order": 1
     },
     {
       "id": 2,
@@ -35,7 +36,8 @@
     {
       "id": 7,
       "name": "Imperial Tools",
-      "parent": null
+      "parent": null,
+      "order": 0
     },
     {
       "id": 8,
@@ -56,6 +58,26 @@
       "id": 29,
       "name": "Lasers",
       "parent": 1
+    },
+    {
+      "id": 32,
+      "name": "V Bits",
+      "parent": 7
+    },
+    {
+      "id": 33,
+      "name": "Engraving",
+      "parent": 7
+    },
+    {
+      "id": 34,
+      "name": "Drills",
+      "parent": 7
+    },
+    {
+      "id": 35,
+      "name": "Lasers",
+      "parent": 7
     }
   ],
   "tools": [
@@ -507,6 +529,215 @@
       "spindleSpeed": 0.0,
       "passDepth": 0.1,
       "stepover": 0.1,
+      "stepoverPercent": 50.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 0
+    },
+    {
+      "group": 9,
+      "id": 36,
+      "name": "Ball Nose 1/16 inch",
+      "toolType": {
+        "kind": "ballNose",
+        "diameter": 1.5875
+      },
+      "notes": "Fine relief detail. Take light passes.",
+      "units": "inch",
+      "number": 22,
+      "feedUnits": "inchPerMin",
+      "feedRate": 40.0,
+      "plungeRate": 15.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 0.79375,
+      "stepover": 0.15875,
+      "stepoverPercent": 10.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 32,
+      "id": 37,
+      "name": "V Bit 60 deg 1/2 inch",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.7,
+        "includedAngle": 60.0
+      },
+      "notes": "Narrow V for lettering and fine detail.",
+      "units": "inch",
+      "number": 23,
+      "feedUnits": "inchPerMin",
+      "feedRate": 80.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.175,
+      "stepover": 5.08,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 32,
+      "id": 38,
+      "name": "V Bit 90 deg 1/2 inch",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.7,
+        "includedAngle": 90.0
+      },
+      "notes": "General V carving and chamfers.",
+      "units": "inch",
+      "number": 24,
+      "feedUnits": "inchPerMin",
+      "feedRate": 80.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.175,
+      "stepover": 5.08,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 32,
+      "id": 39,
+      "name": "V Bit 120 deg 1/2 inch",
+      "toolType": {
+        "kind": "vBit",
+        "diameter": 12.7,
+        "includedAngle": 120.0
+      },
+      "notes": "Wide, shallow V for large lettering.",
+      "units": "inch",
+      "number": 25,
+      "feedUnits": "inchPerMin",
+      "feedRate": 80.0,
+      "plungeRate": 20.0,
+      "spindleSpeed": 18000.0,
+      "passDepth": 3.175,
+      "stepover": 5.08,
+      "stepoverPercent": 40.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 33,
+      "id": 40,
+      "name": "Engraving 30 deg 0.005 inch tip",
+      "toolType": {
+        "kind": "engravingTool",
+        "diameter": 6.35,
+        "includedAngle": 30.0,
+        "flatDiameter": 0.127
+      },
+      "notes": "Fine line engraving and texture work.",
+      "units": "inch",
+      "number": 26,
+      "feedUnits": "inchPerMin",
+      "feedRate": 60.0,
+      "plungeRate": 15.0,
+      "spindleSpeed": 20000.0,
+      "passDepth": 0.508,
+      "stepover": 0.0635,
+      "stepoverPercent": 1.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 1
+    },
+    {
+      "group": 34,
+      "id": 41,
+      "name": "Drill 1/8 inch",
+      "toolType": {
+        "kind": "drill",
+        "diameter": 3.175,
+        "pointAngle": 118.0
+      },
+      "notes": "Peck drilling of small holes.",
+      "units": "inch",
+      "number": 27,
+      "feedUnits": "inchPerMin",
+      "feedRate": 12.0,
+      "plungeRate": 8.0,
+      "spindleSpeed": 3000.0,
+      "passDepth": 3.175,
+      "stepover": 3.175,
+      "stepoverPercent": 100.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 34,
+      "id": 42,
+      "name": "Drill 1/4 inch",
+      "toolType": {
+        "kind": "drill",
+        "diameter": 6.35,
+        "pointAngle": 118.0
+      },
+      "notes": "Peck drilling of larger holes.",
+      "units": "inch",
+      "number": 28,
+      "feedUnits": "inchPerMin",
+      "feedRate": 12.0,
+      "plungeRate": 8.0,
+      "spindleSpeed": 3000.0,
+      "passDepth": 6.35,
+      "stepover": 6.35,
+      "stepoverPercent": 100.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 2
+    },
+    {
+      "group": 35,
+      "id": 43,
+      "name": "Diode Laser 0.004 inch",
+      "toolType": {
+        "kind": "laserTool",
+        "power": 80.0,
+        "speed": 1219.1999999999998,
+        "kerf": 0.1016
+      },
+      "notes": "Generic diode laser module. Test power and speed on scrap before a job.",
+      "units": "inch",
+      "number": 29,
+      "feedUnits": "inchPerMin",
+      "feedRate": 48.0,
+      "plungeRate": 48.0,
+      "spindleSpeed": 0.0,
+      "passDepth": 0.1016,
+      "stepover": 0.1016,
+      "stepoverPercent": 50.0,
+      "clearance": 0.0,
+      "cuttingData": [],
+      "flutes": 0
+    },
+    {
+      "group": 35,
+      "id": 44,
+      "name": "CO2 Laser 0.008 inch",
+      "toolType": {
+        "kind": "laserTool",
+        "power": 60.0,
+        "speed": 3048.0,
+        "kerf": 0.2032
+      },
+      "notes": "Generic CO2 laser tube. Test power and speed on scrap before a job.",
+      "units": "inch",
+      "number": 30,
+      "feedUnits": "inchPerMin",
+      "feedRate": 120.0,
+      "plungeRate": 120.0,
+      "spindleSpeed": 0.0,
+      "passDepth": 0.1016,
+      "stepover": 0.1016,
       "stepoverPercent": 50.0,
       "clearance": 0.0,
       "cuttingData": [],

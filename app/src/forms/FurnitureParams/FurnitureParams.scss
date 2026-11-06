@@ -73,6 +73,7 @@
 .furniture-params__stock {
   display: flex;
   align-items: center;
+  min-width: 0;
   gap: tokens.$space-1;
   font-size: tokens.$font-size-small;
 }

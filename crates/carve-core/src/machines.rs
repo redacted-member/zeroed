@@ -66,17 +66,18 @@ fn default_rapid_rate() -> f64 {
 }
 
 impl MachineConfig {
-    /// A machine with a 600 x 600 x 100 mm working area and no posts yet.
+    /// A machine with a 24 x 24 x 4 inch working area, 120 inches a minute
+    /// rapids and no posts yet.
     pub fn named(name: &str) -> Self {
         MachineConfig {
             name: name.to_string(),
-            units: Units::Mm,
-            bed_x: 600.0,
-            bed_y: 600.0,
-            bed_z: 100.0,
+            units: Units::Inch,
+            bed_x: 24.0 * 25.4,
+            bed_y: 24.0 * 25.4,
+            bed_z: 4.0 * 25.4,
             posts: Vec::new(),
             default_post: None,
-            rapid_rate: default_rapid_rate(),
+            rapid_rate: 120.0 * 25.4,
             acceleration: [0.0; 3],
             rotary_acceleration: 0.0,
             rotary: crate::post::rotary::RotaryWiring::machine_default(),

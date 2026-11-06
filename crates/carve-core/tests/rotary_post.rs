@@ -149,12 +149,11 @@ fn mach_rotary_wraps_x_into_b() {
 fn a_flat_post_cannot_write_a_rotary_job() {
     let post = post_by_id("grbl_mm");
     assert!(Wrap::for_job(&post, &RotarySetup::default()).is_err());
-    let grbl = post_by_id("grbl_rotary_a_mm");
     let along = RotarySetup {
-        axis: RotaryAxis::Y,
+        axis: RotaryAxis::X,
         ..RotarySetup::default()
     };
-    assert!(Wrap::for_job(&grbl, &along).is_err());
+    assert!(Wrap::for_job(&post, &along).is_err());
 }
 
 #[test]
@@ -422,6 +421,7 @@ fn a_multiplier_on_the_a_variable_reverses_an_axis_wired_the_other_way() {
     let post = parse_post("reversed", &reversed).expect("parses");
     let rotary = RotarySetup {
         diameter: DIAMETER,
+        axis: RotaryAxis::X,
         ..RotarySetup::default()
     };
     let wrap = Wrap::for_job(&post, &rotary).expect("wraps");
@@ -433,12 +433,31 @@ fn a_multiplier_on_the_a_variable_reverses_an_axis_wired_the_other_way() {
 }
 
 #[test]
+fn every_shipped_rotary_post_wraps_a_blank_along_y() {
+    for id in [
+        "grbl_rotary_a_mm",
+        "linuxcnc_rotary_mm",
+        "linuxcnc_rotary_inch",
+        "linuxcnc_manual_rotary_mm",
+        "linuxcnc_manual_rotary_inch",
+        "mach3_rotary_mm",
+        "uccnc_rotary_mm",
+        "uccnc_manual_rotary_mm",
+    ] {
+        assert!(
+            post_by_id(id).wrap_word(RotaryAxis::Y).is_some(),
+            "{id} is flat on a blank along Y"
+        );
+    }
+}
+
+#[test]
 fn a_shared_post_wraps_only_the_way_it_says() {
     use carve_core::doc::RotaryAxis as Axis;
     use carve_core::post::rotary::RotaryWord;
     let grbl = post_by_id("grbl_rotary_a_mm");
     assert_eq!(grbl.wrap_word(Axis::X), Some(RotaryWord::A));
-    assert_eq!(grbl.wrap_word(Axis::Y), None);
+    assert_eq!(grbl.wrap_word(Axis::Y), Some(RotaryWord::A));
     let mach = post_by_id("mach3_rotary_mm");
     assert_eq!(mach.wrap_word(Axis::X), Some(RotaryWord::A));
     assert_eq!(mach.wrap_word(Axis::Y), Some(RotaryWord::B));

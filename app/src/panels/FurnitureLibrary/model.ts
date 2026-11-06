@@ -2,6 +2,7 @@
 // search, the license badge and the default values a card previews.
 
 import type { FurnitureParam, FurnitureValues, TemplateSummary } from '../../bridge/furniture';
+import type { Units } from '../../bridge/types';
 
 /** The categories in the order the library lists them. */
 export const CATEGORY_ORDER: readonly string[] = [
@@ -98,11 +99,50 @@ export function needsCredit(license: string): boolean {
   return badge === 'ccBy' || badge === 'ccBySa';
 }
 
-/** Each parameter's default value. */
-export function defaultValues(params: readonly FurnitureParam[]): FurnitureValues {
+const MM_PER_INCH = 25.4;
+
+/** Board thicknesses as sold in inches, in inches. */
+const INCH_BOARDS = [1 / 8, 1 / 4, 3 / 8, 1 / 2, 5 / 8, 3 / 4, 1, 5 / 4, 3 / 2, 2];
+
+/** A length in millimeters as a round inch size: coarser the longer it is. */
+function roundInches(mm: number): number {
+  const inches = mm / MM_PER_INCH;
+  const step = inches >= 6 ? 1 : inches >= 1 ? 1 / 4 : 1 / 16;
+  return Math.round(inches / step) * step * MM_PER_INCH;
+}
+
+/** A template's metric default as the round inch size nearest it, within its limits. */
+function inchDefault(param: FurnitureParam): number | string {
+  const value = param.default;
+  if (typeof value !== 'number' || value === 0) {
+    return value;
+  }
+  const min = param.min ?? -Infinity;
+  const max = param.max ?? Infinity;
+  const inside = (mm: number) => mm >= min && mm <= max;
+  if (param.kind === 'thickness') {
+    const boards = INCH_BOARDS.map((board) => board * MM_PER_INCH).filter(inside);
+    const nearest = boards.reduce<number | null>(
+      (best, mm) => (best === null || Math.abs(mm - value) < Math.abs(best - value) ? mm : best),
+      null,
+    );
+    return nearest ?? value;
+  }
+  if (param.kind === 'length') {
+    const rounded = roundInches(value);
+    return inside(rounded) ? rounded : value;
+  }
+  return value;
+}
+
+/** Each parameter's default value: round inches on an inch job. */
+export function defaultValues(
+  params: readonly FurnitureParam[],
+  units: Units = 'mm',
+): FurnitureValues {
   const values: FurnitureValues = {};
   for (const p of params) {
-    values[p.key] = p.default;
+    values[p.key] = units === 'inch' ? inchDefault(p) : p.default;
   }
   return values;
 }

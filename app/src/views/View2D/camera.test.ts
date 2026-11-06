@@ -5,6 +5,7 @@ import {
   datumOffset,
   fitCamera,
   gridSpacing,
+  unitSpacing,
   jobBounds,
   jobToScreen,
   panBy,
@@ -61,6 +62,16 @@ describe('2D camera', () => {
     expect(gridSpacing(2).minor).toBe(5);
     expect(gridSpacing(0.05).minor).toBe(200);
     expect(gridSpacing(2).major).toBe(50);
+  });
+
+  it('counts the grid in round inches on an inch job', () => {
+    expect(unitSpacing(2, 'mm')).toEqual(gridSpacing(2));
+    const coarse = unitSpacing(1.2, 'inch');
+    expect(coarse.major).toBeCloseTo(25.4, 9);
+    expect(coarse.minor).toBeCloseTo(6.35, 9);
+    const far = unitSpacing(0.05, 'inch');
+    expect(far.major).toBeCloseTo(50 * 25.4, 6);
+    expect(far.minor).toBeCloseTo(10 * 25.4, 6);
   });
 });
 

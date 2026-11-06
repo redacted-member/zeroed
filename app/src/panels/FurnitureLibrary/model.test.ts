@@ -106,6 +106,28 @@ describe('licenseBadge and needsCredit', () => {
 });
 
 describe('defaultValues', () => {
+  it('rounds metric defaults to inch sizes on an inch job, within their limits', () => {
+    const values = defaultValues(
+      [
+        { key: 'width', label: 'Width', kind: 'length', default: 800, min: 250, max: 1200 },
+        { key: 'small', label: 'Small', kind: 'length', default: 50 },
+        { key: 'tiny', label: 'Tiny', kind: 'length', default: 6 },
+        { key: 't', label: 'Thickness', kind: 'thickness', default: 18, min: 12, max: 25 },
+        { key: 'bt', label: 'Back', kind: 'thickness', default: 9, min: 6, max: 12 },
+        { key: 'tight', label: 'Tight', kind: 'length', default: 300, min: 299, max: 301 },
+        { key: 'count', label: 'Shelves', kind: 'count', default: 4 },
+      ],
+      'inch',
+    );
+    expect(values.width).toBeCloseTo(31 * 25.4, 6);
+    expect(values.small).toBeCloseTo(2 * 25.4, 6);
+    expect(values.tiny).toBeCloseTo(0.25 * 25.4, 6);
+    expect(values.t).toBeCloseTo(0.75 * 25.4, 6);
+    expect(values.bt).toBeCloseTo(0.375 * 25.4, 6);
+    expect(values.tight).toBe(300);
+    expect(values.count).toBe(4);
+  });
+
   it('takes each parameter default, choices as their option', () => {
     expect(
       defaultValues([

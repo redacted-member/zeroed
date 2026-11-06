@@ -144,9 +144,9 @@ mod tests {
         let job = kernel.document().job();
         assert_eq!(job.units, Units::Inch);
         assert_eq!(kernel.document().job_setup().units, Units::Inch);
-        assert!((job.width - 400.0).abs() < 1e-9);
-        assert!((job.height - 200.0).abs() < 1e-9);
-        assert!((job.thickness - 19.0).abs() < 1e-9);
+        assert!((job.width - 16.0 * 25.4).abs() < 1e-9);
+        assert!((job.height - 8.0 * 25.4).abs() < 1e-9);
+        assert!((job.thickness - 0.75 * 25.4).abs() < 1e-9);
         assert_eq!(run(&mut kernel, "doc.info", &json!({}))["dirty"], false);
     }
 

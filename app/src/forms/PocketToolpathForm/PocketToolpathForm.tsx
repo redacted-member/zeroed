@@ -24,6 +24,7 @@ import { VectorSelectionField } from '../VectorSelectionField/VectorSelectionFie
 import {
   convertPocketUnits,
   initialPocketState,
+  pocketOnRotary,
   pocketParams,
   pocketStateFrom,
   validatePocket,
@@ -68,15 +69,12 @@ export function PocketToolpathForm(): JSX.Element {
   const unit = unitSuffix(units);
   const raster = state.strategy === 'raster';
   const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  const editing = useUiStore((store) => store.editingToolpath !== null);
   useEffect(() => {
     if (alongBlank !== null) {
-      setState((current) => ({
-        ...current,
-        strategy: 'raster',
-        rasterAngle: String(alongBlank),
-      }));
+      setState((current) => pocketOnRotary(current, alongBlank, editing));
     }
-  }, [alongBlank, setState]);
+  }, [alongBlank, editing, setState]);
   const { tool: firstTool, setTool } = form;
   const tools = useMemo(
     () => (firstTool === null ? state.laterTools : [firstTool, ...state.laterTools]),

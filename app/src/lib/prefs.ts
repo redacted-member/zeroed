@@ -38,7 +38,7 @@ export function clampDockWidth(width: number): number {
 export const DEFAULT_PREFS: Preferences = {
   version: 1,
   general: {
-    defaultUnits: 'mm',
+    defaultUnits: 'inch',
     undoLimit: 200,
     autosaveMinutes: 0,
     showToolTips: true,
@@ -70,7 +70,7 @@ export const DEFAULT_PREFS: Preferences = {
     snapRadiusPx: 10,
     showGrid: true,
     showRulers: true,
-    gridSpacing: 10,
+    gridSpacing: 12.7,
     snapDistances: false,
     nudgeDistance: 5,
     gridStyle: 'points',
@@ -101,9 +101,9 @@ export const DEFAULT_PREFS: Preferences = {
     textures: [],
   },
   toolpaths: {
-    tolerance: 0.025,
-    tolerance3d: 0.01,
-    vgrooveTolerance: 0.025,
+    tolerance: 0.0254,
+    tolerance3d: 0.01016,
+    vgrooveTolerance: 0.0254,
     dropTool: false,
     newRaster: true,
     geometryFixSeconds: 10,

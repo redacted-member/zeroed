@@ -1000,7 +1000,7 @@ mod tests {
     fn tools_list_seeds_the_default_database() {
         let mut fixture = Fixture::new("cmd-list");
         let result = fixture.call("tools.list", "{}");
-        assert_eq!(result["tools"].as_array().map(Vec::len), Some(20));
+        assert_eq!(result["tools"].as_array().map(Vec::len), Some(29));
         assert!(result["groups"].as_array().is_some_and(|g| g.len() >= 10));
         assert_eq!(result["dbRevision"], 0);
         let first = &result["tools"][0];
@@ -1283,7 +1283,7 @@ mod tests {
             &json!({ "kind": "drill", "format": "Drill {Diameter}", "updateExisting": true })
                 .to_string(),
         );
-        assert_eq!(set["renamed"].as_array().map(Vec::len), Some(2));
+        assert_eq!(set["renamed"].as_array().map(Vec::len), Some(4));
         let list = fixture.call("tools.list", "{}");
         assert!(list["tools"]
             .as_array()

@@ -13,7 +13,7 @@ describe('rotary jobs', () => {
   it('fills in settings an older kernel leaves out', () => {
     expect(rotaryOf(DEFAULT_JOB)).toEqual({
       diameter: 100,
-      axis: 'x',
+      axis: 'y',
       length: 300,
       blank: 'cylinder',
       zZero: 'centre',

@@ -14,6 +14,12 @@ mod relief;
 mod sequences;
 mod toolpaths;
 
+/// A kernel whose open document is the metric default job, whatever the
+/// preferences default to, for tests that measure in millimeters.
+fn metric_kernel() -> Kernel {
+    Kernel::with_cam(crate::cam::commands::CamState::default())
+}
+
 fn envelope(reply: KernelReply) -> Value {
     match reply {
         KernelReply::Json(text) => serde_json::from_str(&text).expect("reply is JSON"),

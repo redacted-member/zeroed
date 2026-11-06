@@ -7,6 +7,7 @@ import { ButtonFace } from '../../forms/ButtonFace/ButtonFace';
 import { initialJoints } from '../../forms/FurnitureDesigner/model';
 import { furnitureStrings } from '../../lib/strings/furniture';
 import { useDialogStore } from '../../state/dialogStore';
+import { useDocumentStore } from '../../state/documentStore';
 import { useFurnitureStore } from '../../state/furnitureStore';
 import { ModalDialog } from '../ModalDialog/ModalDialog';
 import {
@@ -49,7 +50,7 @@ function useThumbnails(templates: readonly TemplateSummary[], open: boolean): vo
         const [preview, meshes] = await Promise.all([
           api.furniture.preview(
             { template: waiting.id },
-            defaultValues(waiting.params),
+            defaultValues(waiting.params, useDocumentStore.getState().job.units),
             initialJoints(),
           ),
           import('../../views/View3D/furnitureMeshes'),

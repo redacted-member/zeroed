@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   gap: tokens.$space-2;
+  min-width: 0;
   margin: 0;
   padding: tokens.$space-2 tokens.$space-3 tokens.$space-3;
   border: tokens.$border-width solid tokens.$border;

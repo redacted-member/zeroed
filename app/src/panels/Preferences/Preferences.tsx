@@ -21,6 +21,7 @@ import type {
   SnapDefaults,
 } from '../../bridge/prefs';
 import type { Units } from '../../bridge/types';
+import { unitSuffix } from '../../lib/units';
 import { strings } from '../../lib/formStrings';
 import { prefsStrings } from '../../lib/strings/prefs';
 import { usePrefsStore } from '../../state/prefsStore';
@@ -30,8 +31,10 @@ import {
   draftPatch,
   draftProblems,
   editDraft,
-  NUMBER_RULES,
   PREFS_SECTIONS,
+  isLengthField,
+  shownRange,
+  withDefaultUnits,
   type NumberField,
   type PrefsDraft,
   type PrefsSection,
@@ -225,8 +228,10 @@ function NumberInput({
 }: FieldProps & { field: NumberField; label: string; unit?: string }): JSX.Element {
   const id = useId();
   const problem = problems[field];
-  const rule = NUMBER_RULES[field];
   const hint = `${id}-hint`;
+  const units = draft.prefs.general.defaultUnits;
+  const shownUnit = isLengthField(field) ? unitSuffix(units) : unit;
+  const range = shownRange(field, units);
   return (
     <div className="preferences__row">
       <label className="preferences__label" htmlFor={id}>
@@ -246,11 +251,11 @@ function NumberInput({
           type="text"
           value={draft.numbers[field]}
         />
-        {unit === undefined ? null : <span className="preferences__unit">{unit}</span>}
+        {shownUnit === undefined ? null : <span className="preferences__unit">{shownUnit}</span>}
       </span>
       {problem === undefined ? null : (
         <span className="preferences__problem" id={hint}>
-          {text.range(rule.min, rule.max)}
+          {text.range(range.min, range.max)}
         </span>
       )}
     </div>
@@ -375,7 +380,7 @@ function GeneralSection(props: FieldProps): JSX.Element {
         <legend className="preferences__legend">{text.newJobs}</legend>
         <Choice
           label={text.defaultUnits}
-          onChange={(defaultUnits) => setGeneral({ defaultUnits })}
+          onChange={(defaultUnits) => props.setDraft((d) => withDefaultUnits(d, defaultUnits))}
           options={units}
           value={general.defaultUnits}
         />
@@ -494,7 +499,7 @@ function View2dSection(props: FieldProps): JSX.Element {
           label={text.showGrid}
           onChange={(showGrid) => setView2d({ showGrid })}
         />
-        <NumberInput {...props} field="gridSpacing" label={text.gridSpacing} unit={text.mm} />
+        <NumberInput {...props} field="gridSpacing" label={text.gridSpacing} />
         <Choice
           label={text.gridStyle}
           onChange={(gridStyle) => setView2d({ gridStyle })}
@@ -631,14 +636,9 @@ function ToolpathsSection(props: FieldProps): JSX.Element {
     <>
       <fieldset className="preferences__group">
         <legend className="preferences__legend">{text.calculation}</legend>
-        <NumberInput {...props} field="tolerance" label={text.tolerance} unit={text.mm} />
-        <NumberInput {...props} field="tolerance3d" label={text.tolerance3d} unit={text.mm} />
-        <NumberInput
-          {...props}
-          field="vgrooveTolerance"
-          label={text.vgrooveTolerance}
-          unit={text.mm}
-        />
+        <NumberInput {...props} field="tolerance" label={text.tolerance} />
+        <NumberInput {...props} field="tolerance3d" label={text.tolerance3d} />
+        <NumberInput {...props} field="vgrooveTolerance" label={text.vgrooveTolerance} />
         <Check
           checked={toolpaths.dropTool}
           label={text.dropTool}

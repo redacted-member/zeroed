@@ -189,13 +189,15 @@ export function freeName(draft: MachinesDraft, base: string): string {
 
 /** Adds a machine with default travel and makes it active. */
 export function addMachine(draft: MachinesDraft, units: Units): MachinesDraft {
+  const inch = units === 'inch';
   const machine = draftOf(
     {
       name: freeName(draft, text.newName),
       units,
-      bedX: 600,
-      bedY: 600,
-      bedZ: 100,
+      bedX: inch ? 609.6 : 600,
+      bedY: inch ? 609.6 : 600,
+      bedZ: inch ? 101.6 : 100,
+      rapidRate: inch ? 3048 : DEFAULT_RAPID_RATE,
       posts: [],
     },
     draft.nextKey,

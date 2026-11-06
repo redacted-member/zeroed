@@ -30,6 +30,7 @@ import { madeOf } from '../views/View3D/panelFaces';
 import { furnitureStrings } from '../lib/strings/furniture';
 import { useAssemblyStore } from './assemblyStore';
 import { IdleSettler, LatestQueue } from './latestQueue';
+import { defaultValues } from '../panels/FurnitureLibrary/model';
 import { useDocumentStore } from './documentStore';
 import { leaveFace, useFaceEditStore } from './faceEditStore';
 import { useUiStore } from './uiStore';
@@ -342,10 +343,7 @@ export const useFurnitureStore = create<FurnitureState>()((set, get) => {
     startNew: async (templateId) => {
       try {
         const template = await api.furniture.template(templateId);
-        const values: FurnitureValues = {};
-        for (const p of template.params) {
-          values[p.key] = p.default;
-        }
+        const values = defaultValues(template.params, useDocumentStore.getState().job.units);
         const session: Session = {
           design: null,
           template,

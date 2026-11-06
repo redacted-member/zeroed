@@ -482,8 +482,17 @@ export function View3D(): JSX.Element {
   }, []);
 
   const rings = useRotateRings(rendererRef, canvasRef, ringsLayoutRef, scheduleDraw);
-  const pieces = useAssemblyView(rendererRef, canvasRef, piecesLayoutRef, scheduleDraw);
-  const furniture = useFurnitureView(rendererRef, furnitureLayoutRef, scheduleDraw);
+  // Bumped once the renderer exists: these hooks' effects run before the one that
+  // makes it, so a design waiting when the view first opens is shown on the next pass.
+  const [rendererEpoch, setRendererEpoch] = useState(0);
+  const pieces = useAssemblyView(
+    rendererRef,
+    canvasRef,
+    piecesLayoutRef,
+    scheduleDraw,
+    rendererEpoch,
+  );
+  const furniture = useFurnitureView(rendererRef, furnitureLayoutRef, scheduleDraw, rendererEpoch);
   const faces = useFurnitureFaces(rendererRef, canvasRef);
   const setRingModel = rings.setModel;
   const planeHandles = usePlaneHandles(rendererRef, canvasRef, planeLayoutRef, scheduleDraw);
@@ -588,6 +597,7 @@ export function View3D(): JSX.Element {
     applyPrefs(renderer, usePrefsStore.getState().prefs, container);
     renderer.setJob(useDocumentStore.getState().job);
     rendererRef.current = renderer;
+    setRendererEpoch((epoch) => epoch + 1);
     registerShadedSnapshot(() => renderer.snapshot());
     if (window.carveDev !== undefined) {
       window.carveDev.view3d = renderer;

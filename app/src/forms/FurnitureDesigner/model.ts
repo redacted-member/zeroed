@@ -213,9 +213,11 @@ export function stockChoices(
     .sort((a, b) => Number(b.system === own) - Number(a.system === own) || a.actual - b.actual)
     .map((s) => {
       const size = `${formatLength(s.actual, units)} ${unitSuffix(units)}`;
+      // On an inch job a metric board reads in inches too: its size, not its name.
+      const name = units === 'inch' ? s.label.replace(/ \d+(\.\d+)? mm$/, '') : s.label;
       return {
         id: s.id,
-        label: s.label.includes(size) ? s.label : `${s.label}, ${size}`,
+        label: name.includes(size) ? name : `${name}, ${size}`,
         text: formatLength(s.actual, units),
       };
     });

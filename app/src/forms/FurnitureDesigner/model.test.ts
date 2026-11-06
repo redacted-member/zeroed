@@ -541,6 +541,21 @@ describe('jointsFromConnections', () => {
   });
 });
 
+describe('stockChoices on an inch job', () => {
+  it('names a metric board without its millimeters', () => {
+    const param: FurnitureParam = { key: 't', label: 'T', kind: 'thickness', default: 18 };
+    const board: StockThickness = {
+      id: 'birch-18',
+      label: 'Baltic birch 18 mm',
+      nominal: 18,
+      actual: 18,
+      system: 'metric',
+    };
+    expect(stockChoices(param, [board], 'inch')[0]?.label).toBe('Baltic birch, 0.7087 inch');
+    expect(stockChoices(param, [board], 'mm')[0]?.label).toBe('Baltic birch 18 mm');
+  });
+});
+
 describe('stockChoices', () => {
   const T: FurnitureParam = {
     key: 't',

@@ -116,8 +116,14 @@ fn ping_reports_the_kernel_version() {
 fn job_get_returns_the_default_job() {
     let mut kernel = Kernel::new();
     let result = run(&mut kernel, "job.get", "null");
-    assert_eq!(result["width"], 300.0);
-    assert_eq!(result["units"], "mm");
+    let width = result["width"].as_f64().expect("a width");
+    assert!((width - 12.0 * 25.4).abs() < 1e-9, "{width}");
+    assert_eq!(result["units"], "inch");
+    assert_eq!(result["rotary"]["axis"], "y");
+    let diameter = result["rotary"]["diameter"].as_f64().expect("a diameter");
+    assert!((diameter - 4.0 * 25.4).abs() < 1e-9, "{diameter}");
+    let safe = result["machine"]["safeZ"].as_f64().expect("a safe Z");
+    assert!((safe - 0.25 * 25.4).abs() < 1e-9, "{safe}");
 }
 
 #[test]
@@ -154,7 +160,7 @@ fn job_set_rejects_an_unmachinable_job() {
         .apply("job.set", args)
         .expect_err("zero width is rejected");
     assert!(matches!(error, CoreError::Validation(_)), "{error}");
-    assert_eq!(kernel.document().job().width, 300.0);
+    assert!((kernel.document().job().width - 12.0 * 25.4).abs() < 1e-9);
     assert_eq!(kernel.document().revision(), 0);
 }
 
@@ -178,7 +184,7 @@ fn doc_new_resets_the_document_and_keeps_revisions_monotonic() {
     run(&mut kernel, "job.set", &args);
     let result = run(&mut kernel, "doc.new", "");
     assert_eq!(result["revision"], 2);
-    assert_eq!(*kernel.document().job(), JobSetup::default());
+    assert_eq!(kernel.document().job(), Kernel::new().document().job());
 }
 
 #[test]
@@ -950,7 +956,7 @@ fn document_variables_are_set_undone_and_saved() {
 
 #[test]
 fn variable_formulas_stay_live_through_edits_undo_and_files() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let set = |kernel: &mut Kernel, vars: serde_json::Value| {
         run(
             kernel,

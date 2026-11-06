@@ -1277,7 +1277,7 @@ mod tests {
     #[test]
     fn the_shipped_database_parses_and_every_tool_is_machinable() {
         let db = ToolDatabase::shipped_default().expect("shipped database parses");
-        assert_eq!(db.tool_count(), 20);
+        assert_eq!(db.tool_count(), 29);
         let lasers = db
             .tools()
             .filter(|t| {
@@ -1287,7 +1287,7 @@ mod tests {
                 )
             })
             .count();
-        assert_eq!(lasers, 2, "a diode and a CO2 laser");
+        assert_eq!(lasers, 4, "a diode and a CO2 laser, metric and inch");
         for tool in db.tools() {
             tool.validate()
                 .unwrap_or_else(|error| panic!("{}: {error}", tool.name));
@@ -1573,7 +1573,7 @@ mod tests {
         assert!(!store.path().exists());
         let db = store.load_or_seed().expect("seeds");
         assert!(store.path().exists());
-        assert_eq!(db.tool_count(), 20);
+        assert_eq!(db.tool_count(), 29);
         let again = store.load_or_seed().expect("loads");
         assert_eq!(again, db);
     }

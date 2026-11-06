@@ -4,6 +4,7 @@ import type { Tool } from '../../bridge/cam';
 import {
   angleFor,
   finish3dParams,
+  form3dOnRotary,
   minimumDetailRange,
   initial3dState,
   needsLevel,
@@ -239,5 +240,13 @@ describe('3D toolpath form model', () => {
       const old = state3dFrom('rough3d', { ...rough, strategy: 'zLevelOffset' }, 'R', 'mm');
       expect(old.roughStrategy).toBe('zLevelRaster');
     }
+  });
+
+  it('starts rotary roughing with no profile pass unless it is being edited', () => {
+    const start = initial3dState('rough3d', 'inch');
+    expect(start.profile).toBe('last');
+    expect(form3dOnRotary(start, 90, false).profile).toBe('none');
+    expect(form3dOnRotary(start, 90, true).profile).toBe('last');
+    expect(form3dOnRotary(start, 90, false).angle).toBe('90');
   });
 });

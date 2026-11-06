@@ -20,6 +20,7 @@ import { PassesRow } from '../PassesRow/PassesRow';
 import {
   convertPocketUnits,
   initialPocketState,
+  pocketOnRotary,
   validatePocket,
   type PocketField,
   type ProfilePassChoice,
@@ -73,15 +74,12 @@ export function InlayPocketForm(): JSX.Element {
   const unit = unitSuffix(units);
   const raster = state.strategy === 'raster';
   const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  const editing = useUiStore((store) => store.editingToolpath !== null);
   useEffect(() => {
     if (alongBlank !== null) {
-      setState((current) => ({
-        ...current,
-        strategy: 'raster',
-        rasterAngle: String(alongBlank),
-      }));
+      setState((current) => pocketOnRotary(current, alongBlank, editing));
     }
-  }, [alongBlank, setState]);
+  }, [alongBlank, editing, setState]);
   const { tool: firstTool, setTool } = form;
   const tools = useMemo(
     () => (firstTool === null ? state.laterTools : [firstTool, ...state.laterTools]),

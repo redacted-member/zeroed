@@ -2,9 +2,9 @@
 @use '../../styles/form';
 
 .furniture-designer {
-  display: flex;
-  flex-direction: column;
-  gap: tokens.$space-3;
+  @include form.form-root;
+
+  min-width: 0;
 }
 
 .furniture-designer__hint,

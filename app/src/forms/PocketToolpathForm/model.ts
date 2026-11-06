@@ -73,6 +73,24 @@ export function initialPocketState(units: Units): PocketFormState {
   };
 }
 
+/**
+ * The form on a rotary job: a raster along the blank. A new toolpath also starts
+ * with no profile pass, which would move the rotary and linear axes together;
+ * one being edited keeps its own choice.
+ */
+export function pocketOnRotary(
+  state: PocketFormState,
+  alongBlank: number,
+  editing: boolean,
+): PocketFormState {
+  return {
+    ...state,
+    strategy: 'raster',
+    rasterAngle: String(alongBlank),
+    profilePass: editing ? state.profilePass : 'none',
+  };
+}
+
 export function convertPocketUnits(
   state: PocketFormState,
   from: Units,

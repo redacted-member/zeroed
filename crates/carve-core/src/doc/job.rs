@@ -167,7 +167,7 @@ impl Default for RotarySetup {
     fn default() -> Self {
         RotarySetup {
             diameter: 100.0,
-            axis: RotaryAxis::X,
+            axis: RotaryAxis::Y,
             length: default_rotary_length(),
             blank: RotaryBlank::Cylinder,
             z_zero: RotaryZZero::Centre,

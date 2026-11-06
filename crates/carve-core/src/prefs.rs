@@ -174,7 +174,7 @@ pub struct GeneralPrefs {
 impl Default for GeneralPrefs {
     fn default() -> Self {
         GeneralPrefs {
-            default_units: Units::Mm,
+            default_units: Units::Inch,
             undo_limit: crate::doc::UNDO_LIMIT,
             autosave_minutes: 0,
             show_tool_tips: true,
@@ -271,7 +271,7 @@ impl Default for View2dPrefs {
             snap_radius_px: 10,
             show_grid: true,
             show_rulers: true,
-            grid_spacing: 10.0,
+            grid_spacing: 12.7,
             snap_distances: false,
             nudge_distance: 5.0,
             grid_style: GridStyle::Points,
@@ -542,9 +542,9 @@ pub struct ToolpathPrefs {
 impl Default for ToolpathPrefs {
     fn default() -> Self {
         ToolpathPrefs {
-            tolerance: 0.025,
-            tolerance_3d: 0.01,
-            vgroove_tolerance: 0.025,
+            tolerance: 0.0254,
+            tolerance_3d: 0.01016,
+            vgroove_tolerance: 0.0254,
             drop_tool: false,
             new_raster: true,
             geometry_fix_seconds: crate::cam::filter::DEFAULT_GEOMETRY_FIX_SECONDS,
@@ -959,10 +959,17 @@ impl Preferences {
         }
         job.units = self.general.default_units;
         if job.units == Units::Inch {
-            // A 12 x 8 x 0.75 inch board rather than an odd metric size.
+            // Round inch sizes rather than odd conversions: a 12 x 8 x 0.75 inch
+            // board, a 12 inch long blank 4 inches across, and a quarter inch
+            // above the job to rapid at.
             job.width = 12.0 * 25.4;
             job.height = 8.0 * 25.4;
             job.thickness = 0.75 * 25.4;
+            job.rotary.length = 12.0 * 25.4;
+            job.rotary.diameter = 4.0 * 25.4;
+            job.machine.safe_z = 0.25 * 25.4;
+            job.machine.plunge_gap = 0.1 * 25.4;
+            job.machine.home_z = 1.0 * 25.4;
         }
         // Outside an undo step, so the new job starts with an empty history.
         // The sizes above are always valid, so there is no error to report.
@@ -1266,7 +1273,7 @@ mod tests {
         let text = serde_json::to_string(&prefs).expect("encode");
         let back: Preferences = serde_json::from_str(&text).expect("decode");
         assert_eq!(back, prefs);
-        assert!(text.contains("\"defaultUnits\":\"mm\""));
+        assert!(text.contains("\"defaultUnits\":\"inch\""));
         assert!(text.contains("\"viewMode\":\"2d\""));
     }
 

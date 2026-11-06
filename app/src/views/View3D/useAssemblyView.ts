@@ -155,6 +155,7 @@ export function useAssemblyView(
   canvasRef: RefObject<HTMLCanvasElement | null>,
   layoutRef: MutableRefObject<(() => void) | null>,
   scheduleDraw: () => void,
+  rendererEpoch: number,
 ): AssemblyViewControl {
   const active = useAssemblyStore((s) => s.active);
   const pieces = useAssemblyStore((s) => s.pieces);
@@ -219,7 +220,18 @@ export function useAssemblyView(
       renderer.setView(renderer.fitted(renderer.view()));
     }
     scheduleDraw();
-  }, [active, furnitureSheets, isolated, live, moves, pieces, reliefs, rendererRef, scheduleDraw]);
+  }, [
+    active,
+    furnitureSheets,
+    isolated,
+    live,
+    moves,
+    pieces,
+    reliefs,
+    rendererEpoch,
+    rendererRef,
+    scheduleDraw,
+  ]);
 
   useEffect(() => {
     rendererRef.current?.setAssemblyHighlight(selected, live !== null);

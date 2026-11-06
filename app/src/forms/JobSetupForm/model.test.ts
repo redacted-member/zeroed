@@ -162,7 +162,12 @@ describe('job setup form model', () => {
   });
 
   it('shows the unwrapped size in the form unit', () => {
-    const state = { ...stateFromJob(DEFAULT_JOB), rotaryLength: '10', rotaryDiameter: '2' };
+    const state = {
+      ...stateFromJob(DEFAULT_JOB),
+      rotaryAxis: 'x' as const,
+      rotaryLength: '10',
+      rotaryDiameter: '2',
+    };
     expect(unwrappedLayout(state)).toEqual({ width: '10', height: '6.283' });
     expect(unwrappedLayout({ ...state, rotaryAxis: 'y' })).toEqual({
       width: '6.283',

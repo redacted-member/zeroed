@@ -285,7 +285,7 @@ fn toolpath_changes_undo_like_everything_else() {
 
 #[test]
 fn job_sheet_lists_each_toolpath_and_moves_mark_retracts() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let id = make_rect(&mut kernel, 20.0, 20.0, 80.0, 60.0);
     run(
         &mut kernel,

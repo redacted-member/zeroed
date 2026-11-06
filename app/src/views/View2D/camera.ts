@@ -1,7 +1,7 @@
 // Camera maths for the drawing view. Job space is millimetres relative to the
 // job datum, with Y pointing up; screen space is CSS pixels with Y down.
 
-import type { JobSetup } from '../../bridge/types';
+import type { JobSetup, Units } from '../../bridge/types';
 
 /** Centre of the view in job millimetres and the zoom in pixels per mm. */
 export interface Camera2D {
@@ -133,6 +133,36 @@ export function gridSpacing(pxPerMm: number): { minor: number; major: number } {
     GRID_STEPS[GRID_STEPS.length - 1] ??
     1;
   return { minor, major: minor * 10 };
+}
+
+/** Inch ruler and grid steps as [major, minor] inches, finest first. */
+const INCH_STEPS: ReadonlyArray<readonly [number, number]> = [
+  [1 / 8, 1 / 32],
+  [1 / 4, 1 / 16],
+  [1 / 2, 1 / 8],
+  [1, 1 / 4],
+  [2, 1 / 2],
+  [5, 1],
+  [10, 2],
+  [20, 5],
+  [50, 10],
+  [100, 20],
+  [200, 50],
+  [500, 100],
+];
+
+const MM_PER_INCH = 25.4;
+
+/** Ruler and grid spacing in mm at this zoom: whole inches on an inch job. */
+export function unitSpacing(pxPerMm: number, units: Units): { minor: number; major: number } {
+  if (units !== 'inch') {
+    return gridSpacing(pxPerMm);
+  }
+  const step =
+    INCH_STEPS.find(([, minor]) => minor * MM_PER_INCH * pxPerMm >= MIN_MINOR_GRID_PX) ??
+    INCH_STEPS[INCH_STEPS.length - 1] ??
+    ([1, 1 / 4] as const);
+  return { major: step[0] * MM_PER_INCH, minor: step[1] * MM_PER_INCH };
 }
 
 /** Rectangle spanned by two screen points, in job space. */

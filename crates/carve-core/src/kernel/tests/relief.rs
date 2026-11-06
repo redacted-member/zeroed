@@ -1740,7 +1740,7 @@ fn rebuild(kernel: &mut Kernel, vector: u64, component: u64, angle: f64) {
 
 #[test]
 fn a_shape_moved_off_its_vectors_is_rebuilt_where_it_was_put() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let (vector, shape) = round_shape(&mut kernel, 100.0, 80.0, 140.0, 120.0);
     let top = composite_at(&kernel, 120.0, 100.0);
     assert!(top > 1.0);
@@ -1890,7 +1890,7 @@ fn a_copied_shape_moved_off_its_vectors_is_edited_where_the_copy_lies() {
 
 #[test]
 fn vectors_text_and_groups_copy_with_their_components_in_one_step() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let (vector, shape) = round_shape(&mut kernel, 100.0, 80.0, 140.0, 120.0);
     let top = composite_at(&kernel, 120.0, 100.0);
     let text = make_text(&mut kernel, 10.0, 10.0);
@@ -1999,7 +1999,7 @@ fn an_array_copy_takes_the_components_and_each_shape_its_own_vectors() {
 
 #[test]
 fn a_cut_and_pasted_shape_is_made_from_the_pasted_vectors() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let (vector, shape) = round_shape(&mut kernel, 100.0, 80.0, 140.0, 120.0);
     let top = composite_at(&kernel, 120.0, 100.0);
     let text = make_text(&mut kernel, 10.0, 10.0);
@@ -2258,7 +2258,7 @@ fn a_shape_pasted_without_its_vectors_keeps_them_only_in_the_same_job() {
 
 #[test]
 fn vectors_moved_alone_leave_their_shape_where_it_lies() {
-    let mut kernel = Kernel::new();
+    let mut kernel = metric_kernel();
     let (vector, shape) = round_shape(&mut kernel, 100.0, 80.0, 140.0, 120.0);
     let top = composite_at(&kernel, 120.0, 100.0);
     // A shape on its vectors: the vectors move up on their own.

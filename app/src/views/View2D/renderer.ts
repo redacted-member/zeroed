@@ -5,12 +5,12 @@
 import type { Bbox, Guide, Matrix, Path, ProbeHit, SelectionFrame } from '../../bridge/document';
 import { flattenPath } from '../../lib/geometry';
 import { fromFrame } from '../../lib/transformMath';
-import type { JobSetup } from '../../bridge/types';
+import type { JobSetup, Units } from '../../bridge/types';
 import { strings } from '../../lib/strings';
 import { legibleOn, type CanvasPalette } from '../../lib/theme';
 import type { PreviewLabel, PreviewOverlay } from '../../state/drawStore';
 import {
-  gridSpacing,
+  unitSpacing,
   jobBounds,
   jobToScreen,
   screenToJob,
@@ -104,6 +104,8 @@ export interface ViewOptions {
   gridSpacingMm?: number;
   /** Tint over the rulers (the side of a double sided job), or none. */
   rulerTint?: string | null;
+  /** The job's units, which the rulers and grid lines count in. */
+  units?: Units;
 }
 
 export type OverlayPainter = (
@@ -232,7 +234,10 @@ export function selectionHandles(
   ];
 }
 
-export function formatTick(value: number): string {
+export function formatTick(value: number, units: Units = 'mm'): string {
+  if (units === 'inch') {
+    return String(Math.round((value / 25.4) * 10000) / 10000);
+  }
   const rounded = Math.round(value * 1000) / 1000;
   return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
 }
@@ -400,7 +405,7 @@ export class View2DRenderer {
     }
     const { context, viewport } = this;
     const { camera } = this.state;
-    const { minor, major } = gridSpacing(camera.pxPerMm);
+    const { minor, major } = unitSpacing(camera.pxPerMm, this.state.options.units ?? 'mm');
     const topLeft = screenToJob(camera, viewport, { x: 0, y: 0 });
     const bottomRight = screenToJob(camera, viewport, { x: viewport.width, y: viewport.height });
     context.lineWidth = 1;
@@ -1069,7 +1074,8 @@ export class View2DRenderer {
   private drawRulers(palette: CanvasPalette): void {
     const { context, viewport } = this;
     const { camera } = this.state;
-    const { major, minor } = gridSpacing(camera.pxPerMm);
+    const units = this.state.options.units ?? 'mm';
+    const { major, minor } = unitSpacing(camera.pxPerMm, units);
     const topLeft = screenToJob(camera, viewport, { x: 0, y: 0 });
     const bottomRight = screenToJob(camera, viewport, { x: viewport.width, y: viewport.height });
 
@@ -1115,7 +1121,7 @@ export class View2DRenderer {
       if (px < RULER_SIZE) {
         continue;
       }
-      context.fillText(formatTick(x), px, RULER_SIZE / 2 - 3);
+      context.fillText(formatTick(x, units), px, RULER_SIZE / 2 - 3);
     }
     context.textAlign = 'right';
     for (let y = Math.ceil(bottomRight.y / major) * major; y <= topLeft.y; y += major) {
@@ -1127,7 +1133,7 @@ export class View2DRenderer {
       context.translate(RULER_SIZE / 2 - 3, py);
       context.rotate(-Math.PI / 2);
       context.textAlign = 'center';
-      context.fillText(formatTick(y), 0, 0);
+      context.fillText(formatTick(y, units), 0, 0);
       context.restore();
     }
 

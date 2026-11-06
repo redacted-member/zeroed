@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { Tool } from '../../bridge/cam';
 import {
   initialPocketState,
+  pocketOnRotary,
   pocketParams,
   pocketStateFrom,
   validatePocket,
@@ -161,5 +162,17 @@ describe('pocket toolpath form model', () => {
     expect(params?.ramp.enabled).toBe(true);
     expect(params?.ramp.distance).toBeCloseTo(25.4, 9);
     expect(params?.cutDepth).toBeCloseTo(6.35, 9);
+  });
+
+  it('starts a rotary pocket as a raster along the blank with no profile pass', () => {
+    const fresh = pocketOnRotary(initialPocketState('inch'), 90, false);
+    expect(fresh.strategy).toBe('raster');
+    expect(fresh.rasterAngle).toBe('90');
+    expect(fresh.profilePass).toBe('none');
+  });
+
+  it('keeps the profile pass of a rotary pocket being edited', () => {
+    const saved = { ...initialPocketState('inch'), profilePass: 'first' as const };
+    expect(pocketOnRotary(saved, 90, true).profilePass).toBe('first');
   });
 });

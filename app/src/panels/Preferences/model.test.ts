@@ -1,17 +1,51 @@
 import { describe, expect, it } from 'vitest';
 
 import { DEFAULT_PREFS, mergePrefs } from '../../lib/prefs';
-import { draftFrom, draftPatch, draftProblems, editDraft, numberProblem } from './model';
+import {
+  draftFrom,
+  draftPatch,
+  draftProblems,
+  editDraft,
+  numberProblem,
+  shownRange,
+  withDefaultUnits,
+} from './model';
 
 describe('preferences dialog model', () => {
   it('shows numbers as text and applies them back', () => {
     const draft = draftFrom(DEFAULT_PREFS);
     expect(draft.numbers.undoLimit).toBe('200');
-    expect(draft.numbers.tolerance).toBe('0.025');
-    const edited = { ...draft, numbers: { ...draft.numbers, undoLimit: ' 40 ', gridSpacing: '5' } };
+    expect(draft.numbers.tolerance).toBe('0.001');
+    const edited = { ...draft, numbers: { ...draft.numbers, undoLimit: ' 40 ', gridSpacing: '1' } };
     const patch = draftPatch(edited);
     expect(patch?.general?.undoLimit).toBe(40);
-    expect(patch?.view2d?.gridSpacing).toBe(5);
+    expect(patch?.view2d?.gridSpacing).toBeCloseTo(25.4, 9);
+  });
+
+  it('shows lengths in the default units and converts them when those change', () => {
+    const metric = mergePrefs(DEFAULT_PREFS, {
+      general: { defaultUnits: 'mm' },
+      toolpaths: { tolerance: 0.025 },
+    });
+    const draft = draftFrom(metric);
+    expect(draft.numbers.tolerance).toBe('0.025');
+    expect(draft.numbers.gridSpacing).toBe('12.7');
+    expect(draftPatch(draft)?.view2d?.gridSpacing).toBe(12.7);
+    const inches = withDefaultUnits(draft, 'inch');
+    expect(inches.numbers.gridSpacing).toBe('0.5');
+    expect(inches.numbers.tolerance).toBe('0.0009843');
+    expect(inches.numbers.undoLimit).toBe('200');
+    // Left alone, the stored millimeters stay exact.
+    expect(draftPatch(inches)?.toolpaths?.tolerance).toBe(0.025);
+    const typed = { ...inches, numbers: { ...inches.numbers, gridSpacing: '2' } };
+    expect(withDefaultUnits(typed, 'mm').numbers.gridSpacing).toBe('50.8');
+  });
+
+  it('checks a length against its limits in the units it is typed in', () => {
+    expect(numberProblem('tolerance', '0.05', 'inch')).toBe('range');
+    expect(numberProblem('tolerance', '0.03', 'mm')).toBeNull();
+    expect(shownRange('tolerance', 'mm').max).toBe('1');
+    expect(shownRange('tolerance', 'inch').max).toBe('0.03937');
   });
 
   it('refuses numbers that are not numbers, not whole or out of range', () => {

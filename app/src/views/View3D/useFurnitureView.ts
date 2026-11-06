@@ -87,6 +87,7 @@ export function useFurnitureView(
   rendererRef: RefObject<View3DRenderer | null>,
   layoutRef: MutableRefObject<(() => void) | null>,
   scheduleDraw: () => void,
+  rendererEpoch: number,
 ): FurnitureViewControl {
   const assembly = useAssemblyStore((s) => s.active);
   const session = useFurnitureStore((s) => s.session);
@@ -144,6 +145,7 @@ export function useFurnitureView(
     active,
     preview,
     showPanels,
+    rendererEpoch,
     rendererRef,
     scheduleDraw,
     session?.design,

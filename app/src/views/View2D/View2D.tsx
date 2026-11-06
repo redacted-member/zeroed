@@ -60,6 +60,7 @@ export function View2D(): JSX.Element {
   const topRuler = usePrefsStore((state) => state.prefs.window.topRulerColour);
   const bottomRuler = usePrefsStore((state) => state.prefs.window.bottomRulerColour);
   const rulerTint = sideShown === null ? null : sideShown === 'bottom' ? bottomRuler : topRuler;
+  const units = useDocumentStore((state) => state.job.units);
   const allGuides = useViewStore((state) => state.guides);
   const showGuides = useViewStore((state) => state.showGuides);
   const guides = useMemo(() => (showGuides ? allGuides : []), [showGuides, allGuides]);
@@ -162,6 +163,7 @@ export function View2D(): JSX.Element {
         gridStyle,
         gridSpacingMm,
         rulerTint,
+        units,
       },
       guides,
     });
@@ -186,6 +188,7 @@ export function View2D(): JSX.Element {
     gridStyle,
     gridSpacingMm,
     rulerTint,
+    units,
     guides,
     scheduleDraw,
   ]);

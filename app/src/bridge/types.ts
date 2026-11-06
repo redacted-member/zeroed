@@ -271,7 +271,7 @@ export const DEFAULT_JOB: JobSetup = {
   offsetX: 0,
   offsetY: 0,
   kind: 'singleSided',
-  rotary: { diameter: 100, axis: 'x' },
+  rotary: { diameter: 100, axis: 'y' },
   machine: { safeZ: 5, plungeGap: 2, homeX: 0, homeY: 0, homeZ: 20, modelGap: 0 },
   doubleSided: { flip: 'horizontal', bottomZZero: 'top' },
 };

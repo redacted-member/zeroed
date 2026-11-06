@@ -215,4 +215,13 @@ describe('rotary axis wiring', () => {
     expect(activeMachine(copy)?.rotaryLetter).toBe('B');
     expect(activeMachine(copy)?.rotaryReversed).toBe(true);
   });
+
+  it('gives a new inch machine round inch sizes', () => {
+    const added = addMachine(draftFrom(PREFS), 'inch');
+    const machine = activeMachine(added);
+    expect(machine?.bedX).toBe('24');
+    expect(machine?.bedY).toBe('24');
+    expect(machine?.bedZ).toBe('4');
+    expect(machine?.rapidRate).toBe('120');
+  });
 });
