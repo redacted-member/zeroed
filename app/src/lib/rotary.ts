@@ -20,6 +20,18 @@ export function isRotary(job: JobSetup): boolean {
   return job.kind === 'rotary';
 }
 
+/**
+ * The raster angle a rotary job clears at, in degrees from X: along the blank,
+ * which is the axis the rotary spindle is mounted on. Null on other jobs, whose
+ * clearing is up to the user. The kernel holds rotary toolpaths to it.
+ */
+export function rotaryRasterAngle(job: JobSetup): number | null {
+  if (!isRotary(job)) {
+    return null;
+  }
+  return job.rotary.axis === 'x' ? 0 : 90;
+}
+
 /** The job's rotary settings, with defaults for fields an older kernel omits. */
 export function rotaryOf(job: JobSetup): RotaryBlankSetup {
   return {

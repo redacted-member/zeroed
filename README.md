@@ -89,7 +89,8 @@ each tool change.
 
 **Rotary axis.** Machine Configuration holds how your axis is wired: letter,
 degrees or linear units, and direction. If a scrap cut reads mirrored, flip
-Direction and save again.
+Direction and save again. Rotary jobs clear with a raster along the blank, with the
+rotary axis turning between passes.
 
 > [!WARNING]
 > CNC machines can hurt you and wreck your work. Always run an air cut first.

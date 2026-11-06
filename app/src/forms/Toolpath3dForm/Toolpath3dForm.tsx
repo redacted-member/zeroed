@@ -1,4 +1,4 @@
-import { useCallback, useId, useMemo, useState, type FormEvent, type JSX } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState, type FormEvent, type JSX } from 'react';
 
 import type {
   Tool,
@@ -17,6 +17,8 @@ import { unitSuffix } from '../../lib/units';
 import { useFormState } from '../../lib/useFormState';
 import { calculateWhy, useToolpathForm } from '../../lib/useToolpathForm';
 import { useModelStore } from '../../state/modelStore';
+import { rotaryRasterAngle } from '../../lib/rotary';
+import { useDocumentStore } from '../../state/documentStore';
 import { useUiStore } from '../../state/uiStore';
 import { CheckField } from '../CheckField/CheckField';
 import { ChoiceField, type Choice } from '../ChoiceField/ChoiceField';
@@ -137,6 +139,16 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
   const set = (field: Field3d, value: string) =>
     setState((current) => ({ ...current, [field]: value }));
   const patch = (next: Partial<Form3dState>) => setState((current) => ({ ...current, ...next }));
+  const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  useEffect(() => {
+    if (alongBlank !== null) {
+      setState((current) => ({
+        ...current,
+        finishStrategy: 'raster',
+        angle: String(alongBlank),
+      }));
+    }
+  }, [alongBlank, setState]);
   const errorFor = (field: Field3d) => (showErrors ? errors[field] : undefined);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -176,7 +188,7 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
         value={state.order}
       />
       <ChoiceField
-        disabled={!usesAngle(kind, state)}
+        disabled={!usesAngle(kind, state) || alongBlank !== null}
         label={text.rasterDirection}
         onChange={(direction) => patch({ angle: angleFor(direction) })}
         options={DIRECTIONS}
@@ -202,6 +214,7 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
       <legend className="toolpath-3d__legend">{text.areaStrategy}</legend>
       <HelperRow picture={<HelperPicture picture={strategy3dPicture(state.finishStrategy)} />}>
         <ChoiceField
+          disabled={alongBlank !== null}
           label={text.strategy}
           onChange={(finishStrategy) => patch({ finishStrategy })}
           options={FINISH_STRATEGIES}
@@ -216,7 +229,7 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
         value={state.direction}
       />
       <NumberField
-        disabled={!usesAngle(kind, state)}
+        disabled={!usesAngle(kind, state) || alongBlank !== null}
         error={errorFor('angle')}
         label={text.rasterAngle}
         onChange={(v) => set('angle', v)}
@@ -236,6 +249,9 @@ function Toolpath3dForm({ kind }: { kind: Kind3d }): JSX.Element {
 
   return (
     <form className="toolpath-3d" onSubmit={onSubmit}>
+      {alongBlank !== null ? (
+        <p className="toolpath-3d__hint">{strings.toolpaths.pocket.rotaryClearing}</p>
+      ) : null}
       <p className="toolpath-3d__hint">
         {form.editingName !== null
           ? strings.toolpaths.editing(form.editingName)

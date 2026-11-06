@@ -64,7 +64,7 @@ export function fileName(path: string | null): string {
 }
 
 /** True when there is nothing unsaved, or the user agrees to lose it. */
-async function mayDiscard(): Promise<boolean> {
+export async function mayDiscard(): Promise<boolean> {
   if (!useDocumentStore.getState().dirty) {
     return true;
   }

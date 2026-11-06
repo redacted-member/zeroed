@@ -45,7 +45,7 @@
   },
   "machine": {
     "title": "Set up your machine",
-    "blurb": "Do this once, before your first cut: machine, post processor and bits.",
+    "blurb": "Machine, post processor and bits. Do this first.",
     "steps": [
       {
         "title": "What you will set",
@@ -81,7 +81,7 @@
   },
   "cutout": {
     "title": "Cut out a part",
-    "blurb": "Bring in a shape and cut it free, held in place with tabs.",
+    "blurb": "Cut a shape free, held in place with tabs.",
     "steps": [
       {
         "target": "tool:jobSetup",
@@ -209,7 +209,7 @@
   },
   "relief": {
     "title": "Relief",
-    "blurb": "A raised 3D shape carved with roughing and finishing passes.",
+    "blurb": "A raised 3D shape, roughed and finished.",
     "steps": [
       {
         "target": "tool:drawEllipse",
@@ -282,7 +282,7 @@
   },
   "rotary": {
     "title": "Rotary",
-    "blurb": "Wrap a design round a turning blank on a 4th axis.",
+    "blurb": "Wrap a design round a turning blank.",
     "steps": [
       {
         "target": "tool:jobSetup",
@@ -293,7 +293,7 @@
       {
         "target": "form",
         "title": "Make it a rotary job",
-        "text": "Under Job Type, pick Rotary. Set the Blank Shape, Blank Length and Blank Diameter, and Blank Along for the axis it lies along. Then click OK."
+        "text": "Under Job Type, pick Rotary. Set the Blank Shape, Blank Length and Blank Diameter. Set Blank Along to the axis your rotary spindle is mounted on. Then click OK."
       },
       {
         "target": "views",
@@ -319,8 +319,8 @@
       {
         "target": "tool:pocket",
         "click": true,
-        "title": "Any toolpath wraps",
-        "text": "There is no special rotary toolpath. In the Toolpaths panel, click Pocket Toolpath."
+        "title": "Clear it with a raster",
+        "text": "In the Toolpaths panel, click Pocket Toolpath. On a rotary job it always clears with a raster along the blank, with the rotary axis turning between passes."
       },
       {
         "target": "form",
@@ -410,7 +410,7 @@
   },
   "twoSided": {
     "title": "Two-sided job",
-    "blurb": "Cut both faces of a board and flip it in between.",
+    "blurb": "Cut both faces, flipping the board between.",
     "steps": [
       {
         "target": "tool:jobSetup",
@@ -455,7 +455,7 @@
   },
   "nesting": {
     "title": "Nest parts on a sheet",
-    "blurb": "Pack parts onto sheets to use as little material as possible.",
+    "blurb": "Pack parts to use as little material as possible.",
     "steps": [
       {
         "target": "tool:jobSetup",
@@ -511,7 +511,7 @@
   },
   "box": {
     "title": "Box with joints",
-    "blurb": "Flat panels joined with the Joint Creator, checked in the Assembly View.",
+    "blurb": "Panels joined, then checked in the Assembly View.",
     "steps": [
       {
         "target": "tool:drawRectangle",
@@ -561,7 +561,7 @@
   },
   "furniture": {
     "title": "Design furniture",
-    "blurb": "Start from a template, set your sizes and get every panel and joint.",
+    "blurb": "Set sizes on a template; get panels and joints.",
     "steps": [
       {
         "target": "assembly",
@@ -599,7 +599,7 @@
   },
   "laser": {
     "title": "Laser engraving",
-    "blurb": "Burn text or shapes with a laser, with no bit and no depth.",
+    "blurb": "Burn text or shapes, with no bit and no depth.",
     "steps": [
       {
         "target": "tool:jobSetup",

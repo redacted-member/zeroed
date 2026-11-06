@@ -24,7 +24,9 @@ use crate::doc::display::DisplayCache;
 use crate::doc::Document;
 use crate::error::CoreError;
 use crate::geom::FontLibrary;
-use crate::{assembly, cam, clipart, doc, gadgets, io, job_scale, model, prefs, templates};
+use crate::{
+    assembly, cam, clipart, doc, gadgets, io, job_scale, model, prefs, samples, templates,
+};
 
 /// What a command answers with. JSON for structured replies, bytes for large
 /// buffers such as display polylines or heightfield tiles.
@@ -289,6 +291,9 @@ impl Kernel {
         }
         if templates::handles(name) {
             return templates::dispatch(self, name, args);
+        }
+        if samples::handles(name) {
+            return samples::dispatch(self, name, args);
         }
         if job_scale::handles(name) {
             return job_scale::dispatch(&mut self.document, name, args);

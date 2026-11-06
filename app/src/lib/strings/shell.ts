@@ -217,7 +217,7 @@ export const shellStrings = {
   rightPanel: {
     label: 'Toolpaths',
     rotaryGuide: {
-      note: 'Rotary job: use any toolpath here. It wraps round the blank when you save it through a rotary post.',
+      note: 'Rotary job: toolpaths wrap round the blank when you save them through a rotary post. Clearing is always a raster along the blank.',
       noPost: (along: string) =>
         `This machine has no post that wraps a blank along ${along}, so its files would come out flat. Add a rotary post in Machine Configuration.`,
       machine: 'Machine Configuration...',
@@ -238,7 +238,7 @@ export const shellStrings = {
         },
         {
           name: 'Add toolpaths.',
-          text: 'Use any toolpath in this panel. To turn a square blank round first, use Create Rounding Toolpath in the Gadgets menu.',
+          text: 'Use the toolpaths in this panel; clearing is always a raster along the blank. To turn a square blank round first, use Create Rounding Toolpath in the Gadgets menu.',
         },
         {
           name: 'Preview it.',

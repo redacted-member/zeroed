@@ -2,6 +2,8 @@ import type { JSX } from 'react';
 
 import type { ClearanceOptions } from '../../bridge/cam';
 import type { Units } from '../../bridge/types';
+import { rotaryRasterAngle } from '../../lib/rotary';
+import { useDocumentStore } from '../../state/documentStore';
 import type { ClearanceErrors, ClearanceState } from '../../lib/clearanceFields';
 import { strings } from '../../lib/formStrings';
 import { unitSuffix } from '../../lib/units';
@@ -38,22 +40,24 @@ export function ClearanceOptionsFields({
   disabled,
   strategyDisabled = false,
 }: ClearanceOptionsFieldsProps): JSX.Element {
+  const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  const rotary = alongBlank !== null;
   return (
     <div className="clearance-options">
       <ChoiceField
-        disabled={disabled === true || strategyDisabled}
+        disabled={disabled === true || strategyDisabled || rotary}
         label={text.pocket.clearing}
         onChange={(strategy) => onChange({ ...state, strategy })}
         options={STRATEGIES}
-        value={state.strategy}
+        value={rotary ? 'raster' : state.strategy}
       />
       <NumberField
-        disabled={disabled === true || strategyDisabled || state.strategy !== 'raster'}
+        disabled={disabled === true || strategyDisabled || rotary || state.strategy !== 'raster'}
         error={errors.rasterAngle}
         label={text.pocket.rasterAngle}
         onChange={(rasterAngle) => onChange({ ...state, rasterAngle })}
         unit={strings.units.degrees}
-        value={state.rasterAngle}
+        value={rotary ? String(alongBlank) : state.rasterAngle}
       />
       <ChoiceField
         disabled={disabled}

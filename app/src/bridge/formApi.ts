@@ -579,6 +579,11 @@ export const api = {
         toolpathId === undefined ? { name, values } : { name, values, toolpathId },
       ),
   },
+  samples: {
+    /** Opens a finished job built into the app as a new untitled job. */
+    open: (id: string) => k().call<Revision>('samples.open', { id }),
+  },
+
   /** Furniture Designer: parametric templates made into panels, joints, toolpaths and pieces. */
   furniture: {
     ...startApi.furniture,

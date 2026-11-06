@@ -157,6 +157,8 @@ export const toolpathsStrings = {
     pocket: {
       title: startupStrings.formTitles.toolpaths.pocket.title,
       clearing: 'Clear Pocket',
+      rotaryClearing:
+        'Rotary jobs always clear with a raster along the blank, with the rotary axis turning between passes.',
       offset: 'Offset',
       raster: 'Raster',
       rasterAngle: 'Raster Angle',

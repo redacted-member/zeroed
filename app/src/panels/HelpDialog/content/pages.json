@@ -20,7 +20,7 @@
           "The ? at the top of a form opens the help for that form.",
           "The ? in a panel title opens the help for that panel.",
           "Search this help for a tool, a form or a word.",
-          "Help > Tutorial Browser opens the walkthroughs below again."
+          "Help > Tutorial Browser opens the walkthroughs below again, and the finished jobs you can open and look through."
         ]
       }
     ],
@@ -85,13 +85,13 @@
   },
   "rotaryJobs": {
     "title": "Rotary jobs",
-    "summary": "A rotary job cuts a blank that turns on a 4th axis. There is no separate rotary toolpath: you design flat on the unwrapped surface of the blank, use the normal toolpaths, and a rotary post processor turns the distance around the blank into rotary axis moves when you save.",
+    "summary": "A rotary job cuts a blank that turns on a 4th axis. There is no separate rotary toolpath: you design flat on the unwrapped surface of the blank, use the normal toolpaths with raster clearing, and a rotary post processor turns the distance around the blank into rotary axis moves when you save.",
     "sections": [
       {
         "heading": "Set up the job",
         "items": [
           "Job Setup: set Job Type to Rotary, then the blank's shape, length and diameter. Measure the real diameter, because it sets how far each turn goes.",
-          "Blank Along: whether the blank lies along X or along Y on your machine.",
+          "Blank Along: the axis your rotary spindle is mounted on, X or Y.",
           "Z Zero Position: on the center of rotation or on the top of the blank, the same as you will set it on the machine.",
           "Unwrapped Size is your drawing area: the blank's length one way, once around it the other. A 4 in blank is about 12.57 in around."
         ]
@@ -107,7 +107,7 @@
         "heading": "Make the toolpaths",
         "items": [
           "Draw on the unwrapped area. Going across it goes around the blank, and a design crossing the edge carries on around.",
-          "Use any toolpath in the Toolpaths panel, the same as on a flat job.",
+          "Add toolpaths in the Toolpaths panel as on a flat job. Clearing is always a raster along the blank, with the rotary axis turning between passes: pockets and 3D toolpaths lock to it, and offset clearing, inside out or outside in, is not offered.",
           "A square blank can be turned round first with Create Rounding Toolpath in the Gadgets menu. Rapids clear its corners by themselves.",
           "Preview Toolpaths shows the cut on the blank while Auto-Wrapping View is on in the View menu. Turn it off to see the job flat.",
           "With Animate preview on, the blank turns under an upright bit, as on the machine. When nothing is running, the blank rests with the cut work facing up."

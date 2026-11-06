@@ -14,7 +14,7 @@
 //! of a double sided job.
 
 use std::fs::File;
-use std::io::{BufReader, BufWriter, Read, Write};
+use std::io::{BufReader, BufWriter, Cursor, Read, Seek, Write};
 use std::path::{Path as FsPath, PathBuf};
 
 use zip::write::SimpleFileOptions;
@@ -155,8 +155,26 @@ pub fn save_copy(doc: &Document, path: &FsPath) -> Result<(), CoreError> {
 /// format version is newer than this build understands.
 pub fn open(path: &FsPath, revision: u64) -> Result<Document, CoreError> {
     let file = File::open(path).map_err(|error| CoreError::io(path.display(), error))?;
-    let mut zip = ZipArchive::new(BufReader::new(file))
-        .map_err(|error| CoreError::io(path.display(), error))?;
+    let mut doc = read_archive(BufReader::new(file), &path.display().to_string(), revision)?;
+    doc.mark_saved(path.to_path_buf());
+    Ok(doc)
+}
+
+/// Reads a document held in memory. It has no file behind it, so the first
+/// save asks where to put it, and no unsaved changes yet.
+///
+/// # Errors
+/// As [`open`], with `name` standing for the file in the messages.
+pub fn read_bytes(bytes: &[u8], name: &str, revision: u64) -> Result<Document, CoreError> {
+    read_archive(Cursor::new(bytes), name, revision)
+}
+
+fn read_archive<R: Read + Seek>(
+    reader: R,
+    name: &str,
+    revision: u64,
+) -> Result<Document, CoreError> {
+    let mut zip = ZipArchive::new(reader).map_err(|error| CoreError::io(name, error))?;
     let mut text = String::new();
     {
         let mut entry = zip
@@ -164,7 +182,7 @@ pub fn open(path: &FsPath, revision: u64) -> Result<Document, CoreError> {
             .map_err(|_| CoreError::validation("this is not a Zeroed document"))?;
         entry
             .read_to_string(&mut text)
-            .map_err(|error| CoreError::io(path.display(), error))?;
+            .map_err(|error| CoreError::io(name, error))?;
     }
     let mut file = read_document(&text)?;
     let DocumentFile {
@@ -176,7 +194,7 @@ pub fn open(path: &FsPath, revision: u64) -> Result<Document, CoreError> {
         zip.by_name(&heightfield_entry(component.id))
             .map_err(|_| CoreError::validation("a relief component is missing from the file"))?
             .read_to_end(&mut bytes)
-            .map_err(|error| CoreError::io(path.display(), error))?;
+            .map_err(|error| CoreError::io(name, error))?;
         component.field.set_z_bytes(&bytes)?;
     }
     let image_ids = crate::doc::images::referenced(&file);
@@ -189,14 +207,13 @@ pub fn open(path: &FsPath, revision: u64) -> Result<Document, CoreError> {
         };
         let mut bytes = Vec::new();
         zip.by_name(name)
-            .map_err(|error| CoreError::io(path.display(), error))?
+            .map_err(|error| CoreError::io(name, error))?
             .read_to_end(&mut bytes)
-            .map_err(|error| CoreError::io(path.display(), error))?;
+            .map_err(|error| CoreError::io(name, error))?;
         let ext = name.rsplit('.').next();
         let image = crate::doc::bitmap_cmd::stored_image(bytes, ext)?;
         doc.images_mut().restore(id, image);
     }
-    doc.mark_saved(path.to_path_buf());
     Ok(doc)
 }
 

@@ -304,6 +304,7 @@ Gadgets may not run `templates.*`.
 | templates.list | {} | {userDir, templates:[{name, category (null at the top), path, standard, units, width, height, thickness (mm), layers, vectors, toolpaths}] (Standard first, then the user's by category and name, case insensitive), warnings:[{path, message}]} |
 | templates.save | {name, category?, design? (default true: vectors and components), toolpaths? (default true, only with design), overwrite? (default false)} | {path}; job setup, layers, sheets, notes, variables and levels always; no selection or undo history; names may not contain / \\ : * ? " < > \| or start or end with "."; an existing template needs overwrite |
 | templates.new | {path} | {revision, name}; the template becomes a new untitled document (no path, clean, empty undo history); a file that does not open leaves the document alone |
+| samples.open | {id} | {revision}; a finished job built into the app (ids in `crates/carve-core/src/samples.rs`) becomes a new untitled document in the preferred units (no path, clean, empty undo history). |
 
 ## Gadgets (brief 013e)
 Lua 5.4 scripts in `<user data>/Zeroed/gadgets/<name>/<name>.lua` (plus

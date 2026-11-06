@@ -479,6 +479,13 @@ impl Document {
         self.dirty = true;
     }
 
+    /// Shows the job in `units`, with nothing else moved and nothing to undo:
+    /// sizes are kept in millimeters whichever units the job shows.
+    pub(crate) fn show_units(&mut self, units: Units) {
+        self.job.units = units;
+        self.sync_job();
+    }
+
     /// Whether the document has unsaved changes.
     pub fn is_dirty(&self) -> bool {
         self.dirty

@@ -5,7 +5,7 @@
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 
-use crate::doc::Document;
+use crate::doc::{Document, JobSetup, RotaryAxis};
 use crate::error::CoreError;
 use crate::geom::{Path, Region, Tolerance};
 use crate::warning::Warning;
@@ -285,6 +285,68 @@ pub fn calculate(doc: &Document, request: &Request) -> Result<(Toolpath, Vec<War
     Ok((done.main, done.warnings))
 }
 
+/// The raster angle of a rotary job, in degrees from the X axis: along the
+/// blank, which is the axis the rotary spindle is mounted on.
+fn rotary_raster_angle(job: &JobSetup) -> f64 {
+    match job.rotary.axis {
+        RotaryAxis::X => 0.0,
+        RotaryAxis::Y => 90.0,
+    }
+}
+
+/// A rotary job clears with a raster along the blank, the rotary axis turning
+/// between passes. Offset clearing, inside out or outside in, does not work on
+/// a turning blank, so whichever form a toolpath came from it clears this way.
+fn rotary_clearing(strategy: Strategy, angle: f64, params: &mut Value) {
+    match strategy {
+        Strategy::Pocket => {
+            if !params.is_object() {
+                *params = json!({});
+            }
+            params["strategy"] = json!("raster");
+            params["rasterAngle"] = json!(angle);
+        }
+        Strategy::Rough3d | Strategy::Finish3d => {
+            if !params.is_object() {
+                *params = json!({});
+            }
+            if params["strategy"] == "zLevelOffset" {
+                params["strategy"] = json!("zLevelRaster");
+            } else if matches!(params["strategy"].as_str(), Some("offset" | "rasterXY")) {
+                params["strategy"] = json!("raster");
+            }
+            params["angle"] = json!(angle);
+        }
+        _ => clearing_options_to_raster(angle, params),
+    }
+}
+
+/// Turns the area clearance settings nested in a toolpath's parameters, such
+/// as a V-groove's flat areas or an inlay's pocket, to the raster at `angle`.
+fn clearing_options_to_raster(angle: f64, value: &mut Value) {
+    match value {
+        Value::Object(fields) => {
+            let clears = matches!(
+                fields.get("strategy").and_then(Value::as_str),
+                Some("offset" | "raster")
+            ) && fields.contains_key("rasterAngle");
+            if clears {
+                fields.insert("strategy".to_string(), json!("raster"));
+                fields.insert("rasterAngle".to_string(), json!(angle));
+            }
+            for field in fields.values_mut() {
+                clearing_options_to_raster(angle, field);
+            }
+        }
+        Value::Array(items) => {
+            for item in items {
+                clearing_options_to_raster(angle, item);
+            }
+        }
+        _ => {}
+    }
+}
+
 /// The name a toolpath of a two tool strategy gets: its own name with the
 /// name of the tool it cuts with, so that the two are told apart in the
 /// toolpath list.
@@ -376,6 +438,10 @@ pub struct Calculation {
 /// As [`calculate`].
 pub fn calculate_parts(doc: &Document, request: &Request) -> Result<Calculation, CoreError> {
     let mut resolved = super::selector::resolve(doc, request)?;
+    if doc.job().is_rotary() {
+        let angle = rotary_raster_angle(doc.job());
+        rotary_clearing(resolved.strategy, angle, &mut resolved.params);
+    }
     if resolved.strategy == Strategy::Profile && resolved.params.is_object() {
         super::tabs::anchor_positions(doc, &resolved.ids, &mut resolved.params)?;
     }
@@ -865,6 +931,72 @@ pub fn calculate_parts(doc: &Document, request: &Request) -> Result<Calculation,
 /// How far past the material's underside a carving may reach before it
 /// counts as cutting through, mm.
 const THROUGH_SLACK: f64 = 1e-3;
+
+#[cfg(test)]
+mod rotary_clearing_tests {
+    use super::*;
+
+    #[test]
+    fn a_pocket_always_clears_with_the_raster_along_the_blank() {
+        let mut params = json!({ "strategy": "offset", "rasterAngle": 30.0, "cutDepth": 3.0 });
+        rotary_clearing(Strategy::Pocket, 90.0, &mut params);
+        assert_eq!(params["strategy"], "raster");
+        assert_eq!(params["rasterAngle"], 90.0);
+        assert_eq!(params["cutDepth"], 3.0);
+
+        let mut unset = Value::Null;
+        rotary_clearing(Strategy::Pocket, 0.0, &mut unset);
+        assert_eq!(unset["strategy"], "raster");
+        assert_eq!(unset["rasterAngle"], 0.0);
+    }
+
+    #[test]
+    fn three_d_toolpaths_keep_to_the_raster_along_the_blank() {
+        let mut finish = json!({ "strategy": "offset", "angle": 45.0 });
+        rotary_clearing(Strategy::Finish3d, 90.0, &mut finish);
+        assert_eq!(finish, json!({ "strategy": "raster", "angle": 90.0 }));
+
+        let mut crossed = json!({ "strategy": "rasterXY", "angle": 0.0 });
+        rotary_clearing(Strategy::Finish3d, 90.0, &mut crossed);
+        assert_eq!(crossed["strategy"], "raster");
+
+        let mut rough = json!({ "strategy": "zLevelOffset", "angle": 0.0 });
+        rotary_clearing(Strategy::Rough3d, 90.0, &mut rough);
+        assert_eq!(rough, json!({ "strategy": "zLevelRaster", "angle": 90.0 }));
+
+        let mut raster = json!({ "strategy": "raster3d", "angle": 0.0 });
+        rotary_clearing(Strategy::Rough3d, 0.0, &mut raster);
+        assert_eq!(raster, json!({ "strategy": "raster3d", "angle": 0.0 }));
+    }
+
+    #[test]
+    fn clearance_nested_in_other_toolpaths_turns_to_the_raster() {
+        let mut vgroove = json!({
+            "depth": 2.0,
+            "clearance": { "strategy": "offset", "rasterAngle": 12.0 },
+        });
+        rotary_clearing(Strategy::VGroove, 90.0, &mut vgroove);
+        assert_eq!(vgroove["clearance"]["strategy"], "raster");
+        assert_eq!(vgroove["clearance"]["rasterAngle"], 90.0);
+    }
+
+    #[test]
+    fn other_settings_named_strategy_are_left_alone() {
+        let mut laser = json!({ "strategy": "hatchFill", "lineAngle": 30.0 });
+        let before = laser.clone();
+        rotary_clearing(Strategy::LaserCutFill, 90.0, &mut laser);
+        assert_eq!(laser, before);
+    }
+
+    #[test]
+    fn the_raster_follows_the_axis_the_blank_lies_along() {
+        let mut job = JobSetup::default();
+        job.rotary.axis = RotaryAxis::Y;
+        assert!((rotary_raster_angle(&job) - 90.0).abs() < 1e-12);
+        job.rotary.axis = RotaryAxis::X;
+        assert!(rotary_raster_angle(&job).abs() < 1e-12);
+    }
+}
 
 #[cfg(test)]
 mod tests {

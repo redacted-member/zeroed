@@ -1,4 +1,4 @@
-import { useCallback, useId, useMemo, useState, type FormEvent, type JSX } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState, type FormEvent, type JSX } from 'react';
 
 import type { PocketParams, StraightInlayParams, Tool } from '../../bridge/cam';
 import { strings } from '../../lib/formStrings';
@@ -8,6 +8,8 @@ import { unitSuffix } from '../../lib/units';
 import { useFormState } from '../../lib/useFormState';
 import { useToolpathForm } from '../../lib/useToolpathForm';
 import { useToolpathStore } from '../../state/toolpathStore';
+import { rotaryRasterAngle } from '../../lib/rotary';
+import { useDocumentStore } from '../../state/documentStore';
 import { useUiStore } from '../../state/uiStore';
 import { CheckField } from '../CheckField/CheckField';
 import { ChoiceField, type Choice } from '../ChoiceField/ChoiceField';
@@ -70,6 +72,16 @@ export function InlayPocketForm(): JSX.Element {
   const nameId = useId();
   const unit = unitSuffix(units);
   const raster = state.strategy === 'raster';
+  const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  useEffect(() => {
+    if (alongBlank !== null) {
+      setState((current) => ({
+        ...current,
+        strategy: 'raster',
+        rasterAngle: String(alongBlank),
+      }));
+    }
+  }, [alongBlank, setState]);
   const { tool: firstTool, setTool } = form;
   const tools = useMemo(
     () => (firstTool === null ? state.laterTools : [firstTool, ...state.laterTools]),
@@ -134,6 +146,7 @@ export function InlayPocketForm(): JSX.Element {
       <HelperRow picture={<HelperPicture picture={clearancePicture(state.strategy)} />}>
         <fieldset className="inlay-pocket__group" aria-label={text.pocket.clearing}>
           <ChoiceField
+            disabled={alongBlank !== null}
             label={text.pocket.clearing}
             onChange={(strategy) => setState((current) => ({ ...current, strategy }))}
             options={STRATEGIES}
@@ -146,7 +159,7 @@ export function InlayPocketForm(): JSX.Element {
             value={state.direction}
           />
           <NumberField
-            disabled={!raster}
+            disabled={!raster || alongBlank !== null}
             error={errorFor('rasterAngle')}
             label={text.pocket.rasterAngle}
             onChange={(v) => set('rasterAngle', v)}

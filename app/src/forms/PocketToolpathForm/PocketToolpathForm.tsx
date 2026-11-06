@@ -6,6 +6,8 @@ import { strings } from '../../lib/formStrings';
 import { unitSuffix } from '../../lib/units';
 import { useFormState } from '../../lib/useFormState';
 import { useToolpathForm } from '../../lib/useToolpathForm';
+import { rotaryRasterAngle } from '../../lib/rotary';
+import { useDocumentStore } from '../../state/documentStore';
 import { useUiStore } from '../../state/uiStore';
 import { CheckField } from '../CheckField/CheckField';
 import { ChoiceField, type Choice } from '../ChoiceField/ChoiceField';
@@ -65,6 +67,16 @@ export function PocketToolpathForm(): JSX.Element {
   const nameId = useId();
   const unit = unitSuffix(units);
   const raster = state.strategy === 'raster';
+  const alongBlank = useDocumentStore((documents) => rotaryRasterAngle(documents.job));
+  useEffect(() => {
+    if (alongBlank !== null) {
+      setState((current) => ({
+        ...current,
+        strategy: 'raster',
+        rasterAngle: String(alongBlank),
+      }));
+    }
+  }, [alongBlank, setState]);
   const { tool: firstTool, setTool } = form;
   const tools = useMemo(
     () => (firstTool === null ? state.laterTools : [firstTool, ...state.laterTools]),
@@ -131,6 +143,7 @@ export function PocketToolpathForm(): JSX.Element {
       <HelperRow picture={<HelperPicture picture={clearancePicture(state.strategy)} />}>
         <fieldset className="pocket-toolpath__group" aria-label={text.pocket.clearing}>
           <ChoiceField
+            disabled={alongBlank !== null}
             label={text.pocket.clearing}
             onChange={(strategy) => setState((current) => ({ ...current, strategy }))}
             options={STRATEGIES}
@@ -143,7 +156,7 @@ export function PocketToolpathForm(): JSX.Element {
             value={state.direction}
           />
           <NumberField
-            disabled={!raster}
+            disabled={!raster || alongBlank !== null}
             error={errorFor('rasterAngle')}
             label={text.pocket.rasterAngle}
             onChange={(v) => set('rasterAngle', v)}
@@ -157,6 +170,9 @@ export function PocketToolpathForm(): JSX.Element {
             options={PROFILE_PASSES}
             value={state.profilePass}
           />
+          {alongBlank !== null ? (
+            <p className="pocket-toolpath__hint">{text.pocket.rotaryClearing}</p>
+          ) : null}
         </fieldset>
       </HelperRow>
       <fieldset className="pocket-toolpath__group" aria-label={text.useRamps}>

@@ -98,6 +98,34 @@ $welcome-width: 720px;
   cursor: pointer;
 }
 
+.guide__samples {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: tokens.$space-1;
+  margin: 0 0 tokens.$space-3;
+  padding: 0;
+  list-style: none;
+}
+
+.guide__sample {
+  display: flex;
+  align-items: center;
+  gap: tokens.$space-1;
+  width: 100%;
+  padding: tokens.$space-1 tokens.$space-2;
+  border: tokens.$border-width solid tokens.$border;
+  border-radius: tokens.$radius;
+  background: tokens.$panel-bg;
+  color: tokens.$text;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.guide__sample:hover {
+  border-color: tokens.$accent;
+}
+
 .guide__choice:hover {
   border-color: tokens.$accent;
 }

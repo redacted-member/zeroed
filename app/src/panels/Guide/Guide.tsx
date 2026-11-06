@@ -31,6 +31,8 @@ import {
   type GuideStep,
 } from './model';
 
+import { openSample, SAMPLES } from './samples';
+
 import './Guide.scss';
 
 const text = dialogsStrings.guide;
@@ -122,6 +124,7 @@ function Welcome(): JSX.Element {
   const cardRef = useRef<HTMLElement>(null);
   const { size, view } = useCardRoom(cardRef);
   const at = placeCard(null, size, view);
+  const [sampleFailed, setSampleFailed] = useState(false);
   return (
     <section
       aria-labelledby={titleId}
@@ -137,6 +140,30 @@ function Welcome(): JSX.Element {
       <GuideChoices ids={START_GUIDE_IDS} onPick={start} />
       <h3 className="guide__group">{text.makeSomething}</h3>
       <GuideChoices ids={PROJECT_GUIDE_IDS} onPick={start} />
+      <h3 className="guide__group">{text.openSample}</h3>
+      <ul aria-label={text.openSample} className="guide__samples">
+        {SAMPLES.map((sample) => (
+          <li key={sample.id}>
+            <button
+              className="guide__sample"
+              data-tip={sample.blurb}
+              onClick={() => {
+                setSampleFailed(false);
+                openSample(sample).catch(() => setSampleFailed(true));
+              }}
+              type="button"
+            >
+              <GuideIcon name={sample.icon} />
+              {sample.title}
+            </button>
+          </li>
+        ))}
+      </ul>
+      {sampleFailed ? (
+        <p className="guide__hint" role="alert">
+          {text.sampleFailed}
+        </p>
+      ) : null}
       <div className="guide__footer">
         <label className="guide__check" data-tip={text.dontShowTip}>
           <input

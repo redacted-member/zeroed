@@ -25,6 +25,7 @@ pub mod model;
 pub mod post;
 pub mod prefs;
 pub mod progress;
+pub mod samples;
 pub mod templates;
 pub mod warning;
 
